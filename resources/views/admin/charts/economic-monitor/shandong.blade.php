@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-xs-4">
                     <div class="stats">
-                        <p><i class="fa fa-calendar-minus-o"></i> 2017年1月10日</p>
+                        <p><i class="fa fa-calendar-minus-o"></i> 3小时前</p>
                     </div>
                 </div>
             </div>
