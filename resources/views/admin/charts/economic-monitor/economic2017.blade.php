@@ -27,7 +27,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="details">
-                    <a href="">详情</a>
+                    <a href=""></a>
                 </div>
             </div>
         </div>

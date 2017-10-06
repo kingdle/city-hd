@@ -19,7 +19,8 @@
         padding: 15px 15px 10px 15px;
     }
     .stats {
-        color: #464a4c;
+        color: #373a3c;
+        font-size:12px;
     }
 </style>
 <div class="card">
@@ -32,7 +33,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="details">
-                    <a href="">详情</a>
+                    <a href=""></a>
                 </div>
             </div>
         </div>
