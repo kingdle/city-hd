@@ -7,21 +7,15 @@ use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
 
-class EconomicmonitorController extends Controller
+class EconomicbenchmarkController extends Controller
 {
     public function index()
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('新经济运行监测');
+            $content->header('经济对标');
             $content->description('');
 
-            $content->row(function (Row $row) {
-                $row->column(3, view('admin.charts.economic-monitor.area'));
-                $row->column(3, view('admin.charts.economic-monitor.industry'));
-                $row->column(3, view('admin.charts.economic-monitor.assets'));
-                $row->column(3, view('admin.charts.economic-monitor.sale'));
-            });
             $content->row(function(Row $row) {
                 $row->column(9, view('admin.charts.economic-monitor.charts'));
                 $row->column(3, view('admin.charts.economic-monitor.tables'));
@@ -35,5 +29,4 @@ class EconomicmonitorController extends Controller
 
         });
     }
-
 }
