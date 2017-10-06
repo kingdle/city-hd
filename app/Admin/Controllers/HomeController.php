@@ -15,8 +15,8 @@ class HomeController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('主要经济指标运行趋势');
-            $content->description('时时更新中...');
+            $content->header('服务器运行状态');
+            $content->description('...');
 
             $content->row(Dashboard::title());
 

@@ -11,6 +11,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    $router->get('/auth/economic-monitor', 'EconomicmonitorController@index');
     $router->resource('users', UserController::class);
 
 });
