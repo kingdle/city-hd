@@ -18,10 +18,6 @@
         min-height: 40px;
         padding: 15px 15px 10px 15px;
     }
-    .stats {
-        color: #373a3c;
-        font-size:12px;
-    }
 </style>
 <div class="card">
     <div class="content">

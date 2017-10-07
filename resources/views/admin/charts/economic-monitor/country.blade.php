@@ -21,6 +21,7 @@
     .stats {
         color: #373a3c;
         font-size:12px;
+        text-align: right;
     }
 </style>
 <div class="card">

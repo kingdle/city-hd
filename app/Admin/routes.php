@@ -19,6 +19,7 @@ Route::group([
     $router->get('/auth/area-development', 'AreaController@index');
     $router->get('/auth/project-monitor', 'ProjectController@index');
     $router->get('/auth/search', 'SearchController@index');
+    $router->get('/server', 'HomeController@index');
     $router->resource('users', UserController::class);
 
 });

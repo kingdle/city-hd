@@ -15,7 +15,7 @@ return [
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>黄岛</b>',
+    'logo-mini' => '<b>黄岛+</b>',
 
     /*
      * Route configration.

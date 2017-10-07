@@ -393,5 +393,7 @@
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
-    window.onresize = myChart.resize;
+    window.onresize = function () {
+        myChart.resize();
+    };
 </script>

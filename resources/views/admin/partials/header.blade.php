@@ -12,8 +12,8 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
+        <a href="#" class="sidebar-toggle" id="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">导航栏</span>
         </a>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
