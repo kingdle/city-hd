@@ -98,7 +98,13 @@
             title: {
                 text: ''
             },
-            tooltip: {},
+            tooltip: {
+                position: function (p) {
+                    // 位置回调
+                    // console.log && console.log(p);
+                    return [p[0] + 10, p[1] - 80];
+                },
+            },
             legend: {
                 data: [''],
                 show:false
