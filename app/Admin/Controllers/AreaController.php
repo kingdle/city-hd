@@ -14,7 +14,7 @@ class AreaController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('区域发展');
-            $content->description('');
+            $content->description(now());
 
             $content->body(view('admin.charts.economic-benchmark.dateline'));
             $content->body(view('admin.charts.economic-benchmark.ranking'));

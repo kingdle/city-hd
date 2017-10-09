@@ -5,5 +5,5 @@
         <strong>Version</strong>&nbsp;&nbsp; {!! config('admin.version') !!}
     </div>
     <!-- Default to the left -->
-    <strong>Powered by <a href="http://www.dream-it.cn" target="_blank">梦创双杨</a></strong>
+    <strong>Powered by <a href="http://www.xhafz.com" target="_blank">黄岛统计</a></strong>
 </footer>

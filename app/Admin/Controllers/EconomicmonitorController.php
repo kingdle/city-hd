@@ -14,7 +14,7 @@ class EconomicmonitorController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('新经济运行监测');
-            $content->description('');
+            $content->description(now());
 
             $content->row(function (Row $row) {
                 $row->column(3, view('admin.charts.economic-monitor.area'));
@@ -23,8 +23,9 @@ class EconomicmonitorController extends Controller
                 $row->column(3, view('admin.charts.economic-monitor.sale'));
             });
             $content->row(function(Row $row) {
-                $row->column(9, view('admin.charts.economic-monitor.charts'));
-                $row->column(3, view('admin.charts.economic-monitor.tables'));
+                $row->column(5, view('admin.charts.economic-monitor.tables'));
+                $row->column(7, view('admin.charts.economic-monitor.charts'));
+
             });
             $content->body(view('admin.charts.economic-monitor.economic2017'));
             $content->row(function (Row $row) {

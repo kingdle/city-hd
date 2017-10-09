@@ -19,8 +19,8 @@
     }
     .dateline .title p {
         font-size: 22px;
-        font-weight: 200;
-        color: #1e693a;
+        font-weight: 400;
+        color: #30b8c4;
         line-height: 40px;
     }
 </style>

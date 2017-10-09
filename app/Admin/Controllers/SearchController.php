@@ -14,7 +14,7 @@ class SearchController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('数据检索');
-            $content->description('');
+            $content->description(now());
 
             $content->body(view('admin.charts.economic-benchmark.dateline'));
             $content->body(view('admin.charts.economic-benchmark.ranking'));

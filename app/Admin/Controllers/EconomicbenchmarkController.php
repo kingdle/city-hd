@@ -14,7 +14,7 @@ class EconomicbenchmarkController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('经济对标');
-            $content->description('');
+            $content->description(now());
 
             $content->body(view('admin.charts.economic-benchmark.dateline'));
             $content->body(view('admin.charts.economic-benchmark.ranking'));

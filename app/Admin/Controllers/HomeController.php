@@ -16,7 +16,7 @@ class HomeController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('服务器运行状态');
-            $content->description('...');
+            $content->description(now());
 
             $content->row(Dashboard::title());
 
