@@ -56,11 +56,7 @@
     .text-navy {
         color: #1ab394;
     }
-    .warpper-content-pillar h4 {
-        font-size: 16px;
-        font-weight: 400;
-    }
-    .warpper-content-unique h4 {
+    .project-table h4 {
         font-size: 16px;
         font-weight: 400;
     }
