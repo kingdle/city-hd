@@ -1,5 +1,5 @@
 <style>
-    .dateline {
+    .dateline,.ranking {
         border-radius: 2px;
         background-color: #FFFFFF;
         border-color: #e7eaec;
@@ -12,7 +12,7 @@
         z-index: 1;
     }
     .dateline .content {
-        min-height: 40px;
+        min-height: 30px;
     }
     .dateline .title {
         text-align: center;
