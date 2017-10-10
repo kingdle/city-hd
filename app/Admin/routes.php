@@ -17,7 +17,7 @@ Route::group([
     $router->get('/auth/industry-town', 'TownController@index');
     $router->get('/auth/one-policy', 'PolicyController@index');
     $router->get('/auth/economic-benchmark', 'EconomicbenchmarkController@index');
-    $router->get('/auth/area-development', 'AreaController@index');
+    $router->get('/auth/area-development', 'AreadevController@index');
     $router->get('/auth/project-monitor', 'ProjectController@index');
     $router->get('/auth/search', 'SearchController@index');
     $router->get('/server', 'HomeController@index');
