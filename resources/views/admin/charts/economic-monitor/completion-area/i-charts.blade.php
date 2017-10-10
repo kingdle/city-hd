@@ -13,8 +13,8 @@
         // 指定图表的配置项和数据
         var option = {
             title : {
-                text: '主要指标运行趋势',
-                subtext: '增加值及增速'
+                text: '地区生产总值运行趋势',
+                subtext: '黄岛区统计局发布'
             },
             tooltip : {
                 trigger: 'axis'
@@ -25,9 +25,7 @@
             toolbox: {
                 show : true,
                 feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    magicType : {show: true, type: ['line', 'bar']},
+
                     restore : {show: true},
                     saveAsImage : {show: true}
                 }
@@ -36,7 +34,7 @@
             xAxis : [
                 {
                     type : 'category',
-                    data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                    data: ['2016-3','2016-6','2016-9','2016-12','2017-3','2017-6','2017-7','2017-8']
                 }
             ],
             yAxis : [
@@ -48,7 +46,7 @@
                 {
                     name:'增加值',
                     type:'bar',
-                    data:[26, 59, 90, 120, 128.7, 170.7, 175.6, 182.2, 198.7, 218.8,'',''],
+                    data:[ 487.3,1312,2070.02,2765.69,549.56,1463.6,'',''],
                     markPoint : {
                         data : [
                             {type : 'max', name: '最大值'},
@@ -64,7 +62,7 @@
                 {
                     name:'增速',
                     type:'line',
-                    data:[26, 59, 90, 120, 128.7, 170.7, 175.6, 182.2, 198.7, 218.8,'',''],
+                    data:[8.5,10.5,11.5,12.3,9.5,11.9,'',''],
                     markPoint : {
                         data : [
                             {type : 'max', name: '最快'},
@@ -79,6 +77,10 @@
                 }
             ]
         };
+
+
+
+
 
 
         // 使用刚指定的配置项和数据显示图表。

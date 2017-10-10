@@ -54,113 +54,113 @@
                     <th scope="row">1</th>
                     <td>地区生产总值</td>
                     <td>亿元</td>
-                    <td>--</td>
-                    <td>--</td>
+                    <td>1521.2</td>
+                    <td>12.1</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>规上工业总产值</td>
                     <td>亿元</td>
-                    <td>3094.1</td>
-                    <td>13.5</td>
+                    <td>2620.2</td>
+                    <td>13.8</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>固定资产投资总额</td>
                     <td>亿元</td>
-                    <td>1340.2</td>
-                    <td>11.8</td>
+                    <td>1013.2</td>
+                    <td>11.3</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
                     <td>限上贸易销售额</td>
                     <td>亿元</td>
-                    <td>784.2</td>
-                    <td>56.3</td>
+                    <td>653.3</td>
+                    <td>66.1</td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
                     <td>社会消费品零售额</td>
                     <td>亿元</td>
-                    <td>--</td>
-                    <td>--</td>
+                    <td>279.2</td>
+                    <td>11.7</td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
                     <td>一般公共预算收入</td>
                     <td>亿元</td>
-                    <td>152.8</td>
-                    <td>11.3</td>
+                    <td>134.6</td>
+                    <td>11.1</td>
                 </tr>
                 <tr>
                     <th scope="row">7</th>
                     <td>一般公共预算支出</td>
                     <td>亿元</td>
-                    <td>126.3</td>
-                    <td>11.2</td>
+                    <td>113.4</td>
+                    <td>15.9</td>
                 </tr>
                 <tr>
                     <th scope="row">8</th>
                     <td>税收收入</td>
                     <td>亿元</td>
-                    <td>276.5</td>
-                    <td>18.9</td>
+                    <td>230.7</td>
+                    <td>21.2</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
                     <td>国税</td>
                     <td>亿元</td>
-                    <td>176.5</td>
-                    <td>18.9</td>
+                    <td>156.4</td>
+                    <td>29.5</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
                     <td>地税</td>
                     <td>亿元</td>
-                    <td>100</td>
-                    <td>13.9</td>
+                    <td>74.3</td>
+                    <td>6.9</td>
                 </tr>
                 <tr>
                     <th scope="row">9</th>
-                    <td>国税测试</td>
+                    <td>进出口总额</td>
                     <td>亿元</td>
-                    <td>276.5</td>
-                    <td>18.9</td>
+                    <td>898.7</td>
+                    <td>46.9</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
-                    <td>国税</td>
+                    <td>出口总额</td>
                     <td>亿元</td>
-                    <td>176.5</td>
-                    <td>18.9</td>
+                    <td>395.8</td>
+                    <td>22.8</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
-                    <td>地税</td>
-                    <td>亿元</td>
-                    <td>100</td>
-                    <td>13.9</td>
+                    <td>实际利用外资</td>
+                    <td>亿美元</td>
+                    <td>9.1</td>
+                    <td>5</td>
                 </tr>
                 <tr>
                     <th scope="row">10</th>
-                    <td>国税测试</td>
-                    <td>亿元</td>
-                    <td>276.5</td>
-                    <td>18.9</td>
+                    <td>居民人均可支配收入</td>
+                    <td>元</td>
+                    <td>20359</td>
+                    <td>8.8</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
-                    <td>国税</td>
-                    <td>亿元</td>
-                    <td>176.5</td>
-                    <td>18.9</td>
+                    <td>城镇</td>
+                    <td>元</td>
+                    <td>23256</td>
+                    <td>8.6</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
-                    <td>地税</td>
-                    <td>亿元</td>
-                    <td>100</td>
-                    <td>13.9</td>
+                    <td>农村</td>
+                    <td>元</td>
+                    <td>12316</td>
+                    <td>7.7</td>
                 </tr>
                 </tbody>
             </table>

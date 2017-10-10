@@ -15,6 +15,7 @@ class CompletionareaController extends Controller
 
             $content->header('地区生产总值完成情况');
             $content->description(now());
+            $content->dateline('dateline');
 
             $content->row(function (Row $row) {
                 $row->column(4, view('admin.charts.economic-monitor.completion-area.month-text'));
