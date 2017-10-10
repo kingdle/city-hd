@@ -16,17 +16,11 @@ class SearchController extends Controller
             $content->header('数据检索');
             $content->description(now());
 
-            $content->body(view('admin.charts.economic-benchmark.dateline'));
-            $content->body(view('admin.charts.economic-benchmark.ranking'));
             $content->row(function (Row $row) {
-                $row->column(4, view('admin.charts.economic-benchmark.ranking-total'));
-                $row->column(4, view('admin.charts.economic-benchmark.ranking-industry'));
-                $row->column(4, view('admin.charts.economic-benchmark.ranking-assets'));
-                $row->column(4, view('admin.charts.economic-benchmark.ranking-budget'));
-                $row->column(4, view('admin.charts.economic-benchmark.ranking-trade'));
-                $row->column(4, view('admin.charts.economic-benchmark.ranking-trade-foreign'));
+                $row->column(2, view('admin.charts.search.s-list'));
+                $row->column(10, view('admin.charts.search.s-content'));
             });
-            $content->body(view('admin.charts.economic-benchmark.ranking-table'));
+
 
         });
     }
