@@ -50,7 +50,7 @@
     function dataFormatter(obj) {
         var pList = [];
         var temp;
-        for (var year = 2012; year <= 2017; year++) {
+        for (var year = 2014; year <= 2017; year++) {
             var max = 0;
             var sum = 0;
             temp = obj[year];
@@ -73,9 +73,7 @@
         2017:[],
         2016:[],
         2015:[],
-        2014:[],
-        2013:[],
-        2012:[]
+        2014:[]
     });
 
     option = {
@@ -92,32 +90,30 @@
                 //     position: 'left'
                 // },
                 data: [
-                    '2012-01-01','2013-01-01','2014-01-01','2015-01-01','2016-01-01',
+                    '2014','2015','2016',
                     {
-                        value: '2017-01-01',
+                        value: '201701',
                         tooltip: {
                             formatter: '{b} GDP达到一个高度'
                         },
                         symbol: 'diamond',
-                        symbolSize: 16
+                        symbolSize: 14
                     },
-                    '2017-02-01','2017-03-01','2017-04-01','2017-05-01','2017-06-01','2017-07-01','2017-08-01','2017-09-01',
+                    '02','03','04','05','06','07','08','09',
                     {
-                        value: '2017-10-01',
+                        value: '10',
                         tooltip: {
                             formatter: function (params) {
                                 return params.name + 'GDP达到又一个高度';
                             }
                         },
                         symbol: 'diamond',
-                        symbolSize: 18
+                        symbolSize: 16
                     },
-                    '2017-11-01','2017-12-01',
+                    '11','12',
                 ],
                 label: {
-                    formatter : function(s) {
-                        return (new Date(s)).getFullYear();
-                    }
+
                 }
             },
             title: {

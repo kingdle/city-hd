@@ -11,6 +11,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'EconomicmonitorController@index');
+    $router->get('/auth/completion-area', 'CompletionareaController@index');
     $router->get('/auth/economic-monitor', 'EconomicmonitorController@index');
     $router->get('/auth/616', 'SixController@index');
     $router->get('/auth/industry-town', 'TownController@index');
