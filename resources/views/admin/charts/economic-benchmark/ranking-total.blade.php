@@ -1,4 +1,28 @@
 <style>
+    .dateline,.ranking {
+        border-radius: 2px;
+        background-color: #FFFFFF;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 2px 0 0;
+        color: #252422;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .dateline .content {
+        min-height: 30px;
+    }
+    .dateline .title {
+        text-align: center;
+    }
+    .dateline .title p {
+        font-size: 28px;
+        font-weight: 400;
+        color: #30b8c4;
+        line-height: 60px;
+    }
     .ranking .content {
         min-height: 60px;
     }

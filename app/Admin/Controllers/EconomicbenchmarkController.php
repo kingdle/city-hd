@@ -16,7 +16,6 @@ class EconomicbenchmarkController extends Controller
             $content->header('经济发展对标');
             $content->description(now());
 
-            $content->body(view('admin.charts.economic-benchmark.dateline'));
             $content->row(function (Row $row) {
                 $row->column(2, view('admin.charts.economic-benchmark.ranking-total'));
                 $row->column(2, view('admin.charts.economic-benchmark.ranking-industry'));
