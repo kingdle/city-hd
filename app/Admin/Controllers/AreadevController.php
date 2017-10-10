@@ -15,7 +15,6 @@ class AreadevController extends Controller
 
             $content->header('区域发展监测');
             $content->description(now());
-            $content->dateline('dateline');
 
             $content->row(function (Row $row) {
                 $row->column(12, view('admin.charts.area-development.quota'));
