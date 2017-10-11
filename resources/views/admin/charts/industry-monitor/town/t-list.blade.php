@@ -76,22 +76,22 @@
                         <h5>产业项目</h5>
                         <ul class="folder-list m-b-md" style="padding: 0">
                             <li><a href="#"> <i class="fa fa-building-o "></i> 国际合作小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 国际自贸小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 海尔山水生态颐养小镇 <span class="label label-warning pull-right">4</span></a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 国际自贸小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 海尔山水生态颐养小镇 <span class="label label-warning pull-right">4</span></a></li>
                             <li><a href="#"> <i class="fa fa-building-o"></i> 华星国际冰上运动小镇 <span class="label label-danger pull-right">2</span></a></li>
                             <li><a href="#"> <i class="fa fa-building-o"></i> 华融中广文化艺术小镇</a></li>
                             <li><a href="#"> <i class="fa fa-building-o "></i> 大唐移动电竞小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 财富小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> “宇宙.生命”科普文旅小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 财富小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> “宇宙.生命”科普文旅小镇</a></li>
                             <li><a href="#"> <i class="fa fa-building-o"></i> 东方文化小镇<span class="label label-danger pull-right">3</span></a></li>
                             <li><a href="#"> <i class="fa fa-building-o"></i> 音乐小镇</a></li>
                             <li><a href="#"> <i class="fa fa-building-o "></i> 中研创意设计小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 海洋科技小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 华润地铁小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 海洋科技小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 华润地铁小镇</a></li>
                             <li><a href="#"> <i class="fa fa-building-o"></i> 金融基金小镇<span class="label label-danger pull-right">3</span></a></li>
                             <li><a href="#"> <i class="fa fa-building-o"></i> 保利国防军事文化体验小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 养生小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 健康小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 养生小镇</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 健康小镇</a></li>
                         </ul>
                         <h5>项目分类</h5>
                         <ul class="category-list" style="padding: 0">

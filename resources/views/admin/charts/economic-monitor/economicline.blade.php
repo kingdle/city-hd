@@ -53,10 +53,12 @@
             toolbox: {},
             xAxis: {
                 type: 'category',
+                splitLine:{show: false},
                 boundaryGap: false,
                 data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
             },
             yAxis: {
+                splitLine:{show: false},
                 type: 'value'
             },
             series: [
@@ -113,12 +115,13 @@
             },
             //calculable : true,
             xAxis: [{
-
+                splitLine:{show: false},
                 type: 'category',
                 data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6'],
 
             }],
             yAxis: [{
+                splitLine:{show: false},
                 type: 'value',
                 name: '总量',
                 axisLabel: {

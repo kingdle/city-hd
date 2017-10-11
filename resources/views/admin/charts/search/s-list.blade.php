@@ -75,14 +75,14 @@
                     <div class="file-manager">
                         <h5>分类</h5>
                         <ul class="folder-list m-b-md" style="padding: 0">
-                            <li><a href="#"> <i class="fa fa-building-o "></i> 国家 <span class="label label-info pull-right">3</span></a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 地市 <span class="label label-info pull-right">1</span></a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 区市 <span class="label label-warning pull-right">4</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 图表 <span class="label label-danger pull-right">2</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 文章 <span class="label label-danger pull-right">1</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o "></i> 帮助文档 <span class="label label-danger pull-right">2</span></a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 手册 <span class="label label-danger pull-right">2</span></a></li>
-                            <li><a href="#"> <i class="fa fa-certificate"></i> 其他 <span class="label label-danger pull-right">3</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 国家 <span class="label label-info pull-right">3</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 地市 <span class="label label-info pull-right">1</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 区市 <span class="label label-warning pull-right">4</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 图表 <span class="label label-danger pull-right">2</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 文章 <span class="label label-danger pull-right">1</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 帮助文档 <span class="label label-danger pull-right">2</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 手册 <span class="label label-danger pull-right">2</span></a></li>
+                            <li><a href="#"> <i class="fa fa-bookmark-o"></i> 其他 <span class="label label-danger pull-right">3</span></a></li>
                         </ul>
                     </div>
                 </div>

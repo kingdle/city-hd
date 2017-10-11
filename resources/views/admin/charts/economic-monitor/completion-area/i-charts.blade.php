@@ -44,6 +44,7 @@
                 {
                     type : 'value',
                     name: '增加值',
+                    splitLine:{show: false},
                     axisLabel: {
                         formatter: '{value}万元'
                     }
@@ -51,6 +52,7 @@
                 {
                     type : 'value',
                     name: '增速',
+                    splitLine:{show: false},
                     axisLabel: {
                         formatter: '{value}%'
                     }
@@ -60,6 +62,7 @@
                 {
                     name:'增加值',
                     type:'bar',
+                    splitLine:{show: false},
                     data:[ 487.3,1312, 2070.02, 2765.69, 549.56, 1463.6, '',''],
                     markPoint : {
 
