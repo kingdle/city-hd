@@ -16,6 +16,9 @@
                 text: '地区生产总值运行趋势',
                 subtext: ''
             },
+            grid: [
+                {x: '10%', y: '20%', width: '83%', height: '70%'},
+            ],
             tooltip : {
                 trigger: 'axis'
             },
@@ -77,7 +80,7 @@
                         ]
                     },
                     markLine : {
-                        
+
                     }
                 }
             ]

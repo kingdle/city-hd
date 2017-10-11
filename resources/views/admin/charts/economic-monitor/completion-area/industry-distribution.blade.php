@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="ibox-contenter">
-                <div id="bobal" style="min-height: 300px"></div>
+                <div id="bobal" style="min-height: 650px"></div>
             </div>
         </div>
     </div>
@@ -41,8 +41,8 @@
                     text: '黄岛区地区生产总值完成情况'
                 },
                 grid: [
-                    {x: '6%', y: '20%', width: '36%', height: '60%'},
-                    {x2: '10%', y: '20%', width: '36%', height: '60%'}
+                    {x: '4%', y: '10%', width: '36%', height: '80%'},
+                    {x2: '4%', y: '10%', width: '36%', height: '80%'}
                 ],
                 tooltip : {
                     trigger: 'axis',
@@ -71,7 +71,7 @@
                     {gridIndex: 1,
                         type : 'value',
                         scale:true,
-                        name:'总量(亿元)'
+                        name:''
                     }
                 ],
                 yAxis: [

@@ -38,7 +38,7 @@
         padding: 15px 20px 20px 20px;
         font-size: 14px;
         text-indent: 2em;
-        line-height: ;
+        line-height: 2em;
     }
     .ibox-tools {
         display: block;

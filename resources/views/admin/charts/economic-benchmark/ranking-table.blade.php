@@ -179,7 +179,7 @@
                                             <tr>
                                                 <td>12</td>
                                                 <td>红岛经济区</td>
-                                                <td>41.7</t7d>
+                                                <td>41.7</td>
                                                 <td>6.0%</td>
                                             </tr>
                                             </tbody>
@@ -728,9 +728,3 @@
         </div>
     </div>
 </div>
-<script>
-    $('#myTabs a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-</script>

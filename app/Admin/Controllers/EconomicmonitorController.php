@@ -28,6 +28,7 @@ class EconomicmonitorController extends Controller
 
             });
             $content->body(view('admin.charts.economic-monitor.economic2017'));
+            $content->body(view('admin.charts.economic-monitor.economicline'));
             $content->row(function (Row $row) {
                 $row->column(4, view('admin.charts.economic-monitor.country'));
                 $row->column(4, view('admin.charts.economic-monitor.shandong'));
