@@ -21,9 +21,9 @@
 
             },
             legend: {
-                left:'15%',
-                top:'10%',
-                orient:'vertical',
+                x: 'right',
+                left:'20%',
+                size: 4,
                 data: ['地区生产总值', '地区生产总值增速', '固定资产投资总额', '固定资产投资增速', '限上贸易销售额', '限上贸易增速', '社会消费品零售额', '社会消费品零售增速']
             },
             //calculable : true,
@@ -234,5 +234,8 @@
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        window.onresize = function () {
+            myChart.resize();
+        };
     });
 </script>

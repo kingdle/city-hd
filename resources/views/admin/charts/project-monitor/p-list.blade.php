@@ -112,19 +112,19 @@
 
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>All projects assigned to this account</h5>
+                    <h5>全部监测项目</h5>
                     <div class="ibox-tools">
-                        <a href="" class="btn btn-primary btn-xs">Create new project</a>
+                        <a href="" class="btn btn-primary btn-xs">创建新项目</a>
                     </div>
                 </div>
                 <div class="ibox-content">
                     <div class="row m-b-sm m-t-sm">
                         <div class="col-md-1">
-                            <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                            <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> 刷新</button>
                         </div>
                         <div class="col-md-11">
-                            <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
+                            <div class="input-group"><input type="text" placeholder="项目名称" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> 查询</button> </span></div>
                         </div>
                     </div>
 
@@ -134,222 +134,222 @@
                             <tbody>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Contract with Zender Company</a>
+                                    <a href="#">中国金茂科技小镇</a>
                                     <br>
-                                    <small>Created 14.08.2014</small>
+                                    <small>开始时间 14.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 48%</small>
+                                    <small>完成进度: 48%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 48%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">There are many variations of passages</a>
+                                    <a href="#">中国北方(黄岛)国际农批交易中心</a>
                                     <br>
-                                    <small>Created 11.08.2014</small>
+                                    <small>开始时间 11.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 28%</small>
+                                    <small>完成进度: 28%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 28%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-default">Unactive</span>
+                                    <span class="label label-default">续建</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Many desktop publishing packages and web</a>
+                                    <a href="#">UFORT环球自由港</a>
                                     <br>
-                                    <small>Created 10.08.2014</small>
+                                    <small>开始时间 10.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 8%</small>
+                                    <small>完成进度: 58%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 8%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Letraset sheets containing</a>
+                                    <a href="#">中国棉花交易中心</a>
                                     <br>
-                                    <small>Created 22.07.2014</small>
+                                    <small>开始时间 22.07.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 83%</small>
+                                    <small>完成进度: 83%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 83%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Contrary to popular belief</a>
+                                    <a href="#">中国科学院青岛科教园</a>
                                     <br>
-                                    <small>Created 14.07.2014</small>
+                                    <small>开始时间 14.07.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 97%</small>
+                                    <small>完成进度: 97%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 97%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Contract with Zender Company</a>
+                                    <a href="#">青岛理工大学主校区</a>
                                     <br>
-                                    <small>Created 14.08.2014</small>
+                                    <small>开始时间 14.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 48%</small>
+                                    <small>完成进度: 88%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 48%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">There are many variations of passages</a>
+                                    <a href="#">复旦大学青岛研究院</a>
                                     <br>
-                                    <small>Created 11.08.2014</small>
+                                    <small>开始时间 11.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 28%</small>
+                                    <small>完成进度: 28%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 28%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-default">Unactive</span>
+                                    <span class="label label-default">投资项目</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Many desktop publishing packages and web</a>
+                                    <a href="#">利群集团西海岸商业综合体</a>
                                     <br>
-                                    <small>Created 10.08.2014</small>
+                                    <small>开始时间 10.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 8%</small>
+                                    <small>完成进度: 8%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 8%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Letraset sheets containing</a>
+                                    <a href="#">利群灵山卫购物中心</a>
                                     <br>
-                                    <small>Created 22.07.2014</small>
+                                    <small>开始时间 22.07.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 83%</small>
+                                    <small>完成进度: 83%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 83%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">Contrary to popular belief</a>
+                                    <a href="#">东方影都</a>
                                     <br>
-                                    <small>Created 14.07.2014</small>
+                                    <small>开始时间 14.07.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 97%</small>
+                                    <small>完成进度: 97%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 97%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="project-status">
-                                    <span class="label label-primary">Active</span>
+                                    <span class="label label-primary">新开工</span>
                                 </td>
                                 <td class="project-title">
-                                    <a href="#">There are many variations of passages</a>
+                                    <a href="#">海洋梦世界</a>
                                     <br>
-                                    <small>Created 11.08.2014</small>
+                                    <small>开始时间 11.08.2014</small>
                                 </td>
                                 <td class="project-completion">
-                                    <small>Completion with: 28%</small>
+                                    <small>完成进度: 28%</small>
                                     <div class="progress progress-mini">
                                         <div style="width: 28%;" class="progress-bar"></div>
                                     </div>
                                 </td>
                                 <td class="project-people"></td>
                                 <td class="project-actions">
-                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
                                 </td>
                             </tr>
                             </tbody>

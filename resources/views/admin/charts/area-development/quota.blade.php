@@ -80,7 +80,7 @@
             </div>
             <div class="warpper-content-pillar">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="ibox">
                             <div class="ibox-content">
                                 <div class="row">
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <div class="ibox">
                             <div class="ibox-content ">
                                 <div class="row">
