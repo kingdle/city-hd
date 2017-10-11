@@ -17,7 +17,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="numbers">
-                    <p>748.2亿元</p>
+                    <p>653.3亿元</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-xs-6">
                     <div class="stats-up">
-                        <p><i class="fa fa-arrow-up"></i> 56.3%</p>
+                        <p><i class="fa fa-arrow-up"></i> 66.1%</p>
                     </div>
                 </div>
             </div>

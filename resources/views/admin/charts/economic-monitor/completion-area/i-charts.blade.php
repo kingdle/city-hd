@@ -14,7 +14,7 @@
         var option = {
             title : {
                 text: '地区生产总值运行趋势',
-                subtext: '黄岛区统计局发布'
+                subtext: ''
             },
             tooltip : {
                 trigger: 'axis'
@@ -39,7 +39,18 @@
             ],
             yAxis : [
                 {
-                    type : 'value'
+                    type : 'value',
+                    name: '增加值',
+                    axisLabel: {
+                        formatter: '{value}万元'
+                    }
+                },
+                {
+                    type : 'value',
+                    name: '增速',
+                    axisLabel: {
+                        formatter: '{value}%'
+                    }
                 }
             ],
             series : [
@@ -62,6 +73,7 @@
                 {
                     name:'增速',
                     type:'line',
+                    yAxisIndex: 1,
                     data:[8.5, 10.5, 11.5, 12.3, 9.5,11.9,'',''],
                     markPoint : {
                         data : [
