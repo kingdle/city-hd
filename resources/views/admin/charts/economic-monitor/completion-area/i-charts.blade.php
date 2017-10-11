@@ -59,15 +59,10 @@
                     type:'bar',
                     data:[ 487.3,1312, 2070.02, 2765.69, 549.56, 1463.6, '',''],
                     markPoint : {
-                        data : [
-                            {type : 'max', name: '最大值'},
-                            {type : 'min', name: '最小值'}
-                        ]
+
                     },
                     markLine : {
-                        data : [
-                            {type : 'average', name: '平均值'}
-                        ]
+
                     }
                 },
                 {
@@ -82,9 +77,7 @@
                         ]
                     },
                     markLine : {
-                        data : [
-                            {type : 'average', name: '平均值'}
-                        ]
+                        
                     }
                 }
             ]
