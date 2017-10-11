@@ -1,36 +1,105 @@
+<style>
+    .ibox-title {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background-color: #ffffff;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 2px 0 0;
+        color: inherit;
+        margin-bottom: 0;
+        padding: 15px 15px 7px;
+        min-height: 48px;
+    }
+    .ibox-title h5 {
+        display: inline-block;
+        font-size: 14px;
+        margin: 0 0 7px;
+        padding: 0;
+        text-overflow: ellipsis;
+        float: left;
+    }
+    .ibox-tools {
+        display: block;
+        float: none;
+        margin-top: 0;
+        position: relative;
+        padding: 0;
+        text-align: right;
+    }
+    .ibox-tools a {
+        cursor: pointer;
+        margin-left: 5px;
+        color: #c4c4c4;
+    }
+    .ibox-content {
+        background-color: #ffffff;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+    .feed-element:first-child {
+        margin-top: 0;
+    }
+    .feed-activity-list .feed-element {
+        border-bottom: 1px solid #e7eaec;
+    }
+    .feed-element, .media-body {
+        overflow: hidden;
+    }
+    .feed-element, .feed-element .media {
+        margin-top: 15px;
+    }
+    .feed-element {
+        padding-bottom: 15px;
+    }
+    .feed-element > .pull-left {
+        margin-right: 10px;
+    }
+    .pull-left {
+        float: left!important;
+    }
+    .media-body {
+        overflow: hidden;
+        font-size: 12px;
+        display: table-cell;
+        vertical-align: top;
+    }
+    .feed-element .actions {
+        margin-top: 10px;
+    }
+    .btn-white {
+        color: inherit;
+        background: white;
+        border: 1px solid #e7eaec;
+    }
+</style>
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-md-12">
+            <form method="get" action="index.html" class="pull-right mail-search">
+                <div class="input-group">
+                    <input type="text" class="form-control input-sm" name="search" placeholder="Search email">
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="ibox float-e-margins">
-                <form method="get" action="index.html" class="pull-right mail-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-sm" name="search" placeholder="Search email">
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-sm btn-primary">
-                                Search
-                            </button>
-                        </div>
-                    </div>
-                </form>
                 <div class="ibox-title">
-                    <h5>Activites</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
+                    <h5>为您找到相关结果约15个</h5>
                 </div>
                 <div class="ibox-content">
 
@@ -38,9 +107,6 @@
                         <div class="feed-activity-list">
 
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a1.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">1m ago</small>
                                     <strong>Sandra Momot</strong> started following <strong>Monica Smith</strong>. <br>
@@ -53,9 +119,6 @@
                             </div>
 
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/profile.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right">5m ago</small>
                                     <strong>Monica Smith</strong> posted a new blog. <br>
@@ -65,9 +128,6 @@
                             </div>
 
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a2.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right">2h ago</small>
                                     <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
@@ -84,9 +144,6 @@
                                 </div>
                             </div>
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a3.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right">2h ago</small>
                                     <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
@@ -98,9 +155,6 @@
                                 </div>
                             </div>
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a4.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">5h ago</small>
                                     <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
@@ -112,9 +166,6 @@
                                 </div>
                             </div>
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a5.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right">2h ago</small>
                                     <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
@@ -129,9 +180,6 @@
                                 </div>
                             </div>
                             <div class="feed-element">
-                                <a href="#" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/profile.jpg">
-                                </a>
                                 <div class="media-body ">
                                     <small class="pull-right">23h ago</small>
                                     <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>

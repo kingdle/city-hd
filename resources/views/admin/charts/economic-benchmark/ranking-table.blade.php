@@ -93,7 +93,7 @@
 
                                                 <th>#</th>
                                                 <th>区市 </th>
-                                                <th>累计（计量单位：万元）</th>
+                                                <th>总量（计量单位：亿元）</th>
                                                 <th>增长</th>
                                             </tr>
                                             </thead>
@@ -101,86 +101,86 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>青岛市</td>
-                                                <td>7202541</td>
-                                                <td>8.6%</td>
+                                                <td>5075.1</td>
+                                                <td>7.7%</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>市南区</td>
-                                                <td>607359</td>
+                                                <td>490.1</td>
                                                 <td>3.1%</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>市北区</td>
-                                                <td>626857</td>
-                                                <td>8.8%</td>
+                                                <td>388.6</td>
+                                                <td>8.1%</td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td>李沧区</td>
-                                                <td>396471</td>
-                                                <td>15.1%</td>
+                                                <td>189.6</td>
+                                                <td>8.1%</td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
                                                 <td>崂山区</td>
-                                                <td>881035</td>
-                                                <td>10.6%</td>
+                                                <td>293.3</td>
+                                                <td>8.6%</td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
                                                 <td>青岛西海岸新区</td>
-                                                <td>152.8（亿元）</td>
-                                                <td>15.9%</td>
+                                                <td>1521.3</td>
+                                                <td>12.1%</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
                                                 <td>黄岛区</td>
-                                                <td>1447263</td>
-                                                <td>10.8%</td>
+                                                <td>1463.6</td>
+                                                <td>11.9%</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
                                                 <td>保税港区</td>
-                                                <td>80875</td>
-                                                <td>20.5%</td>
+                                                <td>57.6</td>
+                                                <td>16.0%</td>
                                             </tr>
                                             <tr>
                                                 <td>7</td>
                                                 <td>城阳区</td>
-                                                <td>732040</td>
-                                                <td>11.3%</td>
+                                                <td>517.9</td>
+                                                <td>8.6%</td>
                                             </tr>
                                             <tr>
                                                 <td>8</td>
                                                 <td>即墨市</td>
-                                                <td>685760</td>
-                                                <td>10.1%</td>
+                                                <td>634.9</td>
+                                                <td>7.9%</td>
                                             </tr>
                                             <tr>
                                                 <td>9</td>
                                                 <td>胶州市</td>
-                                                <td>613694</td>
-                                                <td>10.1%</td>
+                                                <td>568.9</td>
+                                                <td>9.1%</td>
                                             </tr>
                                             <tr>
                                                 <td>10</td>
                                                 <td>平度市</td>
-                                                <td>360608</td>
-                                                <td>10.2%</td>
+                                                <td>448.7</td>
+                                                <td>8.2%</td>
                                             </tr>
                                             <tr>
                                                 <td>11</td>
                                                 <td>莱西市</td>
-                                                <td>329784</td>
-                                                <td>6.6%</td>
+                                                <td>292.0</td>
+                                                <td>7.1%</td>
                                             </tr>
                                             <tr>
                                                 <td>12</td>
                                                 <td>红岛经济区</td>
-                                                <td>150667</td>
-                                                <td>19.9%</td>
+                                                <td>41.7</t7d>
+                                                <td>6.0%</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -226,31 +226,31 @@
                                                 <td>4</td>
                                                 <td>李沧区</td>
                                                 <td>4</td>
-                                                <td>2.1%</td>
+                                                <td>7.1%</td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
                                                 <td>崂山区</td>
                                                 <td>5</td>
-                                                <td>3.2%</td>
+                                                <td>7.2%</td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
                                                 <td>青岛西海岸新区</td>
                                                 <td>3</td>
-                                                <td>9.2%</td>
+                                                <td>12.1%</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
                                                 <td>黄岛区</td>
                                                 <td>3</td>
-                                                <td>9%</td>
+                                                <td>11.9%</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
                                                 <td>保税港区</td>
                                                 <td>3</td>
-                                                <td>19.6%</td>
+                                                <td>16.6%</td>
                                             </tr>
                                             <tr>
                                                 <td>7</td>
@@ -286,7 +286,7 @@
                                                 <td>12</td>
                                                 <td>红岛经济区</td>
                                                 <td>6</td>
-                                                <td>7.4%</td>
+                                                <td>6.4%</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -449,7 +449,7 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>青岛西海岸新区</td>
-                                                <td>152.8（亿元）</td>
+                                                <td>1522139</td>
                                                 <td>11.3%</td>
                                             </tr>
                                             <tr>
