@@ -10,7 +10,20 @@
         border-image: none;
         border-style: solid solid none;
         border-width: 1px 0;
-        min-height: 300px;
+        min-height: 260px;
+    }
+    .ibox-map {
+        clear: both;
+        margin-bottom: 25px;
+        margin-top: 0;
+        background-color: #ffffff;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+        min-height: 370px;
     }
     .ibox-title {
         -moz-border-bottom-colors: none;
@@ -55,56 +68,48 @@
     }
 </style>
 <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-6">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>指标列表</h5>
+                <h5>指标列表及报表</h5>
                 <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
+                    <a class="close-link-pillar">
+                        <i class="fa fa-chevron-down"></i>
                     </a>
                 </div>
             </div>
-            <div class="ibox-contenter">
+            <div class="warpper-content-pillar">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-sm-12">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ibox">
+                            <div class="ibox-content ">
+                                <div class="row">
+                                    <div class="col-sm-12">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-8">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>指标报表</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-contenter">
-                指标名称、区域名称、总量、增速、排名
+    <div class="col-lg-6">
+        <div class="ibox-map float-e-margins">
+            <div class="ibox-content">
+                指标地图对比，宏观地图
             </div>
         </div>
     </div>

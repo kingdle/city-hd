@@ -20,7 +20,7 @@ class AreadevController extends Controller
                 $row->column(12, view('admin.charts.area-development.quota'));
             });
             $content->row(function (Row $row) {
-                $row->column(12, view('admin.charts.area-development.quota-map'));
+                //$row->column(12, view('admin.charts.area-development.quota-map'));
             });
             $content->row(function (Row $row) {
                 $row->column(12, view('admin.charts.area-development.quota-run'));

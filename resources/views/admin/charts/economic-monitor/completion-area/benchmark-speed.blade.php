@@ -46,7 +46,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '地区生产总值增速'
+                text: ''
             },
             tooltip: {
                 trigger: 'axis'
@@ -61,9 +61,7 @@
                 containLabel: true
             },
             toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
+
             },
             xAxis: {
                 type: 'category',
@@ -120,7 +118,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '地区生产总值增速'
+                text: ''
             },
             tooltip: {
                 trigger: 'axis'
@@ -135,9 +133,7 @@
                 containLabel: true
             },
             toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
+
             },
             xAxis: {
                 type: 'category',

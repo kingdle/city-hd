@@ -26,10 +26,9 @@ class CompletionareaController extends Controller
             $content->row(function (Row $row) {
                 $row->column(12, view('admin.charts.economic-monitor.completion-area.run-one'));
             });
-            $content->body(view('admin.charts.economic-monitor.completion-area.industry-distribution'));
             $content->row(function (Row $row) {
-                $row->column(6, view('admin.charts.economic-monitor.completion-area.i-i-total'));
-                $row->column(6, view('admin.charts.economic-monitor.completion-area.i-i-speed'));
+                $row->column(8, view('admin.charts.economic-monitor.completion-area.industry-distribution'));
+                $row->column(4, view('admin.charts.economic-monitor.completion-area.i-i-total'));
             });
 
         });

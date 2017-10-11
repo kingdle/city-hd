@@ -105,14 +105,14 @@
 
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Sandra Momot</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <strong>西海岸地区生产总值</strong> 2017上半年总量1521.2亿元 <strong>增长12.1%</strong>. <br>
                                     <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
                                 </div>
                             </div>
 
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Monica Smith</strong> posted a new blog. <br>
+                                    <strong>青岛地区生产总值</strong> 5075.1亿元 <br>
                                     <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
 
                                 </div>
@@ -120,52 +120,46 @@
 
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site.
+                                    <strong>黄岛区地区生产总值</strong> 1463.6亿元 <strong>增长11.9%</strong> site.
                                     <br>
                                     <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
                                     <div class="well">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                        Over the years, sometimes by accident, sometimes on purpose (injected humour and
-                                        the like).
+                                        2017上半年全区实现生产总值(GDP)1463.6亿元，按可比价格计算，增长11.9 %。其中，第一产业增加值33.6亿元，增长3.4% ；第二产业增加值683.7亿元，增长9.1%；第三产业增加值746.3亿元，增长15.2%。三次产业比为2.30：46.71：50.99。
                                     </div>
                                 </div>
                             </div>
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
+                                    <strong>全区地区生产总值</strong> 结构 <strong>分析图</strong>. <br>
                                     <small class="text-muted">2 days ago at 8:30am</small>
                                 </div>
                             </div>
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
+                                    <strong>青岛分市区</strong> GDP <strong>分析
                                         Smith</strong>. <br>
                                     <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
                                 </div>
                             </div>
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site.
+                                    <strong>分功能区</strong> GDP<strong>运行趋势</strong> 图.
                                     <br>
                                     <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
                                     <div class="well">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                        Over the years, sometimes by accident, sometimes on purpose (injected humour and
-                                        the like).
+                                        2016年全区实现生产总值(GDP)2765.7亿元，按可比价格计算，增长12.3%。其中，第一产业增加值63.3亿元，增长4.4%；第二产业增加值1281.3亿元，增长10.1%；第三产业增加值1421.2亿元，增长16.3%。三次产业比例为2.29:46.33:51.38。
                                     </div>
                                 </div>
                             </div>
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                    <strong>对标城市</strong> GDP<strong>增速分析</strong>. <br>
                                     <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
                                 </div>
                             </div>
                             <div class="feed-element">
                                 <div class="select-body ">
-                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>.
+                                    <strong>GDP</strong> 全国、省、市 <strong>对比分析</strong>.
                                     <br>
                                     <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
                                 </div>
