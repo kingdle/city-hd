@@ -794,7 +794,6 @@
     $(function () {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('total-run'));
-        var IndChart = echarts.init(document.getElementById('industry-run'));
         // 指定图表的配置项和数据
         var option = {
             title: {
@@ -833,50 +832,12 @@
             ]
         };
 
-        var optionIndustry = {
-            title: {
-                text: '生产总值运行趋势'
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['增速']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            toolbox: {},
-            xAxis: {
-                type: 'category',
-                splitLine: {show: true},
-                boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
-            },
-            yAxis: {
-                splitLine: {show: true},
-                type: 'value'
-            },
-            series: [
-                {
-                    name: '增速',
-                    type: 'line',
-                    stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
-                }
-            ]
-        };
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-        IndChart.setOption(optionIndustry);
         //浏览器大小改变时重置大小
         window.onresize = function () {
             myChart.resize();
-            IndChart.resize();
         };
     });
 </script>

@@ -40,14 +40,14 @@
                     <tr>
                         <th scope="row">1</th>
                         <td>地区生产总值</td>
-                        <td>1521.2</td>
-                        <td>12.1</td>
+                        <td>1463.6</td>
+                        <td>11.9</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>农林牧渔业</td>
-                        <td>2620.2</td>
-                        <td>13.8</td>
+                        <td>34.8</td>
+                        <td>3.5</td>
                     </tr>
                     <tr>
                         <th scope="row"></th>

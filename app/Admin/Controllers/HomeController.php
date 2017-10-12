@@ -3,11 +3,10 @@
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\Dashboard;
 use Encore\Admin\Facades\Admin;
-use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
+
 
 class HomeController extends Controller
 {
@@ -15,24 +14,11 @@ class HomeController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('服务器运行状态');
-            $content->description(now());
-
-            $content->row(Dashboard::title());
+            $content->header('后台首页');
+            $content->description('后台首页');
 
             $content->row(function (Row $row) {
-
-                $row->column(4, function (Column $column) {
-                    $column->append(Dashboard::environment());
-                });
-
-                $row->column(4, function (Column $column) {
-                    $column->append(Dashboard::extensions());
-                });
-
-                $row->column(4, function (Column $column) {
-                    $column->append(Dashboard::dependencies());
-                });
+                $row->column(12, view('admin.charts.admin-home'));
             });
         });
     }

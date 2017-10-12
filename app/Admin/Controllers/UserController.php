@@ -26,7 +26,6 @@ class UserController extends Controller
 
             $content->header('header');
             $content->description('description');
-            $content->dateline('');
 
             $content->body($this->grid());
         });
