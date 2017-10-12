@@ -14,6 +14,7 @@ Route::group([
     $router->get('/auth/completion-area', 'CompletionareaController@index');
     $router->get('/auth/economic-monitor', 'EconomicmonitorController@index');
     $router->get('/auth/616', 'SixController@index');
+    $router->get('/auth/616/content', 'SixController@create');
     $router->get('/auth/industry-town', 'TownController@index');
     $router->get('/auth/one-policy', 'PolicyController@index');
     $router->get('/auth/economic-benchmark', 'EconomicbenchmarkController@index');

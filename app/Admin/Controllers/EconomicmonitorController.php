@@ -14,7 +14,7 @@ class EconomicmonitorController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('新经济运行监测');
-            $content->description(now());
+            $content->description('详情');
 
             $content->row(function (Row $row) {
                 $row->column(3, view('admin.charts.economic-monitor.area'));

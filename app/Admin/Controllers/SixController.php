@@ -14,9 +14,41 @@ class SixController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('新经济产业监测');
-            $content->description(now());
+            $content->description('详情');
 
             $content->body(view('admin.charts.industry-monitor.616.project'));
+        });
+    }
+    /**
+     * Edit interface.
+     *
+     * @param $id
+     * @return Content
+     */
+    public function edit($id)
+    {
+        return Admin::content(function (Content $content) use ($id) {
+
+            $content->header('header');
+            $content->description('description');
+
+            $content->body($this->form()->edit($id));
+        });
+    }
+
+    /**
+     * Create interface.
+     *
+     * @return Content
+     */
+    public function create()
+    {
+        return Admin::content(function (Content $content) {
+
+            $content->header('616');
+            $content->description('六大支柱产业');
+
+            $content->body(view('admin.charts.industry-monitor.616.six-content'));
         });
     }
 }
