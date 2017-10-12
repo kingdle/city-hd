@@ -30,15 +30,15 @@
     <div class="page page-one">
         <div class="container">
             <div class="row row-top">
-                <div class="col-md-3 text-center"></div>
-                <div class="col-md-2 text-center">
-                    <div class="logo"><img src="{{ asset('uploads/logo.png') }}" class="logo-img"></div>
+                <div class="col-md-2 text-center"></div>
+                <div class="col-md-3 text-center">
+                    <div class="logo "><img src="{{ asset('uploads/logo.png') }}" class="logo-img img-responsive center-block"></div>
                 </div>
                 <div class="col-md-1 visible-lg visible-md">
-                    <div class="line-stars"><img src="{{ asset('uploads/line-star.png') }}" class="line-star"></div>
+                    <div class="line-stars"><img src="{{ asset('uploads/line-star.png') }}" class="line-star img-responsive"></div>
                 </div>
-                <div class="col-md-6">
-                    <div class="login-box">
+                <div class="col-md-6 login-box">
+                    <div class="login-form">
                         <div class="panel-body">
                             <form class="form-horizontal" method="POST" action="{{ admin_base_path('auth/login') }}">
                                 {{ csrf_field() }}
@@ -102,7 +102,8 @@
             </div>
             <div class="row row-bottom visible-lg visible-md">
                 <div class="col-md-12 text-right">
-                    <p>客服热线 86617555 青岛市黄岛区统计局版权所有 鲁ICP备05027830</p>
+                    <p>青岛市黄岛区统计局版权所有 鲁ICP备12023013号</p>
+                    <p>青岛大数据科技发展有限公司技术支持 客服热线 86617555 </p>
                 </div>
             </div>
         </div>
@@ -117,36 +118,39 @@
                     <div class="conlistpage">
                         <ul class="conlist1">
                             <li>
-                                <p><a href=""><p><i class="fa fa-star fa-5x"></i></p>重点关注</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-star fa-5x"></i></p>重点关注</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-eye fa-5x"></i></p>专题监测</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-eye fa-5x"></i></p>专题监测</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-area-chart fa-5x"></i></p>区域经济</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-area-chart fa-5x"></i></p>区域经济</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-product-hunt fa-5x"></i></p>投资项目监测</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-product-hunt fa-5x"></i></p>投资项目监测</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-commenting-o fa-5x"></i></p>街道互动</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-commenting-o fa-5x"></i></p>街道互动</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-file-text-o fa-5x"></i></p>资料信息库</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-file-text-o fa-5x"></i></p>资料信息库</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-user fa-5x"></i></p>我的数据</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-user fa-5x"></i></p>我的数据</a></p>
                             </li>
                             <li>
-                                <p><a href=""><p><i class="fa fa-search fa-5x"></i></p>数据查询</a></p>
+                                <p><a href="">
+                                <p><i class="fa fa-search fa-5x"></i></p>数据查询</a></p>
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            <div class="row row-bottom visible-lg visible-md">
-                <div class="col-md-12 text-right">
-                    <p>客服热线 86617555 青岛市黄岛区统计局版权所有 鲁ICP备05027830</p>
                 </div>
             </div>
         </div>

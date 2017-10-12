@@ -122,7 +122,7 @@ p.title {
 
 }
 .row-top {
-    margin-top: 22%;
+    margin-top: 25%;
 }
 .row-index-top {
     margin-top: 10%;
@@ -131,12 +131,13 @@ p.title {
     line-height:170px;
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0;
+    padding-left: 30px;
 }
 .logo-img {
-     width: 200px;
+     width: 220px;
      height: 100%;
+    padding-top: 5%;
  }
 
 .line-star {
@@ -147,6 +148,10 @@ p.title {
     text-align: right;
 }
 .login-box {
+    padding-left: 0;
+    margin-left: 0;
+}
+.login-form {
     margin-top: 25px;
 }
 .checkbox label {
@@ -190,7 +195,7 @@ p.title {
     position: fixed;
     width: 100%;
     right: 30px;
-    bottom: 10px;
+    bottom: 40px;
     color: #fff;
     font-size: 14px;
 }
