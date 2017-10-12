@@ -62,8 +62,8 @@
                                 <img class="first-slide" src="{{ asset('uploads/616/town-one.jpg') }}" alt="First slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>普惠科技</h1>
-                                        <p>西海岸经济新区建设的主力军、排头兵</p>
+                                        <h1>将建成“国际经济合作交流客厅”</h1>
+                                        <p>国际合作小镇</p>
                                     </div>
                                 </div>
                             </div>
