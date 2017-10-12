@@ -1,7 +1,9 @@
-<div class="row">
-    <div class="col-lg-12">
-        <div class="ibox float-e-margins">
-            <div id="i-charts" style="height:260px"></div>
+<div class="box box-primary">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox-analysis float-e-margins">
+                <div id="i-charts" style="height:240px"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -12,79 +14,68 @@
 
         // 指定图表的配置项和数据
         var option = {
-            title : {
+            title: {
                 text: '地区生产总值运行趋势',
                 subtext: ''
             },
             grid: [
                 {x: '10%', y: '20%', width: '83%', height: '70%'},
             ],
-            tooltip : {
+            tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data:['增加值','增速']
+                data: ['增加值', '增速']
             },
             toolbox: {
-                show : true,
-                feature : {
 
-                    restore : {show: true},
-                    saveAsImage : {show: true}
-                }
             },
-            calculable : true,
-            xAxis : [
+            calculable: true,
+            xAxis: [
                 {
-                    type : 'category',
-                    data: ['2016-3','2016-6','2016-9','2016-12','2017-3','2017-6']
+                    type: 'category',
+                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
                 }
             ],
-            yAxis : [
+            yAxis: [
                 {
-                    type : 'value',
-                    name: '增加值',
-                    splitLine:{show: false},
+                    type: 'value',
+                    name: '',
+                    splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}万元'
                     }
                 },
                 {
-                    type : 'value',
+                    type: 'value',
                     name: '增速',
-                    splitLine:{show: false},
+                    splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}%'
                     }
                 }
             ],
-            series : [
+            series: [
                 {
-                    name:'增加值',
-                    type:'bar',
-                    splitLine:{show: false},
-                    data:[ 487.3,1312, 2070.02, 2765.69, 549.56, 1463.6, '',''],
-                    markPoint : {
-
-                    },
-                    markLine : {
-
-                    }
+                    name: '增加值',
+                    type: 'bar',
+                    splitLine: {show: false},
+                    data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
+                    markPoint: {},
+                    markLine: {}
                 },
                 {
-                    name:'增速',
-                    type:'line',
+                    name: '增速',
+                    type: 'line',
                     yAxisIndex: 1,
-                    data:[8.5, 10.5, 11.5, 12.3, 9.5,11.9,'',''],
-                    markPoint : {
-                        data : [
-                            {type : 'max', name: '最快'},
-                            {type : 'min', name: '最慢'}
+                    data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
+                    markPoint: {
+                        data: [
+                            {type: 'max', name: '最快'},
+                            {type: 'min', name: '最慢'}
                         ]
                     },
-                    markLine : {
-
-                    }
+                    markLine: {}
                 }
             ]
         };

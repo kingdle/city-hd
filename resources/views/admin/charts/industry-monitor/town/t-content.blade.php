@@ -1,24 +1,5 @@
 <style>
-    .featurette {
-        margin-bottom: 10px;
-    }
-    .featurette-heading {
-        margin-top: 120px;
-        font-size: 50px;
-        font-weight: 300;
-        line-height: 1;
-        letter-spacing: -1px;
-    }
-    .lead {
-        font-size: 21px;
-    }
-    .lead {
-        margin-bottom: 20px;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.4;
-    }
-    .mail-box-header {
+    .town-box-header {
         background-color: #ffffff;
         padding: 30px 20px 20px 20px;
         border-color: #e7eaec;
@@ -28,7 +9,7 @@
     .mail-search {
         max-width: 300px;
     }
-    .mail-box-header h2 {
+    .town-box-header h2 {
         margin-top: 0;
         font-size: 24px;
     }
@@ -45,12 +26,12 @@
     }
 
 </style>
-<div class="wrapper wrapper-content">
+<div class="box box-primary">
     <div class="row">
         <div class="col-lg-12 animated fadeInRight">
             <div class="ibox float-e-margins">
                 <div class="ibox-content townbox-content">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class=""></li>
@@ -62,8 +43,9 @@
                                 <img class="first-slide" src="{{ asset('uploads/616/town-one.jpg') }}" alt="First slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>将建成“国际经济合作交流客厅”</h1>
-                                        <p>国际合作小镇</p>
+                                        <h1>海洋科技小镇</h1>
+                                        <p>将建成以海洋科技为特色的新兴产业先导区</p>
+                                        <p><a class="btn btn-m btn-primary" href="#" role="button">查看</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +53,9 @@
                                 <img class="second-slide" src="{{ asset('uploads/616/town-two.jpg') }}" alt="Second slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>为国家社会创造未来</h1>
-                                        <p>勤奋 创新 卓越</p>
+                                        <h1>财富小镇</h1>
+                                        <p>将建成国际知名的高端商务交流中心</p>
+                                        <p><a class="btn btn-m btn-primary" href="#" role="button">查看</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -80,9 +63,9 @@
                                 <img class="third-slide" src="{{ asset('uploads/616/town-three.jpg') }}" alt="Third slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>服务世界</h1>
-                                        <p>新黄岛 新开放 新梦想</p>
-                                        <p><a class="btn btn-lg btn-primary" href="#" role="button">查看</a></p>
+                                        <h1>国际合作小镇</h1>
+                                        <p>将建成“国际经济合作交流客厅”</p>
+                                        <p><a class="btn btn-m btn-primary" href="#" role="button">查看</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +79,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <div class="mail-box-header">
+                    <div class="town-box-header">
                         <form method="get" action="" class="pull-right mail-search">
                             <div class="input-group">
                                 <input type="text" class="form-control input-sm" name="search"

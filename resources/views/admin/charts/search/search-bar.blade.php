@@ -5,7 +5,7 @@
         border-color: #e7eaec;
         border-image: none;
         border-style: solid solid none;
-        border-width: 2px 0 0;
+        border-width: 3px 0 0;
         color: #252422;
         margin-bottom: 10px;
         position: relative;
@@ -15,7 +15,7 @@
         padding: 20px;
     }
 </style>
-<div class="wrapper wrapper-content search-bar">
+<div class="box box-primary search-bar">
     <div class="row">
         <div class="text-center">
             <div class="col-md-12">

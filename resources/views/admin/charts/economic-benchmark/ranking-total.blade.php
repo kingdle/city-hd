@@ -1,11 +1,11 @@
 <style>
-    .dateline,.ranking {
+    .ranking {
         border-radius: 2px;
         background-color: #FFFFFF;
         border-color: #e7eaec;
         border-image: none;
         border-style: solid solid none;
-        border-width: 2px 0 0;
+        border-width: 3px 0 0;
         color: #252422;
         margin-bottom: 20px;
         position: relative;
@@ -44,7 +44,7 @@
         font-size: 70%;
     }
 </style>
-<div class="ranking">
+<div class="box box-primary ranking">
     <div class="content">
         <div class="row">
             <div class="col-md-12">

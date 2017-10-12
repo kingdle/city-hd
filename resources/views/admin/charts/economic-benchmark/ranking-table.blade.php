@@ -1,18 +1,4 @@
 <style>
-    .ibox-title {
-        -moz-border-bottom-colors: none;
-        -moz-border-left-colors: none;
-        -moz-border-right-colors: none;
-        -moz-border-top-colors: none;
-        background-color: #ffffff;
-        border-color: #e7eaec;
-        border-image: none;
-        color: inherit;
-        margin-bottom: 0;
-        padding: 15px 15px 7px;
-        min-height: 48px;
-    }
-
     .ibox-title h5 {
         display: inline-block;
         font-size: 14px;
@@ -21,15 +7,6 @@
         padding: 0;
         text-overflow: ellipsis;
         float: left;
-    }
-
-    .ibox-tools {
-        display: block;
-        float: none;
-        margin-top: 0;
-        position: relative;
-        padding: 0;
-        text-align: right;
     }
 
     .ibox-tools a {
@@ -56,25 +33,15 @@
         border-style: solid solid none;
         border-width: 1px 0;
     }
-
-    .form-control {
-        background-color: #FFFFFF;
-        background-image: none;
-        border: 1px solid #e5e6e7;
-        border-radius: 1px;
-        color: inherit;
-        display: block;
-        padding: 6px 12px;
-        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-        width: 100%;
+    .ranking-table .nav-tabs {
+        padding: 5px 5px 0 10px;
     }
-
     .ranking-table .nav-tabs li a {
         font-size: 14px;
         font-weight: 500;
     }
 </style>
-<div class="ranking ranking-table">
+<div class="box box-primary ranking-table">
     <div class="contenter">
         <div class="row">
             <div class="col-lg-12">
