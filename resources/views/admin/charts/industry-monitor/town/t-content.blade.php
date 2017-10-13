@@ -24,6 +24,9 @@
         background: white;
         border: 1px solid #e7eaec;
     }
+    .mail-box {
+        padding:20px;
+    }
 
 </style>
 <div class="box box-primary">
