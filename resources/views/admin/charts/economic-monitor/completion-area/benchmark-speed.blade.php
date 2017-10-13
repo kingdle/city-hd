@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>产业结构分析</h5>
+                    <h5>经济运行对标分析</h5>
                     <div class="ibox-tools">
                         <a class="close-link-pillar">
                             <i class="fa fa-chevron-down"></i>
