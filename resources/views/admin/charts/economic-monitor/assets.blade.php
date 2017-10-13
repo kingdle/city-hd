@@ -17,7 +17,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="numbers">
-                    <p><span id="assets"></span>亿元</p>
+                    <p><span id="assets-v"></span>亿元</p>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 <div class="col-xs-6">
                     <div class="numbers">
                         <div class="stats">
-                            <div id="assets-v" style="width: 120px;height:40px;"></div>
+                            <div id="assets" style="width: 120px;height:40px;"></div>
                         </div>
                     </div>
                 </div>
