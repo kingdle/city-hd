@@ -14,12 +14,14 @@ Route::group([
     $router->get('/auth/completion-area', 'CompletionareaController@index');
     $router->get('/auth/economic-monitor', 'EconomicmonitorController@index');
     $router->get('/auth/616', 'SixController@index');
-    $router->get('/auth/616/content', 'SixController@create');
+    $router->get('/auth/616/content', 'SixController@show');
     $router->get('/auth/industry-town', 'TownController@index');
+    $router->get('/auth/industry-town/content', 'TownController@show');
     $router->get('/auth/one-policy', 'PolicyController@index');
     $router->get('/auth/economic-benchmark', 'EconomicbenchmarkController@index');
     $router->get('/auth/area-development', 'AreadevController@index');
     $router->get('/auth/project-monitor', 'ProjectController@index');
+    $router->get('/auth/project-monitor/content', 'ProjectController@show');
     $router->get('/auth/search', 'SearchController@index');
     $router->get('/server', 'ServerController@index');
     $router->get('/home', 'HomeController@index');

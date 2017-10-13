@@ -22,5 +22,17 @@ class TownController extends Controller
             });
         });
     }
+    public function show()
+    {
+        return Admin::content(function (Content $content) {
+
+            $content->header('产业小镇');
+            $content->description(now());
+
+            $content->row(function (Row $row) {
+                $row->column(12, view('admin.charts.industry-monitor.town.t-text'));
+            });
+        });
+    }
 
 }

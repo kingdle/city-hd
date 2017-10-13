@@ -160,7 +160,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">中国金茂科技小镇</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">中国金茂科技小镇</a>
                                         <br>
                                         <small>开始时间 14.08.2014</small>
                                     </td>
@@ -172,7 +172,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -180,7 +180,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">中国北方(黄岛)国际农批交易中心</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">中国北方(黄岛)国际农批交易中心</a>
                                         <br>
                                         <small>开始时间 11.08.2014</small>
                                     </td>
@@ -192,7 +192,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -200,7 +200,7 @@
                                         <span class="label label-default">续建</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">UFORT环球自由港</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">UFORT环球自由港</a>
                                         <br>
                                         <small>开始时间 10.08.2014</small>
                                     </td>
@@ -212,7 +212,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -220,7 +220,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">中国棉花交易中心</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">中国棉花交易中心</a>
                                         <br>
                                         <small>开始时间 22.07.2014</small>
                                     </td>
@@ -232,7 +232,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -240,7 +240,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">中国科学院青岛科教园</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">中国科学院青岛科教园</a>
                                         <br>
                                         <small>开始时间 14.07.2014</small>
                                     </td>
@@ -252,7 +252,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -260,7 +260,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">青岛理工大学主校区</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">青岛理工大学主校区</a>
                                         <br>
                                         <small>开始时间 14.08.2014</small>
                                     </td>
@@ -272,7 +272,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -280,7 +280,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">复旦大学青岛研究院</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">复旦大学青岛研究院</a>
                                         <br>
                                         <small>开始时间 11.08.2014</small>
                                     </td>
@@ -292,7 +292,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -300,7 +300,7 @@
                                         <span class="label label-default">投资项目</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">利群集团西海岸商业综合体</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">利群集团西海岸商业综合体</a>
                                         <br>
                                         <small>开始时间 10.08.2014</small>
                                     </td>
@@ -312,7 +312,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -320,7 +320,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">利群灵山卫购物中心</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">利群灵山卫购物中心</a>
                                         <br>
                                         <small>开始时间 22.07.2014</small>
                                     </td>
@@ -332,7 +332,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -340,7 +340,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">东方影都</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">东方影都</a>
                                         <br>
                                         <small>开始时间 14.07.2014</small>
                                     </td>
@@ -352,7 +352,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -360,7 +360,7 @@
                                         <span class="label label-primary">新开工</span>
                                     </td>
                                     <td class="project-title">
-                                        <a href="#">海洋梦世界</a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}">海洋梦世界</a>
                                         <br>
                                         <small>开始时间 11.08.2014</small>
                                     </td>
@@ -372,7 +372,7 @@
                                     </td>
                                     <td class="project-people"></td>
                                     <td class="project-actions">
-                                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 提报 </a>
+                                        <a href="{{ admin_base_path('auth/project-monitor/content') }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 查看 </a>
                                     </td>
                                 </tr>
                                 </tbody>

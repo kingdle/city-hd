@@ -69,6 +69,10 @@
         font-weight: 400;
     }
 
+    .project-table a {
+        color: #1a1a1a;
+    }
+
     .warpper-content-newindustry h6 {
         font-size: 14px;
         font-weight: 500;
@@ -95,27 +99,29 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
-                                                    <h5 class="m-b-md">航运物流增值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
-                                                    </h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
-                                                             style="width: 48%">
-                                                            48%
-                                                        </div>
+                                                <a href="{{ admin_base_path('auth/616/content') }}">
+                                                    <div class="col-sm-4">
+                                                        <h5 class="m-b-md">航运物流增值</h5>
+                                                        <h4 class="text-danger">
+                                                            <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                        </h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                                 style="width: 48%">
+                                                                48%
+                                                            </div>
 
+                                                        </div>
+                                                        <h4>
+                                                            <small>总量:</small>
+                                                            174.1亿元
+                                                        </h4>
                                                     </div>
-                                                    <h4>
-                                                        <small>总量:</small>
-                                                        174.1亿元
-                                                    </h4>
-                                                </div>
-                                                <div class="col-sm-8 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/ShippingLogistics.png') }}"
-                                                         alt="航运物流增加值" class="img-responsive img-thumbnail">
-                                                </div>
+                                                    <div class="col-sm-8 hidden-xs">
+                                                        <img src="{{ asset('uploads/616/ShippingLogistics.png') }}"
+                                                             alt="航运物流增加值" class="img-responsive img-thumbnail">
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -124,6 +130,7 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
+                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">船舶海工产值</h5>
                                                     <h4 class="text-danger">
@@ -145,6 +152,7 @@
                                                     <img src="{{ asset('uploads/616/watercraft.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -153,6 +161,7 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
+                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">家电电子产值</h5>
                                                     <h4 class="text-danger">
@@ -174,6 +183,7 @@
                                                     <img src="{{ asset('uploads/616/electronics.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -182,6 +192,7 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
+                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">汽车制造产值</h5>
                                                     <h4 class="text-navy">
@@ -203,6 +214,7 @@
                                                     <img src="{{ asset('uploads/616/AutomobileMaking.png') }}"
                                                          alt="航运物流增加值" class="img-responsive img-thumbnail">
                                                 </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -211,6 +223,7 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
+                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">机械装备产值</h5>
                                                     <h4 class="text-danger">
@@ -232,6 +245,7 @@
                                                     <img src="{{ asset('uploads/616/machine.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -240,6 +254,7 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
+                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">石油化工产值</h5>
                                                     <h4 class="text-danger">
@@ -261,6 +276,7 @@
                                                     <img src="{{ asset('uploads/616/oil.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

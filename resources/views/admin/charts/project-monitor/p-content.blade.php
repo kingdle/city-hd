@@ -167,47 +167,7 @@
 </style>
 <div class="box">
     <div class="row">
-        <div class="col-lg-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content townbox-content">
-                    <div class="file-manager">
-                        <h5>产业项目</h5>
-                        <ul class="folder-list m-b-md" style="padding: 0">
-                            <li><a href="#"> <i class="fa fa-building-o "></i> 国际合作小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 国际自贸小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 海尔山水生态颐养小镇 <span
-                                            class="label label-warning pull-right">4</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 华星国际冰上运动小镇 <span
-                                            class="label label-danger pull-right">2</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 华融中广文化艺术小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o "></i> 大唐移动电竞小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 财富小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> “宇宙.生命”科普文旅小镇</a></li>
-                        </ul>
-                        <h5>项目分类</h5>
-                        <ul class="category-list" style="padding: 0">
-                            <li><a href="#"> <i class="fa fa-circle text-navy"></i> 国际 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-danger"></i> 国家 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-primary"></i> 地市 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-info"></i> 区市 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-warning"></i> 其他 </a></li>
-                        </ul>
-                        <div class="clearfix"></div>
-                        <h5 class="tag-title">标签</h5>
-                        <ul class="tag-list" style="padding: 0">
-                            <li><a href=""><i class="fa fa-tag"></i> 文化</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> 旅游</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> 金融</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> 科技</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> 康养</a></li>
-                            <li><a href=""><i class="fa fa-tag"></i> 娱乐</a></li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-9">
+        <div class="col-lg-12">
             <div class="wrapper wrapper-content animated fadeInUp">
                 <div class="ibox">
                     <div class="ibox-content">

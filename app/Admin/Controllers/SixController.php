@@ -41,7 +41,7 @@ class SixController extends Controller
      *
      * @return Content
      */
-    public function create()
+    public function show()
     {
         return Admin::content(function (Content $content) {
 
