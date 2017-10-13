@@ -17,7 +17,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="numbers">
-                    <p>1013.2亿元</p>
+                    <p><span id="assets"></span>亿元</p>
                 </div>
             </div>
         </div>
@@ -40,6 +40,78 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{ asset('js/hd-data.js') }}"></script>
+<script>
+    $(function() {
+        new SyStore({
+            autoLoad: true,
+            datasetId:3,
+            success: function(store) {
+                console.log(store)
+                var res = store.collection.filter({
+                    item: 3,
+                    frame: 200000011,
+                    area:3519,
+                    time_year: 2016,
+                    time_month: 2
+                });
+                $('#assets').html(res._datas[0].value);
+                console.log(res)
+                var chartKit = new SyChartSeriesKit({
+                    store: store,
+                    style: 'obj',
+                    series: [{
+                        name: 2016,
+                        type: 'time_year',
+                        extField: 2016
+                    }, {
+                        name: 2,
+                        type: 'time_month',
+                        extField: 2
+                    }, {
+                        name: '指标2',
+                        type: 'item',
+                        extField: '3'
+                    }],
+                    axis: [{
+                        name: '黄岛',
+                        arr: [{
+                            name: '即墨',
+                            type: 'area',
+                            extField: '1508'
+                        }]
+                    }, {
+                        name: '黄岛经济区',
+                        arr: [{
+                            name: '平度',
+                            type: 'area',
+                            extField: '3519'
+                        }]
+                    }],
+                    dim: [
+                        /*[{
+                         name: '指标1',
+                         type: 'item',
+                         extField: '163'
+                         }],*/
+                        //								[{
+                        //									name: '指标2',
+                        //									type: 'item',
+                        //									extField: '3'
+                        //								}]
+                    ]
+
+                });
+                //序列1条件series[2014,2015]     维度条件dim[163,164]    filter   样式array   axis横轴[jimo,qingdao]{name type code extField}
+                console.log(chartKit)
+                var ss = chartKit.genSeriesData();
+                console.log(ss);
+
+            }
+        });
+
+    })
+</script>
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
