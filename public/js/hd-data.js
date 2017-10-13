@@ -12,7 +12,7 @@ SyStore.prototype.init = function() {
 	var _this = this;
 	$.ajax({
 		type: "post",
-		url: "sy-hd/dataset/getDatasetMetasAsType?datasetId=" + _this.datasetId,
+		url: "/sy-hd/dataset/getDatasetMetasAsType?datasetId=" + _this.datasetId,
 		//		async: false,
 		success: function(paramData) {
 			var pd = {};
@@ -31,7 +31,7 @@ SyStore.prototype.init = function() {
 			console.log(pd)
 			$.ajax({
 				type: "post",
-				url: "sy-hd/data",
+				url: "/sy-hd/data",
 				//				data: _this.param,
 				data: pd,
 				//				async: false,
