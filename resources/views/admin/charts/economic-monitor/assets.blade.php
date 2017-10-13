@@ -27,7 +27,7 @@
                 <div class="col-xs-6">
                     <div class="numbers">
                         <div class="stats">
-                            <div id="assets" style="width: 120px;height:40px;"></div>
+                            <div id="assets-v" style="width: 120px;height:40px;"></div>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     time_year: 2016,
                     time_month: 2
                 });
-                $('#assets').html(res._datas[0].value);
+                $('#assets-v').html(res._datas[0].value);
                 console.log(res)
                 var chartKit = new SyChartSeriesKit({
                     store: store,
