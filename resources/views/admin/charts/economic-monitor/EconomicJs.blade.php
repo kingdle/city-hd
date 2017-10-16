@@ -31,17 +31,14 @@
 
             var kitV = new SyValueKit(baseRes, _store);
             var kitS = new SyValueKit(baseSpeed, _store);
-            console.log(_store)
             var $cards = $(".card");
             $.each($cards, function (i, card) {
                 var $card = $(card);
                 var $title = $($card.find('.title p')[0]);
-                var $val = $($card.find('.numbers>p>span')[0]);
+                var $valV = $($card.find('.numbers>p>span')[0]);
                 var $valS = $($card.find('.stats>p>span')[0]);
 
-
-                console.log(kitS.findValueByItemName($title.html(), true))
-                $val.html(kitV.findValueByItemName($title.html(), true));
+                $valV.html(kitV.findValueByItemName($title.html(), true));
                 $valS.html(kitS.findValueByItemName($title.html(), true));
 
             });
@@ -58,15 +55,41 @@
                 $.each($cards, function (i, card) {
                     var $card = $(card);
                     var $title = $($card.find('.title p')[0]);
-                    var $val = $($card.find('.numbers>p>span')[0]);
+                    var $valV = $($card.find('.numbers>p>span')[0]);
                     var $valS = $($card.find('.stats>p>span')[0]);
-
-                    $val.html(kitV.findValueByItemName($title.html(), true));
+                    $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
-
+                });
+            });
+            var $trLists = $(".table tbody").children("tr");
+            $.each($trLists, function (i, trlist) {
+                var $trlist = $(trlist);
+                var $tdTitle = $($trlist.find("td").eq(0));
+                var $tdV = $($trlist.find("td").eq(1));
+                var $tdS = $($trlist.find("td").eq(2));
+                $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
+                $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+            });
+            initTimeline(function (dd) {
+                var nowDate = dateArr[dd.currentIndex];
+                baseRes.time_year = nowDate.getFullYear();
+                baseRes.time_month = nowDate.getMonth() + 1;
+                baseSpeed.time_year = nowDate.getFullYear();
+                baseSpeed.time_month = nowDate.getMonth() + 1;
+                kitV = new SyValueKit(baseRes, _store);
+                kitS = new SyValueKit(baseSpeed, _store);
+                var $trLists = $(".table tbody").children("tr");
+                $.each($trLists, function (i, trlist) {
+                    var $trlist = $(trlist);
+                    var $tdTitle = $($trlist.find("td").eq(0));
+                    var $tdV = $($trlist.find("td").eq(1));
+                    var $tdS = $($trlist.find("td").eq(2));
+                    $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
+                    $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
                 });
 
             });
+
         }
     });
 
