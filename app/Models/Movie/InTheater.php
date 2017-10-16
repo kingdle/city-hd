@@ -35,7 +35,7 @@ class InTheater extends Model
     {
         return new static;
     }
-    // 获取单项数据展示在form中
+
     public function findOrFail($id)
     {
         $data = file_get_contents("http://api.douban.com/v2/movie/subject/$id");
@@ -45,11 +45,8 @@ class InTheater extends Model
         return static::newFromBuilder($data);
     }
 
-    // 保存提交的form数据
     public function save(array $options = [])
     {
-        $attributes = $this->getAttributes();
-
-        // save $attributes
+        dd($this->getAttributes());
     }
 }

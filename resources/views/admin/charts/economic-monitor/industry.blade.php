@@ -17,7 +17,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="numbers">
-                    <p>2620.2亿元</p>
+                    <p><span id="industry-v"></span>亿元</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-xs-6">
                     <div class="stats-down">
-                        <p><i class="fa fa-arrow-down"></i> 13.8%</p>
+                        <p><i class="fa fa-arrow-down"></i> <span id="industry-s"></span>%</p>
                     </div>
                 </div>
             </div>
