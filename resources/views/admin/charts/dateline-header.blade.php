@@ -4,7 +4,7 @@
             {{ $header or trans('admin.title') }}
         </h3>
     </div>
-    <div class="col-md-9 hidden-xs">
+    <div class="col-md-9">
         <div id="HeaderDateline" style="min-height: 50px"></div>
     </div>
 </div>
@@ -51,10 +51,9 @@
         },
 
     };
-    if (option && typeof option === "object") {
-        HeaderDateline.setOption(option, true);
-    }
-    window.onresize = function () {
+
+    HeaderDateline.setOption(option);
+    $(window).resize(function () {
         HeaderDateline.resize();
-    };
+    });
 </script>
