@@ -13,7 +13,7 @@
 
             var _store = store;
 
-            var initDate = new Date();
+            var initDate = new Date(new Date().getTime()-1000*60*60*24*30*1);
             var baseRes = {
                 frame: 200000011,
                 area: 3519,

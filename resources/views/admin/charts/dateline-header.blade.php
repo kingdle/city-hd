@@ -18,7 +18,7 @@
     var dateStrArr = [];
     var dateArr = [];
     for(var i=11;i>=0;i--){
-        date = new Date(nowDate.getTime()-1000*60*60*24*30*i);
+        date = new Date(nowDate.getTime()-1000*60*60*24*30*(i+1));
         dateStrArr.push(date.getFullYear()+'/'+(date.getMonth()+1));
         dateArr.push(date);
     }
