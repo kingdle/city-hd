@@ -10,7 +10,7 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('i-charts'));
+        var ImyChart = echarts.init(document.getElementById('i-charts'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -82,9 +82,9 @@
 
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        window.onresize = function () {
-            myChart.resize();
-        };
+        ImyChart.setOption(option);
+        $(window).resize(function () {
+            ImyChart.resize();
+        });
     });
 </script>

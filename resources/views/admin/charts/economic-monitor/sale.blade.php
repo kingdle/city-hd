@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-xs-6">
-                    <div class="stats-up">
+                    <div class="stats stats-up">
                         <p><i class="fa fa-arrow-up"></i> <span id="sale-s"></span>%</p>
                     </div>
                 </div>

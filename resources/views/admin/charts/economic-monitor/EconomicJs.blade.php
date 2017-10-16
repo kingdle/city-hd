@@ -1,4 +1,3 @@
-<script type="text/javascript" src="{{ asset('js/hd-data.js') }}"></script>
 <script>
     function initTimeline(showData) {
         var myChart = echarts.init(document.getElementById('HeaderDateline'));
@@ -7,44 +6,68 @@
             myChart.on('timelinechanged', showData);
         }
     }
-    initTimeline(function (dd) {
-        var nowDate = dateArr[dd.currentIndex];
-        var area = storeA.collection.filter({
-            item: 3,
-            frame: 200000011,
-            area: 3519,
-            time_year: nowDate.getFullYear(),
-            time_month: nowDate.getMonth()+1,
-            tmp_id: 1
-        });
-        $('#area-v').html(area._datas[0] ? area._datas[0].value : '-');
-        var industry = storeA.collection.filter({
-            item: 1,
-            frame: 200000011,
-            area: 3519,
-            time_year: nowDate.getFullYear(),
-            time_month: nowDate.getMonth()+1,
-            tmp_id: 1
-        });
-        $('#industry-v').html(industry._datas[0] ? industry._datas[0].value : '-');
-        var assets = storeA.collection.filter({
-            item: 2,
-            frame: 200000011,
-            area: 3519,
-            time_year: nowDate.getFullYear(),
-            time_month: nowDate.getMonth()+1,
-            tmp_id: 1
-        });
-        $('#assets-v').html(assets._datas[0] ? assets._datas[0].value : '-');
-        var sale = storeA.collection.filter({
-            item: 4,
-            frame: 200000011,
-            area: 3519,
-            time_year: nowDate.getFullYear(),
-            time_month: nowDate.getMonth()+1,
-            tmp_id: 1
-        });
-        $('#sale-v').html(sale._datas[0] ? sale._datas[0].value : '-');
+    storeA = new SyStore({
+        autoLoad: true,
+        datasetId: 3,
+        success: function (store) {
 
+            var _store = store;
+
+            var initDate = new Date();
+            var baseRes = {
+                frame: 200000011,
+                area: 3519,
+                time_year: initDate.getFullYear(),
+                time_month: initDate.getMonth() + 1,
+                tmp_id: 1
+            };
+            var baseSpeed = {
+                frame: 200000014,
+                area: 3519,
+                time_year: initDate.getFullYear(),
+                time_month: initDate.getMonth() + 1,
+                tmp_id: 1
+            };
+
+            var kitV = new SyValueKit(baseRes, _store);
+            var kitS = new SyValueKit(baseSpeed, _store);
+            console.log(_store)
+            var $cards = $(".card");
+            $.each($cards, function (i, card) {
+                var $card = $(card);
+                var $title = $($card.find('.title p')[0]);
+                var $val = $($card.find('.numbers>p>span')[0]);
+                var $valS = $($card.find('.stats>p>span')[0]);
+
+
+                console.log(kitS.findValueByItemName($title.html(), true))
+                $val.html(kitV.findValueByItemName($title.html(), true));
+                $valS.html(kitS.findValueByItemName($title.html(), true));
+
+            });
+
+            initTimeline(function (dd) {
+                var nowDate = dateArr[dd.currentIndex];
+                baseRes.time_year = nowDate.getFullYear();
+                baseRes.time_month = nowDate.getMonth() + 1;
+                baseSpeed.time_year = nowDate.getFullYear();
+                baseSpeed.time_month = nowDate.getMonth() + 1;
+                kitV = new SyValueKit(baseRes, _store);
+                kitS = new SyValueKit(baseSpeed, _store);
+                var $cards = $(".card");
+                $.each($cards, function (i, card) {
+                    var $card = $(card);
+                    var $title = $($card.find('.title p')[0]);
+                    var $val = $($card.find('.numbers>p>span')[0]);
+                    var $valS = $($card.find('.stats>p>span')[0]);
+
+                    $val.html(kitV.findValueByItemName($title.html(), true));
+                    $valS.html(kitS.findValueByItemName($title.html(), true));
+
+                });
+
+            });
+        }
     });
+
 </script>

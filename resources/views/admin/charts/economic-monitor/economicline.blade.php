@@ -192,9 +192,11 @@
         myChart.setOption(option);
         myC.setOption(optionone);
         //浏览器大小改变时重置大小
-        window.onresize = function () {
+//        window.charts = [];
+        $(window).resize(function () {
             myC.resize();
             myChart.resize();
-        };
+        });
+//        window.onresize = ;
     });
 </script>

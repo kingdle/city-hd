@@ -43,7 +43,7 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('speed-line'));
+        var PmyChart = echarts.init(document.getElementById('speed-line'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -102,13 +102,16 @@
 
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        PmyChart.setOption(option);
+        $(window).resize(function () {
+            PmyChart.resize();
+        });
     });
 </script>
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('total-line'));
+        var CmyChart = echarts.init(document.getElementById('total-line'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -165,6 +168,9 @@
         };
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        CmyChart.setOption(option);
+        $(window).resize(function () {
+            CmyChart.resize();
+        });
     });
 </script>
