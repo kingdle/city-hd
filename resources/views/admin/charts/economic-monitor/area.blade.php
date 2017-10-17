@@ -2,7 +2,7 @@
     .content {
         min-height: 20px;
     }
-    .card {
+    .cardh {
         border-radius: 6px;
         box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
         background-color: #FFFFFF;
@@ -22,23 +22,23 @@
         font-size: 3em;
         min-height: 64px;
     }
-    .card .title {
+    .cardh .title {
         font-size: 0em;
         text-align: left;
     }
-    .card .title p {
+    .cardh .title p {
         margin: 0;
         font-size: 14px;
     }
-    .card .numbers {
+    .cardh .numbers {
         font-size: 2em;
         text-align: right;
     }
-    .card .numbers p {
+    .cardh .numbers p {
         margin: 0;
         font-size: 14px;
      }
-    .card .footer {
+    .cardh .footer {
         padding: 0;
         line-height: 30px;
     }
@@ -47,7 +47,7 @@
         margin-bottom: 5px;
         border-color: #F1EAE0;
     }
-    .card .stats {
+    .cardh .stats {
         color: #a9a9a9;
         font-weight: 200;
         font-size: 14px;
@@ -55,7 +55,7 @@
         line-height: 30px;
     }
 </style>
-<div class="card">
+<div class="cardh">
     <div class="content">
         <div class="row">
             <div class="col-xs-8">
@@ -120,7 +120,7 @@
                 name: '地区生产总值',
                 type: 'bar',
                 data: [2, 2, 4, 5, 4, 6, 3, 7, 4, 8, 3, 6],
-                color: ['#595a5b']
+                color: ['#2990b9']
             }]
         };
 

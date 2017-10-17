@@ -9,7 +9,7 @@
     </div>
 </div>
 <script type="text/javascript" src="{{ asset('js/hd-data.js') }}"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+<script type="text/javascript" src="{{ asset('js/echarts.js') }}"></script>
 <script type="text/javascript">
     var dom = document.getElementById("HeaderDateline");
     var HeaderDateline = echarts.init(dom);

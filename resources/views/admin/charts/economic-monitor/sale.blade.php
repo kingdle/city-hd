@@ -7,7 +7,7 @@
         line-height: 30px;
     }
 </style>
-<div class="card">
+<div class="cardh">
     <div class="content">
         <div class="row">
             <div class="col-xs-8">
@@ -66,7 +66,7 @@
                 name: '固定资产投资总额',
                 type: 'bar',
                 data: [1, 2, 5, 6, 7, 2, 3, 4, 6, 6, 3, 5],
-                color: ['red']
+                color: ['#2990B9']
             }]
         };
 

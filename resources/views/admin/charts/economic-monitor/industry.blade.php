@@ -7,7 +7,7 @@
         line-height: 30px;
     }
 </style>
-<div class="card">
+<div class="cardh">
     <div class="content">
         <div class="row">
             <div class="col-xs-8">
@@ -67,7 +67,7 @@
                 name: '工业总产值',
                 type: 'bar',
                 data: [2, 3, 4, 4, 8, 3, 3, 4, 4, 8, 3, 6],
-                color: ['green']
+                color: ['#2990B9']
             }]
         };
 

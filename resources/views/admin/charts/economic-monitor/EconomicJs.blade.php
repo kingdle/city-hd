@@ -14,6 +14,7 @@
             var _store = store;
 
             var initDate = new Date(new Date().getTime()-1000*60*60*24*30*1);
+
             var baseRes = {
                 frame: 200000011,
                 area: 3519,
@@ -28,18 +29,38 @@
                 time_month: initDate.getMonth() + 1,
                 tmp_id: 1
             };
+            var baseSpeedLast = {
+                frame: 200000014,
+                area: 3519,
+                time_year: new Date(new Date().getTime()-1000*60*60*24*30*2).getFullYear(),
+                time_month: new Date(new Date().getTime()-1000*60*60*24*30*2).getMonth()+1,
+                tmp_id: 1
+            };
 
             var kitV = new SyValueKit(baseRes, _store);
             var kitS = new SyValueKit(baseSpeed, _store);
-            var $cards = $(".card");
-            $.each($cards, function (i, card) {
-                var $card = $(card);
+            var kitSL = new SyValueKit(baseSpeedLast, _store);
+
+            var $cards = $(".cardh");
+            $.each($cards, function (i, cardh) {
+                var $card = $(cardh);
                 var $title = $($card.find('.title p')[0]);
                 var $valV = $($card.find('.numbers>p>span')[0]);
                 var $valS = $($card.find('.stats>p>span')[0]);
+                var slVal = kitSL.findValueByItemName($title.html(), true);
+                var  aa = null;
+                try {
+                    aa = slVal - kitS.findValueByItemName($title.html(), true);
+                    aa=isNaN(aa)||aa==0? 'hui':aa>0? 'lv': 'hong';
+                    console.log(slVal)
+                    console.log(aa);
+                }catch (e){
+                    console.log(e)
+                }
 
                 $valV.html(kitV.findValueByItemName($title.html(), true));
                 $valS.html(kitS.findValueByItemName($title.html(), true));
+
 
             });
 
@@ -49,18 +70,34 @@
                 baseRes.time_month = nowDate.getMonth() + 1;
                 baseSpeed.time_year = nowDate.getFullYear();
                 baseSpeed.time_month = nowDate.getMonth() + 1;
+                baseSpeedLast.time_year = new Date(nowDate.getTime()-1000*60*60*24*30*1).getFullYear();
+                baseSpeedLast.time_month = new Date(nowDate.getTime()-1000*60*60*24*30*1).getMonth()+1;
                 kitV = new SyValueKit(baseRes, _store);
                 kitS = new SyValueKit(baseSpeed, _store);
-                var $cards = $(".card");
-                $.each($cards, function (i, card) {
-                    var $card = $(card);
+                kitSL =new SyValueKit(baseSpeedLast, _store);
+                var $cards = $(".cardh");
+                $.each($cards, function (i, cardh) {
+                    var $card = $(cardh);
                     var $title = $($card.find('.title p')[0]);
                     var $valV = $($card.find('.numbers>p>span')[0]);
                     var $valS = $($card.find('.stats>p>span')[0]);
+                    var slVal = kitSL.findValueByItemName($title.html(), true);
+                    var  aa = null;
+                    try {
+                        aa = slVal - kitS.findValueByItemName($title.html(), true);
+                        aa=isNaN(aa)||aa==0? 'hui':aa>0? 'lv': 'hong';
+                                console.log(slVal)
+                        console.log(aa);
+                    }catch (e){
+                        console.log(e)
+                    }
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
             });
+
+
+
             var $trLists = $(".table tbody").children("tr");
             $.each($trLists, function (i, trlist) {
                 var $trlist = $(trlist);
