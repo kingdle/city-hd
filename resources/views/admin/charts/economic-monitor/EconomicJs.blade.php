@@ -58,7 +58,6 @@
                 var CResult = null;
                 try {
                     CResult = slVal - kitS.findValueByItemName($title.html(), true);
-                    console.log(CResult)
 
                     if (CResult == 0) {
                         $card.find('.sta').removeClass('stats-gray stats-up stats-down');
@@ -113,11 +112,11 @@
                     var $title = $($card.find('.title p')[0]);
                     var $valV = $($card.find('.numbers>p>span')[0]);
                     var $valS = $($card.find('.sta>p>span')[0]);
+                    var $quotadate = $(".quotadate");
                     var slVal = kitSL.findValueByItemName($title.html(), true);
                     var CResult = null;
                     try {
                         CResult = slVal - kitS.findValueByItemName($title.html(), true);
-                        console.log(CResult)
 
                         if (CResult == 0) {
                             $card.find('.sta').removeClass('stats-gray stats-up stats-down');
@@ -145,7 +144,7 @@
                     catch (e) {
                         console.log(e)
                     }
-
+                    $quotadate.html(baseSpeed.time_year+'-'+baseSpeed.time_month);
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });

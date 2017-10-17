@@ -33,8 +33,9 @@
     }
 
     .cardh .title p {
-        margin: 0;
+        margin: 0 5px;
         font-size: 14px;
+        float: left;
     }
 
     .cardh .numbers {
@@ -100,7 +101,7 @@
         <div class="row">
             <div class="col-xs-8">
                 <div class="title">
-                    <p>地区生产总值</p>
+                    <p>地区生产总值</p><span class="quotadate"> {{ date("Y-m",strtotime("last Month")) }}</span>
                 </div>
             </div>
             <div class="col-xs-4">

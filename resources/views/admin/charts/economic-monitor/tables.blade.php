@@ -27,13 +27,18 @@
         font-size: 18px;
         font-weight: bold;
     }
+    .quotadate{
+        font-size: 14px;
+        font-weight: 200;
+        color: #464a4c;
+    }
 </style>
 <div class="card">
     <div class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="title-quota">
-                    <p>指标完成情况</p>
+                    <p>指标完成情况 <span class="quotadate">{{ date("Y-m",strtotime("last Month")) }}</span></p>
                 </div>
             </div>
 

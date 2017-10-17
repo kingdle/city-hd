@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-8">
                 <div class="title">
-                    <p>规上工业总产值</p>
+                    <p>规上工业总产值</p> <span class="quotadate">{{ date("Y-m",strtotime("last Month")) }}</span>
                 </div>
             </div>
             <div class="col-xs-4">
