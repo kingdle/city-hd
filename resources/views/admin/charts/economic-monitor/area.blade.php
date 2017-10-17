@@ -2,6 +2,7 @@
     .content {
         min-height: 20px;
     }
+
     .cardh {
         border-radius: 6px;
         box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
@@ -11,46 +12,85 @@
         position: relative;
         z-index: 1;
     }
+
     .card .content {
         padding: 15px 15px 10px 15px;
     }
+
     .row {
         margin-right: -15px;
         margin-left: -15px;
     }
-    .card{
+
+    .card {
         font-size: 3em;
         min-height: 64px;
     }
+
     .cardh .title {
         font-size: 0em;
         text-align: left;
     }
+
     .cardh .title p {
         margin: 0;
         font-size: 14px;
     }
+
     .cardh .numbers {
         font-size: 2em;
         text-align: right;
     }
+
     .cardh .numbers p {
         margin: 0;
         font-size: 14px;
-     }
+    }
+
     .cardh .footer {
         padding: 0;
         line-height: 30px;
     }
+
     .card .footer hr {
         margin-top: 5px;
         margin-bottom: 5px;
         border-color: #F1EAE0;
     }
-    .cardh .stats {
-        color: #a9a9a9;
+
+    .stats {
         font-weight: 200;
         font-size: 14px;
+        text-align: right;
+        line-height: 30px;
+    }
+    .sta {
+        font-weight: 200;
+        font-size: 22px;
+        text-align: right;
+        line-height: 30px;
+    }
+
+    .stats-gray {
+        color: #313131;
+        font-weight: 200;
+        font-size: 22px;
+        text-align: right;
+        line-height: 30px;
+    }
+
+    .stats-up {
+        color: #f55549;
+        font-weight: 700;
+        font-size: 28px;
+        text-align: right;
+        line-height: 30px;
+    }
+
+    .stats-down {
+        color: #00a946;
+        font-weight: 200;
+        font-size: 22px;
         text-align: right;
         line-height: 30px;
     }
@@ -80,8 +120,8 @@
                     </div>
                 </div>
                 <div class="col-xs-6">
-                    <div class="stats">
-                        <p><i class="fa fa-arrow"></i> <span id="area-s"></span>%</p>
+                    <div class="sta">
+                        <p><i class="fa"></i> <span id="area-s"></span>%</p>
                     </div>
                 </div>
             </div>
@@ -89,10 +129,20 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function area() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('area'));
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
 
+        }
+
+        var chartKit = new SyChartSeriesKit({
+            store: storeA,
+            axis: axisArr,
+
+        });
         // 指定图表的配置项和数据
         var option = {
             title: {
@@ -107,24 +157,40 @@
             },
             legend: {
                 data: [''],
-                show:false
+                show: false
             },
             xAxis: {
-                data: ["201701", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
-                show:false
+                data: axisD,
+                show: false
             },
             yAxis: {
-                show:false
+                show: false
             },
             series: [{
                 name: '地区生产总值',
                 type: 'bar',
-                data: [2, 2, 4, 5, 4, 6, 3, 7, 4, 8, 3, 6],
+                data: chartKit.genSeriesData({
+                    series: [{
+                        //        name: "资产投资",
+                        type: "item",
+                        extField: storeA.findMetaByItemName({
+                            type: 'item',
+                            name: '地区生产总值'
+                        }).extField
+                    }, {
+                        //        name: 2,
+                        type: 'frame',
+                        extField: storeA.findMetaByItemName({
+                            type: 'frame',
+                            name: '累计'
+                        }).extField
+                    }]
+                }),
                 color: ['#2990b9']
             }]
         };
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-    });
+    }
 </script>

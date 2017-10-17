@@ -10,10 +10,17 @@
         autoLoad: true,
         datasetId: 3,
         success: function (store) {
+            $(function () {
+                initChartsContain();
+                area();
+                assets();
+                industry();
+                sale();
+            });
 
             var _store = store;
 
-            var initDate = new Date(new Date().getTime()-1000*60*60*24*30*1);
+            var initDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 1);
 
             var baseRes = {
                 frame: 200000011,
@@ -32,8 +39,8 @@
             var baseSpeedLast = {
                 frame: 200000014,
                 area: 3519,
-                time_year: new Date(new Date().getTime()-1000*60*60*24*30*2).getFullYear(),
-                time_month: new Date(new Date().getTime()-1000*60*60*24*30*2).getMonth()+1,
+                time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
+                time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
                 tmp_id: 1
             };
 
@@ -46,17 +53,42 @@
                 var $card = $(cardh);
                 var $title = $($card.find('.title p')[0]);
                 var $valV = $($card.find('.numbers>p>span')[0]);
-                var $valS = $($card.find('.stats>p>span')[0]);
+                var $valS = $($card.find('.sta>p>span')[0]);
                 var slVal = kitSL.findValueByItemName($title.html(), true);
-                var  aa = null;
+                var CResult = null;
                 try {
-                    aa = slVal - kitS.findValueByItemName($title.html(), true);
-                    aa=isNaN(aa)||aa==0? 'hui':aa>0? 'lv': 'hong';
-                    console.log(slVal)
-                    console.log(aa);
-                }catch (e){
+                    CResult = slVal - kitS.findValueByItemName($title.html(), true);
+                    console.log(CResult)
+
+                    if (CResult == 0) {
+                        $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                        $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                        $card.find('.sta').addClass('sta stats-gray');
+                        $card.find('.sta i').addClass('fa');
+                    } else {
+                        if (CResult > 0) {
+                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                            $card.find('.sta').addClass('sta stats-down');
+                            $card.find('.sta i').addClass('fa fa-arrow-down');
+                        } else {
+                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                            $card.find('.sta').addClass('sta stats-up');
+                            $card.find('.sta i').addClass('fa fa-arrow-up');
+                        }
+                    }
+                    if (CResult = isNaN(CResult)) {
+                        $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                        $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                    }
+                }
+                catch (e) {
                     console.log(e)
                 }
+//
+//                $card.find('.stats').toggleClass(CResult);
+//                $card.find('i').toggleClass(CResult=='stats-down'? 'fa-arrow-down':CResult=='stats-up'?'fa-arrow-up':'');
 
                 $valV.html(kitV.findValueByItemName($title.html(), true));
                 $valS.html(kitS.findValueByItemName($title.html(), true));
@@ -70,32 +102,54 @@
                 baseRes.time_month = nowDate.getMonth() + 1;
                 baseSpeed.time_year = nowDate.getFullYear();
                 baseSpeed.time_month = nowDate.getMonth() + 1;
-                baseSpeedLast.time_year = new Date(nowDate.getTime()-1000*60*60*24*30*1).getFullYear();
-                baseSpeedLast.time_month = new Date(nowDate.getTime()-1000*60*60*24*30*1).getMonth()+1;
+                baseSpeedLast.time_year = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * 1).getFullYear();
+                baseSpeedLast.time_month = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * 1).getMonth() + 1;
                 kitV = new SyValueKit(baseRes, _store);
                 kitS = new SyValueKit(baseSpeed, _store);
-                kitSL =new SyValueKit(baseSpeedLast, _store);
+                kitSL = new SyValueKit(baseSpeedLast, _store);
                 var $cards = $(".cardh");
                 $.each($cards, function (i, cardh) {
                     var $card = $(cardh);
                     var $title = $($card.find('.title p')[0]);
                     var $valV = $($card.find('.numbers>p>span')[0]);
-                    var $valS = $($card.find('.stats>p>span')[0]);
+                    var $valS = $($card.find('.sta>p>span')[0]);
                     var slVal = kitSL.findValueByItemName($title.html(), true);
-                    var  aa = null;
+                    var CResult = null;
                     try {
-                        aa = slVal - kitS.findValueByItemName($title.html(), true);
-                        aa=isNaN(aa)||aa==0? 'hui':aa>0? 'lv': 'hong';
-                                console.log(slVal)
-                        console.log(aa);
-                    }catch (e){
+                        CResult = slVal - kitS.findValueByItemName($title.html(), true);
+                        console.log(CResult)
+
+                        if (CResult == 0) {
+                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                            $card.find('.sta').addClass('sta stats-gray');
+                            $card.find('.sta i').addClass('fa');
+                        } else {
+                            if (CResult > 0) {
+                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                                $card.find('.sta').addClass('sta stats-down');
+                                $card.find('.sta i').addClass('fa fa-arrow-down');
+                            } else {
+                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                                $card.find('.sta').addClass('sta stats-up');
+                                $card.find('.sta i').addClass('fa fa-arrow-up');
+                            }
+                        }
+                        if (CResult = isNaN(CResult)) {
+                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+                        }
+                    }
+                    catch (e) {
                         console.log(e)
                     }
+
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
             });
-
 
 
             var $trLists = $(".table tbody").children("tr");

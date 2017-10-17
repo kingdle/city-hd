@@ -17,10 +17,33 @@
     var date = null;
     var dateStrArr = [];
     var dateArr = [];
-    for(var i=11;i>=0;i--){
-        date = new Date(nowDate.getTime()-1000*60*60*24*30*(i+1));
+    var axisArr =[];
+    var ll = 0;
+    for(var i=11;i>=ll;i--){
+        if(nowDate.getDay()<=20){
+            date = new Date(nowDate.getTime()-1000*60*60*24*30*(i+2));
+        }else{
+            date = new Date(nowDate.getTime()-1000*60*60*24*30*(i+3));
+        }
+
+        if(date.getMonth()==0){
+            ll--;
+            continue;
+    }
         dateStrArr.push(date.getFullYear()+'/'+(date.getMonth()+1));
         dateArr.push(date);
+        axisArr.push({
+            name: date.getFullYear() + '/' + (date.getMonth() + 1),
+            arr: [{
+                name: date.getFullYear(),
+                type: 'time_year',
+                extField: date.getFullYear()
+            }, {
+                name: date.getMonth() + 1,
+                type: 'time_month',
+                extField: date.getMonth() + 1
+            }]
+        })
     }
     option = {
         baseOption: {
