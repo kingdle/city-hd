@@ -166,6 +166,8 @@ return [
         Naux\Mail\SendCloudServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,6 +231,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

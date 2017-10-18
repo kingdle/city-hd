@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::redirect('/','/admin',301);
 
 Auth::routes();

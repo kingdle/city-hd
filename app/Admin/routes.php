@@ -27,6 +27,13 @@ Route::group([
     $router->get('/home', 'HomeController@index');
     $router->resource('users', UserController::class);
 
+    $router->get('/auth/article','ArticleController@index');
+    $router->get('/auth/articles/{id}','ArticleController@show');
+    $router->post('/auth/article/store','ArticleController@store');
+    $router->get('/auth/article/create','ArticleController@create');
+    $router->get('/auth/article/edit/{id}','ArticleController@edit');
+    $router->post('/auth/article/update','ArticleController@update');
+
 
     $router->resources([
 
