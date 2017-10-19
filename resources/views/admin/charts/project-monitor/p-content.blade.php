@@ -175,11 +175,11 @@
                             <div class="col-lg-12">
                                 <div class="m-b-md">
                                     <a href="#" class="btn btn-white btn-xs pull-right">Edit project</a>
-                                    <h2>Contract with Zender Company</h2>
+                                    <h2>中国北方（青岛）国际水产品交易中心</h2>
                                 </div>
                                 <dl class="dl-horizontal">
-                                    <dt>Status:</dt>
-                                    <dd><span class="label label-primary">Active</span></dd>
+                                    <dt>总投资:</dt>
+                                    <dd><span class="label label-primary">260.7亿元</span></dd>
                                 </dl>
                             </div>
                         </div>
@@ -187,24 +187,22 @@
                             <div class="col-lg-5">
                                 <dl class="dl-horizontal">
 
-                                    <dt>Created by:</dt>
-                                    <dd>Alex Smith</dd>
-                                    <dt>Messages:</dt>
-                                    <dd> 162</dd>
-                                    <dt>Client:</dt>
-                                    <dd><a href="#" class="text-navy"> Zender Company</a></dd>
-                                    <dt>Version:</dt>
-                                    <dd> v1.4.2</dd>
+                                    <dt>项目负责单位:</dt>
+                                    <dd>黄岛市政府</dd>
+                                    <dt>项目负责人:</dt>
+                                    <dd> XXX</dd>
+                                    <dt>项目地址:</dt>
+                                    <dd><a href="#" class="text-navy"> 山东省青岛市董家口循环经济区</a></dd>
                                 </dl>
                             </div>
                             <div class="col-lg-7" id="cluster_info">
                                 <dl class="dl-horizontal">
 
-                                    <dt>Last Updated:</dt>
-                                    <dd>16.08.2014 12:15:57</dd>
-                                    <dt>Created:</dt>
-                                    <dd> 10.07.2014 23:36:57</dd>
-                                    <dt>Participants:</dt>
+                                    <dt>开工时间:</dt>
+                                    <dd>2016年八月</dd>
+                                    <dt>预计结束时间:</dt>
+                                    <dd> 2018年8月</dd>
+                                    <dt>项目进度照片:</dt>
                                     <dd class="project-people">
                                         <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
                                         <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
@@ -218,14 +216,12 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <dl class="dl-horizontal">
-                                    <dt>Completed:</dt>
+                                    <dt>项目完成进度:</dt>
                                     <dd>
                                         <div class="progress progress-striped active m-b-sm">
                                             <div style="width: 60%;" class="progress-bar"></div>
                                         </div>
-                                        <small>Project completed in <strong>60%</strong>. Remaining close the
-                                            project,
-                                            sign a contract and invoice.
+                                        <small>项目占地12.26平方公里，总投资260.7亿元，包括国际水产品交易中心和冷链物流基地及海洋文化城两部分。三个冷藏库面积分别为31475、31372、30822平方米，每个冷藏库能容纳10万吨海鲜，建成后将成为东北亚最大的冷库群。
                                         </small>
                                     </dd>
                                 </dl>
@@ -238,7 +234,7 @@
                                         <div class="panel-options">
                                             <ul class="nav nav-tabs">
                                                 <li class="active"><a href="#tab-1" data-toggle="tab"
-                                                                      aria-expanded="true">Users messages</a></li>
+                                                                      aria-expanded="true">项目情况分析</a></li>
                                                 <li class=""><a href="#tab-2" data-toggle="tab"
                                                                 aria-expanded="false">Last
                                                         activity</a></li>
@@ -257,16 +253,12 @@
                                                         </a>
                                                         <div class="media-body ">
                                                             <small class="pull-right">2h ago</small>
-                                                            <strong>Mark Johnson</strong> posted message on <strong>Monica
-                                                                Smith</strong> site. <br>
-                                                            <small class="text-muted">Today 2:10 pm - 12.06.2014
+                                                            <strong>本年累计完成投资</strong> 158亿元 <strong>本月完成投资额
+                                                            </strong> 26亿元同比增长19% <br>
+                                                            <small class="text-muted">2017年10月
                                                             </small>
                                                             <div class="well">
-                                                                Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s.
-                                                                Over the years, sometimes by accident, sometimes on
-                                                                purpose (injected humour and the like).
+                                                                2017年10月，位于北面的办公楼开工建设，主体已完工，在进行内部装修。办公楼南面是冷链物流基地项目的冷冻冷藏基地。3个冷藏库在进行主体建设，预计12月中旬完成主体建设.
                                                             </div>
                                                         </div>
                                                     </div>
@@ -276,9 +268,10 @@
                                                         </a>
                                                         <div class="media-body ">
                                                             <small class="pull-right">2h ago</small>
-                                                            <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica
-                                                                Smith</strong>. <br>
-                                                            <small class="text-muted">2 days ago at 8:30am</small>
+                                                            <strong>本年累计完成投资</strong> 129亿元 <strong>本月完成投资额
+                                                            </strong> 16亿元同比增长10% <br>
+                                                            <small class="text-muted">2017年9月
+                                                            </small>
                                                         </div>
                                                     </div>
                                                     <div class="feed-element">
@@ -286,18 +279,11 @@
                                                             <img alt="image" class="img-circle" src="img/a4.jpg">
                                                         </a>
                                                         <div class="media-body ">
-                                                            <small class="pull-right text-navy">5h ago</small>
-                                                            <strong>Chris Johnatan Overtunk</strong> started
-                                                            following
-                                                            <strong>Monica Smith</strong>. <br>
-                                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014
+                                                            <small class="pull-right">2h ago</small>
+                                                            <strong>本年累计完成投资</strong> 113亿元 <strong>本月完成投资额
+                                                            </strong> 13亿元同比增长10% <br>
+                                                            <small class="text-muted">2017年8月
                                                             </small>
-                                                            <div class="actions">
-                                                                <a class="btn btn-xs btn-white"><i
-                                                                            class="fa fa-thumbs-up"></i> Like </a>
-                                                                <a class="btn btn-xs btn-white"><i
-                                                                            class="fa fa-heart"></i> Love</a>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="feed-element">
@@ -306,16 +292,12 @@
                                                         </a>
                                                         <div class="media-body ">
                                                             <small class="pull-right">2h ago</small>
-                                                            <strong>Kim Smith</strong> posted message on <strong>Monica
-                                                                Smith</strong> site. <br>
-                                                            <small class="text-muted">Yesterday 5:20 pm - 12.06.2014
+                                                            <strong>本年累计完成投资</strong> 100亿元 <strong>本月完成投资额
+                                                            </strong> 10亿元同比增长10% <br>
+                                                            <small class="text-muted">2017年7月
                                                             </small>
                                                             <div class="well">
-                                                                Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s.
-                                                                Over the years, sometimes by accident, sometimes on
-                                                                purpose (injected humour and the like).
+                                                                2017年7月，位于南面的办公楼开工建设，主体已完工，在进行内部装修。预计10月分开始建设北部办公楼。
                                                             </div>
                                                         </div>
                                                     </div>
@@ -325,11 +307,10 @@
                                                                  src="img/profile.jpg">
                                                         </a>
                                                         <div class="media-body ">
-                                                            <small class="pull-right">23h ago</small>
-                                                            <strong>Monica Smith</strong> love <strong>Kim
-                                                                Smith</strong>. <br>
-                                                            <small class="text-muted">2 days ago at 2:30 am -
-                                                                11.06.2014
+                                                            <small class="pull-right">2h ago</small>
+                                                            <strong>本年累计完成投资</strong> 90亿元 <strong>本月完成投资额
+                                                            </strong> 10亿元<br>
+                                                            <small class="text-muted">2017年6月
                                                             </small>
                                                         </div>
                                                     </div>
@@ -338,12 +319,10 @@
                                                             <img alt="image" class="img-circle" src="img/a7.jpg">
                                                         </a>
                                                         <div class="media-body ">
-                                                            <small class="pull-right">46h ago</small>
-                                                            <strong>Mike Loreipsum</strong> started following
-                                                            <strong>Monica
-                                                                Smith</strong>. <br>
-                                                            <small class="text-muted">3 days ago at 7:58 pm -
-                                                                10.06.2014
+                                                            <small class="pull-right">2h ago</small>
+                                                            <strong>本年累计完成投资</strong> 80亿元 <strong>本月完成投资额
+                                                            </strong> 10亿元<br>
+                                                            <small class="text-muted">2017年5月
                                                             </small>
                                                         </div>
                                                     </div>
