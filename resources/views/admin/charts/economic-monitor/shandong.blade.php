@@ -33,7 +33,6 @@
                 </div>
                 <div class="col-xs-4">
                     <div class="details">
-                        <a href=""></a>
                     </div>
                 </div>
             </div>
