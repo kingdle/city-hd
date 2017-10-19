@@ -9,7 +9,7 @@
             </h1>
         @else
             @include('admin::charts.dateline-header')
-            @include('admin::charts.economic-monitor.EconomicJs')
+
         @endif
     </section>
 

@@ -62,3 +62,4 @@
         </div>
     </div>
 </div>
+@include('admin::charts.economic-benchmark.BenchmarkJs')

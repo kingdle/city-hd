@@ -31,7 +31,86 @@
     <script src="{{ admin_asset ("/vendor/laravel-admin/AdminLTE/dist/js/app.min.js") }}"></script>
     <script src="{{ admin_asset ("/vendor/laravel-admin/jquery-pjax/jquery.pjax.js") }}"></script>
     <script src="{{ admin_asset ("/vendor/laravel-admin/nprogress/nprogress.js") }}"></script>
+    <script type="text/javascript" src="{{ admin_asset('js/hd-data.js') }}"></script>
+    <script type="text/javascript" src="{{ admin_asset('js/echarts.js') }}"></script>
+    <script>
+        var nowDate = new Date();
+        var date = null;
+        var dateStrArr = [];
+        var dateArr = [];
+        var axisArr = [];
+        var ll = 0;
+        for (var i = 11; i >= ll; i--) {
+            if (nowDate.getDay() <= 20) {
+                date = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * (i + 2));
+            } else {
+                date = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * (i + 3));
+            }
 
+            if (date.getMonth() == 0) {
+                ll--;
+                continue;
+            }
+            dateStrArr.push(date.getFullYear() + '/' + (date.getMonth() + 1));
+            dateArr.push(date);
+            axisArr.push({
+                name: date.getFullYear() + '/' + (date.getMonth() + 1),
+                arr: [{
+                    name: date.getFullYear(),
+                    type: 'time_year',
+                    extField: date.getFullYear()
+                }, {
+                    name: date.getMonth() + 1,
+                    type: 'time_month',
+                    extField: date.getMonth() + 1
+                }]
+            })
+        }
+
+
+        function initTimeline(showData) {
+            var dom = document.getElementById("HeaderDateline");
+            var myChart = echarts.getInstanceByDom(dom);
+            if (myChart) {
+                myChart.dispose();
+            }
+            myChart = echarts.init(dom);
+            if (showData) {
+                myChart.on('timelinechanged', showData);
+            }
+            var option = {
+                baseOption: {
+                    timeline: {
+                        axisType: 'category',
+                        autoPlay: false,
+                        currentIndex: dateArr.length - 1,
+                        playInterval: 1000,
+                        data: dateStrArr
+                    },
+                    calculable: true,
+                    grid: {
+                        top: 80,
+                        bottom: 100,
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'shadow',
+                                label: {
+                                    show: true,
+                                    formatter: function (params) {
+                                        return params.value.replace('\n', '');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            };
+            myChart.setOption(option);
+        }
+    </script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

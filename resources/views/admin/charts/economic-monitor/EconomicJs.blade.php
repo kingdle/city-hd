@@ -1,11 +1,11 @@
 <script>
-    function initTimeline(showData) {
-        var myChart = echarts.init(document.getElementById('HeaderDateline'));
-        myChart.setOption(option);
-        if (showData) {
-            myChart.on('timelinechanged', showData);
-        }
-    }
+//    function initTimeline(showData) {
+//        var myChart = echarts.init(document.getElementById('HeaderDateline'));
+//        myChart.setOption(option);
+//        if (showData) {
+//            myChart.on('timelinechanged', showData);
+//        }
+//    }
     storeA = new SyStore({
         autoLoad: true,
         datasetId: 3,

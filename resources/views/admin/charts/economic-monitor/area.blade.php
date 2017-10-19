@@ -195,3 +195,5 @@
         myChart.setOption(option);
     }
 </script>
+
+@include('admin::charts.economic-monitor.EconomicJs')
