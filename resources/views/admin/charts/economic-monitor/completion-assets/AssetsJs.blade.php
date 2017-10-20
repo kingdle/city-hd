@@ -11,7 +11,7 @@
         autoLoad: true,
         datasetId: 3,
         success: function (store) {
-            initTimeline();
+//            initTimeline();
         }
     });
 

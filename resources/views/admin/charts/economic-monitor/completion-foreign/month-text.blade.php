@@ -1,4 +1,4 @@
-@include('admin::charts.economic-monitor.completion-sale.SaleJs')
+@include('admin::charts.economic-monitor.completion-foreign.ForeignJs')
 <style>
     .ibox-analysis {
         clear: both;
