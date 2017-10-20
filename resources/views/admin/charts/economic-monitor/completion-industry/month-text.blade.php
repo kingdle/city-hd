@@ -1,4 +1,4 @@
-@include('admin::charts.economic-monitor.completion-Industry.IndustryJs')
+@include('admin::charts.economic-monitor.completion-industry.IndustryJs')
 <style>
     .ibox-analysis {
         clear: both;
