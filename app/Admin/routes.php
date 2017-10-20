@@ -11,7 +11,12 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'EconomicmonitorController@index');
-    $router->get('/auth/completion-area', 'CompletionareaController@index');
+    $router->get('/auth/completion-area', 'CompletionAreaController@index');
+    $router->get('/auth/completion-assets', 'CompletionAssetsController@index');
+    $router->get('/auth/completion-sale', 'CompletionSaleController@index');
+    $router->get('/auth/completion-finance', 'CompletionFinanceController@index');
+    $router->get('/auth/completion-industry', 'CompletionIndustryController@index');
+    $router->get('/auth/completion-foreign', 'CompletionForeignController@index');
     $router->get('/auth/economic-monitor', 'EconomicmonitorController@index');
     $router->get('/auth/616', 'SixController@index');
     $router->get('/auth/616/content', 'SixController@show');

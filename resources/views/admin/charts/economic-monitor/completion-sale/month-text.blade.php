@@ -1,4 +1,4 @@
-@include('admin::charts.economic-monitor.completion-area.AreaJs')
+@include('admin::charts.economic-monitor.completion-assets.AssetsJs')
 <style>
     .ibox-analysis {
         clear: both;

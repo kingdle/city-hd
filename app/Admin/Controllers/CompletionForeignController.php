@@ -7,13 +7,13 @@ use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
 
-class CompletionAreaController extends Controller
+class CompletionForeignController extends Controller
 {
     public function index()
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('地区生产总值完成情况');
+            $content->header('外资外贸完成情况');
             $content->description('详情');
 
             $content->row(function (Row $row) {
