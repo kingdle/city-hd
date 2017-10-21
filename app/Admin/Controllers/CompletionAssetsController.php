@@ -14,7 +14,7 @@ class CompletionAssetsController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('固定资产投资完成情况');
-            $content->description('详情');
+            $content->description(now());
 
             $content->row(function (Row $row) {
                 $row->column(4, view('admin.charts.economic-monitor.completion-assets.month-text'));
@@ -27,8 +27,8 @@ class CompletionAssetsController extends Controller
                 $row->column(12, view('admin.charts.economic-monitor.completion-assets.structure'));
             });
             $content->row(function (Row $row) {
-                $row->column(4, view('admin.charts.economic-monitor.completion-assets.total-table-area'));
                 $row->column(4, view('admin.charts.economic-monitor.completion-assets.total-table-town'));
+                $row->column(4, view('admin.charts.economic-monitor.completion-assets.total-table-area'));
                 $row->column(4, view('admin.charts.economic-monitor.completion-assets.total-table-dept'));
             });
 

@@ -15,7 +15,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '地区生产总值运行趋势',
+                text: '固定资产投资运行趋势',
                 subtext: ''
             },
             grid: [
@@ -27,14 +27,12 @@
             legend: {
                 data: ['增加值', '增速']
             },
-            toolbox: {
-
-            },
+            toolbox: {},
             calculable: true,
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6']
                 }
             ],
             yAxis: [
@@ -57,18 +55,18 @@
             ],
             series: [
                 {
-                    name: '增加值',
+                    name: '完成',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
+                    data: [200.4, 64.5, 86.6, 104.6, 134.6, '', ''],
                     markPoint: {},
                     markLine: {}
                 },
                 {
-                    name: '增速',
+                    name: '增长',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
+                    data: [13.4, 12.1, 12, 11.3, 11.1, '', ''],
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},

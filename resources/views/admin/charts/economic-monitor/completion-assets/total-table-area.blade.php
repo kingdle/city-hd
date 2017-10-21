@@ -3,10 +3,18 @@
         border-color: #e7eaec;
         border-style: solid solid none;
         border-width: 1px 0;
-        padding: 15px 20px 20px 20px;
+        padding: 0 20px 20px 20px;
         font-size: 14px;
         line-height: 2em;
-        min-height: 660px;
+        min-height: 500px;
+    }
+    .table>thead>tr>th {
+        vertical-align: inherit;
+        text-align: center;
+    }
+    .table>tbody>tr>td {
+        vertical-align: inherit;
+        text-align: center;
     }
 </style>
 <div class="box">
@@ -14,7 +22,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>增加值总量排名</h5>
+                    <h5>分功能区固定资产投资情况</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -30,157 +38,94 @@
                 <div class="row-quota" id="quota">
                     <table class="table table-hover scrolltable">
                         <thead style="display:block;overflow-y: scroll;">
-                        <tr>
-                            <th>#</th>
-                            <th>指标名称</th>
-                            <th>总量</th>
-                            <th>增速</th>
+                        <tr class="area-f">
+                            <th rowspan='2'>地区</th>
+                            <th colspan='4'>计划</th>
+                        </tr>
+                        <tr class="area-s">
+                            <th>计划</th>
+                            <th>进度%</th>
+                            <th>其中：民间</th>
+                            <th>进度%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>地区生产总值</td>
-                            <td>1463.6</td>
-                            <td>11.9</td>
+                            <th scope="row">海洋高新区</th>
+                            <td>173</td>
+                            <td>102.41</td>
+                            <td>97</td>
+                            <td>8.35</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>农林牧渔业</td>
-                            <td>34.8</td>
-                            <td>3.5</td>
+                            <th scope="row">中德生态园</th>
+                            <td>77</td>
+                            <td>125.26</td>
+                            <td>43</td>
+                            <td>139.04</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>农林牧渔服务业</td>
-                            <td>1013.2</td>
-                            <td>11.3</td>
+                            <th scope="row">经济技术开发区</th>
+                            <td>93.3</td>
+                            <td>56.44</td>
+                            <td>44.9</td>
+                            <td>101.24</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td>工业</td>
-                            <td>653.3</td>
-                            <td>66.1</td>
+                            <th scope="row">董家口循环经济区</th>
+                            <td>146</td>
+                            <td>109.9</td>
+                            <td>26</td>
+                            <td>131.03</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>金属制品、机械和设备修理业</td>
-                            <td>279.2</td>
-                            <td>11.7</td>
+                            <th scope="row">国际旅游度假区</th>
+                            <td>146</td>
+                            <td>109.9</td>
+                            <td>26</td>
+                            <td>131.03</td>
                         </tr>
                         <tr>
-                            <th scope="row">4</th>
-                            <td>建筑业</td>
-                            <td>134.6</td>
-                            <td>11.1</td>
+                            <th scope="row">灵山湾影视文化区</th>
+                            <td>12</td>
+                            <td>134.82</td>
+                            <td>104</td>
+                            <td>105.13</td>
                         </tr>
                         <tr>
-                            <th scope="row">5</th>
-                            <td>批发和零售业</td>
-                            <td>113.4</td>
-                            <td>15.9</td>
+                            <th scope="row">现代农业示范区</th>
+                            <td>10</td>
+                            <td>114.49</td>
+                            <td>4</td>
+                            <td>251.04</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>批发业</td>
-                            <td>230.7</td>
-                            <td>21.2</td>
+                            <th scope="row">古镇口创新示范区</th>
+                            <td>61</td>
+                            <td>1.51</td>
+                            <td>41</td>
+                            <td>86.35</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>零售业</td>
-                            <td>156.4</td>
-                            <td>29.5</td>
+                            <th scope="row">西海岸交通商务区</th>
+                            <td>69</td>
+                            <td>122.41</td>
+                            <td>59</td>
+                            <td>0</td>
                         </tr>
                         <tr>
-                            <th scope="row">6</th>
-                            <td>交通运输、仓储和邮政业</td>
-                            <td>74.3</td>
-                            <td>6.9</td>
+                            <th scope="row">藏马山旅游度假区</th>
+                            <td>66</td>
+                            <td>102.41</td>
+                            <td>67</td>
+                            <td>0</td>
                         </tr>
                         <tr>
-                            <th scope="row">7</th>
-                            <td>住宿和餐饮业</td>
-                            <td>898.7</td>
-                            <td>46.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>住宿业</td>
-                            <td>395.8</td>
-                            <td>22.8</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>餐饮业</td>
-                            <td>9.1</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>居民人均可支配收入</td>
-                            <td>20359</td>
-                            <td>8.8</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>金融业</td>
-                            <td>23256</td>
-                            <td>8.6</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>房地产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>房地产业(K门类)</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>自有房地产经营活动</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">11</th>
-                            <td>其他服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>营利性服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>非营利性服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12</th>
-                            <td>第一产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">13</th>
-                            <td>第二产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">14</th>
-                            <td>第三产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">轨道交通指挥部</th>
+                            <td>38</td>
+                            <td>125.21</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         </tbody>
                     </table>
@@ -192,15 +137,20 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var _width = $('#quota').width();
-        $('#quota th:first-child').width(_width * 0.1);
-        $('#quota td:first-child').width(_width * 0.1);
-        $('#quota th:nth-child(2)').width(_width * 0.4);
-        $('#quota td:nth-child(2)').width(_width * 0.4);
-        $('#quota th:nth-child(3)').width(_width * 0.2);
-        $('#quota td:nth-child(3)').width(_width * 0.2);
-        $('#quota th:nth-child(4)').width(_width * 0.2);
-        $('#quota td:nth-child(4)').width(_width * 0.2);
-        $('#quota th:nth-child(5)').width(_width * 0.1);
-        $('#quota td:nth-child(5)').width(_width * 0.1);
+
+        $('.area-f th:first-child').width(_width * 0.4);
+        $('.area-s th:first-child').width(_width * 0.2);
+        $('thead th:nth-child(2)').width(_width * 0.2);
+        $('thead th:nth-child(3)').width(_width * 0.3);
+        $('thead th:nth-child(4)').width(_width * 0.2);
+
+        $('tbody th').width(_width * 0.4);
+        $('tbody td:nth-child(0)').width(_width * 0.2);
+        $('tbody td:nth-child(1)').width(_width * 0.2);
+        $('tbody td:nth-child(2)').width(_width * 0.2);
+        $('tbody td:nth-child(3)').width(_width * 0.2);
+        $('tbody td:nth-child(4)').width(_width * 0.3);
+        $('tbody td:nth-child(5)').width(_width * 0.2);
+
     })
 </script>

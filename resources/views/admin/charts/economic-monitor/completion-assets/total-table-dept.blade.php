@@ -1,20 +1,9 @@
-<style>
-    .row-quota {
-        border-color: #e7eaec;
-        border-style: solid solid none;
-        border-width: 1px 0;
-        padding: 15px 20px 20px 20px;
-        font-size: 14px;
-        line-height: 2em;
-        min-height: 660px;
-    }
-</style>
 <div class="box">
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>增加值总量排名</h5>
+                    <h5>分区直部门固定资产投资情况</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -30,157 +19,175 @@
                 <div class="row-quota" id="quota">
                     <table class="table table-hover scrolltable">
                         <thead style="display:block;overflow-y: scroll;">
-                        <tr>
-                            <th>#</th>
-                            <th>指标名称</th>
-                            <th>总量</th>
-                            <th>增速</th>
+                        <tr class="area-f">
+                            <th rowspan='2'>区直部门</th>
+                            <th colspan='2'>固定资产投资</th>
+                        </tr>
+                        <tr class="area-s">
+                            <th>计划</th>
+                            <th>进度%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>地区生产总值</td>
-                            <td>1463.6</td>
-                            <td>11.9</td>
+                            <th scope="row">城市建设局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>农林牧渔业</td>
-                            <td>34.8</td>
-                            <td>3.5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>农林牧渔服务业</td>
-                            <td>1013.2</td>
-                            <td>11.3</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>工业</td>
-                            <td>653.3</td>
-                            <td>66.1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>金属制品、机械和设备修理业</td>
-                            <td>279.2</td>
-                            <td>11.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>建筑业</td>
-                            <td>134.6</td>
-                            <td>11.1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>批发和零售业</td>
-                            <td>113.4</td>
-                            <td>15.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>批发业</td>
-                            <td>230.7</td>
-                            <td>21.2</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>零售业</td>
-                            <td>156.4</td>
-                            <td>29.5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>交通运输、仓储和邮政业</td>
-                            <td>74.3</td>
-                            <td>6.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>住宿和餐饮业</td>
-                            <td>898.7</td>
-                            <td>46.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>住宿业</td>
-                            <td>395.8</td>
-                            <td>22.8</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>餐饮业</td>
-                            <td>9.1</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>居民人均可支配收入</td>
-                            <td>20359</td>
-                            <td>8.8</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>金融业</td>
-                            <td>23256</td>
+                            <th scope="row">城市管理局</th>
                             <td>8.6</td>
+                            <td>141.53</td>
                         </tr>
                         <tr>
-                            <th scope="row">10</th>
-                            <td>房地产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">地震局</th>
+                            <td>1.3</td>
+                            <td>123.53</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>房地产业(K门类)</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">工信局</th>
+                            <td>0.3</td>
+                            <td>95.53</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>自有房地产经营活动</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">国土房管局</th>
+                            <td>7.3</td>
+                            <td>25.53</td>
                         </tr>
                         <tr>
-                            <th scope="row">11</th>
-                            <td>其他服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">海渔局</th>
+                            <td>5.1</td>
+                            <td>35.53</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>营利性服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">环保分局</th>
+                            <td>1.3</td>
+                            <td>82.53</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>非营利性服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">黄岛公安局</th>
+                            <td>7.3</td>
+                            <td>112.53</td>
                         </tr>
                         <tr>
-                            <th scope="row">12</th>
-                            <td>第一产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">机关事务局</th>
+                            <td>0.5</td>
+                            <td>23.53</td>
                         </tr>
                         <tr>
-                            <th scope="row">13</th>
-                            <td>第二产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">建筑工务局</th>
+                            <td>0.6</td>
+                            <td>23.53</td>
                         </tr>
                         <tr>
-                            <th scope="row">14</th>
-                            <td>第三产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">交通运输局</th>
+                            <td>0.4</td>
+                            <td>88.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">教体局</th>
+                            <td>0.7</td>
+                            <td>58.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">开发区公安局</th>
+                            <td>1.6</td>
+                            <td>98.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">开发区消防大队</th>
+                            <td>2.5</td>
+                            <td>21.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">粮食局</th>
+                            <td>0.9</td>
+                            <td>79.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">林业局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">气象局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">市场监管局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">水利局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">体育发展中心</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">卫计局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">文广新局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">大数据产业局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">职教中心</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">综合执法局</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">城发集团</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">海西建设投资集团</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">黄岛发展集团</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">西海岸公用事业集团</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">西海岸教育建设运营有限公司</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">西海岸职教集团</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">西海岸旅游集团</th>
+                            <td>6.3</td>
+                            <td>195.53</td>
                         </tr>
                         </tbody>
                     </table>
@@ -189,18 +196,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var _width = $('#quota').width();
-        $('#quota th:first-child').width(_width * 0.1);
-        $('#quota td:first-child').width(_width * 0.1);
-        $('#quota th:nth-child(2)').width(_width * 0.4);
-        $('#quota td:nth-child(2)').width(_width * 0.4);
-        $('#quota th:nth-child(3)').width(_width * 0.2);
-        $('#quota td:nth-child(3)').width(_width * 0.2);
-        $('#quota th:nth-child(4)').width(_width * 0.2);
-        $('#quota td:nth-child(4)').width(_width * 0.2);
-        $('#quota th:nth-child(5)').width(_width * 0.1);
-        $('#quota td:nth-child(5)').width(_width * 0.1);
-    })
-</script>
