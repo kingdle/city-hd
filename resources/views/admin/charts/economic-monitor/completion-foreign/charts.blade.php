@@ -43,7 +43,7 @@
                     name: '',
                     splitLine: {show: false},
                     axisLabel: {
-                        formatter: '{value}万元'
+                        formatter: '{value}亿元'
                     }
                 },
                 {
