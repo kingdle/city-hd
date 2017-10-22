@@ -1,4 +1,3 @@
-@include('admin::charts.economic-monitor.completion-area.AreaJs')
 <style>
     .ibox-analysis {
         clear: both;
@@ -92,3 +91,4 @@
         </div>
     </div>
 </div>
+@include('admin::charts.economic-monitor.completion-area.AreaJs')

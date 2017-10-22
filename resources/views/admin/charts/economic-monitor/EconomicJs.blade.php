@@ -90,8 +90,6 @@
 
                 $valV.html(kitV.findValueByItemName($title.html(), true));
                 $valS.html(kitS.findValueByItemName($title.html(), true));
-
-
             });
 
             initTimeline(function (dd) {

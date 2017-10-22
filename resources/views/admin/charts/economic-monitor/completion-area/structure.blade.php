@@ -52,182 +52,329 @@
     </div>
 </div>
 <script type="text/javascript">
+    var storeB = null;
     $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-one'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: '',
-                subtext: '2017年2季度',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left',
-                data: ['第一产业', '第二产业', '第三产业']
-            },
-            series: [
-                {
-                    name: '总量',
-                    type: 'pie',
-                    radius: '55%',
-                    center: ['50%', '60%'],
-                    data: [
-                        {value: 33.6, name: '第一产业'},
-                        {value: 683.7, name: '第二产业'},
-                        {value: 746.3, name: '第三产业'}
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
+        storeB = new SyStore({
+            autoLoad: true,
+            datasetId: 4,
+            success: function (store) {
+                // 指定图表的配置项和数据
+                var axisD = [];
+                for (var item in cAxisArr) {
+                    axisD.push(cAxisArr[item].name);
                 }
-            ]
-        };
+                for (var j in dateArr) {
 
+                    //===============饼图kit==============
+                    var pieKit = new SyChartSeriesKit({
+                        store: store,
+                        style: 'obj',
+                        series: [{
+                            type: "time_year",
+                            extField: dateArr[j].getFullYear()
+                        }, {
+                            type: 'time_month',
+                            extField: dateArr[j].getMonth() + 1
+                        }, {
+                            type: 'area',
+                            extField: 1508
+                        }, {
+                            type: 'frame',
+                            extField: 200000011
+                        }],
+                        axis: [{
+                            name: '第一产业',
+                            arr: [{
+                                type: 'item',
+                                extField: store.findMetaByItemName({
+                                    type: 'item',
+                                    name: '第一产业'
+                                }).extField
+                            }]
+                        }, {
+                            name: '第二产业',
+                            arr: [{
+                                type: 'item',
+                                extField: store.findMetaByItemName({
+                                    type: 'item',
+                                    name: '第二产业'
+                                }).extField
+                            }]
+                        }, {
+                            name: '第三产业',
+                            arr: [{
+                                type: 'item',
+                                extField: store.findMetaByItemName({
+                                    type: 'item',
+                                    name: '第三产业'
+                                }).extField
+                            }]
+                        }]
+                    });
+                    var pd = pieKit.genSeriesData();
+//                    console.log(pd)
+                }
+                    //===============普通图kit==============
+                    var chartKit = new SyChartSeriesKit({
+                        store: store,
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '第二产业'
+                            }).extField
+                        }, {
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }],
+                        axis: cAxisArr,
+                    });
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
+//                var dd = chartKit.genSeriesData();
+//                console.log(dd);
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChartOne = echarts.init(document.getElementById('run-one'));
+                    var myChartTwo = echarts.init(document.getElementById('run-two'));
+                    var myChartThree = echarts.init(document.getElementById('run-three'));
+                    var optionOne = {
+                        title: {
+                            text: '',
+                            subtext: '',
+                            x: 'center'
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            left: 'left',
+                            data: ['第一产业', '第二产业', '第三产业']
+                        },
+                        series: [
+                            {
+                                name: '总量',
+                                type: 'pie',
+                                radius: '55%',
+                                center: ['50%', '60%'],
+                                data: pd,
+                                itemStyle: {
+                                    emphasis: {
+                                        shadowBlur: 10,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ]
+                    };
+                    var optionTwo = {
+                        title: {
+                            text: '',
+                            subtext: '',
+                            x: 'center'
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                            }
+                        },
+                        legend: {
+                            data: ['', '第一产业', '第二产业', '第三产业']
+                        },
+                        grid: {
+                            left: '3%',
+                            right: '4%',
+                            bottom: '3%',
+                            containLabel: true
+                        },
+                        xAxis: [
+                            {
+                                type: 'category',
+                                data: axisD
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'value'
+                            }
+                        ],
+                        series: [
+                            {
+                                name: '第一产业',
+                                type: 'bar',
+                                stack: '总量',
+                                data: chartKit.genSeriesData({
+                                    series: [{
+                                        type: "item",
+                                        extField: store.findMetaByItemName({
+                                            type: 'item',
+                                            name: '第一产业'
+                                        }).extField
+                                    }, {
+                                        //        name: 2,
+                                        type: 'frame',
+                                        extField: store.findMetaByItemName({
+                                            type: 'frame',
+                                            name: '累计'
+                                        }).extField
+                                    }]
+                                })
+                                //[5.04, 33.57, 53.69, 63.26, 4.92, 33.6]
+                            },
+                            {
+                                name: '第二产业',
+                                type: 'bar',
+                                stack: '总量',
+                                data: chartKit.genSeriesData({
+                                    series: [{
+                                        type: "item",
+                                        extField: store.findMetaByItemName({
+                                            type: 'item',
+                                            name: '第二产业'
+                                        }).extField
+                                    }, {
+                                        //        name: 2,
+                                        type: 'frame',
+                                        extField: store.findMetaByItemName({
+                                            type: 'frame',
+                                            name: '累计'
+                                        }).extField
+                                    }]
+                                })
+                                //[5.04, 33.57, 53.69, 63.26, 4.92, 33.6]
+                            },
+                            {
+                                name: '第三产业',
+                                type: 'bar',
+                                stack: '总量',
+                                data: chartKit.genSeriesData({
+                                    series: [{
+                                        type: "item",
+                                        extField: store.findMetaByItemName({
+                                            type: 'item',
+                                            name: '第三产业'
+                                        }).extField
+                                    }, {
+                                        //        name: 2,
+                                        type: 'frame',
+                                        extField: store.findMetaByItemName({
+                                            type: 'frame',
+                                            name: '累计'
+                                        }).extField
+                                    }]
+                                })
+                                //[5.04, 33.57, 53.69, 63.26, 4.92, 33.6]
+                            },
+                        ]
+                    };
+                    var optionThree = {
+                        title: {
+                            text: ''
+                        },
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        legend: {
+                            data: ['第一产业', '第二产业', '第三产业']
+                        },
+                        grid: {
+                            left: '3%',
+                            right: '4%',
+                            bottom: '3%',
+                            containLabel: true
+                        },
+                        toolbox: {},
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: axisD
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [
+                            {
+                                name: '第一产业',
+                                type: 'line',
+                                stack: '增速',
+                                data: chartKit.genSeriesData({
+                                    series: [{
+                                        type: "item",
+                                        extField: store.findMetaByItemName({
+                                            type: 'item',
+                                            name: '第一产业'
+                                        }).extField
+                                    }, {
+                                        //        name: 2,
+                                        type: 'frame',
+                                        extField: store.findMetaByItemName({
+                                            type: 'frame',
+                                            name: '累计'
+                                        }).extField
+                                    }]
+                                })
+                            },
+                            {
+                                name: '第二产业',
+                                type: 'line',
+                                stack: '增速',
+                                data: chartKit.genSeriesData({
+                                    series: [{
+                                        type: "item",
+                                        extField: store.findMetaByItemName({
+                                            type: 'item',
+                                            name: '第二产业'
+                                        }).extField
+                                    }, {
+                                        //        name: 2,
+                                        type: 'frame',
+                                        extField: store.findMetaByItemName({
+                                            type: 'frame',
+                                            name: '累计'
+                                        }).extField
+                                    }]
+                                })
+                            },
+                            {
+                                name: '第三产业',
+                                type: 'line',
+                                stack: '增速',
+                                data: chartKit.genSeriesData({
+                                    series: [{
+                                        type: "item",
+                                        extField: store.findMetaByItemName({
+                                            type: 'item',
+                                            name: '第三产业'
+                                        }).extField
+                                    }, {
+                                        //        name: 2,
+                                        type: 'frame',
+                                        extField: store.findMetaByItemName({
+                                            type: 'frame',
+                                            name: '累计'
+                                        }).extField
+                                    }]
+                                })
+                            }
+                        ]
+                    };
+
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChartOne.setOption(optionOne);
+                    myChartTwo.setOption(optionTwo);
+                    myChartThree.setOption(optionThree);
+                    $(window).resize(function () {
+                        myChartOne.resize();
+                        myChartTwo.resize();
+                        myChartThree.resize();
+                    });
+                }
+
         });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-two'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: '',
-                subtext: '',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                }
-            },
-            legend: {
-                data: ['', '第一产业', '第二产业', '第三产业']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: [
-                {
-                    type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: [
-                {
-                    name: '第一产业',
-                    type: 'bar',
-                    stack: '总量',
-                    data: [5.04, 33.57, 53.69, 63.26, 4.92, 33.6]
-
-                },
-                {
-                    name: '第二产业',
-                    type: 'bar',
-                    stack: '总量',
-                    data: [296.78, 625.10, 966.90, 1281.27, 326.57, 683.7]
-                },
-                {
-                    name: '第三产业',
-                    type: 'bar',
-
-                    stack: '总量',
-                    data: [185.48, 625.10, 1049.43, 1421.16, 218.07, 746.3]
-                }
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-three'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: ''
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['第一产业', '第二产业', '第三产业']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            toolbox: {},
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [
-                {
-                    name: '第一产业',
-                    type: 'line',
-                    stack: '总量',
-                    data: [3.4, 3.2, 3.5, 4.1, 4, 3.4]
-                },
-                {
-                    name: '第二产业',
-                    type: 'line',
-                    stack: '总量',
-                    data: [7.8, 9.2, 10.1, 10.1, 9.1, 9.1]
-                },
-                {
-                    name: '第三产业',
-                    type: 'line',
-                    stack: '总量',
-                    data: [9.6, 12.2, 13.5, 16.3, 15.1, 15.2]
-                }
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
+    })
 </script>
