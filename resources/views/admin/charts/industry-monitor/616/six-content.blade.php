@@ -46,7 +46,20 @@
         white-space: nowrap;
         font-weight: 700;
     }
-
+    .dl-value dt {
+        float: left;
+        width: 80px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 700;
+        padding: 5px 10px 5px 0;
+    }
+    .dl-value dd{
+        padding: 5px 10px 5px 0;
+    }
     .panel-heading {
         border-bottom: 1px solid transparent;
         border-top-left-radius: 3px;
@@ -109,50 +122,63 @@
         border: none;
         padding: 10px;
     }
+
     .file-manager {
         list-style: none outside none;
         margin: 0;
         padding: 10px;
     }
+
     .folder-list li {
         border-bottom: 1px solid #e7eaec;
         display: block;
     }
+
     .folder-list li a {
         color: #666666;
         display: block;
         padding: 10px 0;
     }
+
     .file-manager h5 {
         text-transform: uppercase;
         font-weight: 500;
     }
+
     .m-b-md {
         margin-bottom: 20px;
     }
+
     .category-list li {
         display: block;
         float: left;
     }
+
     .category-list li a {
         color: #666666;
         padding: 5px 0;
     }
+
     .file-manager h5.tag-title {
         margin-top: 20px;
     }
+
     .file-manager h5 {
         text-transform: uppercase;
     }
+
     .townbox-content .tag-list li a {
         background: #ffffff;
     }
+
     ul.tag-list li {
         list-style: none;
     }
+
     .tag-list li {
         float: left;
     }
+
     .tag-list li a {
         font-size: 10px;
         background-color: #f3f3f4;
@@ -171,26 +197,31 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content townbox-content">
                     <div class="file-manager">
-                        <h5>产业项目</h5>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="m-b-md">
+                                    <h2>航运物流行业</h2>
+                                </div>
+                                <dl class="dl-value">
+                                    <dt>增加值:</dt>
+                                    <dd><span class="label label-primary">174.1</span></dd>
+                                    <dt>增长:</dt>
+                                    <dd><span class="label label-primary">15.9%</span></dd>
+                                    <dt>牵头部门:</dt>
+                                    <dd>交通运输局</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-manager">
+                        <h5>涉及行业</h5>
                         <ul class="folder-list m-b-md" style="padding: 0">
-                            <li><a href="#"> <i class="fa fa-building-o "></i> 国际合作小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 国际自贸小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 海尔山水生态颐养小镇 <span
+                            <li><a href="#"> <i class="fa fa-building-o "></i> 水上服务业</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 仓库业</a></li>
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 邮政业 <span
                                             class="label label-warning pull-right">4</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 华星国际冰上运动小镇 <span
+                            <li><a href="#"> <i class="fa fa-building-o"></i> 管道运行业 <span
                                             class="label label-danger pull-right">2</span></a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 华融中广文化艺术小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o "></i> 大唐移动电竞小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> 财富小镇</a></li>
-                            <li><a href="#"> <i class="fa fa-building-o"></i> “宇宙.生命”科普文旅小镇</a></li>
-                        </ul>
-                        <h5>项目分类</h5>
-                        <ul class="category-list" style="padding: 0">
-                            <li><a href="#"> <i class="fa fa-circle text-navy"></i> 国际 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-danger"></i> 国家 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-primary"></i> 地市 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-info"></i> 区市 </a></li>
-                            <li><a href="#"> <i class="fa fa-circle text-warning"></i> 其他 </a></li>
                         </ul>
                         <div class="clearfix"></div>
                         <h5 class="tag-title">标签</h5>
@@ -211,62 +242,33 @@
             <div class="wrapper wrapper-content animated fadeInUp">
                 <div class="ibox">
                     <div class="ibox-content">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="m-b-md">
-                                    <a href="#" class="btn btn-white btn-xs pull-right">Edit project</a>
-                                    <h2>Contract with Zender Company</h2>
-                                </div>
-                                <dl class="dl-horizontal">
-                                    <dt>Status:</dt>
-                                    <dd><span class="label label-primary">Active</span></dd>
-                                </dl>
-                            </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-lg-5">
-                                <dl class="dl-horizontal">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="m-b-md">
+                                            <h2>水上服务业</h2>
+                                        </div>
+                                    </div>
 
-                                    <dt>Created by:</dt>
-                                    <dd>Alex Smith</dd>
-                                    <dt>Messages:</dt>
-                                    <dd> 162</dd>
-                                    <dt>Client:</dt>
-                                    <dd><a href="#" class="text-navy"> Zender Company</a></dd>
-                                    <dt>Version:</dt>
-                                    <dd> v1.4.2</dd>
-                                </dl>
-                            </div>
-                            <div class="col-lg-7" id="cluster_info">
                                 <dl class="dl-horizontal">
-
-                                    <dt>Last Updated:</dt>
-                                    <dd>16.08.2014 12:15:57</dd>
-                                    <dt>Created:</dt>
-                                    <dd> 10.07.2014 23:36:57</dd>
-                                    <dt>Participants:</dt>
-                                    <dd class="project-people">
-                                        <a href=""><img alt="image" class="img-circle" src="img/a3.jpg"></a>
-                                        <a href=""><img alt="image" class="img-circle" src="img/a1.jpg"></a>
-                                        <a href=""><img alt="image" class="img-circle" src="img/a2.jpg"></a>
-                                        <a href=""><img alt="image" class="img-circle" src="img/a4.jpg"></a>
-                                        <a href=""><img alt="image" class="img-circle" src="img/a5.jpg"></a>
-                                    </dd>
+                                    <dt>负责单位:</dt>
+                                    <dd>海渔局</dd>
+                                    <dt>负责人:</dt>
+                                    <dd>***</dd>
+                                    <dt>分管领导:</dt>
+                                    <dd>***</dd>
                                 </dl>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <dl class="dl-horizontal">
-                                    <dt>Completed:</dt>
+                                    <dt>产业介绍:</dt>
                                     <dd>
-                                        <div class="progress progress-striped active m-b-sm">
-                                            <div style="width: 60%;" class="progress-bar"></div>
-                                        </div>
-                                        <small>Project completed in <strong>60%</strong>. Remaining close the
-                                            project,
-                                            sign a contract and invoice.
-                                        </small>
+                                        包括国际水产品交易中心和冷链物流基地及海洋文化城两部分。三个冷藏库面积分别为31475、31372、30822平方米，每个冷藏库能容纳10万吨海鲜，建成后将成为东北亚最大的冷库群。
                                     </dd>
                                 </dl>
                             </div>
@@ -278,10 +280,7 @@
                                         <div class="panel-options">
                                             <ul class="nav nav-tabs">
                                                 <li class="active"><a href="#tab-1" data-toggle="tab"
-                                                                      aria-expanded="true">Users messages</a></li>
-                                                <li class=""><a href="#tab-2" data-toggle="tab"
-                                                                aria-expanded="false">Last
-                                                        activity</a></li>
+                                                                      aria-expanded="true">运行趋势</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -292,335 +291,15 @@
                                             <div class="tab-pane active" id="tab-1">
                                                 <div class="feed-activity-list">
                                                     <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle" src="img/a2.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>Mark Johnson</strong> posted message on <strong>Monica
-                                                                Smith</strong> site. <br>
-                                                            <small class="text-muted">Today 2:10 pm - 12.06.2014
-                                                            </small>
-                                                            <div class="well">
-                                                                Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s.
-                                                                Over the years, sometimes by accident, sometimes on
-                                                                purpose (injected humour and the like).
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="ibox-analysis float-e-margins">
+                                                                        <div id="p-charts" style="height:392px"></div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle" src="img/a3.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica
-                                                                Smith</strong>. <br>
-                                                            <small class="text-muted">2 days ago at 8:30am</small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle" src="img/a4.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right text-navy">5h ago</small>
-                                                            <strong>Chris Johnatan Overtunk</strong> started
-                                                            following
-                                                            <strong>Monica Smith</strong>. <br>
-                                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014
-                                                            </small>
-                                                            <div class="actions">
-                                                                <a class="btn btn-xs btn-white"><i
-                                                                            class="fa fa-thumbs-up"></i> Like </a>
-                                                                <a class="btn btn-xs btn-white"><i
-                                                                            class="fa fa-heart"></i> Love</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle" src="img/a5.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>Kim Smith</strong> posted message on <strong>Monica
-                                                                Smith</strong> site. <br>
-                                                            <small class="text-muted">Yesterday 5:20 pm - 12.06.2014
-                                                            </small>
-                                                            <div class="well">
-                                                                Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s.
-                                                                Over the years, sometimes by accident, sometimes on
-                                                                purpose (injected humour and the like).
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle"
-                                                                 src="img/profile.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">23h ago</small>
-                                                            <strong>Monica Smith</strong> love <strong>Kim
-                                                                Smith</strong>. <br>
-                                                            <small class="text-muted">2 days ago at 2:30 am -
-                                                                11.06.2014
-                                                            </small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle" src="img/a7.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">46h ago</small>
-                                                            <strong>Mike Loreipsum</strong> started following
-                                                            <strong>Monica
-                                                                Smith</strong>. <br>
-                                                            <small class="text-muted">3 days ago at 7:58 pm -
-                                                                10.06.2014
-                                                            </small>
-                                                        </div>
-                                                    </div>
                                                 </div>
-
-                                            </div>
-                                            <div class="tab-pane" id="tab-2">
-
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Status</th>
-                                                        <th>Title</th>
-                                                        <th>Start Time</th>
-                                                        <th>End Time</th>
-                                                        <th>Comments</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Completed</span>
-                                                        </td>
-                                                        <td>
-                                                            Create project in webapp
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                Lorem Ipsum is that it has a more-or-less normal
-                                                                distribution of letters, as opposed to using
-                                                                'Content
-                                                                here, content here', making it look like readable.
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Accepted</span>
-                                                        </td>
-                                                        <td>
-                                                            Various versions
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                Various versions have evolved over the years,
-                                                                sometimes
-                                                                by accident, sometimes on purpose (injected humour
-                                                                and
-                                                                the like).
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Sent</span>
-                                                        </td>
-                                                        <td>
-                                                            There are many variations
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                There are many variations of passages of Lorem Ipsum
-                                                                available, but the majority have suffered alteration
-                                                                in
-                                                                some form, by injected humour, or randomised words
-                                                                which
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Reported</span>
-                                                        </td>
-                                                        <td>
-                                                            Latin words
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                Latin words, combined with a handful of model
-                                                                sentence
-                                                                structures
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Accepted</span>
-                                                        </td>
-                                                        <td>
-                                                            The generated Lorem
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                The generated Lorem Ipsum is therefore always free
-                                                                from
-                                                                repetition, injected humour, or non-characteristic
-                                                                words
-                                                                etc.
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Sent</span>
-                                                        </td>
-                                                        <td>
-                                                            The first line
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                The first line of Lorem Ipsum, "Lorem ipsum dolor
-                                                                sit
-                                                                amet..", comes from a line in section 1.10.32.
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Reported</span>
-                                                        </td>
-                                                        <td>
-                                                            The standard chunk
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                The standard chunk of Lorem Ipsum used since the
-                                                                1500s
-                                                                is reproduced below for those interested.
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Completed</span>
-                                                        </td>
-                                                        <td>
-                                                            Lorem Ipsum is that
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                Lorem Ipsum is that it has a more-or-less normal
-                                                                distribution of letters, as opposed to using
-                                                                'Content
-                                                                here, content here', making it look like readable.
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="label label-primary"><i
-                                                                        class="fa fa-check"></i> Sent</span>
-                                                        </td>
-                                                        <td>
-                                                            Contrary to popular
-                                                        </td>
-                                                        <td>
-                                                            12.07.2014 10:10:1
-                                                        </td>
-                                                        <td>
-                                                            14.07.2014 10:16:36
-                                                        </td>
-                                                        <td>
-                                                            <p class="small">
-                                                                Contrary to popular belief, Lorem Ipsum is not
-                                                                simply
-                                                                random text. It has roots in a piece of classical
-                                                            </p>
-                                                        </td>
-
-                                                    </tr>
-
-                                                    </tbody>
-                                                </table>
 
                                             </div>
                                         </div>
@@ -636,3 +315,82 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var ImyChart = echarts.init(document.getElementById('p-charts'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '水上服务业运行趋势图',
+                subtext: '',
+                top: 10,
+                left:10,
+            },
+            grid: [
+                {x: '10%', y: '20%', width: '83%', height: '70%'},
+            ],
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['计划总投资', '累计完成投资', '本月完成投资'],
+                x: '40%',
+                y: '20%',
+            },
+            toolbox: {},
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '',
+                    splitLine: {show: false},
+                    axisLabel: {
+                        formatter: '{value}亿元'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '增加值',
+                    type: 'line',
+                    splitLine: {show: false},
+                    data: [55.4, 64.5, 86.6, 104.6, 134.6, '', ''],
+                    markPoint: {
+                        data: [
+                            {type: 'max', name: '最快'},
+                            {type: 'min', name: '最慢'}
+                        ]
+                    },
+                    markLine: {}
+                },
+                {
+                    name: '增长',
+                    type: 'line',
+                    data: [18.4, 22.5, 16.6, 14.6, 24.6, '', ''],
+                    markPoint: {
+                        data: [
+                            {type: 'max', name: '最快'},
+                            {type: 'min', name: '最慢'}
+                        ]
+                    },
+                    markLine: {}
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        ImyChart.setOption(option);
+        $(window).resize(function () {
+            ImyChart.resize();
+        });
+    });
+</script>
