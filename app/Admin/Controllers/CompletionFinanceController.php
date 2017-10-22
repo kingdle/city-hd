@@ -14,7 +14,7 @@ class CompletionFinanceController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('财政金融完成情况');
-            $content->description('详情');
+            $content->description(now());
 
             $content->row(function (Row $row) {
                 $row->column(4, view('admin.charts.economic-monitor.completion-finance.month-text'));

@@ -14,7 +14,7 @@ class CompletionSaleController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('限上贸易完成情况');
-            $content->description('详情');
+            $content->description(now());
 
             $content->row(function (Row $row) {
                 $row->column(4, view('admin.charts.economic-monitor.completion-sale.month-text'));
