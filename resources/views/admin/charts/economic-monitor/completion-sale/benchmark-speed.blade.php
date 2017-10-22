@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>经济运行对标分析</h5>
+                    <h5>经济发展水平分析</h5>
                     <div class="ibox-tools">
                         <a class="close-link-pillar">
                             <i class="fa fa-chevron-down"></i>
@@ -54,7 +54,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['全国', '山东省', '西海岸新区', '浦东新区']
+                data: ['全国', '山东省', '青岛市','西海岸新区', '浦东新区']
             },
             grid: {
                 left: '3%',
@@ -66,7 +66,7 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
             },
             yAxis: {
                 type: 'value'
@@ -84,12 +84,17 @@
                     //stack: '总量',
                     data: [7.9, 7.5, 8, 7.5, 7.9, 7]
                 },
-
+                {
+                    name: '青岛市',
+                    type: 'line',
+                    //stack: '总量',
+                    data: [7.9, 7.5, 8, 7.5, 7.9, 7]
+                },
                 {
                     name: '西海岸新区',
                     type: 'line',
                     //stack: '总量',
-                    data: [8.5, 10.5, 11.5, 12.3, 10, 12.1]
+                    data: [11.5, 13.5, 11.5, 12.3, 11, 11.8]
                 },
                 {
                     name: '浦东新区',
@@ -134,7 +139,7 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
             },
             yAxis: {
                 type: 'value'
@@ -156,7 +161,7 @@
                     name: '西海岸新区',
                     type: 'line',
                     //stack: '总量',
-                    data: [8.5, 10.5, 11.5, 12.3, 10, 12.1]
+                    data: [11.5, 13.5, 11.5, 12.3, 11, 11.8]
                 },
                 {
                     name: '浦东新区',

@@ -15,7 +15,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '地区生产总值运行趋势',
+                text: '社会消费品零售额运行趋势',
                 subtext: ''
             },
             grid: [
@@ -57,7 +57,7 @@
             ],
             series: [
                 {
-                    name: '增加值',
+                    name: '总额',
                     type: 'bar',
                     splitLine: {show: false},
                     data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
@@ -65,7 +65,7 @@
                     markLine: {}
                 },
                 {
-                    name: '增速',
+                    name: '增长',
                     type: 'line',
                     yAxisIndex: 1,
                     data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
