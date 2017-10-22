@@ -124,7 +124,7 @@
         margin-bottom: 0;
     }
 </style>
-<div class="box box-primary">
+<div class="box">
     <div class="row">
         <div class="col-lg-12">
             <div class="wrapper wrapper-content animated fadeInUp">
