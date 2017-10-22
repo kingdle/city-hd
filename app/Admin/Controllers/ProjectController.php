@@ -17,6 +17,11 @@ class ProjectController extends Controller
             $content->description('详情');
 
             //$content->body(view('admin.charts.industry-monitor.616.dateline'));
+            $content->body(view(''));
+            $content->row(function (Row $row) {
+                $row->column(8, view('admin.charts.project-monitor.p-text'));
+                $row->column(4, view('admin.charts.project-monitor.p-img'));
+            });
             $content->body(view('admin.charts.project-monitor.p-list'));
 
         });
