@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Route::redirect('/','/admin',301);
 
+Route::redirect('/admin/sy-hd','/sy-hd',301);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
