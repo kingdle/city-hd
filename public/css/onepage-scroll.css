@@ -1,5 +1,3 @@
-
-
 body, .onepage-wrapper, html {
     display: block;
     position: static;
@@ -8,7 +6,9 @@ body, .onepage-wrapper, html {
     height: 100%;
     font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
 }
-
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+}
 .onepage-wrapper {
     width: 100%;
     height: 100%;
