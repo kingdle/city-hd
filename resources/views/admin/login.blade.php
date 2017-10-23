@@ -102,7 +102,7 @@
             </div>
             <div class="row row-bottom visible-lg visible-md">
                 <div class="col-md-12 text-right">
-                    <p>青岛市青岛西海岸新区统计局版权所有 鲁ICP备12023013号</p>
+                    <p>青岛西海岸新区统计局版权所有 鲁ICP备12023013号</p>
                 </div>
             </div>
         </div>
