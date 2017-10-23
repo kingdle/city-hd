@@ -85,7 +85,8 @@
                         autoPlay: false,
                         currentIndex: dateArr.length - 1,
                         playInterval: 1000,
-                        data: dateStrArr
+                        data: dateStrArr,
+                        rewind: true
                     },
                     calculable: true,
                     grid: {

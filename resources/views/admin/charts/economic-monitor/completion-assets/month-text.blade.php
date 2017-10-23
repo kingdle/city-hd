@@ -1,4 +1,3 @@
-@include('admin::charts.economic-monitor.completion-assets.AssetsJs')
 <style>
     .ibox-analysis {
         clear: both;
@@ -91,3 +90,4 @@
         </div>
     </div>
 </div>
+@include('admin::charts.economic-monitor.completion-assets.AssetsJs')

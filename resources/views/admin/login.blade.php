@@ -118,36 +118,32 @@
                     <div class="conlistpage">
                         <ul class="conlist1">
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-star fa-5x"></i></p>重点关注</a></p>
+                                <p><a href="{{ admin_base_path('/') }}">
+                                <p><i class="fa fa-star fa-5x"></i></p>经济运行监测</a></p>
                             </li>
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-eye fa-5x"></i></p>专题监测</a></p>
+                                <p><a href="{{ admin_base_path('/auth/616') }}">
+                                <p><i class="fa fa-eye fa-5x"></i></p>新经济产业监测</a></p>
                             </li>
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-area-chart fa-5x"></i></p>区域经济</a></p>
+                                <p><a href="{{ admin_base_path('/auth/economic-benchmark') }}">
+                                <p><i class="fa fa-area-chart fa-5x"></i></p>经济发展对标</a></p>
                             </li>
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-product-hunt fa-5x"></i></p>投资项目监测</a></p>
+                                <p><a href="{{ admin_base_path('/auth/area-development') }}">
+                                <p><i class="fa fa-product-hunt fa-5x"></i></p>区域发展监测</a></p>
                             </li>
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-commenting-o fa-5x"></i></p>街道互动</a></p>
+                                <p><a href="{{ admin_base_path('/auth/project-monitor') }}">
+                                <p><i class="fa fa-commenting-o fa-5x"></i></p>重点项目监测</a></p>
                             </li>
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-file-text-o fa-5x"></i></p>资料信息库</a></p>
+                                <p><a href="{{ admin_base_path('/auth/search') }}">
+                                <p><i class="fa fa-search fa-5x"></i></p>数据检索</a></p>
                             </li>
                             <li>
-                                <p><a href="">
-                                <p><i class="fa fa-user fa-5x"></i></p>我的数据</a></p>
-                            </li>
-                            <li>
-                                <p><a href="">
-                                <p><i class="fa fa-search fa-5x"></i></p>数据查询</a></p>
+                                <p><a href="{{ admin_base_path('/auth/media') }}">
+                                <p><i class="fa fa-user fa-5x"></i></p>资料库</a></p>
                             </li>
                         </ul>
                     </div>

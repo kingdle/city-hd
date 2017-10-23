@@ -5,7 +5,7 @@
         @if($description != "详情")
             <h1>
                 {{ $header or trans('admin.title') }}
-                <small>{{ $description or trans('admin.description') }}</small>
+                <small>(不含保税区) {{ $description or trans('admin.description') }}</small>
             </h1>
         @else
             @include('admin::charts.dateline-header')

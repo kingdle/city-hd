@@ -218,452 +218,464 @@
     })
 </script>
 <script type="text/javascript">
-    $(function () {
-        storeB = new SyStore({
-            autoLoad: true,
-            datasetId: 4,
-            success: function (store) {
-                initTimelineArea();
-                //==============散点图(横轴指标)=================
-                var axisArr = [];
-                for (var axis in store.meta.item) {
-                    axisArr.push({
-                        name: store.meta.item[axis].name,
-                        arr: [{
-                            type: 'item',
-                            extField: store.meta.item[axis].extField
-                        }]
-                    })
+    function grossChart(store) {
+        //==============散点图(横轴指标)=================
+        var axisArr = [];
+        for (var axis in store.meta.item) {
+            axisArr.push({
+                name: store.meta.item[axis].name,
+                arr: [{
+                    type: 'item',
+                    extField: store.meta.item[axis].extField
+                }]
+            })
 
-                }
-                //==============!散点图(横轴指标)=================
-                for (var j in dateArr) {
-                    var baseRes = {
-                        frame: 200000011,
-                        area: 1508,
-                        time_year: dateArr[j].getFullYear(),
-                        time_month: dateArr[j].getMonth() + 1,
-                    }
+        }
+        var sOptionArr = [];
+        //==============!散点图(横轴指标)=================
+        for (var j in jiduTime.dateArr) {
+            var baseRes = {
+                frame: 200000011,
+                area: 1508,
+                time_year: jiduTime.dateArr[j].getFullYear(),
+                time_month: jiduTime.dateArr[j].getMonth() + 1,
+            }
 
-                    var baseRes1 = {
-                        frame: 200000014,
-                        area: 1508,
-                        time_year: dateArr[j].getFullYear(),
-                        time_month: dateArr[j].getMonth() + 1,
-                    }
-                    var kit = new SyValueKit(baseRes, store); //总量kit
-                    var kit1 = new SyValueKit(baseRes1, store); //增速kit
-                    //===============散点图kit==============
-                    var sandianKit = new SyChartSeriesKit({
-                        store: store,
-                        series: [{
-                            type: "time_year",
-                            extField: dateArr[j].getFullYear()
-                        }, {
-                            type: 'time_month',
-                            extField: dateArr[j].getMonth() + 1
-                        }, {
-                            type: 'area',
-                            extField: 1508
-                        }],
-                        axis: axisArr,
-                        dim: [
-                            [{
-                                type: 'frame',
-                                extField: store.findMetaByItemName({
-                                    type: 'frame',
-                                    name: '累计'
-                                }).extField
-                            }],
-                            [{
-                                type: 'frame',
-                                extField: store.findMetaByItemName({
-                                    type: 'frame',
-                                    name: '增长'
-                                }).extField
-                            }]
-                        ]
+            var baseRes1 = {
+                frame: 200000014,
+                area: 1508,
+                time_year: jiduTime.dateArr[j].getFullYear(),
+                time_month: jiduTime.dateArr[j].getMonth() + 1,
+            }
+            var kit = new SyValueKit(baseRes, store); //总量kit
+            var kit1 = new SyValueKit(baseRes1, store); //增速kit
+            //===============散点图kit==============
+            var sandianKit = new SyChartSeriesKit({
+                store: store,
+                series: [{
+                    type: "time_year",
+                    extField: jiduTime.dateArr[j].getFullYear()
+                }, {
+                    type: 'time_month',
+                    extField: jiduTime.dateArr[j].getMonth() + 1
+                }, {
+                    type: 'area',
+                    extField: 1508
+                }],
+                axis: axisArr,
+                dim: [
+                    [{
+                        type: 'frame',
+                        extField: store.findMetaByItemName({
+                            type: 'frame',
+                            name: '累计'
+                        }).extField
+                    }],
+                    [{
+                        type: 'frame',
+                        extField: store.findMetaByItemName({
+                            type: 'frame',
+                            name: '增长'
+                        }).extField
+                    }]
+                ]
 
-                    });
-                }
-                var sd = sandianKit.genSeriesData();
-                console.log(sd)
-                console.log(sd[0])
-                // 基于准备好的dom，初始化echarts实例
-                var myChart = echarts.init(document.getElementById('bobal'));
-
-                // 指定图表的配置项和数据
-                var
-                    option = {
-                        title: {
-                            left: 'center',
-                            text: '黄岛区地区生产总值完成情况'
-                        },
-                        grid: [
-                            {x: '4%', y: '10%', width: '85%', height: '80%'},
-//                            {x2: '4%', y: '10%', width: '36%', height: '80%'}
-                        ],
-                        tooltip: {
-                            trigger: 'axis',
-                            showDelay: 0,
-                            formatter: function (p) {
-                                console.log(arguments);
-                                var pp = p[0];
-                                return pp.seriesName + '<br>总量:' + pp.data[0] + "<br>增速:" + pp.data[1];
-                            },
-                            axisPointer: {
+            });
+            var sd = sandianKit.genSeriesData();
+            sOptionArr.push({
+                series: [
+                    {
+                        name: '农林牧渔业',
+                        type: 'scatter',
+                        large: true,
+                        data: [sd[7]],
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        label: {
+                            normal: {
                                 show: true,
-                                type: 'cross',
-                                lineStyle: {
-                                    type: 'dashed',
-                                    width: 1
-                                }
-                            },
-                            zlevel: 1
-                        },
-                        xAxis: [
-                            {
-                                gridIndex: 0,
-                                type: 'value',
-                                scale: true,
-                                name: '累计(亿元)'
-                            },
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '工业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[9]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '建筑业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[2]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '批发和零售业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[11]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '交通运输、仓储和邮政业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[14]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '住宿和餐饮业',
+                        type: 'scatter',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        large: true,
+                        data: [sd[15]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '金融业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[17]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '房地产业',
+                        type: 'scatter',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        large: true,
+                        data: [sd[5]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '其他服务业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[19]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '农林牧渔业服务业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[8]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '金属制品、机械和设备修理业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[10]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '批发业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[12]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '零售业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[13]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '住宿业',
+                        type: 'scatter',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        large: true,
+                        data: [sd[16]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '餐饮业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[3]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '房地产业(K门类)',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[4]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '自有房地产经营活动',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[18]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '营利性服务业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[20]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+
+                            }
+                        }
+                    },
+                    {
+                        name: '非营利性服务业',
+                        type: 'scatter',
+                        large: true,
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: [sd[21]],
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{a}',
+                                position: 'top'
+                            }
+                        }
+                    }
+
+                ]
+            });
+        }
+
+//                console.log(sd)
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('bobal'));
+        myChart.group = 'jidu';
+        echarts.connect('jidu');
+        // 指定图表的配置项和数据
+        var option = {
+            group:'jidu',
+            baseOption:{
+                title: {
+                    left: 'center',
+                    text: '黄岛区地区生产总值完成情况'
+                },
+                grid: [
+                    {x: '4%', y: '10%', width: '85%', height: '80%'},
+                ],
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: function (p) {
+                        var pp = p[0];
+                        if(!pp)
+                            return '';
+                        if(pp.seriesName)
+                            return pp.seriesName + '<br>总量:' + pp.data[0] + "<br>增速:" + pp.data[1];
+                        else
+                            return pp.data;
+                    },
+                    axisPointer: {
+                        show: true,
+                        type: 'cross',
+                        lineStyle: {
+                            type: 'dashed',
+                            width: 1
+                        }
+                    },
+                    zlevel: 1
+                },
+                xAxis: [
+                    {
+                        gridIndex: 0,
+                        type: 'value',
+                        scale: true,
+                        name: '累计(亿元)'
+                    },
 //                            {
 //                                gridIndex: 1,
 //                                type: 'value',
 //                                scale: true,
 //                                name: ''
 //                            }
-                        ],
-                        yAxis: [
-                            {
-                                gridIndex: 0,
-                                type: 'value',
-                                scale: true,
-                                name: '增速(%)'
-                            },
+                ],
+                yAxis: [
+                    {
+                        gridIndex: 0,
+                        type: 'value',
+                        scale: true,
+                        name: '增速(%)'
+                    },
 //                            {
 //                                gridIndex: 1,
 //                                type: 'value',
 //                                scale: true,
 //                                name: '增速(%)'
 //                            }
-                        ],
-                        series: [
-                            {
-                                name: '农林牧渔业',
-                                type: 'scatter',
-                                large: true,
-                                data: [sd[7]],
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
+                ],
+                timeline:{
+                    data:jiduTime.dateStrArr,
+                    currentIndex:jiduTime.dateStrArr.length-1,
+                    autoPlay : false,
+                    rewind:true,
+                    show:false
+                },series:sOptionArr[0].series
+            },
 
-                                    }
-                                }
-                            },
-                            {
-                                name: '工业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[9]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
+            options:sOptionArr
+        }
+//                console.log(JSON.stringify(option))
+        //                var
+//                    sOption = ;
 
-                                    }
-                                }
-                            },
-                            {
-                                name: '建筑业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[2]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '批发和零售业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[11]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '交通运输、仓储和邮政业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[14]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '住宿和餐饮业',
-                                type: 'scatter',
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                large: true,
-                                data: [sd[15]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '金融业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[17]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '房地产业',
-                                type: 'scatter',
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                large: true,
-                                data: [sd[5]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '其他服务业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[19]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '农林牧渔业服务业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[8]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '金属制品、机械和设备修理业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[10]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '批发业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[12]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '零售业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[13]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '住宿业',
-                                type: 'scatter',
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                large: true,
-                                data: [sd[16]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '餐饮业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[3]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '房地产业(K门类)',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[4]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '自有房地产经营活动',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[18]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '营利性服务业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[20]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            },
-                            {
-                                name: '非营利性服务业',
-                                type: 'scatter',
-                                large: true,
-                                xAxisIndex: 0,
-                                yAxisIndex: 0,
-                                data: [sd[21]],
-                                label: {
-                                    normal: {
-                                        show: true,
-                                        formatter: '{a}',
-                                        position: 'top'
-
-                                    }
-                                }
-                            }
-
-                        ]
-                    };
-
-                // 使用刚指定的配置项和数据显示图表。
-                myChart.setOption(option);
-                window.onresize = function () {
-                    myChart.resize();
-                };
-            }
-            })
-    });
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.onresize = function () {
+            myChart.resize();
+        };
+    }
 </script>
