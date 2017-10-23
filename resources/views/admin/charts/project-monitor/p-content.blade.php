@@ -44,7 +44,7 @@
         text-align: right;
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-weight: 700;
+        font-weight: 200;
     }
 
     .panel-heading {

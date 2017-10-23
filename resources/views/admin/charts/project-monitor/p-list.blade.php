@@ -18,7 +18,6 @@
 
     .ibox-title h5 {
         display: inline-block;
-        font-size: 14px;
         margin: 0 0 7px;
         padding: 0;
         text-overflow: ellipsis;
@@ -108,11 +107,6 @@
         width: 32px;
         height: 32px;
     }
-
-    .img-circle {
-        border-radius: 50%;
-    }
-
     .btn-white {
         color: inherit;
         background: white;

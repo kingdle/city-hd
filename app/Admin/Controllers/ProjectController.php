@@ -14,7 +14,7 @@ class ProjectController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('重点项目监测');
-            $content->description('详情');
+            $content->description(now());
 
             $content->row(function (Row $row) {
                 $row->column(7, view('admin.charts.project-monitor.p-table'));

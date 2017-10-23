@@ -1,17 +1,15 @@
-<style>
-
-</style>
-<div class="box box-primary hidden-xs">
+<div class="box box-primary hidden-xs text-center">
     <div class="row">
         <div class="col-lg-12 animated fadeInRight">
             <div class="ibox float-e-margins">
                 <div class="ibox-content townbox-content">
-                    <div id="myCarousel" class="carousel slide " data-ride="carousel">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class=""></li>
                             <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
                             <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="item active left">
@@ -19,9 +17,7 @@
                                      alt="First slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>中国北方(黄岛)国际农批交易中心 </h1>
-                                        <p>将建成以..为特色的新兴产业先导区</p>
-                                        <p><a class="btn btn-m btn-primary" href="{{ admin_base_path('auth/project-monitor/content') }}" role="button">查看</a></p>
+                                        <p>中国金茂科技小镇</p>
                                     </div>
                                 </div>
                             </div>
@@ -30,9 +26,7 @@
                                      alt="Second slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>复旦大学青岛研究院</h1>
-                                        <p>将建成...</p>
-                                        <p><a class="btn btn-m btn-primary" href="{{ admin_base_path('auth/project-monitor/content') }}" role="button">查看</a></p>
+                                        <p>平安基金项目</p>
                                     </div>
                                 </div>
                             </div>
@@ -41,9 +35,16 @@
                                      alt="Third slide">
                                 <div class="container">
                                     <div class="carousel-caption">
-                                        <h1>东方影都 </h1>
-                                        <p>将建成“国际影视文化..”</p>
-                                        <p><a class="btn btn-m btn-primary" href="{{ admin_base_path('auth/project-monitor/content') }}" role="button">查看</a></p>
+                                        <p>中国北方（黄岛）国际农批交易中心项目</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img class="third-slide" src="{{ asset('uploads/project-monitor/project-4.jpg') }}"
+                                     alt="Third slide">
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <p>青岛西站</p>
                                     </div>
                                 </div>
                             </div>

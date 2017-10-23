@@ -2,7 +2,29 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox-analysis float-e-margins">
-                <div id="p-charts" style="height:392px"></div>
+                <div class="ibox-title">
+                    <h5>重点项目投资情况</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#">Config option 1</a>
+                            </li>
+                            <li><a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-contenter">
+                    <div id="p-charts" style="height:290px"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -15,10 +37,10 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '重点项目投资情况',
+                text: '',
                 subtext: '',
                 top: 10,
-                left:10,
+                left: 10,
             },
             grid: [
                 {x: '10%', y: '20%', width: '83%', height: '70%'},
@@ -28,8 +50,7 @@
             },
             legend: {
                 data: ['计划总投资', '累计完成投资', '本月完成投资'],
-                x: '40%',
-                y: '20%',
+
             },
             toolbox: {},
             calculable: true,
@@ -42,7 +63,7 @@
             yAxis: [
                 {
                     type: 'value',
-                    name: '',
+                    name: '增加值',
                     splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}亿元'
