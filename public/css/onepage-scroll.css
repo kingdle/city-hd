@@ -4,10 +4,17 @@ body, .onepage-wrapper, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial, "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial, "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial, "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial, "Microsoft YaHei", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+}
+th {
+    font-weight: 300;
+}
+* { margin: 0; padding: 0;}
+canvas {
+    font-weight: 200;
 }
 .onepage-wrapper {
     width: 100%;
@@ -17,12 +24,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 0;
     -webkit-transform-style: preserve-3d;
 }
-
 .onepage-wrapper .section {
     width: 100%;
     height: 100%;
 }
-
 .onepage-pagination {
     position: absolute;
     right: 30px;
@@ -85,11 +90,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     display: none;
 }
 
-body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
-    position: inherit;
-}
 
-* { margin: 0; padding: 0;}
+
 .page-one {
     background: url('/uploads/login.jpg'); 
     background-repeat:no-repeat;
@@ -111,13 +113,6 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
     height: 100%;
     background-size: 100% 100%;
 }
-p.title { 
-    position: relative; 
-    top: 35%; font: 700 40px "Microsoft Yahei"; 
-    color: #fff; 
-    text-align: center;
-}
-
 .container {
     transition: all 0.5s;
 
@@ -260,10 +255,316 @@ p.title {
     -webkit-transition: all 0.4s;
 }
 
+.content {
+    min-height: 20px;
+}
+
+.cardh {
+    border-radius: 6px;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+    background-color: #FFFFFF;
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card .content {
+    padding: 15px 15px 10px 15px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
 
 
 
+.cardh .title {
+    font-size: 0em;
+    text-align: left;
+}
 
+.cardh .title p {
+    margin: 0 5px;
+    font-size: 14px;
+    float: left;
+}
+
+.cardh .numbers {
+    font-size: 2em;
+    text-align: right;
+}
+
+.cardh .numbers p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cardh .footer {
+    padding: 0;
+    line-height: 30px;
+}
+
+.card .footer hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #F1EAE0;
+}
+
+.stats {
+    font-weight: 200;
+    font-size: 14px;
+    text-align: right;
+    line-height: 30px;
+    color: #343434;
+}
+.sta {
+    font-weight: 200;
+    font-size: 22px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.stats-gray {
+    color: #313131;
+    font-weight: 200;
+    font-size: 22px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.stats-up {
+    color: #f55549;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.stats-down {
+    color: #00a946;
+    font-weight: 200;
+    font-size: 22px;
+    text-align: right;
+    line-height: 30px;
+}
+.title-country p {
+    font-size: 18px;
+    padding-left: 15px;
+}
+.title-shandong p {
+    font-size: 18px;
+    padding-left: 15px;
+}
+.title-qingdao p {
+    font-size: 18px;
+    padding-left: 15px;
+}
+.details {
+    line-height: 12px;
+    text-align: right;
+    margin-right: 2em;
+}
+
+.details a {
+    font-size: 14px;
+}
+
+.conn {
+    font-size: 14px;
+    text-indent: 2em;
+    min-height: 40px;
+    color: #595959;
+    padding: 15px 15px 10px 15px;
+}
+.card a {
+    color: #0a0a0a;
+}
+.title-economic p {
+    font-size: 18px;
+    padding-left: 15px;
+}
+.card {
+    border-radius: 6px;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+    background-color: #FFFFFF;
+    color: #343434;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+.card .content {
+    padding: 15px 15px 10px 15px;
+}
+.title-quota {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.card{
+    font-size: 3em;
+    min-height: 64px;
+}
+.card .table {
+    padding: 15px 15px 10px 15px;
+    font-size: 12px;
+}
+.title-quota p {
+    font-size: 18px;
+    font-weight: 200;
+}
+.quotadate{
+    font-size: 14px;
+    font-weight: 200;
+    color: #464a4c;
+}
+.ibox-analysis {
+    clear: both;
+    margin-top: 0;
+    background-color: #ffffff;
+    color: inherit;
+    padding: 0 0 20px 0;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    min-height: 300px;
+}
+
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 15px 25px 7px;
+    min-height: 48px;
+}
+
+.float-e-margins h5 {
+    font-size: 18px;
+    font-weight: 200;
+    float: left;
+    margin: 0 0 7px;
+}
+
+.ibox-contenter {
+    border-color: #e7eaec;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    padding: 15px 20px 20px 20px;
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 2em;
+}
+
+.ibox-tools {
+    display: block;
+    float: none;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    text-align: right;
+}
+
+.ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #c4c4c4;
+}
+.project-table .ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 15px 15px 7px;
+    min-height: 48px;
+}
+
+
+
+.project-table .ibox-tools {
+    display: block;
+    float: none;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    text-align: right;
+}
+
+.project-table .ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #30b8c4;
+}
+
+.project-table .ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 2px 0 0;
+}
+
+.project-table .ibox {
+    clear: both;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding: 0;
+}
+
+.project-table .m-b-md {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.project-table .text-navy {
+    color: #1ab394;
+}
+
+.project-table h4 {
+    font-size: 18px;
+    font-weight: 200;
+    clear: both;
+}
+.project-table h5 {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.project-table a {
+    color: #1a1a1a;
+}
+
+.project-table h6 {
+    font-size: 14px;
+    font-weight: 200;
+}
+.nav-tabs {
+    padding: 5px 5px 0 10px;
+}
+.nav-tabs li a {
+    font-size: 14px;
+    font-weight: 500;
+}
+.tab-content {
+    padding: 15px 20px 20px 20px;
+}
 
 
 

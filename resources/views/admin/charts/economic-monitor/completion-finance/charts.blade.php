@@ -2,7 +2,29 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox-analysis float-e-margins">
-                <div id="i-charts" style="height:240px"></div>
+                <div class="ibox-title">
+                    <h5>财政金融完成情况运行趋势</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#">Config option 1</a>
+                            </li>
+                            <li><a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-contenter">
+                    <div id="i-charts" style="height:180px"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -15,7 +37,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '地区生产总值运行趋势',
+                text: '',
                 subtext: ''
             },
             grid: [
@@ -27,9 +49,7 @@
             legend: {
                 data: ['增加值', '增速']
             },
-            toolbox: {
-
-            },
+            toolbox: {},
             calculable: true,
             xAxis: [
                 {

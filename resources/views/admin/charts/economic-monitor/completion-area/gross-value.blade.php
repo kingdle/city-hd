@@ -47,7 +47,7 @@
                                     <th>增速</th>
                                 </tr>
                                 </thead>
-                                <tbody style="display:block; max-height:592px;overflow-y: scroll;">
+                                <tbody style="display:block; max-height:530px;overflow-y: scroll;">
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>地区生产总值</td>
@@ -603,7 +603,8 @@
             baseOption:{
                 title: {
                     left: 'center',
-                    text: '黄岛区地区生产总值完成情况'
+                    text: '黄岛区地区生产总值完成情况',
+                    y:'10'
                 },
                 grid: [
                     {x: '4%', y: '10%', width: '85%', height: '80%'},

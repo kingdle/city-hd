@@ -1,28 +1,4 @@
-<style>
-    .card a {
-        color: #0a0a0a;
-    }
-    .title-economic p {
-        font-size: 18px;
-        font-weight: bold;
-        padding-left: 15px;
-    }
 
-    .details {
-        line-height: 12px;
-        text-align: right;
-        margin-right: 2em;
-    }
-
-    .details a {
-        font-size: 14px;
-    }
-
-    .conn {
-        font-size: 14px;
-        text-indent: 2em;
-    }
-</style>
 <div class="card">
     <a href="/admin/auth/articles/3">
         <div class="content">

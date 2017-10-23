@@ -1,38 +1,4 @@
-<style>
-    .card {
-        border-radius: 6px;
-        box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-        background-color: #FFFFFF;
-        color: #252422;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-    }
-    .card .content {
-        padding: 15px 15px 10px 15px;
-    }
-    .title-quota {
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-    .card{
-        font-size: 3em;
-        min-height: 64px;
-    }
-    .card .table {
-        padding: 15px 15px 10px 15px;
-        font-size: 12px;
-    }
-    .title-quota p {
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .quotadate{
-        font-size: 14px;
-        font-weight: 200;
-        color: #464a4c;
-    }
-</style>
+
 <div class="card">
     <div class="content">
         <div class="row">

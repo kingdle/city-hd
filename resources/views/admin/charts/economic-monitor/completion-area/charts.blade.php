@@ -2,7 +2,23 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox-analysis float-e-margins">
-                <div id="i-charts" style="height:240px"></div>
+                <div class="ibox-title">
+                    <h5>地区生产总值运行趋势</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-contenter">
+                    <div id="i-charts" style="height:195px"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -40,7 +56,8 @@
 
         var option = {
             title: {
-                text: '地区生产总值运行趋势',
+                y: '5%',
+                text: '',
                 subtext: ''
             },
             grid: [
@@ -50,11 +67,10 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['增加值', '增速']
+                data: ['增加值', '增速'],
+                left:'10',
             },
-            toolbox: {
-
-            },
+            toolbox: {},
             calculable: true,
             xAxis: [
                 {
@@ -101,7 +117,12 @@
                             }).extField
                         }]
                     }),
-                    markPoint: {},
+                    markPoint: {
+                        data: [
+                            {type: 'max', name: '最快'},
+                            {type: 'min', name: '最慢'}
+                        ]
+                    },
                     markLine: {}
                 },
                 {
@@ -124,12 +145,7 @@
                             }).extField
                         }]
                     }),
-                    markPoint: {
-                        data: [
-                            {type: 'max', name: '最快'},
-                            {type: 'min', name: '最慢'}
-                        ]
-                    },
+
                     markLine: {}
                 }
             ]

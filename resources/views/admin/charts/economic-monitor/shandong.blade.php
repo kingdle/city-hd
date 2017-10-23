@@ -1,27 +1,3 @@
-<style>
-    .title-shandong p {
-        font-size: 18px;
-        font-weight: bold;
-        padding-left: 15px;
-    }
-
-    .details {
-        line-height: 12px;
-        text-align: right;
-        margin-right: 2em;
-    }
-
-    .details a {
-        font-size: 14px;
-    }
-
-    .conn {
-        font-size: 14px;
-        text-indent: 2em;
-        min-height: 40px;
-        padding: 15px 15px 10px 15px;
-    }
-</style>
 <div class="card">
     <a href="/admin/auth/articles/5">
         <div class="content">
