@@ -30,8 +30,8 @@
     <div class="page page-one">
         <div class="container">
             <div class="row row-top">
-                <div class="col-md-2 text-center"></div>
-                <div class="col-md-3 text-center">
+                <div class="col-md-1 text-center"></div>
+                <div class="col-md-4 text-center">
                     <div class="logo "><img src="{{ asset('uploads/logo.png') }}" class="logo-img img-responsive center-block"></div>
                 </div>
                 <div class="col-md-1 visible-lg visible-md">
@@ -102,8 +102,7 @@
             </div>
             <div class="row row-bottom visible-lg visible-md">
                 <div class="col-md-12 text-right">
-                    <p>青岛市黄岛区统计局版权所有 鲁ICP备12023013号</p>
-                    <p>青岛大数据科技发展有限公司技术支持 客服热线 86617555 </p>
+                    <p>青岛市青岛西海岸新区统计局版权所有 鲁ICP备12023013号</p>
                 </div>
             </div>
         </div>
