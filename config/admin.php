@@ -5,17 +5,17 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'      => '黄岛统计',
+    'name'      => '西海岸新区统计平台',
 
     /*
      * Logo in admin panel header.
      */
-    'logo'      => '<b>黄岛统计</b>',
+    'logo'      => '<b>西海岸统计</b>',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>黄岛+</b>',
+    'logo-mini' => '<b>新区+</b>',
 
     /*
      * Route configration.
