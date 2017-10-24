@@ -19,7 +19,7 @@
                     <th>增长</th>
                 </tr>
                 </thead>
-                <tbody style="display:block; max-height:410px;overflow-y: scroll;">
+                <tbody style="display:block; max-height:445px;overflow-y: scroll;">
                 <tr>
                     <th scope="row">1</th>
                     <td>地区生产总值</td>

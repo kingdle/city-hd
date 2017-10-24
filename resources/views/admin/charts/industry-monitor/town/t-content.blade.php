@@ -22,6 +22,7 @@
 
     .m-t-md {
         margin-top: 20px;
+        clear: both;
     }
 
     .btn-white {

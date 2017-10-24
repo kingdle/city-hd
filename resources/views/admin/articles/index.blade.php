@@ -11,7 +11,7 @@
     .ibox-tag ul li a {
         padding: 8px 5px;
         display: block;
-        width: 100%;
+        width: 60%;
         color: #668a99;
         border-radius: 0;
         border: 0;
@@ -34,7 +34,7 @@
 
     .ibox-tag ul li span {
         float: left;
-        margin-left: -20px;
+        margin-left: 20px;
         margin-top: 9px;
         font-size: 15px;
     }

@@ -23,6 +23,7 @@
 
     .m-b-md {
         margin-bottom: 20px;
+        clear: both;
     }
 
     .btn-white {
@@ -225,7 +226,7 @@
                         </ul>
                         <div class="clearfix"></div>
                         <h5 class="tag-title">标签</h5>
-                        <ul class="tag-list" style="padding: 0">
+                        <ul class="tag-list m-b-md">
                             <li><a href=""><i class="fa fa-tag"></i> 文化</a></li>
                             <li><a href=""><i class="fa fa-tag"></i> 旅游</a></li>
                             <li><a href=""><i class="fa fa-tag"></i> 金融</a></li>
