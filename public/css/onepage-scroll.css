@@ -16,6 +16,12 @@ th {
 canvas {
     font-weight: 200;
 }
+.sidebar-menu .treeview-menu>li>a {
+    font-size: 13px;
+}
+.treeview-menu>li>a:hover {
+    color: #5b93b9;
+}
 .onepage-wrapper {
     width: 100%;
     height: 100%;
