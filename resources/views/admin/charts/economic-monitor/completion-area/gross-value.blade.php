@@ -247,8 +247,7 @@
                 time_year: jiduTime.dateArr[j].getFullYear(),
                 time_month: jiduTime.dateArr[j].getMonth() + 1,
             }
-            var kit = new SyValueKit(baseRes, store); //总量kit
-            var kit1 = new SyValueKit(baseRes1, store); //增速kit
+
             //===============散点图kit==============
             var sandianKit = new SyChartSeriesKit({
                 store: store,
@@ -282,7 +281,7 @@
 
             });
             var sd = sandianKit.genSeriesData();
-            sOptionArr.push({
+            var sssss=sOptionArr.push({
                 series: [
                     {
                         name: '农林牧渔业',
@@ -590,6 +589,7 @@
 
                 ]
             });
+            console.log(sssss)
         }
 
 //                console.log(sd)

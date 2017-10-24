@@ -14,7 +14,7 @@ class CompletionAssetsController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('固定资产投资完成情况');
-            $content->description(now());
+            $content->description('(不含保税区)');
 
             $content->row(function (Row $row) {
                 $row->column(4, view('admin.charts.economic-monitor.completion-assets.month-text'));

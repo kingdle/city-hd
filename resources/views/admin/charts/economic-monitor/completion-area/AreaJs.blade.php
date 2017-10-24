@@ -46,7 +46,6 @@
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
-        console.log(dateArr.length)
         var option = {
             group:'jidu',
             baseOption: {
@@ -96,21 +95,21 @@
 
                 var baseRes = {
                     frame: 200000011,
-                    area: 3519,
+                    area: 1508,
                     time_year: initDate.getFullYear(),
                     time_month: initDate.getMonth() + 1,
                     tmp_id: 1
                 };
                 var baseSpeed = {
                     frame: 200000014,
-                    area: 3519,
+                    area: 1508,
                     time_year: initDate.getFullYear(),
                     time_month: initDate.getMonth() + 1,
                     tmp_id: 1
                 };
                 var baseSpeedLast = {
                     frame: 200000014,
-                    area: 3519,
+                    area: 1508,
                     time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
                     time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
                     tmp_id: 1
@@ -121,7 +120,8 @@
                 var kitSL = new SyValueKit(baseSpeedLast, _store);
 
                 initTimelineArea(function (dd) {
-                    var nowDate = dateArr[dd.currentIndex];
+                    var nowDate = jiduTime.dateArr[dd.currentIndex];
+                    console.log(nowDate)
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();

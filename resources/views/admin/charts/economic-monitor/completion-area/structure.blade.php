@@ -58,8 +58,8 @@
         for (var item in jiduTime.cAxisArr) {
             axisD.push(jiduTime.cAxisArr[item].name);
         }
+        var sOptionArrA = [];
         for (var j in jiduTime.dateArr) {
-
             //===============饼图kit==============
             var pieKit = new SyChartSeriesKit({
                 store: store,
@@ -107,7 +107,25 @@
                 }]
             });
             var pd = pieKit.genSeriesData();
-//                    console.log(pd)
+            var sss = sOptionArrA.push({
+                series: [
+                    {
+                        name: '总量',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '60%'],
+                        data: pd,
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            });
+            console.log(sss)
         }
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
@@ -132,9 +150,12 @@
 //                console.log(dd);
         // 基于准备好的dom，初始化echarts实例
         var myChartOne = echarts.init(document.getElementById('run-one'));
+        myChartOne.group = 'jidu';
+
         var myChartTwo = echarts.init(document.getElementById('run-two'));
         var myChartThree = echarts.init(document.getElementById('run-three'));
         var optionOne = {
+            group: 'jidu',
             title: {
                 text: '',
                 subtext: '',
@@ -149,22 +170,15 @@
                 left: 'left',
                 data: ['第一产业', '第二产业', '第三产业']
             },
-            series: [
-                {
-                    name: '总量',
-                    type: 'pie',
-                    radius: '55%',
-                    center: ['50%', '60%'],
-                    data: pd,
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
-                }
-            ]
+            timeline: {
+                data: jiduTime.dateStrArr,
+                currentIndex: jiduTime.dateStrArr.length - 1,
+                autoPlay: false,
+                rewind: true,
+                show: false
+            },
+            series: sOptionArrA[0].series,
+            options: sOptionArrA
         };
         var optionTwo = {
             title: {
