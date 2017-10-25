@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="ibox-analysis float-e-margins">
                 <div class="ibox-title">
-                    <h5>工业生产完成情况运行趋势</h5>
+                    <h5>规上工业总产值</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -11,12 +11,6 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-wrench"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
                         <a class="close-link">
                             <i class="fa fa-times"></i>
                         </a>
@@ -47,14 +41,14 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['增加值', '增速']
+                data: ['绝对额', '增长%']
             },
             toolbox: {},
             calculable: true,
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -68,7 +62,7 @@
                 },
                 {
                     type: 'value',
-                    name: '增速',
+                    name: '增长%',
                     splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}%'
@@ -77,18 +71,18 @@
             ],
             series: [
                 {
-                    name: '增加值',
+                    name: '绝对额',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
+                    data: [723.4, 1187.3, 1603, 2068.7, 2620.2, 3094.1, '', ''],
                     markPoint: {},
                     markLine: {}
                 },
                 {
-                    name: '增速',
+                    name: '增长%',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
+                    data: [12.2, 13, 12.1, 12.9, 13.8, 13.5, '', ''],
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
