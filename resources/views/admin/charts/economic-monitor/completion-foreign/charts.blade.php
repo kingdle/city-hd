@@ -1,7 +1,7 @@
 <div class="box box-primary">
     <div class="row">
         <div class="col-lg-12">
-            <div class="ibox-analysis float-e-margins">
+            <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>外资外贸完成情况运行趋势</h5>
                     <div class="ibox-tools">
@@ -23,7 +23,16 @@
                     </div>
                 </div>
                 <div class="ibox-contenter">
-                    <div id="i-charts" style="height:180px"></div>
+                    <div class="col-lg-6">
+                        <div class="ibox float-e-margins">
+                            <div id="i-charts1" style="height:236px"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ibox float-e-margins">
+                            <div id="i-charts2" style="height:236px"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,29 +41,31 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var ImyChart = echarts.init(document.getElementById('i-charts'));
+        var ImyChart1 = echarts.init(document.getElementById('i-charts1'));
 
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '',
+                text: '进出口贸易运行趋势',
                 subtext: ''
             },
             grid: [
-                {x: '10%', y: '20%', width: '83%', height: '70%'},
+                {x: '15%', y: '15%', width: '75%', height: '70%'},
             ],
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['增加值', '增速']
+                data: ['总量', '增速']
             },
-            toolbox: {},
+            toolbox: {
+
+            },
             calculable: true,
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -77,10 +88,10 @@
             ],
             series: [
                 {
-                    name: '增加值',
+                    name: '总量',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
+                    data: [285, 457.4, 607.2, 759.6, 898.7, 1018.2, '', ''],
                     markPoint: {},
                     markLine: {}
                 },
@@ -88,7 +99,7 @@
                     name: '增速',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
+                    data: [58.3, 62, 60, 52.3,46.9, 38.6, '', ''],
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -102,9 +113,90 @@
 
 
         // 使用刚指定的配置项和数据显示图表。
-        ImyChart.setOption(option);
+        ImyChart1.setOption(option);
         $(window).resize(function () {
-            ImyChart.resize();
+            ImyChart1.resize();
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var ImyChart2 = echarts.init(document.getElementById('i-charts2'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '实际利用外资运行趋势',
+                subtext: ''
+            },
+            grid: [
+                {x: '15%', y: '15%', width: '75%', height: '70%'},
+            ],
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['总量', '增速']
+            },
+            toolbox: {
+
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '',
+                    splitLine: {show: false},
+                    axisLabel: {
+                        formatter: '{value}亿美元'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '增速',
+                    splitLine: {show: false},
+                    axisLabel: {
+                        formatter: '{value}%'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '总量',
+                    type: 'bar',
+                    splitLine: {show: false},
+                    data: [1.77, 4.93, 6.7, 7.5, 9.1, 10.6, '', ''],
+                    markPoint: {},
+                    markLine: {}
+                },
+                {
+                    name: '增速',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [82, 21.4, 35.7, 24.2, 5, 17.2, '', ''],
+                    markPoint: {
+                        data: [
+                            {type: 'max', name: '最快'},
+                            {type: 'min', name: '最慢'}
+                        ]
+                    },
+                    markLine: {}
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        ImyChart2.setOption(option);
+        $(window).resize(function () {
+            ImyChart2.resize();
         });
     });
 </script>

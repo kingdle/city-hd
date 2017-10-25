@@ -58,7 +58,7 @@
         for (var item in jiduTime.cAxisArr) {
             axisD.push(jiduTime.cAxisArr[item].name);
         }
-        var sOptionArrA = [];
+        var pds = [];
         for (var j in jiduTime.dateArr) {
             //===============饼图kit==============
             var pieKit = new SyChartSeriesKit({
@@ -106,26 +106,38 @@
                     }]
                 }]
             });
-            var pd = pieKit.genSeriesData();
-            var sss = sOptionArrA.push({
-                series: [
-                    {
-                        name: '总量',
-                        type: 'pie',
-                        radius: '55%',
-                        center: ['50%', '60%'],
-                        data: pd,
-                        itemStyle: {
-                            emphasis: {
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
+
+            pds.push({
+                title: {
+                    text: '',
+                    subtext: jiduTime.dateStrArr[j],
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['第一产业', '第二产业', '第三产业']
+                },
+                series: [{
+                    name: '总量',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: pieKit.genSeriesData(),
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
                         }
                     }
-                ]
+                }]
             });
-            console.log(sss)
+
         }
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
@@ -145,40 +157,27 @@
             }],
             axis: jiduTime.cAxisArr,
         });
-
 //                var dd = chartKit.genSeriesData();
 //                console.log(dd);
         // 基于准备好的dom，初始化echarts实例
         var myChartOne = echarts.init(document.getElementById('run-one'));
-        myChartOne.group = 'jidu';
-
         var myChartTwo = echarts.init(document.getElementById('run-two'));
         var myChartThree = echarts.init(document.getElementById('run-three'));
+
         var optionOne = {
-            group: 'jidu',
-            title: {
-                text: '',
-                subtext: '',
-                x: 'center'
+            baseOption: {
+                timeline: {
+                    data: jiduTime.dateStrArr,
+                    currentIndex: jiduTime.dateStrArr.length - 1,
+                    autoPlay: false,
+                    rewind: true,
+                    show: false
+                },
+                series: {
+                    type: 'pie'
+                }
             },
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left',
-                data: ['第一产业', '第二产业', '第三产业']
-            },
-            timeline: {
-                data: jiduTime.dateStrArr,
-                currentIndex: jiduTime.dateStrArr.length - 1,
-                autoPlay: false,
-                rewind: true,
-                show: false
-            },
-            series: sOptionArrA[0].series,
-            options: sOptionArrA
+            options: pds
         };
         var optionTwo = {
             title: {
@@ -319,7 +318,7 @@
                                 name: '第一产业'
                             }).extField
                         }, {
-                            //        name: 2,
+                            //name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
@@ -372,9 +371,10 @@
                 }
             ]
         };
-
         // 使用刚指定的配置项和数据显示图表。
         myChartOne.setOption(optionOne);
+        myChartOne.group = 'jidu';
+        echarts.connect('jidu');
         myChartTwo.setOption(optionTwo);
         myChartThree.setOption(optionThree);
         $(window).resize(function () {

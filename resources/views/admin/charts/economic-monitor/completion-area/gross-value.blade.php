@@ -278,10 +278,9 @@
                         }).extField
                     }]
                 ]
-
             });
             var sd = sandianKit.genSeriesData();
-            var sssss=sOptionArr.push({
+            sOptionArr.push({
                 series: [
                     {
                         name: '农林牧渔业',
@@ -589,10 +588,7 @@
 
                 ]
             });
-            console.log(sssss)
         }
-
-//                console.log(sd)
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('bobal'));
         myChart.group = 'jidu';
@@ -637,12 +633,6 @@
                         scale: true,
                         name: '累计(亿元)'
                     },
-//                            {
-//                                gridIndex: 1,
-//                                type: 'value',
-//                                scale: true,
-//                                name: ''
-//                            }
                 ],
                 yAxis: [
                     {
@@ -651,12 +641,6 @@
                         scale: true,
                         name: '增速(%)'
                     },
-//                            {
-//                                gridIndex: 1,
-//                                type: 'value',
-//                                scale: true,
-//                                name: '增速(%)'
-//                            }
                 ],
                 timeline:{
                     data:jiduTime.dateStrArr,
@@ -666,13 +650,8 @@
                     show:false
                 },series:sOptionArr[0].series
             },
-
             options:sOptionArr
         }
-//                console.log(JSON.stringify(option))
-        //                var
-//                    sOption = ;
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         window.onresize = function () {

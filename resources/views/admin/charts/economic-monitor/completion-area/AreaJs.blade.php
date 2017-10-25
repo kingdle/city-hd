@@ -1,7 +1,7 @@
 <script>
     //===============!时间轴(季度)=================
-    var jiduTime = (function(){
-        var result ={};
+    var jiduTime = (function () {
+        var result = {};
         var sDate = new Date();
         var sQuarter = parseInt((sDate.getMonth() + 1) / 3);
         sDate.setMonth(sQuarter * 3 - 1);
@@ -12,7 +12,7 @@
         var dateStrArr = []; //时间字符数组
         var cAxisArr = []; //普通图表横轴
         for (var i = 7; i >= 0; i--) {
-            date = new Date(sDate.getTime() - 1000 * 60 * 60 * 24 * 30 * i * 3);
+            date = new Date(sDate.getTime() - 1000 * 60 * 60 * 24 * 30 * (i + 1) * 3);
             dateArr.push(date);
             dateStrArr.push(date.getFullYear() + '-' + (date.getMonth() + 1));
             cAxisArr.push({
@@ -27,7 +27,8 @@
                     extField: date.getMonth() + 1
                 }]
             })
-        };
+        }
+        ;
         result.dateArr = dateArr;
         result.dateStrArr = dateStrArr;
         result.cAxisArr = cAxisArr;
@@ -42,18 +43,18 @@
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-        myChart.group='jidu';
+        myChart.group = 'jidu';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-            group:'jidu',
+            group: 'jidu',
             baseOption: {
                 timeline: {
                     axisType: 'category',
                     autoPlay: false,
-                    rewind:true,
-                    currentIndex: jiduTime.dateArr.length-1,
+                    rewind: true,
+                    currentIndex: jiduTime.dateArr.length - 1,
                     playInterval: 1000,
                     data: jiduTime.dateStrArr
                 },
@@ -80,7 +81,7 @@
     }
 </script>
 <script>
-    $(function() {
+    $(function () {
         storeB = new SyStore({
             autoLoad: true,
             datasetId: 4,

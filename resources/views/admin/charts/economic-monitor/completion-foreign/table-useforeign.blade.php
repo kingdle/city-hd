@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>增加值总量排名</h5>
+                    <h5>利用外资完成情况</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -31,156 +31,48 @@
                     <table class="table table-hover scrolltable">
                         <thead style="display:block;overflow-y: scroll;">
                         <tr>
-                            <th>#</th>
-                            <th>指标名称</th>
-                            <th>总量</th>
-                            <th>增速</th>
+                            <th>指标</th>
+                            <th>本月（个、万美元）</th>
+                            <th>累计（个、万美元）</th>
+                            <th>累计增长%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>地区生产总值</td>
-                            <td>1463.6</td>
-                            <td>11.9</td>
+                            <th scope="row">利用外资新签合同个数</th>
+                            <td>11</td>
+                            <td>44</td>
+                            <td>33.3</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>农林牧渔业</td>
-                            <td>34.8</td>
-                            <td>3.5</td>
+                            <th scope="row">   其中：千万美元以上</th>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>76.5</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>农林牧渔服务业</td>
-                            <td>1013.2</td>
-                            <td>11.3</td>
+                            <th scope="row">  &nbsp; &nbsp; &nbsp;亿美元以上</th>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>100</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td>工业</td>
-                            <td>653.3</td>
-                            <td>66.1</td>
+                            <th scope="row">利用外资项目总投资</th>
+                            <td>181134</td>
+                            <td>58775</td>
+                            <td>-2.54</td>
                         </tr>
                         <tr>
-                            <th scope="row"></th>
-                            <td>金属制品、机械和设备修理业</td>
-                            <td>279.2</td>
-                            <td>11.7</td>
+                            <th scope="row">合同利用外资</th>
+                            <td>16034</td>
+                            <td>40049</td>
+                            <td>-14.97</td>
                         </tr>
                         <tr>
-                            <th scope="row">4</th>
-                            <td>建筑业</td>
-                            <td>134.6</td>
-                            <td>11.1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>批发和零售业</td>
-                            <td>113.4</td>
-                            <td>15.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>批发业</td>
-                            <td>230.7</td>
-                            <td>21.2</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>零售业</td>
-                            <td>156.4</td>
-                            <td>29.5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>交通运输、仓储和邮政业</td>
-                            <td>74.3</td>
-                            <td>6.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>住宿和餐饮业</td>
-                            <td>898.7</td>
-                            <td>46.9</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>住宿业</td>
-                            <td>395.8</td>
-                            <td>22.8</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>餐饮业</td>
-                            <td>9.1</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>居民人均可支配收入</td>
-                            <td>20359</td>
-                            <td>8.8</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>金融业</td>
-                            <td>23256</td>
-                            <td>8.6</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>房地产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>房地产业(K门类)</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>自有房地产经营活动</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">11</th>
-                            <td>其他服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>营利性服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>非营利性服务业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12</th>
-                            <td>第一产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">13</th>
-                            <td>第二产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">14</th>
-                            <td>第三产业</td>
-                            <td>12316</td>
-                            <td>7.7</td>
+                            <th scope="row">实际利用外资</th>
+                            <td>10768</td>
+                            <td>60213</td>
+                            <td>6.27</td>
                         </tr>
                         </tbody>
                     </table>
@@ -192,12 +84,12 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var _width = $('#quota').width();
-        $('#quota th:first-child').width(_width * 0.1);
-        $('#quota td:first-child').width(_width * 0.1);
+        $('#quota th:first-child').width(_width * 0.4);
+        $('#quota td:first-child').width(_width * 0.4);
         $('#quota th:nth-child(2)').width(_width * 0.4);
         $('#quota td:nth-child(2)').width(_width * 0.4);
-        $('#quota th:nth-child(3)').width(_width * 0.2);
-        $('#quota td:nth-child(3)').width(_width * 0.2);
+        $('#quota th:nth-child(3)').width(_width * 0.4);
+        $('#quota td:nth-child(3)').width(_width * 0.4);
         $('#quota th:nth-child(4)').width(_width * 0.2);
         $('#quota td:nth-child(4)').width(_width * 0.2);
         $('#quota th:nth-child(5)').width(_width * 0.1);
