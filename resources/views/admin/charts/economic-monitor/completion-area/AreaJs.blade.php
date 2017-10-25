@@ -12,7 +12,8 @@
         var dateStrArr = []; //时间字符数组
         var cAxisArr = []; //普通图表横轴
         for (var i = 7; i >= 0; i--) {
-            date = new Date(sDate.getTime() - 1000 * 60 * 60 * 24 * 30 * (i + 1) * 3);
+            date = new Date(sDate.getTime());
+            date.setMonth(sDate.getMonth() - (i+1)*3)
             dateArr.push(date);
             dateStrArr.push(date.getFullYear() + '-' + (date.getMonth() + 1));
             cAxisArr.push({
@@ -90,30 +91,27 @@
                 topChart(store);
                 structureChart(store);
                 grossChart(store);
-
                 var _store = store;
                 var initDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 1);
-
                 var baseRes = {
                     frame: 200000011,
                     area: 1508,
-                    time_year: initDate.getFullYear(),
-                    time_month: initDate.getMonth() + 1,
-                    tmp_id: 1
-                };
-                var baseSpeed = {
+                    time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
+                    time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
+                }
+
+                var baseRes1 = {
                     frame: 200000014,
                     area: 1508,
-                    time_year: initDate.getFullYear(),
-                    time_month: initDate.getMonth() + 1,
-                    tmp_id: 1
-                };
+                    time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
+                    time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
+                }
+
                 var baseSpeedLast = {
                     frame: 200000014,
                     area: 1508,
                     time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
                     time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
-                    tmp_id: 1
                 };
 
                 var kitV = new SyValueKit(baseRes, _store);
@@ -153,7 +151,6 @@
                     $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
                     $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
                 });
-
             }
         });
     })

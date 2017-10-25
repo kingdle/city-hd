@@ -40,10 +40,12 @@
         var axisArr = [];
         var ll = 0;
         for (var i = 11; i >= ll; i--) {
-            if (nowDate.getDay() <= 20) {
-                date = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * (i + 2));
+            if (nowDate.getDate() <= 20) {
+                date = new Date();
+                date.setMonth(date.getMonth()-i-2);
             } else {
-                date = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * (i + 3));
+                date = new Date();
+                date.setMonth(date.getMonth()-i-3);
             }
 
             if (date.getMonth() == 0) {
