@@ -297,7 +297,7 @@
                                 <div class="ibox-content">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div id="speed-line" style="min-height: 200px"></div>
+                                            <div id="assets-run" style="min-height: 200px"></div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -411,7 +411,7 @@
                                 <div class="ibox-content">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div id="speed-line" style="min-height: 200px"></div>
+                                            <div id="budget-run" style="min-height: 200px"></div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -525,7 +525,7 @@
                                 <div class="ibox-content">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div id="speed-line" style="min-height: 200px"></div>
+                                            <div id="trade-run" style="min-height: 200px"></div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -639,7 +639,7 @@
                                 <div class="ibox-content">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div id="speed-line" style="min-height: 200px"></div>
+                                            <div id="foreign-run" style="min-height: 200px"></div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -760,7 +760,8 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('total-run'));
+        var totalChart = echarts.init(document.getElementById('total-run'));
+
         // 指定图表的配置项和数据
         var option = {
             title: {
@@ -801,10 +802,330 @@
 
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        totalChart.setOption(option);
+        //浏览器大小改变时重置大小
+        $(window).resize(function () {
+            totalChart.resize();
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var industryContainer = document.getElementById('industry-run');
+
+        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+        var resizeMainContainer = function () {
+            var _width = $('.col-sm-12').width();
+            var _height = $('.col-sm-12').height();
+            industryContainer.style.width = _width +'px';
+            industryContainer.style.height = _height +'px';
+        };
+        //设置div容器高宽
+        resizeMainContainer();
+        // 初始化图表
+        var industryChart = echarts.init(industryContainer);
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '工业增加值运行趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['增速']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {},
+            xAxis: {
+                type: 'category',
+                splitLine: {show: true},
+                boundaryGap: false,
+                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+            },
+            yAxis: {
+                splitLine: {show: true},
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '增速',
+                    type: 'line',
+                    stack: '总量',
+                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        industryChart.setOption(option);
         //浏览器大小改变时重置大小
         window.onresize = function () {
-            myChart.resize();
+            resizeMainContainer();
+            industryChart.resize();
+        };
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var assetsContainer = document.getElementById('assets-run');
+
+        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+        var resizeMainContainer = function () {
+            var _width = $('.col-sm-12').width();
+            var _height = $('.col-sm-12').height();
+            assetsContainer.style.width = _width +'px';
+            assetsContainer.style.height = _height +'px';
+        };
+        //设置div容器高宽
+        resizeMainContainer();
+        // 初始化图表
+        var assetsChart = echarts.init(assetsContainer);
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '固定资产投资运行趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['增速']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {},
+            xAxis: {
+                type: 'category',
+                splitLine: {show: true},
+                boundaryGap: false,
+                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+            },
+            yAxis: {
+                splitLine: {show: true},
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '增速',
+                    type: 'line',
+                    stack: '总量',
+                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        assetsChart.setOption(option);
+        //浏览器大小改变时重置大小
+        window.onresize = function () {
+            resizeMainContainer();
+            assetsChart.resize();
+        };
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var budgetContainer = document.getElementById('budget-run');
+
+        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+        var resizeMainContainer = function () {
+            var _width = $('.col-sm-12').width();
+            var _height = $('.col-sm-12').height();
+            budgetContainer.style.width = _width +'px';
+            budgetContainer.style.height = _height +'px';
+        };
+        //设置div容器高宽
+        resizeMainContainer();
+        // 初始化图表
+        var budgetChart = echarts.init(budgetContainer);
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '一般公共预算收入运行趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['增速']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {},
+            xAxis: {
+                type: 'category',
+                splitLine: {show: true},
+                boundaryGap: false,
+                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+            },
+            yAxis: {
+                splitLine: {show: true},
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '增速',
+                    type: 'line',
+                    stack: '总量',
+                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        budgetChart.setOption(option);
+        //浏览器大小改变时重置大小
+        window.onresize = function () {
+            resizeMainContainer();
+            budgetChart.resize();
+        };
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var tradeContainer = document.getElementById('trade-run');
+
+        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+        var resizeMainContainer = function () {
+            var _width = $('.col-sm-12').width();
+            var _height = $('.col-sm-12').height();
+            tradeContainer.style.width = _width +'px';
+            tradeContainer.style.height = _height +'px';
+        };
+        //设置div容器高宽
+        resizeMainContainer();
+        // 初始化图表
+        var tradeChart = echarts.init(tradeContainer);
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '限额以上贸易运行趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['增速']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {},
+            xAxis: {
+                type: 'category',
+                splitLine: {show: true},
+                boundaryGap: false,
+                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+            },
+            yAxis: {
+                splitLine: {show: true},
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '增速',
+                    type: 'line',
+                    stack: '总量',
+                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        tradeChart.setOption(option);
+        //浏览器大小改变时重置大小
+        window.onresize = function () {
+            resizeMainContainer();
+            tradeChart.resize();
+        };
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var foreignContainer = document.getElementById('foreign-run');
+
+        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+        var resizeMainContainer = function () {
+            var _width = $('.col-sm-12').width();
+            var _height = $('.col-sm-12').height();
+            foreignContainer.style.width = _width +'px';
+            foreignContainer.style.height = _height +'px';
+        };
+        //设置div容器高宽
+        resizeMainContainer();
+        // 初始化图表
+        var foreignChart = echarts.init(foreignContainer);
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '对外贸易运行趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['增速']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {},
+            xAxis: {
+                type: 'category',
+                splitLine: {show: true},
+                boundaryGap: false,
+                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+            },
+            yAxis: {
+                splitLine: {show: true},
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '增速',
+                    type: 'line',
+                    stack: '总量',
+                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        foreignChart.setOption(option);
+        //浏览器大小改变时重置大小
+        window.onresize = function () {
+            resizeMainContainer();
+            foreignChart.resize();
         };
     });
 </script>
