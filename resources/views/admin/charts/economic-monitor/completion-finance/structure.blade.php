@@ -60,7 +60,72 @@
         var option = {
             title: {
                 text: '',
-                subtext: '2017年2季度',
+                subtext: '',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['', '税收收入', '非税收收入']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+
+                {
+                    name: '税收收入',
+                    type: 'bar',
+                    stack: '收入',
+                    data: [348039, 455866, 668077, 797998, 968225, 1153409]
+                },
+                {
+                    name: '税收收入',
+                    type: 'bar',
+                    stack: '收入',
+                    data: [21136, 160470, 150755, 191671,314610, 293854]
+
+                },
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        $(window).resize(function () {
+            myChart.resize();
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('run-two'));
+
+        // 指定图表的配置项和数据
+
+        var option = {
+            title: {
+                text: '',
+                subtext: '2017年7月',
                 x: 'center'
             },
             tooltip: {
@@ -70,7 +135,7 @@
             legend: {
                 orient: 'vertical',
                 left: 'left',
-                data: ['第一产业', '第二产业', '第三产业']
+                data: ['一般公共服务', '公共安全', '教育','科学技术', '社会保障与就业', '医疗卫生与计划生育','节能环保','城乡社区']
             },
             series: [
                 {
@@ -79,9 +144,14 @@
                     radius: '55%',
                     center: ['50%', '60%'],
                     data: [
-                        {value: 33.6, name: '第一产业'},
-                        {value: 683.7, name: '第二产业'},
-                        {value: 746.3, name: '第三产业'}
+                        {value: 134560, name: '一般公共服务'},
+                        {value: 39580, name: '公共安全'},
+                        {value: 189298, name: '教育'},
+                        {value: 5463, name: '科学技术'},
+                        {value: 137630, name: '社会保障与就业'},
+                        {value: 107139, name: '医疗卫生与计划生育'},
+                        {value:26632, name: '节能环保'},
+                        {value: 393123, name: '城乡社区'}
                     ],
                     itemStyle: {
                         emphasis: {
@@ -105,75 +175,6 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-two'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: '',
-                subtext: '',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                }
-            },
-            legend: {
-                data: ['', '第一产业', '第二产业', '第三产业']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: [
-                {
-                    type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: [
-                {
-                    name: '第一产业',
-                    type: 'bar',
-                    stack: '总量',
-                    data: [5.04, 33.57, 53.69, 63.26, 4.92, 33.6]
-
-                },
-                {
-                    name: '第二产业',
-                    type: 'bar',
-                    stack: '总量',
-                    data: [296.78, 625.10, 966.90, 1281.27, 326.57, 683.7]
-                },
-                {
-                    name: '第三产业',
-                    type: 'bar',
-
-                    stack: '总量',
-                    data: [185.48, 625.10, 1049.43, 1421.16, 218.07, 746.3]
-                }
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('run-three'));
 
         // 指定图表的配置项和数据
@@ -185,7 +186,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['第一产业', '第二产业', '第三产业']
+                data: ['存款余额', '个人储蓄存款', '贷款余额']
             },
             grid: {
                 left: '3%',
@@ -197,29 +198,29 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
             },
             yAxis: {
                 type: 'value'
             },
             series: [
                 {
-                    name: '第一产业',
+                    name: '存款余额',
                     type: 'line',
-                    stack: '总量',
-                    data: [3.4, 3.2, 3.5, 4.1, 4, 3.4]
+                    stack: '比年初增加',
+                    data: [90, 122.9, 117, 107.5, 156, 196.5]
                 },
                 {
-                    name: '第二产业',
+                    name: '个人储蓄存款',
                     type: 'line',
-                    stack: '总量',
-                    data: [7.8, 9.2, 10.1, 10.1, 9.1, 9.1]
+                    stack: '比年初增加',
+                    data: [50.1, 69.4, 38.4, 36, 53.6, 38.6]
                 },
                 {
-                    name: '第三产业',
+                    name: '贷款余额',
                     type: 'line',
-                    stack: '总量',
-                    data: [9.6, 12.2, 13.5, 16.3, 15.1, 15.2]
+                    stack: '比年初增加',
+                    data: [96.7, 156.3, 195.1, 218.8, 228.8, 256.3]
                 }
             ]
         };

@@ -23,7 +23,16 @@
                     </div>
                 </div>
                 <div class="ibox-contenter">
-                    <div id="i-charts" style="height:180px"></div>
+                    <div class="col-lg-6">
+                        <div class="ibox float-e-margins">
+                            <div id="i-charts1" style="height:236px"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ibox float-e-margins">
+                            <div id="i-charts2" style="height:236px"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,29 +41,31 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var ImyChart = echarts.init(document.getElementById('i-charts'));
+        var ImyChart = echarts.init(document.getElementById('i-charts1'));
 
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '',
+                text: '一般公共预算收入',
                 subtext: ''
             },
             grid: [
-                {x: '10%', y: '20%', width: '83%', height: '70%'},
+                {x: '15%', y: '15%', width: '75%', height: '70%'},
             ],
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['增加值', '增速']
+                data: ['收入', '增速']
             },
-            toolbox: {},
+            toolbox: {
+
+            },
             calculable: true,
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -77,18 +88,10 @@
             ],
             series: [
                 {
-                    name: '增加值',
+                    name: '收入',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
-                    markPoint: {},
-                    markLine: {}
-                },
-                {
-                    name: '增速',
-                    type: 'line',
-                    yAxisIndex: 1,
-                    data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
+                    data: [39.3, 64.5, 86.6, 104.6, 134.6, 152.8, '', ''],
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -96,6 +99,84 @@
                         ]
                     },
                     markLine: {}
+                },
+                {
+                    name: '增速',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [13.7, 12.1, 12, 11.3,11.1, 11.3, '', ''],
+
+                    markLine: {}
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        ImyChart.setOption(option);
+        $(window).resize(function () {
+            ImyChart.resize();
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        // 基于准备好的dom，初始化echarts实例
+        var ImyChart = echarts.init(document.getElementById('i-charts2'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                left:'left',
+                text: '金融情况',
+                subtext: ''
+            },
+            grid: [
+                {x: '15%', y: '15%', width: '75%', height: '70%'},
+            ],
+            tooltip: {
+                trigger: 'axis',
+
+            },
+            legend: {
+                x: 'right',
+                left:'20%',
+                size: '5',
+                data: ['存款余额', '个人储蓄存款', '贷款余额']
+            },
+            //calculable : true,
+            xAxis: [{
+                splitLine:{show: false},
+                type: 'category',
+                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7'],
+
+            }],
+            yAxis: [{
+                splitLine:{show: false},
+                type: 'value',
+                name: '',
+                axisLabel: {
+                    formatter: '{value}亿元'
+                }
+            }
+
+            ],
+            series: [{
+                name: '存款余额',
+                type: 'bar',
+                data: [1573.8, 1606.6, 1600.7, 1591.3, 1639.8, 1680.3, '','']
+            },
+                {
+                    name: '个人储蓄存款',
+                    type: 'bar',
+                    data: [761.5, 780.8, 749.8, 747.4,765, 749.9,'',''],
+
+                },
+                {
+                    name: '贷款余额',
+                    type: 'bar',
+                    data: [1618.3, 1678, 1716.8,1740.4 , 1750.5, 1778, '',''],
+
                 }
             ]
         };

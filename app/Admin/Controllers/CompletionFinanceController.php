@@ -17,8 +17,8 @@ class CompletionFinanceController extends Controller
             $content->description('(不含保税区)');
 
             $content->row(function (Row $row) {
-                $row->column(4, view('admin.charts.economic-monitor.completion-finance.month-text'));
-                $row->column(8, view('admin.charts.economic-monitor.completion-finance.charts'));
+                $row->column(3, view('admin.charts.economic-monitor.completion-finance.month-text'));
+                $row->column(9, view('admin.charts.economic-monitor.completion-finance.charts'));
             });
             $content->row(function (Row $row) {
                 $row->column(12, view('admin.charts.economic-monitor.completion-finance.benchmark-speed'));
