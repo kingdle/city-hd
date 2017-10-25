@@ -5,8 +5,7 @@
         var sDate = new Date();
         var sQuarter = parseInt((sDate.getMonth() + 1) / 3);
         sDate.setMonth(sQuarter * 3 - 1);
-        var cDateYear = null;
-        var cDateMonth = null;
+
         var date = null;
         var dateArr = []; //时间数组
         var dateStrArr = []; //时间字符数组
@@ -28,8 +27,7 @@
                     extField: date.getMonth() + 1
                 }]
             })
-        }
-        ;
+        };
         result.dateArr = dateArr;
         result.dateStrArr = dateStrArr;
         result.cAxisArr = cAxisArr;
@@ -92,44 +90,34 @@
                 structureChart(store);
                 grossChart(store);
                 var _store = store;
-                var initDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 1);
+                var sDate = new Date();
+                date = new Date(sDate.getTime());
                 var baseRes = {
                     frame: 200000011,
                     area: 1508,
-                    time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
-                    time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
+                    time_year: date.getFullYear(),
+                    time_month: date.getMonth()-3,
                 }
 
-                var baseRes1 = {
+                var baseSpeed = {
                     frame: 200000014,
                     area: 1508,
-                    time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
-                    time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
+                    time_year: date.getFullYear(),
+                    time_month: date.getMonth()-3,
                 }
-
-                var baseSpeedLast = {
-                    frame: 200000014,
-                    area: 1508,
-                    time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
-                    time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
-                };
 
                 var kitV = new SyValueKit(baseRes, _store);
                 var kitS = new SyValueKit(baseSpeed, _store);
-                var kitSL = new SyValueKit(baseSpeedLast, _store);
 
                 initTimelineArea(function (dd) {
                     var nowDate = jiduTime.dateArr[dd.currentIndex];
-                    console.log(nowDate)
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();
                     baseSpeed.time_month = nowDate.getMonth() + 1;
-                    baseSpeedLast.time_year = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * 1).getFullYear();
-                    baseSpeedLast.time_month = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * 1).getMonth() + 1;
+
                     kitV = new SyValueKit(baseRes, _store);
                     kitS = new SyValueKit(baseSpeed, _store);
-                    kitSL = new SyValueKit(baseSpeedLast, _store);
 
                     var $trLists = $(".table tbody").children("tr");
                     $.each($trLists, function (i, trlist) {
