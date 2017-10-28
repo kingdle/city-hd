@@ -51,6 +51,11 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="HeaderDatelineAssets" style="min-height: 50px"></div>
+    </div>
+</div>
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例

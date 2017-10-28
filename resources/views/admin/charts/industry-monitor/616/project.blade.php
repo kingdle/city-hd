@@ -19,21 +19,20 @@
                                         <div class="ibox-content">
                                             <div class="row">
                                                 <a href="{{ admin_base_path('auth/616/content') }}">
-                                                    <div class="col-sm-4">
-                                                        <h5 class="m-b-md">航运物流增值</h5>
-                                                        <h4 class="text-danger">
-                                                            <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <div class="col-sm-4 con">
+                                                        <h5 class="m-b-md">航运物流增加值</h5>
+                                                        <h4 class="text-navy update-s-v">
+                                                            <i class="fa fa-play "></i> 增速 <b>48</b>%
                                                         </h4>
                                                         <div class="progress">
-                                                            <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                            <div class="progress-bar progress-bar-striped active"
                                                                  style="width: 48%">
-                                                                48%
+                                                                <span>48</span>%
                                                             </div>
-
                                                         </div>
-                                                        <h4>
+                                                        <h4 class="update-s-v">
                                                             <small>总量:</small>
-                                                            174.1亿元
+                                                            <span>174.1</span>亿元
                                                         </h4>
                                                     </div>
                                                     <div class="col-sm-8 hidden-xs">
@@ -50,21 +49,20 @@
                                         <div class="ibox-content ">
                                             <div class="row">
                                                 <a href="{{ admin_base_path('auth/616/content') }}">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">船舶海工产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>61</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 61%">
-                                                            61%
+                                                            <span>61</span>%
                                                         </div>
-
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>174.1</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -76,26 +74,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 con">
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
                                                 <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">家电电子产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>82</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 82%">
-                                                            82%
+                                                            <span>82</span>%
                                                         </div>
-
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>174.1</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -107,26 +104,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 con">
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
                                                 <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">汽车制造产值</h5>
-                                                    <h4 class="text-navy">
-                                                        <i class="fa fa-play fa-rotate-90"></i> 下降
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>32</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 32%">
-                                                            32%
+                                                            <span>32</span>%
                                                         </div>
-
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>174.1</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -138,26 +134,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 con">
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
                                                 <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">机械装备产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>14</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 14%">
-                                                            14%
+                                                            <span>14</span>%
                                                         </div>
-
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>174.1</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -169,26 +164,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 con">
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
                                                 <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">石油化工产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>26</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 26%">
-                                                            26%
+                                                            <span>26</span>%
                                                         </div>
-
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>174.1</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -224,19 +218,19 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>新信息技术</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 48%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">新一代信息技术</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
                                                     <img src="{{ asset('uploads/616/info-technology.png') }}"
-                                                         alt="新信息技术"
+                                                         alt="新一代信息技术产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -247,18 +241,18 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>海洋生物</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 61%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">海洋生物产值</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/halobios.png') }}" alt="海洋生物"
+                                                    <img src="{{ asset('uploads/616/halobios.png') }}" alt="海洋生物产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -269,18 +263,18 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>节能环保</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 82%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">文化创意产业</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/efficient.png') }}" alt="节能环保"
+                                                    <img src="{{ asset('uploads/616/efficient.png') }}" alt="文化创意产业产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -291,18 +285,18 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>新材料</h6>
-                                                    <h5 class="text-navy">
-                                                        <i class="fa fa-play fa-rotate-90"></i> 下降 32%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">新材料产值</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/newmaterial.png') }}" alt="新材料"
+                                                    <img src="{{ asset('uploads/616/newmaterial.png') }}" alt="新材料产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -313,18 +307,18 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>旅游度假</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 14%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">旅游度假收入</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/travel.png') }}" alt="旅游度假"
+                                                    <img src="{{ asset('uploads/616/travel.png') }}" alt="旅游度假收入"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -335,18 +329,18 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>石油化工产值</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 26%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">蓝色金融增加值</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/oil.png') }}" alt="航运物流增加值"
+                                                    <img src="{{ asset('uploads/616/banking.png') }}" alt="蓝色金融增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -357,18 +351,18 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>节能环保</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 82%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">通用航空产值</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/electronics.png') }}" alt="航运物流增加值"
+                                                    <img src="{{ asset('uploads/616/airline.png') }}" alt="通用航空产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -379,19 +373,19 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>新材料</h6>
-                                                    <h5 class="text-navy">
-                                                        <i class="fa fa-play fa-rotate-90"></i> 下降 32%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">生命健康收入</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/AutomobileMaking.png') }}"
-                                                         alt="航运物流增加值"
+                                                    <img src="{{ asset('uploads/616/health.png') }}"
+                                                         alt="生命健康收入"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -402,46 +396,25 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>旅游度假</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 14%
+                                                <div class="col-sm-5 con">
+                                                    <h6 class="m-b-md">科技服务增加值</h6>
+                                                    <h5 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h5>
-                                                    <h5>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
+                                                        <span>174.1</span>亿元
+                                                    </h4>
                                                 </div>
                                                 <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/machine.png') }}" alt="航运物流增加值"
+                                                    <img src="{{ asset('uploads/616/technology.png') }}" alt="科技服务增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="ibox">
-                                        <div class="ibox-content">
-                                            <div class="row">
-                                                <div class="col-sm-5">
-                                                    <h6>石油化工产值</h6>
-                                                    <h5 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长 26%
-                                                    </h5>
-                                                    <h5>
-                                                        <small>总量:</small>
-                                                        174.1亿元
-                                                    </h5>
-                                                </div>
-                                                <div class="col-sm-7 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/oil.png') }}" alt="航运物流增加值"
-                                                         class="img-responsive img-thumbnail">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -466,21 +439,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">影视文化收入</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 48%">
-                                                            48%
+                                                            <span>48</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -495,25 +468,25 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <div class="col-sm-4">
-                                                    <h5 class="m-b-md">港口贸易交易</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                <div class="col-sm-4 con">
+                                                    <h5 class="m-b-md">港口贸易进出口交易额</h5>
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 61%">
-                                                            61%
+                                                            <span>61</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/porttrade.png') }}" alt="港口贸易交易额"
+                                                    <img src="{{ asset('uploads/616/porttrade.png') }}" alt="港口贸易进出口交易额"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -524,21 +497,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">游艇邮轮产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 72%">
-                                                            72%
+                                                            <span>72</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -553,21 +526,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">军民结合收入</h5>
-                                                    <h4 class="text-navy">
-                                                        <i class="fa fa-play fa-rotate-90"></i> 下降
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 22%">
-                                                            22%
+                                                            <span>22</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -582,21 +555,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">特色农业增加值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 14%">
-                                                            14%
+                                                            <span>14</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -611,21 +584,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">绿色食品加工产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 26%">
-                                                            26%
+                                                            <span>26</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -660,21 +633,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">家电电子产值</h5>
-                                                    <h4 class="text-danger">
-                                                        <i class="fa fa-play fa-rotate-270"></i> 增长
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped active"
                                                              style="width: 82%">
-                                                            82%
+                                                            <span>82</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -689,21 +662,21 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">汽车制造产值</h5>
-                                                    <h4 class="text-navy">
-                                                        <i class="fa fa-play fa-rotate-90"></i> 下降
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-striped progress-bar-striped active"
                                                              style="width: 32%">
-                                                            32%
+                                                            <span>32</span>%
                                                         </div>
 
                                                     </div>
-                                                    <h4>
+                                                    <h4 class="update-s-v">
                                                         <small>总量:</small>
-                                                        174.1亿元
+                                                        <span>171.4</span>亿元
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
@@ -739,3 +712,4 @@
         });
     });
 </script>
+@include('admin::charts.industry-monitor.616.616Js')

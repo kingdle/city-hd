@@ -1,40 +1,4 @@
 <script>
-    //===============!时间轴(季度)=================
-    var jiduTime = (function () {
-        var result = {};
-        var sDate = new Date();
-        var sQuarter = parseInt((sDate.getMonth() + 1) / 3);
-        sDate.setMonth(sQuarter * 3 - 1);
-
-        var date = null;
-        var dateArr = []; //时间数组
-        var dateStrArr = []; //时间字符数组
-        var cAxisArr = []; //普通图表横轴
-        for (var i = 7; i >= 0; i--) {
-            date = new Date(sDate.getTime());
-            date.setMonth(sDate.getMonth() - (i+1)*3)
-            dateArr.push(date);
-            dateStrArr.push(date.getFullYear() + '-' + (date.getMonth() + 1));
-            cAxisArr.push({
-                name: date.getFullYear() + '-' + (date.getMonth() + 1),
-                arr: [{
-                    name: date.getFullYear(),
-                    type: 'time_year',
-                    extField: date.getFullYear()
-                }, {
-                    name: date.getMonth() + 1,
-                    type: 'time_month',
-                    extField: date.getMonth() + 1
-                }]
-            })
-        };
-        result.dateArr = dateArr;
-        result.dateStrArr = dateStrArr;
-        result.cAxisArr = cAxisArr;
-        return result;
-
-    })();
-
     function initTimelineArea(showData) {
         var dom = document.getElementById("HeaderDatelineArea");
         var myChart = echarts.getInstanceByDom(dom);
