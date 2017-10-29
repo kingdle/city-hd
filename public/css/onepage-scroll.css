@@ -571,3 +571,6 @@ canvas {
 .tab-content {
     padding: 15px 20px 20px 20px;
 }
+.con .m-b-md {
+    display : inline;
+}
