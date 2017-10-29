@@ -217,7 +217,31 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-8">
-                                                        <div id="industry-charts" style="height:440px"></div>
+                                                        <div id="industry-charts" style="height:400px"></div>
+                                                        <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+                                                        <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+                                                        <script src="http://webapi.amap.com/maps?v=1.4.1&key=80701f48c0cc37c4d279b256aba5c407&plugin=AMap.ControlBar"></script>
+                                                        <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+                                                        <script>
+                                                            var AMap;
+                                                            map = new AMap.Map('industry-charts', {
+                                                                pitch:75,
+                                                                viewMode:'3D',
+                                                                zoom: 11,
+                                                                rotation:-2,
+                                                                expandZoomRange:true,
+                                                                zooms:[3,20],
+                                                                center:[120.192481,35.953266]
+                                                            });
+                                                            map.addControl(new AMap.ControlBar({
+                                                                showZoomBar:false,
+                                                                showControlButton:true,
+                                                                position:{
+                                                                    right:'10px',
+                                                                    top:'10px'
+                                                                }
+                                                            }))
+                                                        </script>
                                                     </div>
                                                 </div>
                                             </div>
@@ -804,90 +828,90 @@
     </div>
 </div>
 {{--<script type="text/javascript" src="{{ admin_asset('js/echarts-gl.min.js') }}"></script>--}}
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var industryChart = echarts.init(document.getElementById('industry-charts'));
-        // 指定图表的配置项和数据
-        var option = {
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b}: {c} ({d}%)"
-            },
-            title: {
-                text: '工业产值',
-                subtext: '分街镇主要经济指标',
-                x: 'center',
-                top: '10',
-            },
-            legend: {
-                orient: 'vertical',
-                x: 'left',
-                top: '10',
-                data: ['黄岛', '辛安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']
-            },
-            series: [
-                {
-                    name: '街镇',
-                    type: 'pie',
-                    radius: ['30%', '70%'],
-                    avoidLabelOverlap: false,
-                    label: {
-                        normal: {
-                            show: false,
-                            position: 'right'
-                        },
-                        emphasis: {
-                            show: true,
-                            textStyle: {
-                                fontSize: '30',
-                                fontWeight: 'bold'
-                            }
-                        }
-                    },
-                    labelLine: {
-                        normal: {
-                            show: false
-                        }
-                    },
-                    data: [
-                        {value: 11.9, name: '黄岛'},
-                        {value: 16.6, name: '辛安'},
-                        {value: 8.4, name: '薛家岛'},
-                        {value: 8.5, name: '灵珠山'},
-                        {value: 11.9, name: '长江路'},
-                        {value: 16.6, name: '红石崖'},
-                        {value: 8.4, name: '灵山卫'},
-                        {value: 8.5, name: '王台镇'},
-                        {value: 8.7, name: '隐珠'},
-                        {value: 8.4, name: '滨海'},
-                        {value: 11.5, name: '张家楼'},
-                        {value: 12.4, name: '琅琊'},
-                        {value: 10.4, name: '藏南'},
-                        {value: 16.4, name: '泊里'},
-                        {value: 13.6, name: '大场'},
-                        {value: 8.5, name: '海青'},
-                        {value: 9.4, name: '大村'},
-                        {value: 10.4, name: '六汪'},
-                        {value: 13.2, name: '宝山'},
-                        {value: 9.9, name: '铁山'},
-                        {value: 7.4, name: '胶南'},
-                        {value: 6.9, name: '珠海'},
-                        {value: 8.4, name: '度假区'},
-                        {value: 10.4, name: '胶河'},
-                        {value: 12.4, name: '临港'}
-                    ]
-                }
-            ]
-        };
+{{--<script type="text/javascript">--}}
+    {{--$(function () {--}}
+        {{--// 基于准备好的dom，初始化echarts实例--}}
+        {{--var industryChart = echarts.init(document.getElementById('industry-charts'));--}}
+        {{--// 指定图表的配置项和数据--}}
+        {{--var option = {--}}
+            {{--tooltip: {--}}
+                {{--trigger: 'item',--}}
+                {{--formatter: "{a} <br/>{b}: {c} ({d}%)"--}}
+            {{--},--}}
+            {{--title: {--}}
+                {{--text: '工业产值',--}}
+                {{--subtext: '分街镇主要经济指标',--}}
+                {{--x: 'center',--}}
+                {{--top: '10',--}}
+            {{--},--}}
+            {{--legend: {--}}
+                {{--orient: 'vertical',--}}
+                {{--x: 'left',--}}
+                {{--top: '10',--}}
+                {{--data: ['黄岛', '辛安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']--}}
+            {{--},--}}
+            {{--series: [--}}
+                {{--{--}}
+                    {{--name: '街镇',--}}
+                    {{--type: 'pie',--}}
+                    {{--radius: ['30%', '70%'],--}}
+                    {{--avoidLabelOverlap: false,--}}
+                    {{--label: {--}}
+                        {{--normal: {--}}
+                            {{--show: false,--}}
+                            {{--position: 'right'--}}
+                        {{--},--}}
+                        {{--emphasis: {--}}
+                            {{--show: true,--}}
+                            {{--textStyle: {--}}
+                                {{--fontSize: '30',--}}
+                                {{--fontWeight: 'bold'--}}
+                            {{--}--}}
+                        {{--}--}}
+                    {{--},--}}
+                    {{--labelLine: {--}}
+                        {{--normal: {--}}
+                            {{--show: false--}}
+                        {{--}--}}
+                    {{--},--}}
+                    {{--data: [--}}
+                        {{--{value: 11.9, name: '黄岛'},--}}
+                        {{--{value: 16.6, name: '辛安'},--}}
+                        {{--{value: 8.4, name: '薛家岛'},--}}
+                        {{--{value: 8.5, name: '灵珠山'},--}}
+                        {{--{value: 11.9, name: '长江路'},--}}
+                        {{--{value: 16.6, name: '红石崖'},--}}
+                        {{--{value: 8.4, name: '灵山卫'},--}}
+                        {{--{value: 8.5, name: '王台镇'},--}}
+                        {{--{value: 8.7, name: '隐珠'},--}}
+                        {{--{value: 8.4, name: '滨海'},--}}
+                        {{--{value: 11.5, name: '张家楼'},--}}
+                        {{--{value: 12.4, name: '琅琊'},--}}
+                        {{--{value: 10.4, name: '藏南'},--}}
+                        {{--{value: 16.4, name: '泊里'},--}}
+                        {{--{value: 13.6, name: '大场'},--}}
+                        {{--{value: 8.5, name: '海青'},--}}
+                        {{--{value: 9.4, name: '大村'},--}}
+                        {{--{value: 10.4, name: '六汪'},--}}
+                        {{--{value: 13.2, name: '宝山'},--}}
+                        {{--{value: 9.9, name: '铁山'},--}}
+                        {{--{value: 7.4, name: '胶南'},--}}
+                        {{--{value: 6.9, name: '珠海'},--}}
+                        {{--{value: 8.4, name: '度假区'},--}}
+                        {{--{value: 10.4, name: '胶河'},--}}
+                        {{--{value: 12.4, name: '临港'}--}}
+                    {{--]--}}
+                {{--}--}}
+            {{--]--}}
+        {{--};--}}
 
-        // 使用刚指定的配置项和数据显示图表。
-        industryChart.setOption(option);
-        $(window).resize(function () {
-            industryChart.resize();
-        });
-    });
-</script>
+        {{--// 使用刚指定的配置项和数据显示图表。--}}
+        {{--industryChart.setOption(option);--}}
+        {{--$(window).resize(function () {--}}
+            {{--industryChart.resize();--}}
+        {{--});--}}
+    {{--});--}}
+{{--</script>--}}
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
