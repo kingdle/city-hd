@@ -224,7 +224,7 @@
                                                         <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
                                                         <script>
                                                             var AMap;
-                                                            map = new AMap.Map('industry-charts', {
+                                                            var map = new AMap.Map('industry-charts', {
                                                                 pitch:75,
                                                                 viewMode:'3D',
                                                                 zoom: 11,
