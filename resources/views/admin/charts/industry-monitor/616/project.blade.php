@@ -25,7 +25,7 @@
                                                             <i class="fa fa-play "></i> 增速 <b>48</b>%
                                                         </h4>
                                                         <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped active"
+                                                            <div class="progress-bar progress-bar-striped progress-mini active"
                                                                  style="width: 48%">
                                                                 <span>48</span>%
                                                             </div>
@@ -55,7 +55,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>61</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 61%">
                                                             <span>61</span>%
                                                         </div>
@@ -85,7 +85,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>82</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 82%">
                                                             <span>82</span>%
                                                         </div>
@@ -115,7 +115,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>32</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 32%">
                                                             <span>32</span>%
                                                         </div>
@@ -145,7 +145,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>14</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 14%">
                                                             <span>14</span>%
                                                         </div>
@@ -175,7 +175,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>26</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 26%">
                                                             <span>26</span>%
                                                         </div>
@@ -445,7 +445,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 48%">
                                                             <span>48</span>%
                                                         </div>
@@ -474,7 +474,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 61%">
                                                             <span>61</span>%
                                                         </div>
@@ -503,7 +503,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 72%">
                                                             <span>72</span>%
                                                         </div>
@@ -532,7 +532,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 22%">
                                                             <span>22</span>%
                                                         </div>
@@ -561,7 +561,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 14%">
                                                             <span>14</span>%
                                                         </div>
@@ -590,7 +590,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 26%">
                                                             <span>26</span>%
                                                         </div>
@@ -639,7 +639,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
                                                              style="width: 82%">
                                                             <span>82</span>%
                                                         </div>
@@ -668,7 +668,7 @@
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped progress-bar-striped active"
+                                                        <div class="progress-bar progress-bar-striped progress-mini progress-bar-striped active"
                                                              style="width: 32%">
                                                             <span>32</span>%
                                                         </div>

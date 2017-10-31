@@ -41,7 +41,7 @@
                                                                         <thead style="display:block;overflow-y: scroll;">
                                                                         <tr>
                                                                             <th>#</th>
-                                                                            <th>街镇</th>
+                                                                            <th>功能区</th>
                                                                             <th>累计</th>
                                                                             <th>增长</th>
                                                                         </tr>
@@ -50,164 +50,80 @@
                                                                         <tr>
                                                                             <td>1</td>
                                                                             <td>总计</td>
-                                                                            <td>--</td>
+                                                                            <td>2564252</td>
                                                                             <td>13.7%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>2</td>
-                                                                            <td>街镇</td>
-                                                                            <td>--</td>
+                                                                            <td>功能区累计</td>
+                                                                            <td>1207138</td>
                                                                             <td>12.8%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>3</td>
-                                                                            <td>黄岛</td>
-                                                                            <td>--</td>
+                                                                            <td>海洋高新区</td>
+                                                                            <td>52277</td>
                                                                             <td>11%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>4</td>
-                                                                            <td>辛安</td>
-                                                                            <td>--</td>
+                                                                            <td>中德生态园</td>
+                                                                            <td>131016</td>
                                                                             <td>12.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>5</td>
-                                                                            <td>薛家岛</td>
-                                                                            <td>--</td>
+                                                                            <td>经济技术开发区</td>
+                                                                            <td>68284</td>
                                                                             <td>5.2%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>6</td>
-                                                                            <td>灵珠山</td>
-                                                                            <td>--</td>
-                                                                            <td>12.1%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td>长江路</td>
-                                                                            <td>--</td>
-                                                                            <td>15.9%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td>红石崖</td>
-                                                                            <td>--</td>
-                                                                            <td>16.6%</td>
+                                                                            <td>董家口循环经济区</td>
+                                                                            <td>2041</td>
+                                                                            <td>63.93 %</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>7</td>
-                                                                            <td>灵山卫</td>
-                                                                            <td>--</td>
-                                                                            <td>20.4%</td>
+                                                                            <td>国际旅游度假区</td>
+                                                                            <td>184112</td>
+                                                                            <td>-1.71%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>8</td>
-                                                                            <td>王台镇</td>
-                                                                            <td>--</td>
-                                                                            <td>11.5%</td>
+                                                                            <td>灵山湾影视文化产业区</td>
+                                                                            <td>12968</td>
+                                                                            <td>26.6%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>9</td>
-                                                                            <td>隐珠</td>
-                                                                            <td>--</td>
-                                                                            <td>20.7%</td>
+                                                                            <td>现代农业示范区</td>
+                                                                            <td>7877</td>
+                                                                            <td>20.4%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>10</td>
-                                                                            <td>滨海</td>
-                                                                            <td>--</td>
-                                                                            <td>17.4%</td>
+                                                                            <td>古镇口创新示范区</td>
+                                                                            <td>131245</td>
+                                                                            <td>11.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>11</td>
-                                                                            <td>张家楼</td>
-                                                                            <td>--</td>
-                                                                            <td>19.5%</td>
+                                                                            <td>西海岸交通商务区</td>
+                                                                            <td>71245</td>
+                                                                            <td>20.7%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>12</td>
-                                                                            <td>琅琊</td>
-                                                                            <td>--</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏南</td>
-                                                                            <td>--</td>
-                                                                            <td>20.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>泊里</td>
-                                                                            <td>--</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大场</td>
-                                                                            <td>--</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>海青</td>
-                                                                            <td>--</td>
-                                                                            <td>18.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大村</td>
-                                                                            <td>--</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>六汪</td>
-                                                                            <td>--</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>宝山</td>
-                                                                            <td>--</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>铁山</td>
-                                                                            <td>--</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶南</td>
-                                                                            <td>--</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>珠海</td>
-                                                                            <td>--</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>度假区</td>
-                                                                            <td>--</td>
+                                                                            <td>藏马山旅游度假区</td>
+                                                                            <td>91245</td>
                                                                             <td>17.4%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶河</td>
-                                                                            <td>--</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>临港</td>
-                                                                            <td>--</td>
-                                                                            <td>20.4%</td>
+                                                                            <td>13</td>
+                                                                            <td>轨道交通指挥部</td>
+                                                                            <td>231145</td>
+                                                                            <td>19.5%</td>
                                                                         </tr>
                                                                         </tbody>
                                                                     </table>
@@ -218,12 +134,8 @@
                                                     </div>
                                                     <div class="col-sm-8">
                                                         <div id="industry-charts" style="height:400px"></div>
-                                                        <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
-                                                        <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
-                                                        <script src="http://webapi.amap.com/maps?v=1.4.1&key=80701f48c0cc37c4d279b256aba5c407&plugin=AMap.ControlBar"></script>
-                                                        <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+
                                                         <script>
-                                                            var AMap;
                                                             var map = new AMap.Map('industry-charts', {
                                                                 pitch:75,
                                                                 viewMode:'3D',
@@ -241,6 +153,14 @@
                                                                     top:'10px'
                                                                 }
                                                             }))
+                                                            window.onload = function() {
+                                                                map.plugin(["AMap.ToolBar"], function() {
+                                                                    map.addControl(new AMap.ToolBar());
+                                                                });
+                                                                if(location.href.indexOf('&guide=1')!==-1){
+                                                                    map.setStatus({scrollWheel:false})
+                                                                }
+                                                            }
                                                         </script>
                                                     </div>
                                                 </div>
@@ -255,7 +175,7 @@
                                                                         <thead style="display:block;overflow-y: scroll;">
                                                                         <tr>
                                                                             <th>#</th>
-                                                                            <th>街镇</th>
+                                                                            <th>功能区</th>
                                                                             <th>累计（万元）</th>
                                                                             <th>增长</th>
                                                                         </tr>
@@ -269,159 +189,75 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <td>2</td>
-                                                                            <td>街镇</td>
+                                                                            <td>功能区累计</td>
                                                                             <td>1207138</td>
                                                                             <td>12.8%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>3</td>
-                                                                            <td>黄岛</td>
+                                                                            <td>海洋高新区</td>
                                                                             <td>52277</td>
                                                                             <td>11%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>4</td>
-                                                                            <td>辛安</td>
+                                                                            <td>中德生态园</td>
                                                                             <td>131016</td>
                                                                             <td>12.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>5</td>
-                                                                            <td>薛家岛</td>
+                                                                            <td>经济技术开发区</td>
                                                                             <td>68284</td>
                                                                             <td>5.2%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>6</td>
-                                                                            <td>灵珠山</td>
+                                                                            <td>董家口循环经济区</td>
                                                                             <td>2041</td>
                                                                             <td>63.93 %</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td></td>
-                                                                            <td>长江路</td>
+                                                                            <td>7</td>
+                                                                            <td>国际旅游度假区</td>
                                                                             <td>184112</td>
                                                                             <td>-1.71%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td></td>
-                                                                            <td>红石崖</td>
+                                                                            <td>8</td>
+                                                                            <td>灵山湾影视文化产业区</td>
                                                                             <td>12968</td>
                                                                             <td>26.6%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>7</td>
-                                                                            <td>灵山卫</td>
+                                                                            <td>9</td>
+                                                                            <td>现代农业示范区</td>
                                                                             <td>7877</td>
                                                                             <td>20.4%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>8</td>
-                                                                            <td>王台镇</td>
+                                                                            <td>10</td>
+                                                                            <td>古镇口创新示范区</td>
                                                                             <td>131245</td>
                                                                             <td>11.5%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>9</td>
-                                                                            <td>隐珠</td>
+                                                                            <td>11</td>
+                                                                            <td>西海岸交通商务区</td>
                                                                             <td>71245</td>
                                                                             <td>20.7%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>10</td>
-                                                                            <td>滨海</td>
+                                                                            <td>12</td>
+                                                                            <td>藏马山旅游度假区</td>
                                                                             <td>91245</td>
                                                                             <td>17.4%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>11</td>
-                                                                            <td>张家楼</td>
+                                                                            <td>13</td>
+                                                                            <td>轨道交通指挥部</td>
                                                                             <td>231145</td>
                                                                             <td>19.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>琅琊</td>
-                                                                            <td>131231</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏南</td>
-                                                                            <td>91245</td>
-                                                                            <td>20.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>泊里</td>
-                                                                            <td>92382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大场</td>
-                                                                            <td>72382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>海青</td>
-                                                                            <td>72382</td>
-                                                                            <td>18.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大村</td>
-                                                                            <td>82382</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>六汪</td>
-                                                                            <td>72382</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>宝山</td>
-                                                                            <td>82382</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>铁山</td>
-                                                                            <td>82382</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶南</td>
-                                                                            <td>292382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>珠海</td>
-                                                                            <td>192382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>度假区</td>
-                                                                            <td>232382</td>
-                                                                            <td>17.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶河</td>
-                                                                            <td>292382</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>临港</td>
-                                                                            <td>--</td>
-                                                                            <td>--</td>
                                                                         </tr>
                                                                         </tbody>
                                                                     </table>
@@ -445,7 +281,7 @@
                                                                         <thead style="display:block;overflow-y: scroll;">
                                                                         <tr>
                                                                             <th>#</th>
-                                                                            <th>街镇</th>
+                                                                            <th>功能区</th>
                                                                             <th>累计（万元）</th>
                                                                             <th>增长</th>
                                                                         </tr>
@@ -454,164 +290,80 @@
                                                                         <tr>
                                                                             <td>1</td>
                                                                             <td>总计</td>
-                                                                            <td>4564252</td>
+                                                                            <td>2564252</td>
                                                                             <td>13.7%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>2</td>
-                                                                            <td>街镇</td>
-                                                                            <td>2207138</td>
-                                                                            <td>11.8%</td>
+                                                                            <td>功能区累计</td>
+                                                                            <td>1207138</td>
+                                                                            <td>12.8%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>3</td>
-                                                                            <td>黄岛</td>
-                                                                            <td>62277</td>
-                                                                            <td>13%</td>
+                                                                            <td>海洋高新区</td>
+                                                                            <td>52277</td>
+                                                                            <td>11%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>4</td>
-                                                                            <td>辛安</td>
-                                                                            <td>171016</td>
+                                                                            <td>中德生态园</td>
+                                                                            <td>131016</td>
                                                                             <td>12.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>5</td>
-                                                                            <td>薛家岛</td>
-                                                                            <td>168284</td>
-                                                                            <td>8.2%</td>
+                                                                            <td>经济技术开发区</td>
+                                                                            <td>68284</td>
+                                                                            <td>5.2%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>6</td>
-                                                                            <td>灵珠山</td>
-                                                                            <td>20410</td>
+                                                                            <td>董家口循环经济区</td>
+                                                                            <td>2041</td>
                                                                             <td>63.93 %</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td></td>
-                                                                            <td>长江路</td>
-                                                                            <td>384112</td>
-                                                                            <td>10.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td>红石崖</td>
-                                                                            <td>129681</td>
-                                                                            <td>21.6%</td>
-                                                                        </tr>
-                                                                        <tr>
                                                                             <td>7</td>
-                                                                            <td>灵山卫</td>
-                                                                            <td>78770</td>
-                                                                            <td>11.4%</td>
+                                                                            <td>国际旅游度假区</td>
+                                                                            <td>184112</td>
+                                                                            <td>-1.71%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>8</td>
-                                                                            <td>王台镇</td>
-                                                                            <td>431245</td>
-                                                                            <td>20.5%</td>
+                                                                            <td>灵山湾影视文化产业区</td>
+                                                                            <td>12968</td>
+                                                                            <td>26.6%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>9</td>
-                                                                            <td>隐珠</td>
-                                                                            <td>171245</td>
-                                                                            <td>10.7%</td>
+                                                                            <td>现代农业示范区</td>
+                                                                            <td>7877</td>
+                                                                            <td>20.4%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>10</td>
-                                                                            <td>滨海</td>
-                                                                            <td>191245</td>
-                                                                            <td>12.4%</td>
+                                                                            <td>古镇口创新示范区</td>
+                                                                            <td>131245</td>
+                                                                            <td>11.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>11</td>
-                                                                            <td>张家楼</td>
-                                                                            <td>131145</td>
-                                                                            <td>16.5%</td>
+                                                                            <td>西海岸交通商务区</td>
+                                                                            <td>71245</td>
+                                                                            <td>20.7%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>12</td>
-                                                                            <td>琅琊</td>
-                                                                            <td>231231</td>
-                                                                            <td>21.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏南</td>
-                                                                            <td>12245</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>泊里</td>
-                                                                            <td>192382</td>
-                                                                            <td>6.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大场</td>
-                                                                            <td>72382</td>
-                                                                            <td>26.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>海青</td>
-                                                                            <td>172382</td>
-                                                                            <td>28.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大村</td>
-                                                                            <td>182382</td>
-                                                                            <td>11.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>六汪</td>
-                                                                            <td>172382</td>
-                                                                            <td>12.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>宝山</td>
-                                                                            <td>182382</td>
-                                                                            <td>12.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>铁山</td>
-                                                                            <td>182382</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶南</td>
-                                                                            <td>392382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>珠海</td>
-                                                                            <td>192382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>度假区</td>
-                                                                            <td>212382</td>
+                                                                            <td>藏马山旅游度假区</td>
+                                                                            <td>91245</td>
                                                                             <td>17.4%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶河</td>
-                                                                            <td>392382</td>
-                                                                            <td>12.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>临港</td>
-                                                                            <td>--</td>
-                                                                            <td>--</td>
+                                                                            <td>13</td>
+                                                                            <td>轨道交通指挥部</td>
+                                                                            <td>231145</td>
+                                                                            <td>19.5%</td>
                                                                         </tr>
                                                                         </tbody>
                                                                     </table>
@@ -635,7 +387,7 @@
                                                                         <thead style="display:block;overflow-y: scroll;">
                                                                         <tr>
                                                                             <th>#</th>
-                                                                            <th>街镇</th>
+                                                                            <th>功能区</th>
                                                                             <th>累计（万元）</th>
                                                                             <th>增长</th>
                                                                         </tr>
@@ -644,164 +396,80 @@
                                                                         <tr>
                                                                             <td>1</td>
                                                                             <td>总计</td>
-                                                                            <td>5434252</td>
+                                                                            <td>2564252</td>
                                                                             <td>13.7%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>2</td>
-                                                                            <td>街镇</td>
-                                                                            <td>3207138</td>
-                                                                            <td>11.8%</td>
+                                                                            <td>功能区累计</td>
+                                                                            <td>1207138</td>
+                                                                            <td>12.8%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>3</td>
-                                                                            <td>黄岛</td>
-                                                                            <td>162277</td>
-                                                                            <td>13%</td>
+                                                                            <td>海洋高新区</td>
+                                                                            <td>52277</td>
+                                                                            <td>11%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>4</td>
-                                                                            <td>辛安</td>
-                                                                            <td>211016</td>
+                                                                            <td>中德生态园</td>
+                                                                            <td>131016</td>
                                                                             <td>12.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>5</td>
-                                                                            <td>薛家岛</td>
-                                                                            <td>268284</td>
-                                                                            <td>8.2%</td>
+                                                                            <td>经济技术开发区</td>
+                                                                            <td>68284</td>
+                                                                            <td>5.2%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>6</td>
-                                                                            <td>灵珠山</td>
-                                                                            <td>90410</td>
+                                                                            <td>董家口循环经济区</td>
+                                                                            <td>2041</td>
                                                                             <td>63.93 %</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td></td>
-                                                                            <td>长江路</td>
-                                                                            <td>184112</td>
-                                                                            <td>10.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td></td>
-                                                                            <td>红石崖</td>
-                                                                            <td>319681</td>
-                                                                            <td>21.6%</td>
-                                                                        </tr>
-                                                                        <tr>
                                                                             <td>7</td>
-                                                                            <td>灵山卫</td>
-                                                                            <td>178770</td>
-                                                                            <td>11.4%</td>
+                                                                            <td>国际旅游度假区</td>
+                                                                            <td>184112</td>
+                                                                            <td>-1.71%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>8</td>
-                                                                            <td>王台镇</td>
-                                                                            <td>931245</td>
-                                                                            <td>20.5%</td>
+                                                                            <td>灵山湾影视文化产业区</td>
+                                                                            <td>12968</td>
+                                                                            <td>26.6%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>9</td>
-                                                                            <td>隐珠</td>
-                                                                            <td>211245</td>
-                                                                            <td>10.7%</td>
+                                                                            <td>现代农业示范区</td>
+                                                                            <td>7877</td>
+                                                                            <td>20.4%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>10</td>
-                                                                            <td>滨海</td>
-                                                                            <td>231245</td>
-                                                                            <td>12.4%</td>
+                                                                            <td>古镇口创新示范区</td>
+                                                                            <td>131245</td>
+                                                                            <td>11.5%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>11</td>
-                                                                            <td>张家楼</td>
-                                                                            <td>91145</td>
-                                                                            <td>16.5%</td>
+                                                                            <td>西海岸交通商务区</td>
+                                                                            <td>71245</td>
+                                                                            <td>20.7%</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>12</td>
-                                                                            <td>琅琊</td>
-                                                                            <td>31231</td>
-                                                                            <td>21.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏南</td>
-                                                                            <td>42145</td>
-                                                                            <td>10.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>泊里</td>
-                                                                            <td>92382</td>
-                                                                            <td>6.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大场</td>
-                                                                            <td>122382</td>
-                                                                            <td>26.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>海青</td>
-                                                                            <td>372382</td>
-                                                                            <td>28.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>大村</td>
-                                                                            <td>482382</td>
-                                                                            <td>11.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>六汪</td>
-                                                                            <td>572382</td>
-                                                                            <td>12.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>宝山</td>
-                                                                            <td>182382</td>
-                                                                            <td>12.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>铁山</td>
-                                                                            <td>282382</td>
-                                                                            <td>19.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶南</td>
-                                                                            <td>192382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>珠海</td>
-                                                                            <td>992382</td>
-                                                                            <td>16.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>度假区</td>
-                                                                            <td>912382</td>
+                                                                            <td>藏马山旅游度假区</td>
+                                                                            <td>91245</td>
                                                                             <td>17.4%</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>12</td>
-                                                                            <td>胶河</td>
-                                                                            <td>572382</td>
-                                                                            <td>22.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>临港</td>
-                                                                            <td>--</td>
-                                                                            <td>--</td>
+                                                                            <td>13</td>
+                                                                            <td>轨道交通指挥部</td>
+                                                                            <td>231145</td>
+                                                                            <td>19.5%</td>
                                                                         </tr>
                                                                         </tbody>
                                                                     </table>
@@ -1208,8 +876,8 @@
         var _width = $('#industry').width();
         $('#industry th:first-child').width(_width * 0.1);
         $('#industry td:first-child').width(_width * 0.1);
-        $('#industry th:nth-child(2)').width(_width * 0.3);
-        $('#industry td:nth-child(2)').width(_width * 0.3);
+        $('#industry th:nth-child(2)').width(_width * 0.6);
+        $('#industry td:nth-child(2)').width(_width * 0.6);
         $('#industry th:nth-child(3)').width(_width * 0.2);
         $('#industry td:nth-child(3)').width(_width * 0.2);
         $('#industry th:nth-child(4)').width(_width * 0.2);
@@ -1219,8 +887,8 @@
         var _width = $('#profit').width();
         $('#profit th:first-child').width(_width * 0.1);
         $('#profit td:first-child').width(_width * 0.1);
-        $('#profit th:nth-child(2)').width(_width * 0.3);
-        $('#profit td:nth-child(2)').width(_width * 0.3);
+        $('#profit th:nth-child(2)').width(_width * 0.6);
+        $('#profit td:nth-child(2)').width(_width * 0.6);
         $('#profit th:nth-child(3)').width(_width * 0.4);
         $('#profit td:nth-child(3)').width(_width * 0.4);
         $('#profit th:nth-child(4)').width(_width * 0.2);
@@ -1230,8 +898,8 @@
         var _width = $('#assets').width();
         $('#assets th:first-child').width(_width * 0.1);
         $('#assets td:first-child').width(_width * 0.1);
-        $('#assets th:nth-child(2)').width(_width * 0.3);
-        $('#assets td:nth-child(2)').width(_width * 0.3);
+        $('#assets th:nth-child(2)').width(_width * 0.6);
+        $('#assets td:nth-child(2)').width(_width * 0.6);
         $('#assets th:nth-child(3)').width(_width * 0.4);
         $('#assets td:nth-child(3)').width(_width * 0.4);
         $('#assets th:nth-child(4)').width(_width * 0.2);
@@ -1241,8 +909,8 @@
         var _width = $('#trade').width();
         $('#trade th:first-child').width(_width * 0.1);
         $('#trade td:first-child').width(_width * 0.1);
-        $('#trade th:nth-child(2)').width(_width * 0.3);
-        $('#trade td:nth-child(2)').width(_width * 0.3);
+        $('#trade th:nth-child(2)').width(_width * 0.6);
+        $('#trade td:nth-child(2)').width(_width * 0.6);
         $('#trade th:nth-child(3)').width(_width * 0.4);
         $('#trade td:nth-child(3)').width(_width * 0.4);
         $('#trade th:nth-child(4)').width(_width * 0.2);

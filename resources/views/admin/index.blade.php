@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/google-fonts/fonts.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/dist/css/AdminLTE.min.css") }}">
     <link rel="stylesheet" href="{{ admin_asset('css/onepage-scroll.css') }}"/>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+
+
     <!-- REQUIRED JS SCRIPTS -->
     <script src="{{ admin_asset ("/vendor/laravel-admin/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js") }}"></script>
     <script src="{{ admin_asset ("/vendor/laravel-admin/AdminLTE/bootstrap/js/bootstrap.min.js") }}"></script>
@@ -43,13 +46,16 @@
         for (var i = 11; i >= ll; i--) {
             if (nowDate.getDate() <= 20) {
                 date = new Date();
-                date.setMonth(date.getMonth()-i-2);
+                date.setDate(1);
+                date.setMonth(date.getMonth()-i-3);
             } else {
                 date = new Date();
-                date.setMonth(date.getMonth()-i-3);
+                date.setDate(1);
+                date.setMonth(date.getMonth()-i-2);
             }
 
             if (date.getMonth() == 0) {
+                date.setDate(1);
                 ll--;
                 continue;
             }
@@ -81,7 +87,8 @@
             var cAxisArr = []; //普通图表横轴
             for (var i = 7; i >= 0; i--) {
                 date = new Date(sDate.getTime());
-                date.setMonth(sDate.getMonth() - (i+1)*3)
+                date.setDate(1);
+                date.setMonth(sDate.getMonth() - (i+1)*3);
                 dateArr.push(date);
                 dateStrArr.push(date.getFullYear() + '-' + (date.getMonth() + 1));
                 cAxisArr.push({
@@ -147,7 +154,12 @@
             };
             myChart.setOption(option);
         }
+
     </script>
+
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.4.1&key=80701f48c0cc37c4d279b256aba5c407&plugin=AMap.ControlBar"></script>
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

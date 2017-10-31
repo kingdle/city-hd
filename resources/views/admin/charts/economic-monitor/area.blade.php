@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-8">
                 <div class="title">
-                    <p>地区生产总值</p><span class="quotadate"> {{ date("Y-m",strtotime("last Month")) }}</span>
+                    <p>地区生产总值</p><span class="quotadate"> {{ date("Y-m",mktime(0, 0 , 0,date("m")-1,1,date("Y"))) }}</span>
                 </div>
             </div>
             <div class="col-xs-4">

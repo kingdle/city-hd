@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="title-quota">
-                    <p>指标完成情况 <span class="quotadate">{{ date("Y-m",strtotime("last Month")) }}</span></p>
+                    <p>指标完成情况 <span class="quotadate">{{ date("Y-m",mktime(0, 0 , 0,date("m")-1,1,date("Y"))) }}</span></p>
                 </div>
             </div>
 

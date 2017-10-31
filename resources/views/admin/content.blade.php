@@ -2,14 +2,17 @@
 
 @section('content')
     <section class="content-header">
-        @if($description != "详情")
+        @if($description == "详情")
+            @include('admin::charts.dateline-header')
+        @elseif($description == "月度详情")
+            @include('admin::charts.dateline-quarter')
+        @else
             <h1>
                 {{ $header or trans('admin.title') }}
                 <small>{{ $description or trans('admin.description') }}</small>
             </h1>
-        @else
-            @include('admin::charts.dateline-header')
         @endif
+
     </section>
 
     <section class="content">

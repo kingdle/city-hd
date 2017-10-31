@@ -1,46 +1,4 @@
-<style>
-    .ibox-title h5 {
-        display: inline-block;
-        font-size: 14px;
-        font-weight: 600;
-        margin: 0 0 7px;
-        padding: 0;
-        text-overflow: ellipsis;
-        float: left;
-    }
 
-    .ibox-tools a {
-        cursor: pointer;
-        margin-left: 5px;
-        color: #c4c4c4;
-    }
-
-    .ibox .ibox-tools.open > .dropdown-menu {
-        left: auto;
-        right: 0;
-    }
-
-    .ibox-content {
-        clear: both;
-    }
-
-    .ibox-content {
-        background-color: #ffffff;
-        color: inherit;
-        padding: 15px 20px 20px 20px;
-        border-color: #ffffff;
-        border-image: none;
-        border-style: solid solid none;
-        border-width: 1px 0;
-    }
-    .ranking-table .nav-tabs {
-        padding: 5px 5px 0 10px;
-    }
-    .ranking-table .nav-tabs li a {
-        font-size: 14px;
-        font-weight: 500;
-    }
-</style>
 <div class="box box-primary ranking-table">
     <div class="contenter">
         <div class="row">

@@ -14,7 +14,7 @@ class SixController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('新经济产业监测');
-            $content->description('详情');
+            $content->description('月度详情');
 
             $content->body(view('admin.charts.industry-monitor.616.project'));
         });

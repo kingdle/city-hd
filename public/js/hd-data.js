@@ -28,7 +28,6 @@ SyStore.prototype.init = function() {
                 }
 
             }
-            console.log(pd)
             $.ajax({
                 type: "post",
                 url: "/sy-hd/data",
@@ -251,19 +250,19 @@ SyChartSeriesKit.prototype.genSeriesData = function(option) {
                         tmpDimItem = tmpAxisItem.filter(tmpFilter);
                         if(style != 'obj') {
                             if(dimSize > 1)
-                                tmpDimV.push(tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? tmpDimItem._datas[0].value : '-');
+                                tmpDimV.push(tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? tmpDimItem._datas[0].value.trim() : '-');
                             else
-                                tmpDimV = tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? tmpDimItem._datas[0].value : '-';
+                                tmpDimV = tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? tmpDimItem._datas[0].value.trim() : '-';
                         } else {
                             if(dimSize > 1)
                                 tmpDimV.push(tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? {
                                         name: item.name,
-                                        value: tmpDimItem._datas[0].value
+                                        value: tmpDimItem._datas[0].value.trim()
                                     } : '-');
                             else
                                 tmpDimV = tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? {
                                         name: item.name,
-                                        value: tmpDimItem._datas[0].value
+                                        value: tmpDimItem._datas[0].value.trim()
                                     } : '-';
                         }
                     });
@@ -288,11 +287,10 @@ SyChartSeriesKit.prototype.setOption = function(option) {
     }
 }
 
-function SyValueKit(baseFilter, store) {
-    this.baseFilter = baseFilter;
+function SyValueKit(baseFilterV, store) {
+    this.baseFilterV = baseFilterV;
     this.store = store;
-    this.baseFilter = store.collection.filter(baseFilter);
-
+    this.baseFilter = this.store.collection.filter(this.baseFilterV);
 }
 
 SyValueKit.prototype.findValueByItemName = function(filter, isV) {
@@ -300,6 +298,7 @@ SyValueKit.prototype.findValueByItemName = function(filter, isV) {
         type: 'item',
         name: filter
     });
+    this.baseFilter = this.store.collection.filter(this.baseFilterV);
     if(!isV) {
         return this.baseFilter.filter({
             item: meta.extField
@@ -312,4 +311,44 @@ SyValueKit.prototype.findValueByItemName = function(filter, isV) {
 
     }
 
+}
+SyValueKit.prototype.findValueByAreaName = function(filter, isV) {
+    var meta = this.store.findMetaByItemName({
+        type: 'area',
+        name: filter
+    });
+    this.baseFilter = this.store.collection.filter(this.baseFilterV);
+    if(!isV) {
+        return this.baseFilter.filter({
+            area: meta.extField
+        });
+    } else {
+        var res = this.baseFilter.filter({
+            area: meta.extField
+        });
+        return res._datas[0] ? res._datas[0].value : '-'
+
+    }
+
+}
+SyValueKit.prototype.findValueByObj = function(filter, isV) {
+    //	var meta = this.store.findMetaByItemName({
+    //		type: 'area',
+    //		name: filter
+    //	});
+    this.baseFilter = this.store.collection.filter(this.baseFilterV);
+    if(!isV) {
+        return this.baseFilter.filter(filter);
+    } else {
+        var res = this.baseFilter.filter(filter);
+        return res._datas[0] ? res._datas[0].value : '-'
+
+    }
+
+}
+SyValueKit.prototype.meta = function(type, value) {
+    return this.store.findMetaByItemName({
+        type: type,
+        name: value
+    });
 }

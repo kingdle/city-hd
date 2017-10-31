@@ -5,8 +5,8 @@
             <small>{{ $description or trans('admin.description') }}</small>
         </h3>
     </div>
-    <div class="col-md-9">
-        <div id="HeaderDateline" style="min-height: 50px"></div>
-    </div>
+        <div class="col-md-9">
+            <div id="HeaderDateline" style="min-height: 50px"></div>
+        </div>
 </div>
 

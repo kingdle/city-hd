@@ -4,7 +4,7 @@
             autoLoad: true,
             datasetId: 5,
             success: function (store) {
-                initTimeline();
+                initTimelineQ();
 
                 var _store = store;
                 var sDate = new Date();
@@ -26,7 +26,7 @@
                 var kitV = new SyValueKit(baseRes, _store);
                 var kitS = new SyValueKit(baseSpeed, _store);
 
-                initTimeline(function (dd) {
+                initTimelineQ(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;

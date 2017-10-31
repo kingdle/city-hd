@@ -17,12 +17,12 @@ class BenchmarkProvinceController extends Controller
             $content->description('详情');
 
             $content->row(function (Row $row) {
-                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-total'));
-                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-industry'));
-                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-assets'));
-                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-budget'));
-                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-trade'));
-                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-trade-foreign'));
+                $row->column(3, view('admin.charts.economic-benchmark.province.ranking-total'));
+//                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-industry'));
+                $row->column(3, view('admin.charts.economic-benchmark.province.ranking-assets'));
+                $row->column(3, view('admin.charts.economic-benchmark.province.ranking-budget'));
+//                $row->column(2, view('admin.charts.economic-benchmark.province.ranking-trade'));
+                $row->column(3, view('admin.charts.economic-benchmark.province.ranking-trade-foreign'));
             });
             $content->body(view('admin.charts.economic-benchmark.province.table'));
 
