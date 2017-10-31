@@ -10,13 +10,7 @@
         </div>
 </div>
 <script>
-    storeA = new SyStore({
-        autoLoad: true,
-        datasetId: 3,
-        success: function (store) {
-            initTimelineQ();
-        }
-    });
+
     function initTimelineQ(showData) {
         var dom = document.getElementById("HeaderDatelineQuarter");
         var myChart = echarts.getInstanceByDom(dom);
@@ -55,8 +49,6 @@
                     }
                 }
             }
-
-
         };
         myChart.setOption(option);
     }

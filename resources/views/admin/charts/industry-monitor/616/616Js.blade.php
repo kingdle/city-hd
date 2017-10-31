@@ -15,7 +15,7 @@
                     time_year: date.getFullYear(),
                     time_month: date.getMonth()-1,
                 };
-//                console.log(baseRes)
+                console.log(baseRes)
                 var baseSpeed = {
                     frame: 200000014,
                     area: 1508,
@@ -27,7 +27,7 @@
                 var kitS = new SyValueKit(baseSpeed, _store);
 
                 initTimelineQ(function (dd) {
-                    var nowDate = dateArr[dd.currentIndex];
+                    var nowDate = jiduTime.dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();
