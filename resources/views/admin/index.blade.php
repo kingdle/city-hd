@@ -79,6 +79,7 @@
             var result = {};
             var sDate = new Date();
             var sQuarter = parseInt((sDate.getMonth() + 1) / 3);
+            sDate.setDate(1);
             sDate.setMonth(sQuarter * 3 - 1);
 
             var date = null;
@@ -88,7 +89,7 @@
             for (var i = 7; i >= 0; i--) {
                 date = new Date(sDate.getTime());
                 date.setDate(1);
-                date.setMonth(sDate.getMonth() - (i+1)*3);
+                date.setMonth(sDate.getMonth() - (i+1)*3)
                 dateArr.push(date);
                 dateStrArr.push(date.getFullYear() + '-' + (date.getMonth() + 1));
                 cAxisArr.push({
