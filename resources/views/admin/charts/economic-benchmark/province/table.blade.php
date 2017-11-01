@@ -576,12 +576,18 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function province() {
         // 基于准备好的dom，初始化echarts实例
         var axisD = [];
         for (var item in axisArr) {
             axisD.push(axisArr[item].name);
         }
+        var chartKit = new SyChartSeriesKit({
+            store: storeA,
+            axis: axisArr,
+
+        });
+
         var totalChart = echarts.init(document.getElementById('total-run'));
         var assetsContainer = document.getElementById('assets-run');
         var budgetContainer = document.getElementById('budget-run');
@@ -590,12 +596,12 @@
         var resizeMainContainer = function () {
             var _width = $('.col-sm-12').width();
             var _height = $('.col-sm-12').height();
-            assetsContainer.style.width = _width +'px';
-            assetsContainer.style.height = _height +'px';
-            budgetContainer.style.width = _width +'px';
-            budgetContainer.style.height = _height +'px';
-            foreignContainer.style.width = _width +'px';
-            foreignContainer.style.height = _height +'px';
+            assetsContainer.style.width = _width + 'px';
+            assetsContainer.style.height = _height + 'px';
+            budgetContainer.style.width = _width + 'px';
+            budgetContainer.style.height = _height + 'px';
+            foreignContainer.style.width = _width + 'px';
+            foreignContainer.style.height = _height + 'px';
         };
         //设置div容器高宽
         resizeMainContainer();
@@ -636,7 +642,7 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2,3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: [3.7, 2.7, 4, 5, 6.9, 5.2, 3.7, 2.7, 4, 5, 6.9, 5.2]
                 }
             ]
         };
@@ -661,7 +667,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -697,7 +703,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -733,7 +739,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -761,5 +767,5 @@
             budgetChart.resize();
             foreignChart.resize();
         });
-    });
+    }
 </script>

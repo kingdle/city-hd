@@ -6,6 +6,7 @@
             success: function (store) {
 
                 initTimeline();
+                province();
 
                 var _store = store;
                 var initDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 1);
