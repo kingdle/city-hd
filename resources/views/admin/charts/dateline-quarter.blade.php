@@ -26,7 +26,7 @@
                 timeline: {
                     axisType: 'category',
                     autoPlay: false,
-                    currentIndex: jiduTime.dateArr.length - 2,
+                    currentIndex: jiduTime.dateArr.length - 1,
                     playInterval: 1000,
                     data: jiduTime.dateStrArr,
                     rewind: true
