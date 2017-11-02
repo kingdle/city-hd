@@ -253,7 +253,7 @@
                                                      alt="First slide">
                                                 <div class="container">
                                                     <div class="carousel-caption">
-                                                        <p>将建成以..为特色的新兴产业先导区</p>
+                                                        <p>东北亚最大的冷库群效果图</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -263,7 +263,7 @@
                                                      alt="Second slide">
                                                 <div class="container">
                                                     <div class="carousel-caption">
-                                                        <p>将建成...</p>
+                                                        <p>冷链物流基地卫星图</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -273,7 +273,7 @@
                                                      alt="Third slide">
                                                 <div class="container">
                                                     <div class="carousel-caption">
-                                                        <p>将建成“国际影视文化..”</p>
+                                                        <p>海洋文化城建设中</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,7 +283,7 @@
                                                      alt="Third slide">
                                                 <div class="container">
                                                     <div class="carousel-caption">
-                                                        <p>将建成“国际影视文化..”</p>
+                                                        <p>国际水产品交易中心建设中</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -321,7 +321,38 @@
                                     </div>
 
                                     <div class="panel-body">
-
+                                        <link rel="stylesheet" href="{{ admin_asset('dist/jquery.vm-carousel.css') }}"/>
+                                        <style type="text/css">
+                                            h2 {
+                                                margin-bottom: 40px;
+                                                margin-top: 40px;
+                                            }
+                                            .vmc-centered{ padding: 10px 0; }
+                                            .vmc-centered img { transition: all 0.3s ease; }
+                                            .vmc-centered .vmc_active img { transform: scale(1.2); }
+                                        </style>
+                                        <script type="text/javascript" src="{{ admin_asset('js/modernizr.js') }}"></script>
+                                        <div class="container">
+                                            <ul class="vmcarousel-centered-infitine vmc-centered">
+                                                <li><img src="{{ asset('uploads/project-monitor/1.jpg') }}" alt="" width="200"></li>
+                                                <li><img src="{{ asset('uploads/project-monitor/2.jpg') }}" alt="" width="200"></li>
+                                                <li><img src="{{ asset('uploads/project-monitor/3.jpg') }}" alt="" width="200"></li>
+                                                <li><img src="{{ asset('uploads/project-monitor/4.jpg') }}" alt="" width="200"></li>
+                                                <li><img src="{{ asset('uploads/project-monitor/5.jpg') }}" alt="" width="200"></li>
+                                                <li><img src="{{ asset('uploads/project-monitor/6.jpg') }}" alt="" width="200"></li>
+                                            </ul>
+                                        </div>
+                                        <script type="text/javascript" src="{{ admin_asset('dist/jquery.vm-carousel.js') }}"></script>
+                                        <script type="text/javascript">
+                                            jQuery(function($){
+                                                $('.vmcarousel-centered-infitine').vmcarousel({
+                                                    centered: true,
+                                                    start_item: 1,
+                                                    autoplay: false,
+                                                    infinite: true
+                                                });
+                                            });
+                                        </script>
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="tab-1">
                                                 <div class="feed-activity-list">
