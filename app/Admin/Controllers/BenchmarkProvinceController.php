@@ -13,7 +13,7 @@ class BenchmarkProvinceController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('新区与省内区市对比');
+            $content->header('新区与省内地市对比');
             $content->description('详情');
 
             $content->row(function (Row $row) {

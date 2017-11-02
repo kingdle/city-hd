@@ -37,7 +37,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="地区生产总值">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>济南市</td>
@@ -174,7 +174,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="固定资产投资">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>济南市</td>
@@ -312,7 +312,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="一般公共预算收入">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>济南市</td>
@@ -449,7 +449,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="进出口总额">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>济南市</td>

@@ -84,19 +84,41 @@
                     catch (e) {
 
                     }
-//
-//                $card.find('.stats').toggleClass(CResult);
-//                $card.find('i').toggleClass(CResult=='stats-down'? 'fa-arrow-down':CResult=='stats-up'?'fa-arrow-up':'');
-
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
+                var $totalLists = $("#total tbody").children("tr");
+                $.each($totalLists, function (i, trlist) {
+                    var $totalList = $(trlist);
+                    var $tdTitle = $($totalList.find("td").eq(0));
+                    var $liTitle = $($totalList.find("td").eq(0));
+                    var $tdV = $($totalList.find("td").eq(1));
+                    var $tdS = $($totalList.find("td").eq(2));
+                    $tdV.text(
+                        kitTable.findValueByObj({
+                            area: kitTable.meta("area", $tdTitle.text()).extField,
+                            item: kitTable.meta("item", '地区生产总值').extField
+                        }, true)
+                    );
+                    $tdS.text(
+                        kitTableS.findValueByObj({
+                            area: kitTableS.meta("area", $tdTitle.text()).extField,
+                            item: kitTableS.meta("item", '地区生产总值').extField
+                        }, true)
+                    );
+
+                });
+
                 initTimeline(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();
                     baseSpeed.time_month = nowDate.getMonth() + 1;
+                    baseTable.time_year = nowDate.getFullYear();
+                    baseTable.time_month = nowDate.getMonth() + 1;
+                    baseTableS.time_year = nowDate.getFullYear();
+                    baseTableS.time_month = nowDate.getMonth() + 1;
                     baseSpeedLast.time_year = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * 1).getFullYear();
                     baseSpeedLast.time_month = new Date(nowDate.getTime() - 1000 * 60 * 60 * 24 * 30 * 1).getMonth() + 1;
                     kitV = new SyValueKit(baseRes, _store);
@@ -149,27 +171,33 @@
                         $valS.html(kitS.findValueByItemName($title.html(), true));
                     });
 
-                    var $totalLists = $("#total tbody").children("tr");
-                    $.each($totalLists, function (i, trlist) {
-                        var $totalList = $(trlist);
-                        var $tdTitle = $($totalList.find("td").eq(0));
-                        var $liTitle = $($totalList.find("td").eq(0));
-                        var $tdV = $($totalList.find("td").eq(1));
-                        var $tdS = $($totalList.find("td").eq(2));
-                        $tdV.text(
-                            kitTable.findValueByObj({
-                                area: kitTable.meta("area", $tdTitle.text()).extField,
-                                item: kitTable.meta("item", '地区生产总值').extField
-                            }, true)
-                        );
-                        $tdS.text(
-                            kitTableS.findValueByObj({
-                                area: kitTableS.meta("area", $tdTitle.text()).extField,
-                                item: kitTableS.meta("item", '地区生产总值').extField
-                            }, true)
-                        );
-
-                    });
+//                    var $totalLists = $(".ranking-table").children("tr");
+                    var $tbodys = $('tbody');
+                    $.each($tbodys,function(ii,tbody){
+                        var $totalLists = $(tbody).find("tr");
+                        var itemName = $(tbody).attr('itemName');
+//                        console.log($totalLists)
+                        $.each($totalLists, function (i, trlist) {
+                            var $totalList = $(trlist);
+                            var $tdTitle = $($totalList.find("td").eq(0));
+//                            var $liTitle = $($totalList.find('ul>li>a'));
+                            var $tdV = $($totalList.find("td").eq(1));
+                            var $tdS = $($totalList.find("td").eq(2));
+//                            console.log($liTitle.html());
+                            $tdV.text(
+                                kitTable.findValueByObj({
+                                    area: kitTable.meta("area", $tdTitle.text()).extField,
+                                    item: kitTable.meta("item", itemName).extField
+                                }, true)
+                            );
+                            $tdS.text(
+                                kitTableS.findValueByObj({
+                                    area: kitTableS.meta("area", $tdTitle.text()).extField,
+                                    item: kitTableS.meta("item", itemName).extField
+                                }, true)
+                            );
+                        });
+                    })
                 });
             }
         });

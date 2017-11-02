@@ -134,33 +134,120 @@
                                                     </div>
                                                     <div class="col-sm-8">
                                                         <div id="industry-charts" style="height:400px"></div>
-
+                                                        <script type="text/javascript" src="{{ admin_asset('js/echarts-gl.min.js') }}"></script>
                                                         <script>
-                                                            var map = new AMap.Map('industry-charts', {
-                                                                pitch:75,
-                                                                viewMode:'3D',
-                                                                zoom: 11,
-                                                                rotation:-2,
-                                                                expandZoomRange:true,
-                                                                zooms:[3,20],
-                                                                center:[120.192481,35.953266]
-                                                            });
-                                                            map.addControl(new AMap.ControlBar({
-                                                                showZoomBar:false,
-                                                                showControlButton:true,
-                                                                position:{
-                                                                    right:'10px',
-                                                                    top:'10px'
-                                                                }
-                                                            }))
-                                                            window.onload = function() {
-                                                                map.plugin(["AMap.ToolBar"], function() {
-                                                                    map.addControl(new AMap.ToolBar());
-                                                                });
-                                                                if(location.href.indexOf('&guide=1')!==-1){
-                                                                    map.setStatus({scrollWheel:false})
-                                                                }
+                                                            var ImyChart = echarts.init(document.getElementById('industry-charts'));
+                                                            var axisD = [];
+                                                            for (var item in axisArr) {
+                                                                axisD.push(axisArr[item].name);
                                                             }
+                                                            storeA = new SyStore({
+                                                                autoLoad: true,
+                                                                datasetId: 8,
+                                                                success: function (store) {
+                                                                    var _store = store;
+                                                                    var hours = axisD;
+                                                                    var days = ['海洋高新区', '中德生态园', '经济技术开发区'];
+                                                                    var data = []
+//                                                                    console.log(JSON.stringify(axisD))
+                                                                    var dataItem = null;
+                                                                    var baseTable = {
+                                                                        frame: 303000713,
+                                                                        item: 3
+
+                                                                    };
+//                                                                    console.log(baseTable)
+//                                                                    console.log(store)
+                                                                    var kitTable = new SyValueKit(baseTable, _store); //总量kit
+                                                                    $.each(days, function (j, day) {
+                                                                        $.each(hours, function (i, hour) {
+                                                                            dataItem = [];
+                                                                            dataItem.push(j);
+                                                                            dataItem.push(i);
+                                                                            dataItem.push(kitTable.findValueByObj({
+                                                                                area: kitTable.meta("area", day).extField,
+                                                                                time_year: dateArr[i].getFullYear(),
+                                                                                time_month: dateArr[i].getMonth() + 1
+                                                                            }, true));
+//console.log(dateArr[i])
+                                                                            data.push(dataItem);
+                                                                        })
+                                                                    })
+//                                                                    console.log()
+//                                                                    console.log(data);
+                                                                    var option = {
+                                                                        tooltip: {},
+                                                                        visualMap: {
+//                                                                            max: 20,
+                                                                            inRange: {
+                                                                                color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                                                                            }
+                                                                        },
+                                                                        xAxis3D: {
+                                                                            type: 'category',
+                                                                            data: hours
+                                                                        },
+                                                                        yAxis3D: {
+                                                                            type: 'category',
+                                                                            data: days
+                                                                        },
+                                                                        zAxis3D: {
+                                                                            type: 'value'
+                                                                        },
+                                                                        grid3D: {
+                                                                            boxWidth: 230,
+                                                                            boxDepth: 80,
+                                                                            light: {
+                                                                                main: {
+                                                                                    intensity: 1.2
+                                                                                },
+                                                                                ambient: {
+                                                                                    intensity: 0.3
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        series: [{
+                                                                            type: 'bar3D',
+                                                                            data: data.map(function (item) {
+                                                                                return {
+                                                                                    value: [item[1], item[0], item[2]]
+                                                                                }
+                                                                            }),
+                                                                            shading: 'color',
+
+                                                                            label: {
+                                                                                show: false,
+                                                                                textStyle: {
+                                                                                    fontSize: 16,
+                                                                                    borderWidth: 1
+                                                                                }
+                                                                            },
+
+                                                                            itemStyle: {
+                                                                                opacity: 0.4
+                                                                            },
+
+                                                                            emphasis: {
+                                                                                label: {
+                                                                                    textStyle: {
+                                                                                        fontSize: 20,
+                                                                                        color: '#900'
+                                                                                    }
+                                                                                },
+                                                                                itemStyle: {
+                                                                                    color: '#900'
+                                                                                }
+                                                                            }
+                                                                        }]
+                                                                    }
+                                                                    // 使用刚指定的配置项和数据显示图表。
+                                                                    ImyChart.setOption(option);
+                                                                }
+                                                            });
+                                                            $(window).resize(function () {
+                                                                ImyChart.resize();
+                                                            });
+                                                            //
                                                         </script>
                                                     </div>
                                                 </div>
@@ -497,88 +584,88 @@
 </div>
 {{--<script type="text/javascript" src="{{ admin_asset('js/echarts-gl.min.js') }}"></script>--}}
 {{--<script type="text/javascript">--}}
-    {{--$(function () {--}}
-        {{--// 基于准备好的dom，初始化echarts实例--}}
-        {{--var industryChart = echarts.init(document.getElementById('industry-charts'));--}}
-        {{--// 指定图表的配置项和数据--}}
-        {{--var option = {--}}
-            {{--tooltip: {--}}
-                {{--trigger: 'item',--}}
-                {{--formatter: "{a} <br/>{b}: {c} ({d}%)"--}}
-            {{--},--}}
-            {{--title: {--}}
-                {{--text: '工业产值',--}}
-                {{--subtext: '分街镇主要经济指标',--}}
-                {{--x: 'center',--}}
-                {{--top: '10',--}}
-            {{--},--}}
-            {{--legend: {--}}
-                {{--orient: 'vertical',--}}
-                {{--x: 'left',--}}
-                {{--top: '10',--}}
-                {{--data: ['黄岛', '辛安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']--}}
-            {{--},--}}
-            {{--series: [--}}
-                {{--{--}}
-                    {{--name: '街镇',--}}
-                    {{--type: 'pie',--}}
-                    {{--radius: ['30%', '70%'],--}}
-                    {{--avoidLabelOverlap: false,--}}
-                    {{--label: {--}}
-                        {{--normal: {--}}
-                            {{--show: false,--}}
-                            {{--position: 'right'--}}
-                        {{--},--}}
-                        {{--emphasis: {--}}
-                            {{--show: true,--}}
-                            {{--textStyle: {--}}
-                                {{--fontSize: '30',--}}
-                                {{--fontWeight: 'bold'--}}
-                            {{--}--}}
-                        {{--}--}}
-                    {{--},--}}
-                    {{--labelLine: {--}}
-                        {{--normal: {--}}
-                            {{--show: false--}}
-                        {{--}--}}
-                    {{--},--}}
-                    {{--data: [--}}
-                        {{--{value: 11.9, name: '黄岛'},--}}
-                        {{--{value: 16.6, name: '辛安'},--}}
-                        {{--{value: 8.4, name: '薛家岛'},--}}
-                        {{--{value: 8.5, name: '灵珠山'},--}}
-                        {{--{value: 11.9, name: '长江路'},--}}
-                        {{--{value: 16.6, name: '红石崖'},--}}
-                        {{--{value: 8.4, name: '灵山卫'},--}}
-                        {{--{value: 8.5, name: '王台镇'},--}}
-                        {{--{value: 8.7, name: '隐珠'},--}}
-                        {{--{value: 8.4, name: '滨海'},--}}
-                        {{--{value: 11.5, name: '张家楼'},--}}
-                        {{--{value: 12.4, name: '琅琊'},--}}
-                        {{--{value: 10.4, name: '藏南'},--}}
-                        {{--{value: 16.4, name: '泊里'},--}}
-                        {{--{value: 13.6, name: '大场'},--}}
-                        {{--{value: 8.5, name: '海青'},--}}
-                        {{--{value: 9.4, name: '大村'},--}}
-                        {{--{value: 10.4, name: '六汪'},--}}
-                        {{--{value: 13.2, name: '宝山'},--}}
-                        {{--{value: 9.9, name: '铁山'},--}}
-                        {{--{value: 7.4, name: '胶南'},--}}
-                        {{--{value: 6.9, name: '珠海'},--}}
-                        {{--{value: 8.4, name: '度假区'},--}}
-                        {{--{value: 10.4, name: '胶河'},--}}
-                        {{--{value: 12.4, name: '临港'}--}}
-                    {{--]--}}
-                {{--}--}}
-            {{--]--}}
-        {{--};--}}
+{{--$(function () {--}}
+{{--// 基于准备好的dom，初始化echarts实例--}}
+{{--var industryChart = echarts.init(document.getElementById('industry-charts'));--}}
+{{--// 指定图表的配置项和数据--}}
+{{--var option = {--}}
+{{--tooltip: {--}}
+{{--trigger: 'item',--}}
+{{--formatter: "{a} <br/>{b}: {c} ({d}%)"--}}
+{{--},--}}
+{{--title: {--}}
+{{--text: '工业产值',--}}
+{{--subtext: '分街镇主要经济指标',--}}
+{{--x: 'center',--}}
+{{--top: '10',--}}
+{{--},--}}
+{{--legend: {--}}
+{{--orient: 'vertical',--}}
+{{--x: 'left',--}}
+{{--top: '10',--}}
+{{--data: ['黄岛', '辛安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']--}}
+{{--},--}}
+{{--series: [--}}
+{{--{--}}
+{{--name: '街镇',--}}
+{{--type: 'pie',--}}
+{{--radius: ['30%', '70%'],--}}
+{{--avoidLabelOverlap: false,--}}
+{{--label: {--}}
+{{--normal: {--}}
+{{--show: false,--}}
+{{--position: 'right'--}}
+{{--},--}}
+{{--emphasis: {--}}
+{{--show: true,--}}
+{{--textStyle: {--}}
+{{--fontSize: '30',--}}
+{{--fontWeight: 'bold'--}}
+{{--}--}}
+{{--}--}}
+{{--},--}}
+{{--labelLine: {--}}
+{{--normal: {--}}
+{{--show: false--}}
+{{--}--}}
+{{--},--}}
+{{--data: [--}}
+{{--{value: 11.9, name: '黄岛'},--}}
+{{--{value: 16.6, name: '辛安'},--}}
+{{--{value: 8.4, name: '薛家岛'},--}}
+{{--{value: 8.5, name: '灵珠山'},--}}
+{{--{value: 11.9, name: '长江路'},--}}
+{{--{value: 16.6, name: '红石崖'},--}}
+{{--{value: 8.4, name: '灵山卫'},--}}
+{{--{value: 8.5, name: '王台镇'},--}}
+{{--{value: 8.7, name: '隐珠'},--}}
+{{--{value: 8.4, name: '滨海'},--}}
+{{--{value: 11.5, name: '张家楼'},--}}
+{{--{value: 12.4, name: '琅琊'},--}}
+{{--{value: 10.4, name: '藏南'},--}}
+{{--{value: 16.4, name: '泊里'},--}}
+{{--{value: 13.6, name: '大场'},--}}
+{{--{value: 8.5, name: '海青'},--}}
+{{--{value: 9.4, name: '大村'},--}}
+{{--{value: 10.4, name: '六汪'},--}}
+{{--{value: 13.2, name: '宝山'},--}}
+{{--{value: 9.9, name: '铁山'},--}}
+{{--{value: 7.4, name: '胶南'},--}}
+{{--{value: 6.9, name: '珠海'},--}}
+{{--{value: 8.4, name: '度假区'},--}}
+{{--{value: 10.4, name: '胶河'},--}}
+{{--{value: 12.4, name: '临港'}--}}
+{{--]--}}
+{{--}--}}
+{{--]--}}
+{{--};--}}
 
-        {{--// 使用刚指定的配置项和数据显示图表。--}}
-        {{--industryChart.setOption(option);--}}
-        {{--$(window).resize(function () {--}}
-            {{--industryChart.resize();--}}
-        {{--});--}}
-    {{--});--}}
+{{--// 使用刚指定的配置项和数据显示图表。--}}
+{{--industryChart.setOption(option);--}}
+{{--$(window).resize(function () {--}}
+{{--industryChart.resize();--}}
+{{--});--}}
+{{--});--}}
 {{--</script>--}}
 <script type="text/javascript">
     $(function () {
@@ -588,8 +675,8 @@
         var resizeMainContainer = function () {
             var _width = $('.col-sm-8').width();
             var _height = $('.col-sm-8').height();
-            taxContainer.style.width = _width+'px';
-            taxContainer.style.height = _height+'px';
+            taxContainer.style.width = _width + 'px';
+            taxContainer.style.height = _height + 'px';
         };
         //设置div容器高宽
         resizeMainContainer();
@@ -685,8 +772,8 @@
         var resizeMainContainer = function () {
             var _width = $('.col-sm-8').width();
             var _height = $('.col-sm-8').height();
-            assetsContainer.style.width = _width +'px';
-            assetsContainer.style.height = _height +'px';
+            assetsContainer.style.width = _width + 'px';
+            assetsContainer.style.height = _height + 'px';
         };
         //设置div容器高宽
         resizeMainContainer();
@@ -782,8 +869,8 @@
         var resizeMainContainer = function () {
             var _width = $('.col-sm-8').width();
             var _height = $('.col-sm-8').height();
-            saleContainer.style.width =_width +'px';
-            saleContainer.style.height =_height +'px';
+            saleContainer.style.width = _width + 'px';
+            saleContainer.style.height = _height + 'px';
         };
         //设置div容器高宽
         resizeMainContainer();

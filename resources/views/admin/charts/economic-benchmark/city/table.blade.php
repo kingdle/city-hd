@@ -1,4 +1,3 @@
-
 <div class="box box-primary ranking-table">
     <div class="contenter">
         <div class="row">
@@ -7,14 +6,14 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#total" aria-controls="total" role="tab"
-                                                                  data-toggle="tab">生产总值总量</a></li>
+                                                                  data-toggle="tab">地区生产总值</a></li>
                         <li role="presentation"><a href="#industry" aria-controls="industry" role="tab"
                                                    data-toggle="tab">工业增加值</a></li>
                         <li role="presentation"><a href="#assets" aria-controls="assets" role="tab" data-toggle="tab">固定资产投资</a>
                         </li>
                         <li role="presentation"><a href="#budget" aria-controls="budget" role="tab" data-toggle="tab">一般公共预算收入</a>
                         </li>
-                        <li role="presentation"><a href="#trade" aria-controls="trade" role="tab" data-toggle="tab">限额以上贸易</a>
+                        <li role="presentation"><a href="#trade" aria-controls="trade" role="tab" data-toggle="tab">社会消费品零售额</a>
                         </li>
                         <li role="presentation"><a href="#trade-foreign" aria-controls="trade-foreign" role="tab"
                                                    data-toggle="tab">对外贸易</a></li>
@@ -43,7 +42,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="地区生产总值">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
@@ -157,7 +156,7 @@
                                                         <th>增加值</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="工业增加值">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
@@ -271,7 +270,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="固定资产投资">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
@@ -385,7 +384,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="一般公共预算">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
@@ -499,7 +498,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="社会消费品">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
@@ -613,7 +612,7 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody itemName="对外贸易">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
@@ -716,12 +715,55 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function city() {
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        var axisQuarter = [];
+        for (var item in jiduTime.cAxisArr) {
+            axisQuarter.push(jiduTime.cAxisArr[item].name);
+        }
+        var chartKit = new SyChartSeriesKit({
+            store: storeA,
+            axis: axisArr,
+        });
+        var chartKitQ = new SyChartSeriesKit({
+            store: storeA,
+            axis: jiduTime.cAxisArr,
+        });
         // 基于准备好的dom，初始化echarts实例
         var totalChart = echarts.init(document.getElementById('total-run'));
-
+        var industryContainer = document.getElementById('industry-run');
+        var assetsContainer = document.getElementById('assets-run');
+        var budgetContainer = document.getElementById('budget-run');
+        var tradeContainer = document.getElementById('trade-run');
+        var foreignContainer = document.getElementById('foreign-run');
+        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+        var resizeMainContainer = function () {
+            var _width = $('.col-sm-12').width();
+            var _height = $('.col-sm-12').height();
+            industryContainer.style.width = _width + 'px';
+            industryContainer.style.height = _height + 'px';
+            assetsContainer.style.width = _width + 'px';
+            assetsContainer.style.height = _height + 'px';
+            budgetContainer.style.width = _width + 'px';
+            budgetContainer.style.height = _height + 'px';
+            tradeContainer.style.width = _width + 'px';
+            tradeContainer.style.height = _height + 'px';
+            foreignContainer.style.width = _width + 'px';
+            foreignContainer.style.height = _height + 'px';
+        };
+        //设置div容器高宽
+        resizeMainContainer();
+        // 初始化图表
+        var industryChart = echarts.init(industryContainer);
+        var assetsChart = echarts.init(assetsContainer);
+        var budgetChart = echarts.init(budgetContainer);
+        var tradeChart = echarts.init(tradeContainer);
+        var foreignChart = echarts.init(foreignContainer);
         // 指定图表的配置项和数据
-        var option = {
+        var optionTotal = {
             title: {
                 text: '生产总值运行趋势'
             },
@@ -742,7 +784,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisQuarter
             },
             yAxis: {
                 splitLine: {show: true},
@@ -753,38 +795,25 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKitQ.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '地区生产总值'
+                            }).extField
+                        }, {
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        totalChart.setOption(option);
-        //浏览器大小改变时重置大小
-        $(window).resize(function () {
-            totalChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var industryContainer = document.getElementById('industry-run');
-
-        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-        var resizeMainContainer = function () {
-            var _width = $('.col-sm-12').width();
-            var _height = $('.col-sm-12').height();
-            industryContainer.style.width = _width +'px';
-            industryContainer.style.height = _height +'px';
-        };
-        //设置div容器高宽
-        resizeMainContainer();
-        // 初始化图表
-        var industryChart = echarts.init(industryContainer);
-        // 指定图表的配置项和数据
-        var option = {
+        var optionIndustry = {
             title: {
                 text: '工业增加值运行趋势'
             },
@@ -805,7 +834,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -816,39 +845,27 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '工业增加值'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        industryChart.setOption(option);
-        //浏览器大小改变时重置大小
-        window.onresize = function () {
-            resizeMainContainer();
-            industryChart.resize();
-        };
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var assetsContainer = document.getElementById('assets-run');
-
-        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-        var resizeMainContainer = function () {
-            var _width = $('.col-sm-12').width();
-            var _height = $('.col-sm-12').height();
-            assetsContainer.style.width = _width +'px';
-            assetsContainer.style.height = _height +'px';
-        };
-        //设置div容器高宽
-        resizeMainContainer();
-        // 初始化图表
-        var assetsChart = echarts.init(assetsContainer);
-        // 指定图表的配置项和数据
-        var option = {
+        var optionAssets = {
             title: {
                 text: '固定资产投资运行趋势'
             },
@@ -869,7 +886,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -880,39 +897,27 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '固定资产投资'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        assetsChart.setOption(option);
-        //浏览器大小改变时重置大小
-        window.onresize = function () {
-            resizeMainContainer();
-            assetsChart.resize();
-        };
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var budgetContainer = document.getElementById('budget-run');
-
-        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-        var resizeMainContainer = function () {
-            var _width = $('.col-sm-12').width();
-            var _height = $('.col-sm-12').height();
-            budgetContainer.style.width = _width +'px';
-            budgetContainer.style.height = _height +'px';
-        };
-        //设置div容器高宽
-        resizeMainContainer();
-        // 初始化图表
-        var budgetChart = echarts.init(budgetContainer);
-        // 指定图表的配置项和数据
-        var option = {
+        var optionBudget = {
             title: {
                 text: '一般公共预算收入运行趋势'
             },
@@ -933,7 +938,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -944,41 +949,29 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '一般公共预算收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        budgetChart.setOption(option);
-        //浏览器大小改变时重置大小
-        window.onresize = function () {
-            resizeMainContainer();
-            budgetChart.resize();
-        };
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var tradeContainer = document.getElementById('trade-run');
-
-        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-        var resizeMainContainer = function () {
-            var _width = $('.col-sm-12').width();
-            var _height = $('.col-sm-12').height();
-            tradeContainer.style.width = _width +'px';
-            tradeContainer.style.height = _height +'px';
-        };
-        //设置div容器高宽
-        resizeMainContainer();
-        // 初始化图表
-        var tradeChart = echarts.init(tradeContainer);
-        // 指定图表的配置项和数据
-        var option = {
+        var optionTrade = {
             title: {
-                text: '限额以上贸易运行趋势'
+                text: '社会消费品零售额运行趋势'
             },
             tooltip: {
                 trigger: 'axis'
@@ -997,7 +990,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -1008,39 +1001,27 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '社会消费品零售额'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        tradeChart.setOption(option);
-        //浏览器大小改变时重置大小
-        window.onresize = function () {
-            resizeMainContainer();
-            tradeChart.resize();
-        };
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var foreignContainer = document.getElementById('foreign-run');
-
-        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-        var resizeMainContainer = function () {
-            var _width = $('.col-sm-12').width();
-            var _height = $('.col-sm-12').height();
-            foreignContainer.style.width = _width +'px';
-            foreignContainer.style.height = _height +'px';
-        };
-        //设置div容器高宽
-        resizeMainContainer();
-        // 初始化图表
-        var foreignChart = echarts.init(foreignContainer);
-        // 指定图表的配置项和数据
-        var option = {
+        var optionForeign = {
             title: {
                 text: '对外贸易运行趋势'
             },
@@ -1061,7 +1042,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD
             },
             yAxis: {
                 splitLine: {show: true},
@@ -1072,18 +1053,43 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '对外贸易'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
 
-
         // 使用刚指定的配置项和数据显示图表。
-        foreignChart.setOption(option);
+        totalChart.setOption(optionTotal);
+        industryChart.setOption(optionIndustry);
+        assetsChart.setOption(optionAssets);
+        budgetChart.setOption(optionBudget);
+        tradeChart.setOption(optionTrade);
+        foreignChart.setOption(optionForeign);
         //浏览器大小改变时重置大小
-        window.onresize = function () {
+        $(window).resize(function () {
             resizeMainContainer();
+            totalChart.resize();
+            industryChart.resize();
+            assetsChart.resize();
+            budgetChart.resize();
+            tradeChart.resize();
             foreignChart.resize();
-        };
-    });
+        });
+    }
 </script>

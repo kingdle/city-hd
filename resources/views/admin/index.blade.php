@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/google-fonts/fonts.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/dist/css/AdminLTE.min.css") }}">
     <link rel="stylesheet" href="{{ admin_asset('css/onepage-scroll.css') }}"/>
-    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    {{--<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>--}}
 
 
     <!-- REQUIRED JS SCRIPTS -->
@@ -35,6 +35,7 @@
     <script src="{{ admin_asset ("/vendor/laravel-admin/nprogress/nprogress.js") }}"></script>
     <script type="text/javascript" src="{{ admin_asset('js/hd-data.js') }}"></script>
     <script type="text/javascript" src="{{ admin_asset('js/echarts.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ admin_asset('js/echarts-gl.min.js') }}"></script>--}}
     <script>
         //===============!时间轴(月度)=================
         var nowDate = new Date();
@@ -158,8 +159,8 @@
 
     </script>
 
-    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
-    <script src="http://webapi.amap.com/maps?v=1.4.1&key=80701f48c0cc37c4d279b256aba5c407&plugin=AMap.ControlBar"></script>
+    {{--<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>--}}
+    {{--<script src="http://webapi.amap.com/maps?v=1.4.1&key=80701f48c0cc37c4d279b256aba5c407&plugin=AMap.ControlBar"></script>--}}
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
