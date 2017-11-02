@@ -162,7 +162,6 @@
                                 item: kitTable.meta("item", '地区生产总值').extField
                             }, true)
                         );
-                        console.log(kitTable.meta("area", $tdTitle.text()).extField,)
                         $tdS.text(
                             kitTableS.findValueByObj({
                                 area: kitTableS.meta("area", $tdTitle.text()).extField,
