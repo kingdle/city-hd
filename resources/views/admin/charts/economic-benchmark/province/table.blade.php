@@ -582,10 +582,17 @@
         for (var item in axisArr) {
             axisD.push(axisArr[item].name);
         }
+        var axisQuarter = [];
+        for (var item in jiduTime.cAxisArr) {
+            axisQuarter.push(jiduTime.cAxisArr[item].name);
+        }
         var chartKit = new SyChartSeriesKit({
             store: storeA,
             axis: axisArr,
-
+        });
+        var chartKitQ = new SyChartSeriesKit({
+            store: storeA,
+            axis: jiduTime.cAxisArr,
         });
 
         var totalChart = echarts.init(document.getElementById('total-run'));
@@ -631,7 +638,7 @@
                 type: 'category',
                 splitLine: {show: true},
                 boundaryGap: false,
-                data: axisD
+                data: axisQuarter
             },
             yAxis: {
                 splitLine: {show: true},
@@ -642,7 +649,21 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2, 3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKitQ.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '地区生产总值'
+                            }).extField
+                        }, {
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
@@ -678,7 +699,23 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '固定资产投资'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
@@ -714,7 +751,23 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '一般公共预算收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
@@ -750,7 +803,23 @@
                     name: '增速',
                     type: 'line',
                     stack: '总量',
-                    data: [3.7, 2.7, 4, 5, 6.9, 5.2]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            //        name: "资产投资",
+                            type: "item",
+                            extField: storeA.findMetaByItemName({
+                                type: 'item',
+                                name: '进出口总额'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: storeA.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
