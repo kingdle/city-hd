@@ -48,18 +48,6 @@
                                                                         </thead>
                                                                         <tbody style="display:block; max-height:360px;overflow-y: scroll;">
                                                                         <tr>
-                                                                            <td>1</td>
-                                                                            <td>总计</td>
-                                                                            <td>2564252</td>
-                                                                            <td>13.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2</td>
-                                                                            <td>功能区累计</td>
-                                                                            <td>1207138</td>
-                                                                            <td>12.8%</td>
-                                                                        </tr>
-                                                                        <tr>
                                                                             <td>3</td>
                                                                             <td>海洋高新区</td>
                                                                             <td>52277</td>
@@ -147,7 +135,7 @@
                                                                 success: function (store) {
                                                                     var _store = store;
                                                                     var hours = axisD;
-                                                                    var days = ['海洋高新区', '中德生态园', '经济技术开发区'];
+                                                                    var days = ['海洋高新区', '中德生态园', '经济技术开发区', '董家口循环经济区', '国际旅游度假区', '灵山湾影视文化产业区', '现代农业示范区', '古镇口创新示范区', '西海岸交通商务区', '藏马山旅游度假区', '轨道交通指挥部'];
                                                                     var data = []
 //                                                                    console.log(JSON.stringify(axisD))
                                                                     var dataItem = null;
@@ -269,18 +257,6 @@
                                                                         </thead>
                                                                         <tbody style="display:block; max-height:360px;overflow-y: scroll;">
                                                                         <tr>
-                                                                            <td>1</td>
-                                                                            <td>总计</td>
-                                                                            <td>2564252</td>
-                                                                            <td>13.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2</td>
-                                                                            <td>功能区累计</td>
-                                                                            <td>1207138</td>
-                                                                            <td>12.8%</td>
-                                                                        </tr>
-                                                                        <tr>
                                                                             <td>3</td>
                                                                             <td>海洋高新区</td>
                                                                             <td>52277</td>
@@ -375,18 +351,6 @@
                                                                         </thead>
                                                                         <tbody style="display:block; max-height:360px;overflow-y: scroll;">
                                                                         <tr>
-                                                                            <td>1</td>
-                                                                            <td>总计</td>
-                                                                            <td>2564252</td>
-                                                                            <td>13.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2</td>
-                                                                            <td>功能区累计</td>
-                                                                            <td>1207138</td>
-                                                                            <td>12.8%</td>
-                                                                        </tr>
-                                                                        <tr>
                                                                             <td>3</td>
                                                                             <td>海洋高新区</td>
                                                                             <td>52277</td>
@@ -480,18 +444,6 @@
                                                                         </tr>
                                                                         </thead>
                                                                         <tbody style="display:block; max-height:360px;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td>总计</td>
-                                                                            <td>2564252</td>
-                                                                            <td>13.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2</td>
-                                                                            <td>功能区累计</td>
-                                                                            <td>1207138</td>
-                                                                            <td>12.8%</td>
-                                                                        </tr>
                                                                         <tr>
                                                                             <td>3</td>
                                                                             <td>海洋高新区</td>

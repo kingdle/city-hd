@@ -606,7 +606,7 @@ canvas {
 }
 
 .project-table h4 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 200;
     clear: both;
 }
@@ -644,4 +644,7 @@ canvas {
 
 .con .m-b-md {
     display: inline;
+}
+.con h4 {
+    font-size: 12px;
 }

@@ -634,7 +634,7 @@
                                         <div class="ibox-content">
                                             <div class="row">
                                                 <div class="col-sm-4 con">
-                                                    <h5 class="m-b-md">家电电子产值</h5>
+                                                    <h5 class="m-b-md">批发</h5>
                                                     <h4 class="text-navy update-s-v">
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
@@ -651,7 +651,7 @@
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/electronics.png') }}" alt="家电电子产值"
+                                                    <img src="{{ asset('uploads/616/wholesale.png') }}" alt="家电电子产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
                                             </div>
@@ -663,7 +663,36 @@
                                         <div class="ibox-content">
                                             <div class="row">
                                                 <div class="col-sm-4 con">
-                                                    <h5 class="m-b-md">汽车制造产值</h5>
+                                                    <h5 class="m-b-md">零售</h5>
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
+                                                    </h4>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-mini active"
+                                                             style="width: 82%">
+                                                            <span>82</span>%
+                                                        </div>
+
+                                                    </div>
+                                                    <h4 class="update-s-v">
+                                                        <small>总量:</small>
+                                                        <span>171.4</span>亿元
+                                                    </h4>
+                                                </div>
+                                                <div class="col-sm-8 hidden-xs">
+                                                    <img src="{{ asset('uploads/616/retail.png') }}" alt="家电电子产值"
+                                                         class="img-responsive img-thumbnail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="ibox">
+                                        <div class="ibox-content">
+                                            <div class="row">
+                                                <div class="col-sm-4 con">
+                                                    <h5 class="m-b-md">住宿</h5>
                                                     <h4 class="text-navy update-s-v">
                                                         <i class="fa fa-play"></i> 增速 <b>48</b>%
                                                     </h4>
@@ -680,7 +709,37 @@
                                                     </h4>
                                                 </div>
                                                 <div class="col-sm-8 hidden-xs">
-                                                    <img src="{{ asset('uploads/616/AutomobileMaking.png') }}"
+                                                    <img src="{{ asset('uploads/616/accommodation.png') }}"
+                                                         alt="汽车制造产值"
+                                                         class="img-responsive img-thumbnail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="ibox">
+                                        <div class="ibox-content">
+                                            <div class="row">
+                                                <div class="col-sm-4 con">
+                                                    <h5 class="m-b-md">餐饮</h5>
+                                                    <h4 class="text-navy update-s-v">
+                                                        <i class="fa fa-play"></i> 增速 <b>48</b>%
+                                                    </h4>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-striped progress-mini progress-bar-striped active"
+                                                             style="width: 32%">
+                                                            <span>32</span>%
+                                                        </div>
+
+                                                    </div>
+                                                    <h4 class="update-s-v">
+                                                        <small>总量:</small>
+                                                        <span>171.4</span>亿元
+                                                    </h4>
+                                                </div>
+                                                <div class="col-sm-8 hidden-xs">
+                                                    <img src="{{ asset('uploads/616/food.png') }}"
                                                          alt="汽车制造产值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
