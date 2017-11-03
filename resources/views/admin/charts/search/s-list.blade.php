@@ -18,6 +18,7 @@
     .folder-list li {
         border-bottom: 1px solid #e7eaec;
         display: block;
+        clear: both;
     }
     .folder-list li a {
         color: #666666;

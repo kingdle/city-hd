@@ -48,11 +48,11 @@
             if (nowDate.getDate() <= 20) {
                 date = new Date();
                 date.setDate(1);
-                date.setMonth(date.getMonth()-i-3);
+                date.setMonth(date.getMonth()-i-2);
             } else {
                 date = new Date();
                 date.setDate(1);
-                date.setMonth(date.getMonth()-i-2);
+                date.setMonth(date.getMonth()-i-1);
             }
 
             if (date.getMonth() == 0) {

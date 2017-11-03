@@ -36,7 +36,7 @@
         for (var item in axisArr) {
             axisD.push(axisArr[item].name);
         }
-
+console.log(store)
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
@@ -73,7 +73,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['增加值', '增速'],
+                data: ['累计', '增长'],
                 left:'10',
             },
             toolbox: {},
@@ -95,7 +95,7 @@
                 },
                 {
                     type: 'value',
-                    name: '增速',
+                    name: '增长',
                     splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}%'
@@ -104,25 +104,10 @@
             ],
             series: [
                 {
-                    name: '增加值',
+                    name: '累计',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: chartKit.genSeriesData({
-                        series: [{
-                            type: "item",
-                            extField: store.findMetaByItemName({
-                                type: 'item',
-                                name: '固定'
-                            }).extField
-                        }, {
-                            //        name: 2,
-                            type: 'frame',
-                            extField: store.findMetaByItemName({
-                                type: 'frame',
-                                name: '累计'
-                            }).extField
-                        }]
-                    }),
+                    data: ['', '','', '',200.4, 64.5, 86.6, 104.6, 134.6,'', ''],
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -132,25 +117,10 @@
                     markLine: {}
                 },
                 {
-                    name: '增速',
+                    name: '增长',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: chartKit.genSeriesData({
-                        series: [{
-                            type: "item",
-                            extField: store.findMetaByItemName({
-                                type: 'item',
-                                name: '固定'
-                            }).extField
-                        }, {
-                            //        name: 2,
-                            type: 'frame',
-                            extField: store.findMetaByItemName({
-                                type: 'frame',
-                                name: '增长'
-                            }).extField
-                        }]
-                    }),
+                    data: ['', '','', '',13.4, 12.1, 12, 11.3, 11.1,'', ''],
                     markLine: {}
                 }
             ]

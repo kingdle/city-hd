@@ -12,7 +12,7 @@
                             <span>56.3</span>%
                         </div>
                     </div>
-                    <div class="m-t-sm"> <small>累计投资:</small><b>748.16</b><small>亿元 排名：</small><em>2</em></div>
+                    <div class="m-t-sm"> <small>累计投资:</small><b>748.16</b><small>亿元 排名：</small><em>1</em></div>
                 </div>
             </div>
         </div>

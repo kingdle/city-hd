@@ -82,7 +82,6 @@
                     }
                 }
                 catch (e) {
-
                 }
 //
 //                $card.find('.stats').toggleClass(CResult);
