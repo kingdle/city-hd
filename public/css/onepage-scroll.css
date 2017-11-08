@@ -157,9 +157,9 @@ canvas {
 }
 
 .logo-img {
-    width: 280px;
+    width: 320px;
     height: 100%;
-    padding-top: 0;
+    padding-top: 20px;
 }
 
 .line-star {

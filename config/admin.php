@@ -5,12 +5,12 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'      => '西海岸新区统计平台',
+    'name'      => '青岛西海岸新区统计大数据平台',
 
     /*
      * Logo in admin panel header.
      */
-    'logo'      => '<b>西海岸统计</b>',
+    'logo'      => '<b>青岛西海岸统计</b>',
 
     /*
      * Mini-logo in admin panel header.
@@ -37,7 +37,7 @@ return [
     /*
      * Laravel-admin html title.
      */
-    'title'  => '西海岸新区统计平台',
+    'title'  => '青岛西海岸新区统计大数据平台',
 
     /*
      * Use `https`.

@@ -55,19 +55,19 @@
                 grossChart(store);
                 var _store = store;
                 var sDate = new Date();
-                date = new Date(sDate.getTime());
+                date = jiduTime.dateArr[jiduTime.dateArr.length-1];
                 var baseRes = {
                     frame: 200000011,
                     area: 1508,
                     time_year: date.getFullYear(),
-                    time_month: date.getMonth()-3,
+                    time_month: date.getMonth()+1,
                 }
 
                 var baseSpeed = {
                     frame: 200000014,
                     area: 1508,
                     time_year: date.getFullYear(),
-                    time_month: date.getMonth()-3,
+                    time_month: date.getMonth()+1,
                 }
 
                 var kitV = new SyValueKit(baseRes, _store);

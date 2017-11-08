@@ -32,7 +32,7 @@
             <div class="row row-top">
                 <div class="col-md-1 text-center"></div>
                 <div class="col-md-4 text-center">
-                    <div class="logo "><img src="{{ asset('uploads/logo.png') }}" class="logo-img img-responsive center-block"></div>
+                    <div class="logo "><img src="{{ asset('uploads/logo-600.png') }}" class="logo-img img-responsive center-block"></div>
                 </div>
                 <div class="col-md-1 visible-lg visible-md">
                     <div class="line-stars"><img src="{{ asset('uploads/line-star.png') }}" class="line-star img-responsive"></div>
@@ -111,7 +111,7 @@
         <div class="container">
             <div class="row row-index-top">
                 <div class="col-md-12 text-center visible-lg visible-md">
-                    <div class="logo"><img src="{{ asset('uploads/logo.png') }}" class="logo-img"></div>
+                    <div class="logo"><img src="{{ asset('uploads/logo-600.png') }}" class="logo-img"></div>
                 </div>
                 <div class="col-md-12 text-center porctlist">
                     <div class="conlistpage">
