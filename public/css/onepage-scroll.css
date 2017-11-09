@@ -267,31 +267,25 @@ canvas {
     display: inline-block;
     vertical-align: top;
     float: left \9;
-}
-
-.porctlist li p {
-    line-height: 20px;
-    font-size: 14px;
-    padding: 0 5px;
-}
-
-.porctlist li img {
-    display: block;
-    margin: auto;
-    width: 80px;
-    height: 100%;
+    margin-left: 30px;
 }
 
 .porctlist li a {
     color: #ffffff;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
 }
 
+.porctlist li i {
+    padding-bottom: 10px;
+}
+
 .porctlist li a:hover {
-    color: #ffffff;
-    font-size: 16px;
+    color: #fffcf6;
+    font-size: 20px;
+    font-weight: 700;
     text-decoration: none;
+    text-shadow: 2px 2px 5px #575757;
     transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
@@ -645,6 +639,7 @@ canvas {
 .con .m-b-md {
     display: inline;
 }
+
 .con h4 {
     font-size: 12px;
 }

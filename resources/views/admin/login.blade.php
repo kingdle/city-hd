@@ -117,32 +117,39 @@
                     <div class="conlistpage">
                         <ul class="conlist1">
                             <li>
-                                <p><a href="{{ admin_base_path('/') }}">
-                                <p><i class="fa fa-star fa-5x"></i></p>经济运行监测</a></p>
+                                <a href="{{ admin_base_path('/') }}">
+                                <i class="fa fa-star fa-5x"></i><br><span>新区发展监测</span>
+                                </a>
                             </li>
                             <li>
-                                <p><a href="{{ admin_base_path('/auth/616') }}">
-                                <p><i class="fa fa-eye fa-5x"></i></p>新经济产业监测</a></p>
+                                <a href="{{ admin_base_path('/auth/616') }}">
+                                <i class="fa fa-eye fa-5x"></i><br><span>新经济产业监测</span>
+                                </a>
                             </li>
                             <li>
-                                <p><a href="{{ admin_base_path('/auth/economic-benchmark') }}">
-                                <p><i class="fa fa-area-chart fa-5x"></i></p>经济发展对标</a></p>
+                                <a href="{{ admin_base_path('/auth/economic-benchmark') }}">
+                                <i class="fa fa-area-chart fa-5x"></i><br><span>经济发展对标</span>
+                                </a>
                             </li>
                             <li>
-                                <p><a href="{{ admin_base_path('/auth/area-development') }}">
-                                <p><i class="fa fa-product-hunt fa-5x"></i></p>区域发展监测</a></p>
+                                <a href="{{ admin_base_path('/auth/area-development') }}">
+                                <i class="fa fa-product-hunt fa-5x"></i><br><span>区域发展监测</span>
+                                </a>
                             </li>
                             <li>
-                                <p><a href="{{ admin_base_path('/auth/project-monitor') }}">
-                                <p><i class="fa fa-commenting-o fa-5x"></i></p>重点项目监测</a></p>
+                                <a href="{{ admin_base_path('/auth/project-monitor') }}">
+                                <i class="fa fa-commenting-o fa-5x"></i><br><span>重点项目监测</span>
+                                </a>
                             </li>
                             <li>
-                                <p><a href="{{ admin_base_path('/auth/search') }}">
-                                <p><i class="fa fa-search fa-5x"></i></p>数据检索</a></p>
+                                <a href="{{ admin_base_path('/auth/search') }}">
+                                <i class="fa fa-search fa-5x"></i><br><span>数据检索</span>
+                                </a>
                             </li>
                             <li>
-                                <p><a href="{{ admin_base_path('/auth/media') }}">
-                                <p><i class="fa fa-user fa-5x"></i></p>资料库</a></p>
+                                <a href="{{ admin_base_path('/auth/media') }}">
+                                <i class="fa fa-user fa-5x"></i><br><span>数字库</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
