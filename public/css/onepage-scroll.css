@@ -638,8 +638,12 @@ canvas {
 
 .con .m-b-md {
     display: inline;
+    min-height: 36px;
+    margin: auto;
 }
-
 .con h4 {
     font-size: 12px;
+}
+.main-footer a {
+    padding:0 5px;
 }

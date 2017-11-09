@@ -15,7 +15,7 @@ return [
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>新区+</b>',
+    'logo-mini' => '<b>统计+</b>',
 
     /*
      * Route configration.
@@ -129,7 +129,7 @@ return [
     /*
      * @see https://adminlte.io/docs/2.4/layout
      */
-    'skin'    => 'skin-blue-light',
+    'skin'    => 'skin-blue',
 
     /*
     |---------------------------------------------------------|
@@ -140,7 +140,7 @@ return [
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
      */
-    'layout'  => ['sidebar-mini', 'sidebar-collapse'],
+    'layout'  => ['sidebar-mini', ''],
 
     /*
      * Version displayed in footer.

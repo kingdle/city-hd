@@ -91,7 +91,7 @@
         border: 1px solid #e7eaec;
     }
 </style>
-<div class="wrapper wrapper-content">
+<div class="box search-bar">
     <div class="row">
         <div class="col-md-12">
             <div class="ibox float-e-margins">

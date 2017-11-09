@@ -240,7 +240,7 @@
             </div>
         </div>
         <div class="col-lg-9">
-            <div class="wrapper wrapper-content animated fadeInUp">
+            <div class="wrapper-content animated fadeInUp">
                 <div class="ibox">
                     <div class="ibox-content">
 
