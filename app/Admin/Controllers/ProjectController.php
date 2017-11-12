@@ -17,8 +17,8 @@ class ProjectController extends Controller
             $content->description(now());
 
             $content->row(function (Row $row) {
-                $row->column(7, view('admin.charts.project-monitor.p-table'));
-                $row->column(5, view('admin.charts.project-monitor.p-img'));
+                $row->column(12, view('admin.charts.project-monitor.p-table'));
+//                $row->column(5, view('admin.charts.project-monitor.p-img'));
             });
             $content->body(view('admin.charts.project-monitor.p-list'));
 

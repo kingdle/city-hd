@@ -57,12 +57,13 @@
                                             <input id="username" type="input" class="form-control"
                                                    placeholder="{{ trans('admin.username') }}" name="username"
                                                    value="{{ old('username') }}" required autofocus>
-                                            @if ($errors->has('username'))
-                                                <span class="help-block">
+
+                                        </div>
+                                        @if ($errors->has('username'))
+                                            <span class="help-block">
                                                     <strong>{{ $errors->first('username') }}</strong>
                                                 </span>
-                                            @endif
-                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
@@ -72,13 +73,13 @@
                                             <input id="password" type="password" class="form-control"
                                                    placeholder="{{ trans('admin.password') }}" name="password"
                                                    required>
-                                            @if ($errors->has('password'))
-                                                <span class="help-block">
-                                                        <strong>{{ $errors->first('password') }}</strong>
-                                                     </span>
-                                            @endif
                                         </div>
                                     </div>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                                        <strong>{{ $errors->first('password') }}</strong>
+                                                     </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6 text-left">
@@ -135,47 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 text-center porctlist">
-                    <div class="conlistpage">
-                        <ul class="conlist1">
-                            <li>
-                                <a href="{{ admin_base_path('/') }}">
-                                    <i class="fa fa-star fa-5x"></i><br><span>新区发展监测</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ admin_base_path('/auth/616') }}">
-                                    <i class="fa fa-eye fa-5x"></i><br><span>新经济产业监测</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ admin_base_path('/auth/economic-benchmark') }}">
-                                    <i class="fa fa-area-chart fa-5x"></i><br><span>经济发展对标</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ admin_base_path('/auth/area-development') }}">
-                                    <i class="fa fa-product-hunt fa-5x"></i><br><span>区域发展监测</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ admin_base_path('/auth/project-monitor') }}">
-                                    <i class="fa fa-commenting-o fa-5x"></i><br><span>重点项目监测</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ admin_base_path('/auth/search') }}">
-                                    <i class="fa fa-search fa-5x"></i><br><span>数据检索</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ admin_base_path('/media') }}">
-                                    <i class="fa fa-user fa-5x"></i><br><span>数字库</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                @include('admin.partials.menu-login')
             </div>
         </div>
     </div>
