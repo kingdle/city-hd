@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
+use Encore\Admin\Auth\Database\Menu;
+use Encore\Admin\Auth\Database\Role;
+use Encore\Admin\Layout\Column;
+use Encore\Admin\Tree;
+use Encore\Admin\Widgets\Box;
+
 
 
 class HomeController extends Controller
@@ -14,12 +20,13 @@ class HomeController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('后台首页');
-            $content->description('后台首页');
+            $content->header('');
+            $content->description(now());
 
             $content->row(function (Row $row) {
                 $row->column(12, view('admin.charts.admin-home'));
             });
+
         });
     }
 }

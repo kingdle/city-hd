@@ -8,39 +8,47 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'city-hd') }}</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/onepage-scroll.css') }}"/>
+    <link rel="stylesheet" href="{{ admin_asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ admin_asset('css/onepage-scroll.css') }}"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/font-awesome/css/font-awesome.min.css") }}">
     <!-- Script -->
-    <script src="{{ asset('js/jquery-2.1.0.js') }}"></script>
-    <script src="{{ asset('js/jquery.onepage-scroll.min.js') }}"></script>
+    <script src="{{ admin_asset('js/jquery-2.1.0.js') }}"></script>
+    <script src="{{ admin_asset('js/jquery.onepage-scroll.min.js') }}"></script>
+    <style>
 
-    <script>
-        $(function () {
-            $('.main').onepage_scroll({
-                sectionContainer: '.page',
-                responsiveFallback: 600
-            });
-        });
-    </script>
+    </style>
 </head>
 <body>
 <div class="main">
     <div class="page page-one">
         <div class="container">
+            <div class="row visible-lg visible-md">
+                <div class="col-md-12">
+                    <div class="Surface">
+                        <ul class="surface-ul">
+                            <li>担当海洋强国战略<span>新支点</span></li>
+                            <li>担当全省对外开放<span>桥头堡</span></li>
+                            <li>担当全市创新发展<span>排头兵</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="row row-top">
-                <div class="col-md-1 text-center"></div>
+                <div class="col-md-2 text-center visible-lg visible-md"></div>
                 <div class="col-md-4 text-center">
-                    <div class="logo "><img src="{{ asset('uploads/logo-600.png') }}" class="logo-img img-responsive center-block"></div>
+                    <div class="logo "><img src="{{ asset('uploads/logo-600.png') }}"
+                                            class="logo-img img-responsive center-block"></div>
                 </div>
                 <div class="col-md-1 visible-lg visible-md">
-                    <div class="line-stars"><img src="{{ asset('uploads/line-star.png') }}" class="line-star img-responsive"></div>
+                    <div class="line-stars"><img src="{{ asset('uploads/line-star.png') }}"
+                                                 class="line-star img-responsive"></div>
                 </div>
-                <div class="col-md-6 login-box">
+                <div class="col-md-5 login-box">
                     <div class="login-form">
                         <div class="panel-body">
-                            <form class="form-horizontal" method="POST" action="{{ admin_base_path('auth/login') }}">
+                            <form class="form-horizontal" method="POST"
+                                  action="{{ admin_base_path('auth/login') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group {{ $errors->has('username') ? ' has-error' : '' }}">
                                     <div class="col-md-6">
@@ -62,7 +70,8 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                             <input id="password" type="password" class="form-control"
-                                                   placeholder="{{ trans('admin.password') }}" name="password" required>
+                                                   placeholder="{{ trans('admin.password') }}" name="password"
+                                                   required>
                                             @if ($errors->has('password'))
                                                 <span class="help-block">
                                                         <strong>{{ $errors->first('password') }}</strong>
@@ -110,45 +119,58 @@
     <div class="page page-two">
         <div class="container">
             <div class="row row-index-top">
-                <div class="col-md-12 text-center visible-lg visible-md">
-                    <div class="logo"><img src="{{ asset('uploads/logo-600.png') }}" class="logo-img"></div>
+                <div class="col-md-12 p-two-border text-center visible-lg visible-md">
+                    <div class="col-md-4">
+                        <div class="logo"><img src="{{ asset('uploads/logo-600.png') }}" class="logo-img"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="col-md-12">
+                            <div class="Surface-sta">
+                                <ul class="surface-sta-ul">
+                                    <li>激情干事，打造<span>“活力统计”</span></li>
+                                    <li>服务发展，打造<span>“实力统计”</span></li>
+                                    <li>提升形象，打造<span>“魅力统计”</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-12 text-center porctlist">
                     <div class="conlistpage">
                         <ul class="conlist1">
                             <li>
                                 <a href="{{ admin_base_path('/') }}">
-                                <i class="fa fa-star fa-5x"></i><br><span>新区发展监测</span>
+                                    <i class="fa fa-star fa-5x"></i><br><span>新区发展监测</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ admin_base_path('/auth/616') }}">
-                                <i class="fa fa-eye fa-5x"></i><br><span>新经济产业监测</span>
+                                    <i class="fa fa-eye fa-5x"></i><br><span>新经济产业监测</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ admin_base_path('/auth/economic-benchmark') }}">
-                                <i class="fa fa-area-chart fa-5x"></i><br><span>经济发展对标</span>
+                                    <i class="fa fa-area-chart fa-5x"></i><br><span>经济发展对标</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ admin_base_path('/auth/area-development') }}">
-                                <i class="fa fa-product-hunt fa-5x"></i><br><span>区域发展监测</span>
+                                    <i class="fa fa-product-hunt fa-5x"></i><br><span>区域发展监测</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ admin_base_path('/auth/project-monitor') }}">
-                                <i class="fa fa-commenting-o fa-5x"></i><br><span>重点项目监测</span>
+                                    <i class="fa fa-commenting-o fa-5x"></i><br><span>重点项目监测</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ admin_base_path('/auth/search') }}">
-                                <i class="fa fa-search fa-5x"></i><br><span>数据检索</span>
+                                    <i class="fa fa-search fa-5x"></i><br><span>数据检索</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ admin_base_path('/auth/media') }}">
-                                <i class="fa fa-user fa-5x"></i><br><span>数字库</span>
+                                <a href="{{ admin_base_path('/media') }}">
+                                    <i class="fa fa-user fa-5x"></i><br><span>数字库</span>
                                 </a>
                             </li>
                         </ul>
@@ -158,5 +180,33 @@
         </div>
     </div>
 </div>
+<script>
+    function Surface(id, width) {
+        var ul = $(id);
+        var liFirst = ul.find('li:first');
+        $(id).animate({left: width}).animate({"left": 0}, 0, function () {
+            var clone = liFirst.clone();
+            $(id).append(clone);
+            liFirst.remove();
+        })
+    }
+    function Surface_sta(id, height) {
+        var ul = $(id);
+        var liFirst = ul.find('li:first');
+        $(id).animate({top: height}).animate({"top": 0}, 0, function () {
+            var clone = liFirst.clone();
+            $(id).append(clone);
+            liFirst.remove();
+        })
+    }
+    setInterval("Surface('.surface-ul','-2500px')", 3000);
+    setInterval("Surface_sta('.surface-sta-ul','-200px')", 3000);
+    $(function () {
+        $('.main').onepage_scroll({
+            sectionContainer: '.page',
+            responsiveFallback: 600
+        });
+    });
+</script>
 </body>
 </html>

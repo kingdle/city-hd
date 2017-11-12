@@ -10,7 +10,7 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
 
-    $router->get('/', 'EconomicmonitorController@index');
+    $router->get('/', 'HomeController@index');
     $router->get('/auth/completion-area', 'CompletionAreaController@index');
     $router->get('/auth/completion-assets', 'CompletionAssetsController@index');
     $router->get('/auth/completion-sale', 'CompletionSaleController@index');
