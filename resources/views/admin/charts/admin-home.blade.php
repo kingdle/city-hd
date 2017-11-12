@@ -2,7 +2,6 @@
     .content-wrapper {
         background: url('/uploads/login.jpg');
         background-repeat: no-repeat;
-
         background-size: 100% 100%;
     }
 
@@ -16,7 +15,7 @@
             <div class="conlistpage">
                 <ul class="conlist1">
                     <li>
-                        <a href="{{ admin_base_path('/') }}">
+                        <a href="{{ admin_base_path('/auth/economic-monitor') }}">
                             <i class="fa fa-star fa-5x"></i><br><span>新区发展监测</span>
                         </a>
                     </li>
@@ -26,7 +25,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ admin_base_path('/auth/economic-benchmark') }}">
+                        <a href="{{ admin_base_path('/auth/benchmark-province') }}">
                             <i class="fa fa-area-chart fa-5x"></i><br><span>经济发展对标</span>
                         </a>
                     </li>
