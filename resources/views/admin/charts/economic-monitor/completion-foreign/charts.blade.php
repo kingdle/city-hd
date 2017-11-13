@@ -46,7 +46,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '进出口贸易运行趋势',
+                text: '进出口贸易',
                 subtext: ''
             },
             grid: [
@@ -127,7 +127,7 @@
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: '实际利用外资运行趋势',
+                text: '实际利用外资',
                 subtext: ''
             },
             grid: [

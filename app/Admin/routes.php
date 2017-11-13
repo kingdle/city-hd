@@ -26,9 +26,11 @@ Route::group([
     $router->get('/auth/economic-benchmark', 'EconomicbenchmarkController@index');
     $router->get('/auth/benchmark-province', 'BenchmarkProvinceController@index');
     $router->get('/auth/benchmark-city', 'BenchmarkCityController@index');
+    $router->get('/auth/benchmark-area', 'BenchmarkAreaController@index');
     $router->get('/auth/area-development', 'AreadevController@index');
     $router->get('/auth/development-functional', 'AreadevController@index');
     $router->get('/auth/development-town', 'AreadevTownController@index');
+    $router->get('/auth/development-prefecture', 'AreadevPrefectureController@index');
     $router->get('/auth/project-monitor', 'ProjectController@index');
     $router->get('/auth/project-monitor/content', 'ProjectController@show');
     $router->get('/auth/search', 'SearchController@index');
