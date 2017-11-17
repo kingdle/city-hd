@@ -9,7 +9,7 @@
         background-size: cover;
     }
 .container {
-    min-height: 800px;
+    min-height: 600px;
 }
 </style>
 <div class="container">
