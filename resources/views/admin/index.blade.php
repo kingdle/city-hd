@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/google-fonts/fonts.css") }}">
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/dist/css/AdminLTE.min.css") }}">
     <link rel="stylesheet" href="{{ admin_asset('css/onepage-scroll.css') }}"/>
+    <link rel="stylesheet" href="{{ admin_asset('css/buttons.css') }}"/>
     {{--<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>--}}
 
 

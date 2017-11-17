@@ -7,10 +7,21 @@
         @elseif($description == "月度详情")
             @include('admin::charts.dateline-quarter')
         @else
-            <h1>
+            <div class="col-md-11">
+            <h3>
                 {{ $header or trans('admin.title') }}
                 <small>{{ $description or trans('admin.description') }}</small>
-            </h1>
+            </h3>
+            </div>
+            <div class="col-md-1 hidden-xs">
+                <button class="button button-box"><i class="fa fa-reply"></i></button>
+            </div>
+
+            <script>
+                $("button").click(function(){
+                    history.go(-1)
+                })
+            </script>
         @endif
 
     </section>

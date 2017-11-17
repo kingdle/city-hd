@@ -5,8 +5,16 @@
             <small>{{ $description or trans('admin.description') }}</small>
         </h3>
     </div>
-        <div class="col-md-9">
-            <div id="HeaderDateline" style="min-height: 50px"></div>
-        </div>
+    <div class="col-md-8">
+        <div id="HeaderDateline" style="min-height: 50px"></div>
+    </div>
+    <div class="col-md-1 hidden-xs">
+        <button class="button button-box"><i class="fa fa-reply"></i></button>
+    </div>
+    <script>
+        $("button").click(function(){
+            history.go(-1)
+        })
+    </script>
 </div>
 
