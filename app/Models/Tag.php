@@ -10,6 +10,6 @@ class Tag extends Model
         'name',
     ];
     public function articles() {
-        return $this->belongsToMany('App\Models\Article','conversation_id');
+        return $this->belongsToMany('App\Models\Article','id');
     }
 }

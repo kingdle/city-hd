@@ -14,7 +14,7 @@ class User extends Model
 
     //use Faker;
 
-    protected $table = 'demo_users';
+    protected $table = 'admin_users';
 
     /**
      * The attributes that are mass assignable.

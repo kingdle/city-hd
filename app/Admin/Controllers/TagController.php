@@ -22,8 +22,8 @@ class TagController extends Controller
     public function index()
     {
         return Admin::content(function (Content $content) {
-            $content->header('Tags');
-            $content->description('All tags');
+            $content->header('标签 Tags');
+            $content->description('全部标签');
             $content->body($this->grid());
         });
     }
@@ -38,8 +38,8 @@ class TagController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('Tags');
-            $content->description('Edit tags');
+            $content->header('标签 Tags');
+            $content->description('编辑标签');
             $content->body($this->form()->edit($id));
         });
     }
@@ -52,8 +52,8 @@ class TagController extends Controller
     public function create()
     {
         return Admin::content(function (Content $content) {
-            $content->header('Tags');
-            $content->description('Create tags');
+            $content->header('标签 Tags');
+            $content->description('新建标签');
             $content->body($this->form());
         });
     }
@@ -70,22 +70,6 @@ class TagController extends Controller
             $grid->id('ID')->sortable();
 
             $grid->name()->editable();
-
-            $grid->options()->checkbox([
-                1 => 'Sed ut perspiciatis unde omni',
-                2 => 'voluptatem accusantium doloremque',
-                3 => 'dicta sunt explicabo',
-                4 => 'laudantium, totam rem aperiam',
-            ]);
-
-            $states = [
-                'on' => ['text' => 'YES'],
-                'off' => ['text' => 'NO'],
-            ];
-
-            $grid->column('switch_group')->switchGroup([
-                'recommend' => '推荐', 'hot' => '热门', 'new' => '最新'
-            ], $states);
 
             $grid->created_at();
             $grid->updated_at();
@@ -108,17 +92,6 @@ class TagController extends Controller
             $form->display('id', 'ID');
 
             $form->text('name')->rules('required');
-
-            $form->checkbox('options')->options([
-                1 => 'Sed ut perspiciatis unde omni',
-                2 => 'voluptatem accusantium doloremque',
-                3 => 'dicta sunt explicabo',
-                4 => 'laudantium, totam rem aperiam',
-            ])->stacked();
-
-            $form->switch('recommend');
-            $form->switch('hot');
-            $form->switch('new');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

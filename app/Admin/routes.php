@@ -45,6 +45,7 @@ Route::group([
     $router->get('/auth/article/edit/{id}','ArticleController@edit');
     $router->post('/auth/article/update','ArticleController@update');
 
+    $router->get('/auth/top-news','TopnewsController@index');
 
     $router->resources([
 

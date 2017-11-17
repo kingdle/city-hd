@@ -31,8 +31,8 @@ class PostController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('Posts');
-            $content->description('Post list..');
+            $content->header('统计头条');
+            $content->description('列表');
 
             $content->body($this->grid());
         });
@@ -48,8 +48,8 @@ class PostController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('头条');
+            $content->description('编辑');
 
             $content->body($this->form()->edit($id));
         });
@@ -64,8 +64,8 @@ class PostController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('头条');
+            $content->description('创建');
 
             $content->body($this->form());
         });
@@ -200,13 +200,7 @@ class PostController extends Controller
 
             $form->text('title')->default('hello');
 
-            $form->select('author_id')->options(function ($id) {
-                $user = User::find($id);
-
-                if ($user) {
-                    return [$user->id => $user->name];
-                }
-            })->ajax('/demo/api/users');
+            $form->text('author_id')->default('1');
 
             $form->editor('content');
 

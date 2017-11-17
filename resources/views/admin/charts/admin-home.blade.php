@@ -5,9 +5,6 @@
         background-size: 100% 100%;
     }
 
-    .container {
-
-    }
 </style>
 <div class="container">
     <div class="row row-index-top">
