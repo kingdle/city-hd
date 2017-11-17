@@ -18,15 +18,16 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return Admin::content(function (Content $content) {
-
-            $content->header('');
-            $content->description(now());
-
-            $content->row(function (Row $row) {
-                $row->column(12, view('admin.charts.admin-home'));
-            });
-
-        });
+//        return Admin::content(function (Content $content) {
+//
+//            $content->header('');
+//            $content->description(now());
+//
+//            $content->row(function (Row $row) {
+//                $row->column(12, view('admin.charts.admin-home'));
+//            });
+//
+//        });
+        return view('admin.charts.admin-home');
     }
 }

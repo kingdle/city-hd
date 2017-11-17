@@ -21,7 +21,7 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'author_id');
     }
-    public function admin_users()
+    public function users()
     {
         return $this->belongsTo(User::class, 'author_id');
     }

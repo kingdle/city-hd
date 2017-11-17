@@ -65,7 +65,7 @@ class PostController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('头条');
-            $content->description('创建');
+            $content->description('新建');
 
             $content->body($this->form());
         });

@@ -18,8 +18,11 @@
  *
  */
 use Encore\Admin\Facades\Admin;
+use App\Admin\Extensions\Form\WangEditor;
+use Encore\Admin\Form;
 
 Encore\Admin\Form::forget(['map', 'editor']);
+Form::extend('editor', WangEditor::class);
 app('view')->prependNamespace('admin', resource_path('views/admin'));
 
 Admin::js('/js/timeline.js');
