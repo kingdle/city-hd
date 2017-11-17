@@ -723,3 +723,39 @@ canvas {
 .p-two-border {
     border-bottom: 1px groove #ffffff;
 }
+@media screen and (max-width: 480px) {
+    porctlist li {
+        width: 50px;
+        margin: 0 5px;
+        height: 74px;
+        display: inline-block;
+        vertical-align: top;
+        float: left \9;
+        margin-left: 10px;
+        text-shadow: 2px 2px 5px #575757;
+    }
+
+    .porctlist li a {
+        color: #ffffff;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .porctlist li i {
+        padding-bottom: 10px;
+    }
+
+    .porctlist li a:hover {
+        color: #fffcf6;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        text-shadow: 2px 2px 5px #575757;
+        transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -ms-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -webkit-transition: all 0.4s;
+
+    }
+}
