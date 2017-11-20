@@ -7,15 +7,17 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticleRequest;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\User;
 use MercurySeries\Flashy\Flashy;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
+use Illuminate\Http\Request;
 
 class TopnewsController extends Controller {
     public function index()
     {
-        $posts = Post::latest()->paginate(5);
+        $posts = Post::latest('release_at')->paginate(6);
         $tags = Tag::pluck('name', 'id');
 
         return view('admin.topnews.index', compact('posts', 'tags'));
@@ -24,7 +26,8 @@ class TopnewsController extends Controller {
     public function show($id)
     {
         $posts = Post::findOrFail($id);
-
-        return view('admin.topnews.show', compact('posts'));
+        $tags = Tag::pluck('name', 'id');
+        return view('admin.topnews.show', compact('posts', 'tags'));
     }
+
 }

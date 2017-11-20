@@ -18,7 +18,7 @@
             </div>
 
             <script>
-                $("button").click(function(){
+                $(".col-md-1 button").click(function(){
                     history.go(-1)
                 })
             </script>

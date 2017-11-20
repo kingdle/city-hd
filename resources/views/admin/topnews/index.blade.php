@@ -7,7 +7,7 @@
         }
 
         .article-list {
-            margin-bottom: 200px;
+            margin-bottom: 10px;
         }
 
         .article-list ul {
@@ -99,12 +99,13 @@
             display: inline-block;
             vertical-align: middle;
             margin-top: -4px;
-            margin-right: 10px;
+            margin-right: 5px;
         }
 
         .article-list .tag a {
             vertical-align: top;
             color: #00A4A0;
+            padding-left:5px;
         }
 
         .BreakingNewsController {
@@ -134,7 +135,7 @@
             font-size: 13px;
             height: auto;
             line-height: 22px;
-            width: 50%;
+            width: 100%;
             overflow: hidden;
             text-overflow: clip;
             -o-text-overflow: clip;
@@ -166,7 +167,7 @@
         }
 
         .event-inform {
-            height: 61px;
+            height: 58px;
             overflow: hidden;
             margin: 0 auto;
             background-color: #fffdf4;
@@ -206,11 +207,11 @@
                                     @if($article->released ==1)
                                 <span class="surface-span">
                                   <a href="" target="_blank" style="color: rgb(51, 51, 51);">
-                                      <h3>{{ $article->author_id }}</h3>
+                                      <h3>{{ $article->author->name }}</h3>
                                   </a>
                                   <a href="" class="post_a" title="{{ $article->title }}"
                                      style="color: rgb(51, 51, 51); font-weight: normal; height: 22px;">
-                                      <h4><a class="title" href="/admin/posts/{{ $article->id }}"> {{ $article->title }}</a></h4>
+                                      <h4><a class="title" href="/admin/auth/top-news/{{ $article->id }}"> {{ $article->title }}</a></h4>
                                   </a>
                                 </span>
                                     @endif
@@ -227,7 +228,7 @@
                                         liFirst.remove();
                                     })
                                 }
-                                setInterval("Surface('.surface-top','-10px')", 3000);
+                                setInterval("Surface('.surface-top','-10px')", 5000);
                             </script>
                         </ul>
                     </div>
@@ -238,12 +239,15 @@
             <div class="col-lg-12">
                 <ul class="article-list">
                     @foreach($posts as $article)
+                        @if($article->released ==1)
                         <li>
-                            <a href="" class="pic" target="_blank">
-                                <img src="" alt="" width="200" height="150">
+                            @if($article->images !='')
+                            <a href="/admin/auth/top-news/{{ $article->id }}" class="pic visible-lg">
+                                <img src="/uploads/{{ $article->images }}" alt="" width="200" height="150">
                             </a>
+                            @endif
                             <div class="cont">
-                                <h3><a class="title" href="/admin/posts/{{ $article->id }}"> {{ $article->title }}</a>
+                                <h3><a class="title" href="/admin/auth/top-news/{{ $article->id }}"> {{ $article->title }}</a>
                                 </h3>
                                 <div class="options fr">
                                     <a href="" data-id="" class="comment">
@@ -255,22 +259,26 @@
                                 </div>
                                 <div class="info">
                                 <span class="author">
-                                    <a href="" class="name" target="_blank">{{ $article->author_id }}</a>
+                                    <a href="" class="name" target="_blank">{{ $article->author->name }}</a>
                                     <span class="gap_point">•</span>
                                     <i class="fa fa-clock-o"></i>{{ $article->updated_at }}</span></div>
-                                <p class="summary">{{ str_limit($article->content, $limit = 300, $end = '...') }}</p>
+                                <p class="summary">{{ str_limit(strip_tags($article->content), $limit = 300, $end = '...') }}</p>
                                 <div class="tag">
                                     @if($article->tags)
                                         <i class="fa fa-tag"></i>
                                         @foreach($article->tags as $tag)
-                                            <a class="collection-tag" href="">{{ $tag->name }}</a>，
+                                            <a class="collection-tag" href="">{{ $tag->name }}</a>
                                         @endforeach
                                     @endif
                                 </div>
                             </div>
                         </li>
+                        @endif
                     @endforeach
                 </ul>
+                <div class="text-center">
+                    {{ $posts->links() }}
+                </div>
             </div>
         </div>
     </div>

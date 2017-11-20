@@ -10,7 +10,8 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
 
-    $router->get('/', 'HomeController@index');
+    $router->get('/', 'TopnewsController@index');
+    $router->get('/logo', 'HomeController@index');
     $router->get('/auth/completion-area', 'CompletionAreaController@index');
     $router->get('/auth/completion-assets', 'CompletionAssetsController@index');
     $router->get('/auth/completion-sale', 'CompletionSaleController@index');
@@ -36,7 +37,7 @@ Route::group([
     $router->get('/auth/search', 'SearchController@index');
     $router->get('/server', 'ServerController@index');
     $router->get('/home', 'HomeController@index');
-    $router->resource('users', UserController::class);
+//    $router->resource('users', UserController::class);
 
     $router->get('/auth/article','ArticleController@index');
     $router->get('/auth/articles/{id}','ArticleController@show');
@@ -46,7 +47,7 @@ Route::group([
     $router->post('/auth/article/update','ArticleController@update');
 
     $router->get('/auth/top-news','TopnewsController@index');
-
+    $router->get('/auth/top-news/{id}','TopnewsController@show');
     $router->resources([
 
         'tags'                  => TagController::class,
@@ -74,4 +75,22 @@ Route::group([
     ]);
     $router->post('posts/release', 'PostController@release');
     $router->post('posts/restore', 'PostController@restore');
+    $router->get('api/users', 'PostController@users');
+    $router->resource('admin/users', UserController::class);
+    $router->get('china/cascading-select', 'China\ChinaController@cascading');
+
+    $router->get('api/world/cities', 'World\ApiController@cities');
+    $router->get('api/world/countries', 'World\ApiController@countries');
+    $router->get('api/china/city', 'China\ChinaController@city');
+    $router->get('api/china/district', 'China\ChinaController@district');
+
+    $router->get('widgets/form-1', 'WidgetsController@form1');
+    $router->get('widgets/form-2', 'WidgetsController@form2');
+    $router->get('widgets/form-3', 'WidgetsController@form3');
+    $router->get('widgets/table', 'WidgetsController@table');
+    $router->get('widgets/box', 'WidgetsController@box');
+    $router->get('widgets/info-box', 'WidgetsController@infoBox');
+    $router->get('widgets/tab', 'WidgetsController@tab');
+    $router->get('widgets/notice', 'WidgetsController@notice');
+    $router->get('widgets/editors', 'WidgetsController@editors');
 });

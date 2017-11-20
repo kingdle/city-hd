@@ -31,6 +31,25 @@
             width: 100%;
             margin-bottom: 10px;
         }
+        .a-img {
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .a-img img {
+            width:80%;
+        }
+        p.post-abstract {
+            padding: 20px 30px;
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 24px;
+            color: #808080;
+            margin: 0 0 20px 0;
+            background-color: #f6f6f6;
+        }
+        p.post-abstract .abstract-tit {
+            font-weight: bold;
+        }
     </style>
     <div class="box">
         <div class="row">
@@ -45,6 +64,13 @@
                         </div>
                         <div class="post-deco"></div>
                         <div class="article">
+                            <p class="post-abstract">
+                                <span class="abstract-tit">摘要：</span>
+                                {{ str_limit(strip_tags($posts->content), $limit = 100, $end = '...') }}
+                            </p>
+                            @if($posts->images)
+                                <div class="a-img"><img src="/uploads/{{ $posts->images }}" alt=""></div>
+                                @endif
                             <p>{!! $posts->content !!}</p>
                         </div>
                         <hr>
@@ -60,9 +86,7 @@
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <div class="small text-right">
-                                    <a href="/admin/auth/article/edit/{{$posts->id}}" class="btn btn-primary btn-sm" role="button">编辑</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

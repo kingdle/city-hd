@@ -10,21 +10,19 @@ class Post extends Model
 {
     use SoftDeletes, AdminBuilder;
 
-    protected $table = 'admin_posts';
+    protected $table = 'demo_posts';
 
     protected $casts = [
         'extra' => 'json',
-
     ];
+    protected $fillable = ['title','content','author_id','rate','released','keywords','foo_bar','release_at','created_at','updated_at'];
+
 
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
     }
-    public function users()
-    {
-        return $this->belongsTo(User::class, 'author_id');
-    }
+
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable', 'demo_taggables');

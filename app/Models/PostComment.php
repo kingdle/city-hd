@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostComment extends Model
 {
-    protected $table = 'admin_post_comments';
+    protected $table = 'demo_post_comments';
 
     protected $fillable = ['content'];
 

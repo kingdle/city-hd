@@ -93,8 +93,8 @@ class TagController extends Controller
 
             $form->text('name')->rules('required');
 
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->display('created_at', 'Created At')->default(now());
+            $form->display('updated_at', 'Updated At')->default(now());
         });
     }
 }

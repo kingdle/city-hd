@@ -86,24 +86,23 @@ class PostController extends Controller
 
             $grid->id('ID')->sortable();
 
-            $grid->title()->ucfirst()->limit(30);
+            $grid->column('title','标题')->ucfirst()->limit(30)->sortable();
 
-            $grid->tags()->pluck('name')->label();
-
+            $grid->tags('标签')->pluck('name')->label();
             $states = [
-                'on' => ['text' => 'YES'],
-                'off' => ['text' => 'NO'],
+                'on'  => ['value' => 1, 'text' => '是'],
+                'off' => ['value' => 0, 'text' => '否'],
             ];
+            $grid->column('released','发布')->switch($states);
 
-            $grid->released()->switch($states);
 
-            $grid->rate()->display(function ($rate) {
+            $grid->rate('等级')->display(function ($rate) {
                 $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
 
                 return join('&nbsp;', array_fill(0, min(5, $rate), $html));
             });
 
-            $grid->created_at();
+            $grid->created_at('创建时间')->sortable()->editable('datetime');
 
             $grid->column('float_bar')->floatBar();
 
@@ -115,13 +114,13 @@ class PostController extends Controller
 
             $grid->filter(function (Grid\Filter $filter) {
 
-                $filter->equal('title');
+                $filter->equal('title','标题');
 
-                $filter->equal('created_at')->datetime();
+                $filter->equal('created_at','创建时间')->datetime();
 
-                $filter->between('updated_at')->datetime();
+                $filter->between('updated_at','更新时间')->datetime();
 
-                $filter->between('rate');
+                $filter->between('rate','等级');
 
                 $filter->where(function ($query) {
 
@@ -131,7 +130,7 @@ class PostController extends Controller
                         $query->where('name', $input);
                     });
 
-                }, 'Has tag', 'tag');
+                }, '标签', 'tag');
             });
 
             $grid->tools(function ($tools) {
@@ -140,10 +139,10 @@ class PostController extends Controller
 
                 $tools->batch(function (Grid\Tools\BatchActions $batch) {
 
-                    $batch->add('Restore', new RestorePost());
-                    $batch->add('Release', new ReleasePost(1));
-                    $batch->add('Unrelease', new ReleasePost(0));
-                    $batch->add('Show selected', new ShowSelected());
+                    $batch->add('恢复', new RestorePost());
+                    $batch->add('发布', new ReleasePost(1));
+                    $batch->add('取消发布', new ReleasePost(0));
+                    $batch->add('显示选中项', new ShowSelected());
                 });
 
             });
@@ -152,40 +151,7 @@ class PostController extends Controller
         });
     }
 
-    protected function _form()
-    {
-        return Admin::form(Post::class, function (Form $form) {
 
-            $form->row(function ($row) {
-                $row->width(2)->display('id', 'ID');
-            });
-
-            $form->row(function ($row) {
-                $row->width(4)->text('title', '文章标题')->rules('min:3|max:5')->help('标题标题标题标题标题标题标题');
-                $row->width(4)->select('author_id', '选择作者')->options(function ($id) {
-                    $user = User::find($id);
-
-                    if ($user) {
-                        return [$user->id => $user->name];
-                    }
-                })->ajax('/demo/api/users');
-                $row->width(2)->number('rate', '评分');
-                $row->width(2)->switch('released', '发布?');
-            });
-
-            $form->row(function ($row) {
-                $row->width(5)->listbox('tags', '选择标签')->options(Tag::all()->pluck('name', 'id'))->settings(['selectorMinimalHeight' => 300]);
-                $row->width(7)->textarea('content', '文章内容')->rows(19)->help('标题标题标题标题标题标题标题');
-            });
-
-            $form->row(function ($row) {
-
-                $row->width(6)->datetimeRange('created_at', 'updated_at', '创建时间');
-//                $row->width(3)->display('created_at', '创建时间');
-//                $row->width(3)->display('updated_at', '更新时间');
-            });
-        });
-    }
 
     /**
      * Make a form builder.
@@ -198,19 +164,27 @@ class PostController extends Controller
 
             $form->display('id', 'ID');
 
-            $form->text('title')->default('hello');
+            $form->text('title','标题')->rules('required|min:1');
 
-            $form->text('author_id')->default('1');
+            $form->select('author_id','发布人')->options(function ($id) {
+                $user = User::find($id);
+                if ($user) {
+                    return [$user->id => $user->name];
+                }
+            })->ajax('/admin/api/users')->rules('required|min:1');
+            $form->file('images','封面')->removable();
+            $form->file('files','附件')->removable();
+            $form->editor('content','内容');
+            $form->listbox('tags','标签')->options(Tag::all()->pluck('name', 'id'))->settings(['selectorMinimalHeight' => 300]);
 
-            $form->editor('content');
+            $form->number('rate','评分');
 
-            $form->number('rate');
-            $form->switch('released');
+            $form->radio('released','发布')->options(['1' => '发布', '0'=> '不发布'])->default('1');
 
-            $form->listbox('tags')->options(Tag::all()->pluck('name', 'id'))->settings(['selectorMinimalHeight' => 300]);
 
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->datetime('release_at', '发布时间')->default(now());
+            $form->display('created_at', '创建时间')->default(now());
+            $form->display('updated_at', '更新时间')->default(now());
         });
     }
 
