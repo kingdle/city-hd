@@ -266,9 +266,9 @@ canvas {
 }
 
 .porctlist li {
-    width: 120px;
-    margin: 0 5px;
-    height: 144px;
+    width: 100px;
+    margin: 0 10px 20px 10px;
+    height: 100px;
     display: inline-block;
     vertical-align: top;
     float: left \9;

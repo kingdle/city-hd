@@ -133,6 +133,5 @@
         $('#quota td:nth-child(3)').width(_width*0.3);
         $('#quota th:nth-child(4)').width(_width*0.2);
         $('#quota td:nth-child(4)').width(_width*0.2);
-
     })
 </script>

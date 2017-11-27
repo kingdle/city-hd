@@ -2,6 +2,11 @@
     <div class="conlistpage">
         <ul class="conlist1">
             <li>
+                <a href="{{ admin_base_path('auth/top-news') }}">
+                    <i class="fa fa-newspaper-o fa-5x"></i><br><span>统计头条</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ admin_base_path('/auth/economic-monitor') }}">
                     <i class="fa fa-line-chart fa-5x"></i><br><span>新区发展监测</span>
                 </a>
