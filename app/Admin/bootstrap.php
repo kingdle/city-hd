@@ -55,7 +55,7 @@ Column::extend('prependIcon', function ($value, $icon) {
 
 Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
 
-    $navbar->left(view('admin.search-bar'));
-    $navbar->right(new Links());
+//    $navbar->left(view('admin.search-bar'));
+//    $navbar->right(new Links());
 
 });
