@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ admin_base_path('/auth/benchmark-province') }}">
+                <a href="{{ admin_base_path('/auth/benchmark-area') }}">
                     <i class="fa fa-area-chart fa-5x"></i><br><span>经济发展对标</span>
                 </a>
             </li>

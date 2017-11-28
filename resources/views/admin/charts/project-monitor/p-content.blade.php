@@ -212,7 +212,7 @@
                                 <dl class="dl-horizontal">
 
                                     <dt>项目负责单位:</dt>
-                                    <dd>黄岛市政府</dd>
+                                    <dd>青岛西海岸新区</dd>
                                     <dt>项目负责人:</dt>
                                     <dd> XXX</dd>
                                     <dt>开工时间:</dt>
@@ -220,7 +220,7 @@
                                     <dt>预计结束时间:</dt>
                                     <dd> 2018年8月</dd>
                                     <dt>项目地址:</dt>
-                                    <dd><a href="#" class="text-navy"> 山东省青岛市董家口循环经济区</a></dd>
+                                    <dd><a href="#" class="text-navy">董家口循环经济区</a></dd>
                                     <dt>项目简介:</dt>
                                     <dd>
                                         项目占地12.26平方公里，总投资260.7亿元，包括国际水产品交易中心和冷链物流基地及海洋文化城两部分。三个冷藏库面积分别为31475、31372、30822平方米，每个冷藏库能容纳10万吨海鲜，建成后将成为东北亚最大的冷库群。
@@ -321,38 +321,6 @@
                                     </div>
 
                                     <div class="panel-body">
-                                        <link rel="stylesheet" href="{{ admin_asset('dist/jquery.vm-carousel.css') }}"/>
-                                        <style type="text/css">
-                                            h2 {
-                                                margin-bottom: 40px;
-                                                margin-top: 40px;
-                                            }
-                                            .vmc-centered{ padding: 10px 0; }
-                                            .vmc-centered img { transition: all 0.3s ease; }
-                                            .vmc-centered .vmc_active img { transform: scale(1.2); }
-                                        </style>
-                                        <script type="text/javascript" src="{{ admin_asset('js/modernizr.js') }}"></script>
-                                        <div class="container">
-                                            <ul class="vmcarousel-centered-infitine vmc-centered">
-                                                <li><img src="{{ asset('uploads/project-monitor/1.jpg') }}" alt="" width="200"></li>
-                                                <li><img src="{{ asset('uploads/project-monitor/2.jpg') }}" alt="" width="200"></li>
-                                                <li><img src="{{ asset('uploads/project-monitor/3.jpg') }}" alt="" width="200"></li>
-                                                <li><img src="{{ asset('uploads/project-monitor/4.jpg') }}" alt="" width="200"></li>
-                                                <li><img src="{{ asset('uploads/project-monitor/5.jpg') }}" alt="" width="200"></li>
-                                                <li><img src="{{ asset('uploads/project-monitor/6.jpg') }}" alt="" width="200"></li>
-                                            </ul>
-                                        </div>
-                                        <script type="text/javascript" src="{{ admin_asset('dist/jquery.vm-carousel.js') }}"></script>
-                                        <script type="text/javascript">
-                                            jQuery(function($){
-                                                $('.vmcarousel-centered-infitine').vmcarousel({
-                                                    centered: true,
-                                                    start_item: 1,
-                                                    autoplay: false,
-                                                    infinite: true
-                                                });
-                                            });
-                                        </script>
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="tab-1">
                                                 <div class="feed-activity-list">
