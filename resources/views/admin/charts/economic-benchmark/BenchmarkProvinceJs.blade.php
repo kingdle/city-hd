@@ -87,27 +87,27 @@
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
-                var $totalLists = $("#total tbody").children("tr");
-                $.each($totalLists, function (i, trlist) {
-                    var $totalList = $(trlist);
-                    var $tdTitle = $($totalList.find("td").eq(0));
-                    var $liTitle = $($totalList.find("td").eq(0));
-                    var $tdV = $($totalList.find("td").eq(1));
-                    var $tdS = $($totalList.find("td").eq(2));
-                    $tdV.text(
-                        kitTable.findValueByObj({
-                            area: kitTable.meta("area", $tdTitle.text()).extField,
-                            item: kitTable.meta("item", '地区生产总值').extField
-                        }, true)
-                    );
-                    $tdS.text(
-                        kitTableS.findValueByObj({
-                            area: kitTableS.meta("area", $tdTitle.text()).extField,
-                            item: kitTableS.meta("item", '地区生产总值').extField
-                        }, true)
-                    );
-
-                });
+//                var $totalLists = $("#total tbody").children("tr");
+//                $.each($totalLists, function (i, trlist) {
+//                    var $totalList = $(trlist);
+//                    var $tdTitle = $($totalList.find("td").eq(0));
+//                    var $liTitle = $($totalList.find("td").eq(0));
+//                    var $tdV = $($totalList.find("td").eq(1));
+//                    var $tdS = $($totalList.find("td").eq(2));
+//                    $tdV.text(
+//                        kitTable.findValueByObj({
+//                            area: kitTable.meta("area", $tdTitle.text()).extField,
+//                            item: kitTable.meta("item", '地区生产总值').extField
+//                        }, true)
+//                    );
+//                    $tdS.text(
+//                        kitTableS.findValueByObj({
+//                            area: kitTableS.meta("area", $tdTitle.text()).extField,
+//                            item: kitTableS.meta("item", '地区生产总值').extField
+//                        }, true)
+//                    );
+//
+//                });
 
                 initTimeline(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
@@ -171,19 +171,19 @@
                         $valS.html(kitS.findValueByItemName($title.html(), true));
                     });
 
-//                    var $totalLists = $(".ranking-table").children("tr");
+
                     var $tbodys = $('tbody');
                     $.each($tbodys,function(ii,tbody){
                         var $totalLists = $(tbody).find("tr");
                         var itemName = $(tbody).attr('itemName');
-//                        console.log($totalLists)
+
                         $.each($totalLists, function (i, trlist) {
                             var $totalList = $(trlist);
                             var $tdTitle = $($totalList.find("td").eq(0));
-//                            var $liTitle = $($totalList.find('ul>li>a'));
+
                             var $tdV = $($totalList.find("td").eq(1));
                             var $tdS = $($totalList.find("td").eq(2));
-//                            console.log($liTitle.html());
+
                             $tdV.text(
                                 kitTable.findValueByObj({
                                     area: kitTable.meta("area", $tdTitle.text()).extField,
