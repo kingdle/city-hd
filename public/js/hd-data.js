@@ -12,58 +12,64 @@ SyStore.prototype.init = function() {
     var _this = this;
     $.ajax({
         type: "post",
-        url: "/sy-hd/dataset/getDatasetMetasAsType?datasetId=" + _this.datasetId,
-        //		async: false,
+        jsonp: "callback",
+        jsonpCallback: "jsonpCallback",
+        url: "http://218.58.53.234:8183/sy-hd/dataset/getDatasetMetasAsType?datasetId=" + _this.datasetId,
         success: function(paramData) {
-            var pd = {};
-            _this.meta = paramData;
-            for(var item in paramData) {
-                if(paramData[item] instanceof Array) {
-                    $.each(paramData[item], function(i, itemV) {
-                        if(i == 0) {
-                            pd[item + '.code'] = itemV.extField
-                        } else
-                            pd[item + '.code'] += "," + itemV.extField;
-                    });
-                }
+            _this.getDataByMeta(paramData);
 
-            }
-            $.ajax({
-                type: "post",
-                url: "/sy-hd/data",
-                //				data: _this.param,
-                data: pd,
-                //				async: false,
-                success: function(rawDatas) {
-                    _this.rawData = rawDatas;
-                    _this.tmpData = [];
-                    var tmpData = null;
-                    var data = null;
-                    for(var index in rawDatas.list) {
-                        tmpData = {};
-                        data = rawDatas.list[index];
-                        for(var item in data) {
-                            tmpData[item] = data[item] != null && typeof(data[item]['code']) != 'undefined' ? data[item]['code'] : data[item];
-                        }
-                        _this.tmpData.push(tmpData);
-                    }
-                    _this.collection = new SyCollection(_this.tmpData);
-                    if(_this.success) {
-                        _this.done = true;
-                        _this.success(_this);
-                    };
-
-                }
-            });
         }
     });
 
+}
+SyStore.prototype.getDataByMeta = function(paramData) {
+    var _this = this;
+    var pd = {};
+    _this.meta = paramData;
+    for(var item in paramData) {
+        if(paramData[item] instanceof Array) {
+            $.each(paramData[item], function(i, itemV) {
+                if(i == 0) {
+                    pd[item + '.code'] = itemV.extField
+                } else
+                    pd[item + '.code'] += "," + itemV.extField;
+            });
+        }
+
+    }
+    $.ajax({
+        type: "post",
+        url: "http://218.58.53.234:8183/sy-hd/data",
+        data: pd,
+        jsonp: "callback",
+        jsonpCallback: "jsonpCallback",
+        success: function(rawDatas) {
+            _this.rawData = rawDatas;
+            _this.tmpData = [];
+            var tmpData = null;
+            var data = null;
+            for(var index in rawDatas.list) {
+                tmpData = {};
+                data = rawDatas.list[index];
+                for(var item in data) {
+                    tmpData[item] = data[item] != null && typeof(data[item]['code']) != 'undefined' ? data[item]['code'] : data[item];
+                }
+                _this.tmpData.push(tmpData);
+            }
+            _this.collection = new SyCollection(_this.tmpData);
+            if(_this.success) {
+                _this.done = true;
+                _this.success(_this);
+            };
+
+        }
+    });
 }
 SyStore.prototype.findMetaByItemName = function(item) {
     var _this = this;
     var result = {};
     var pStr = '^\\S*' + item.name + '\\S*$';
-    var reg = new RegExp(pStr, 'g'); ///^(item.name)$/;
+    var reg = new RegExp(pStr, 'g');
     if(_this.meta) {
         $.each(_this.meta[item.type], function(j, meta) {
 
@@ -101,8 +107,22 @@ function SyCollection(datas) {
         this._datas = datas;
         $.each(datas, function(index, data) {
             for(var item in data) {
-                if(item == 'value' || item == "_id")
+                if(item == 'value' || item == "_id") {
                     continue;
+                } else if(item == 'time_year') {
+                    if(!_this["time"]) {
+                        _this["time"] = {};
+                        _this["time"][data.time_year + "-" + data.time_month] = [data];
+                    } else {
+                        if(_this["time"][data.time_year + "-" + data.time_month]) {
+                            _this["time"][data.time_year + "-" + data.time_month].push(data)
+                        } else {
+                            _this["time"][data.time_year + "-" + data.time_month] = [data]
+                        }
+                    };
+                }
+
+                //				}
                 if(!_this[item]) {
                     _this[item] = {};
                     _this[item][data[item]] = [data]

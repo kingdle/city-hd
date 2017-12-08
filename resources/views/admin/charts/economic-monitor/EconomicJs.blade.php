@@ -1,11 +1,11 @@
 <script>
-//    function initTimeline(showData) {
-//        var myChart = echarts.init(document.getElementById('HeaderDateline'));
-//        myChart.setOption(option);
-//        if (showData) {
-//            myChart.on('timelinechanged', showData);
-//        }
-//    }
+    //    function initTimeline(showData) {
+    //        var myChart = echarts.init(document.getElementById('HeaderDateline'));
+    //        myChart.setOption(option);
+    //        if (showData) {
+    //            myChart.on('timelinechanged', showData);
+    //        }
+    //    }
     storeA = new SyStore({
         autoLoad: true,
         datasetId: 3,
@@ -141,7 +141,7 @@
                     catch (e) {
                         console.log(e)
                     }
-                    $quotadate.html(baseSpeed.time_year+'-'+baseSpeed.time_month);
+                    $quotadate.html(baseSpeed.time_year + '-' + baseSpeed.time_month);
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });

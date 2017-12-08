@@ -20,3 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('test', function () {
     return 'hello world';
 });
+
+Route::get('/posts',function (){
+    $posts = App\Models\Post::all();
+    return $posts;
+})->middleware('api','cors');
+Route::get('/post/{id}',function ($id){
+    $posts = App\Models\Post::find($id);
+    return $posts;
+})->middleware('api','cors');

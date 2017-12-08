@@ -12,7 +12,7 @@
                         <li role="presentation"><a href="#budget" aria-controls="budget" role="tab" data-toggle="tab">一般公共预算收入</a>
                         </li>
                         <li role="presentation"><a href="#trade-foreign" aria-controls="trade-foreign" role="tab"
-                                                   data-toggle="tab">进出口总额</a></li>
+                                                   data-toggle="tab">实际使用外资</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -467,120 +467,120 @@
                                                         <th>增长</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody itemName="进出口总额">
+                                                    <tbody itemName="实际使用外资">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>上海浦东新区</td>
-                                                        <td>5075.1</td>
-                                                        <td>7.7%</td>
+                                                        <td>57.8</td>
+                                                        <td>9.0%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>2</th>
                                                         <td>天津滨海新区</td>
-                                                        <td>490.1</td>
-                                                        <td>3.1%</td>
+                                                        <td>58.7</td>
+                                                        <td>9.6%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>3</th>
-                                                        <td>重庆两江新区</td>
-                                                        <td>388.6</td>
-                                                        <td>8.1%</td>
+                                                        <td>青岛西海岸新区</td>
+                                                        <td>13.9</td>
+                                                        <td>17.4%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>4</th>
-                                                        <td>浙江舟山群岛新区</td>
-                                                        <td>189.6</td>
-                                                        <td>8.1%</td>
+                                                        <td>重庆两江新区</td>
+                                                        <td>24.3</td>
+                                                        <td>13.1%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>5</th>
                                                         <td>甘肃兰州新区</td>
-                                                        <td>293.3</td>
-                                                        <td>8.6%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>6</th>
                                                         <td>广州南沙新区</td>
-                                                        <td>1521.3</td>
-                                                        <td>12.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>7</th>
                                                         <td>陕西西咸新区</td>
-                                                        <td>1463.6</td>
-                                                        <td>11.9%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>8</th>
                                                         <td>贵州贵安新区</td>
-                                                        <td>57.6</td>
-                                                        <td>16.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>9</th>
-                                                        <td>青岛西海岸新区</td>
-                                                        <td>517.9</td>
-                                                        <td>8.6%</td>
+                                                        <td>浙江舟山群岛新区</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>10</th>
                                                         <td>大连金普新区</td>
-                                                        <td>634.9</td>
-                                                        <td>7.9%</td>
+                                                        <td>15.9</td>
+                                                        <td>68.5%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>11</th>
                                                         <td>四川天府新区</td>
-                                                        <td>568.9</td>
-                                                        <td>9.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>12</th>
                                                         <td>湖南湘江新区</td>
-                                                        <td>448.7</td>
-                                                        <td>8.2%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>13</th>
                                                         <td>南京江北新区</td>
-                                                        <td>292.0</td>
-                                                        <td>7.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>14</th>
                                                         <td>福州新区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>15</th>
                                                         <td>云南滇中新区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>16</th>
                                                         <td>哈尔滨新区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>17</th>
                                                         <td>长春新区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>18</th>
                                                         <td>江西赣江新区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>19</th>
                                                         <td>雄安新区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -797,7 +797,7 @@
         };
         var optionForeign = {
             title: {
-                text: '进出口总额运行趋势'
+                text: '实际使用外资运行趋势'
             },
             tooltip: {
                 trigger: 'axis'
