@@ -1,0 +1,15 @@
+{
+  "appid": "H5291D269",
+  "iOS": {
+    "version": "1.2.0",
+    "title": "Hello MUI版本更新",
+    "note": "",
+    "url": ""
+  },
+  "Android": {
+    "version": "1.5.5",
+    "title": "Hello MUI版本更新",
+    "note": "",
+    "url": "http://www.dcloud.io/hellomui/HelloMUI.apk"
+  }
+}
