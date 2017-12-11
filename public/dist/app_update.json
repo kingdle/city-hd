@@ -1,5 +1,5 @@
 {
-  "appid": "H5291D269",
+  "appid": "H5FC02897",
   "iOS": {
     "version": "1.5.6",
     "title": "统计平台版本更新",
@@ -7,7 +7,7 @@
     "url": ""
   },
   "Android": {
-    "version": "1.5.6",
+    "version": "1.5.5",
     "title": "统计平台版本更新",
     "note": "修复文章不显示",
     "url": "http://hd.maxdata.cc:8185/dist/H5291D269_1211143401.apk"
