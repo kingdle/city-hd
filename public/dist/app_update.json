@@ -1,12 +1,14 @@
 {
   "appid": "H5FC02897",
   "iOS": {
+    "status":1,
     "version": "1.5.6",
     "title": "统计平台版本更新",
     "note": "修复文章不显示",
     "url": ""
   },
   "Android": {
+    "status":1,
     "version": "1.5.5",
     "title": "统计平台版本更新",
     "note": "修复文章不显示",
