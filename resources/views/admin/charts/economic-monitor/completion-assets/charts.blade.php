@@ -36,7 +36,6 @@
         for (var item in axisArr) {
             axisD.push(axisArr[item].name);
         }
-console.log(store)
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,

@@ -103,9 +103,9 @@
                 kitS = new SyValueKit(baseSpeed, _store);
                 kitSL = new SyValueKit(baseSpeedLast, _store);
                 var $cards = $(".cardh");
-
                 $.each($cards, function (i, cardh) {
                     var $card = $(cardh);
+
                     var $title = $($card.find('.title p')[0]);
                     var $valV = $($card.find('.numbers>p>span')[0]);
                     var $valS = $($card.find('.sta>p>span')[0]);

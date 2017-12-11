@@ -25,7 +25,13 @@ Route::get('/posts',function (){
     $posts = App\Models\Post::all();
     return $posts;
 })->middleware('api','cors');
+
 Route::get('/post/{id}',function ($id){
     $posts = App\Models\Post::find($id);
     return $posts;
+})->middleware('api','cors');
+
+Route::get('/svn',function (){
+    $svn = App\App_update::all();
+    return $svn;
 })->middleware('api','cors');
