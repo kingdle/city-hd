@@ -1,15 +1,15 @@
 {
   "appid": "H5291D269",
   "iOS": {
-    "version": "1.2.0",
-    "title": "Hello MUI版本更新",
-    "note": "",
-    "url": ""
+    "version": "1.5.6",
+    "title": "统计平台版本更新",
+    "note": "修复文章不显示",
+    "url": "http://hd.maxdata.cc:8185/dist/1.5.5.apk"
   },
   "Android": {
-    "version": "1.5.5",
-    "title": "Hello MUI版本更新",
-    "note": "",
-    "url": "http://www.dcloud.io/hellomui/HelloMUI.apk"
+    "version": "1.5.6",
+    "title": "统计平台版本更新",
+    "note": "修复文章不显示",
+    "url": "http://hd.maxdata.cc:8185/dist/1.5.5.apk"
   }
 }
