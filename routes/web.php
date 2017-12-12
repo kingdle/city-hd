@@ -25,3 +25,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('email/verify/{token}',['as'=>'email.verify','uses'=>'EmailController@verify']);
+
+Route::get('/app-update', 'HomeController@appUpdate')->name('home');
