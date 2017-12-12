@@ -39,7 +39,6 @@ Admin::css('/vendor/prism/prism.css');
 Admin::js('/vendor/prism/prism.js');
 Admin::js('/vendor/clipboard/dist/clipboard.min.js');
 
-
 Column::extend('expand', ExpandRow::class);
 Column::extend('openMap', OpenMap::class);
 Column::extend('floatBar', FloatBar::class);

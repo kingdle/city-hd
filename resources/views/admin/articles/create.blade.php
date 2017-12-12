@@ -1,6 +1,8 @@
 @extends('admin::index')
 @section('content')
-    @include('vendor.ueditor.assets')
+    <script>
+        window.UEDITOR_CONFIG.serverUrl = '/ueditor/server'
+    </script>
     <style>
         .col-lg-10 {
             padding-bottom: 70px;

@@ -36,8 +36,6 @@
     <script src="{{ admin_asset ("/vendor/laravel-admin/nprogress/nprogress.js") }}"></script>
     <script src="{{ admin_asset ("/js/hd-data.js") }}"></script>
 
-
-
     {{--<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>--}}
     {{--<script src="http://webapi.amap.com/maps?v=1.4.1&key=80701f48c0cc37c4d279b256aba5c407&plugin=AMap.ControlBar"></script>--}}
 
@@ -54,7 +52,8 @@
     @include('admin::partials.header')
 
     @include('admin::partials.sidebar')
-
+    <script type="text/javascript" src="{{ admin_asset ("/vendor/ueditor/ueditor.config.js") }}"></script>
+    <script type="text/javascript" src="{{ admin_asset ("/vendor/ueditor/ueditor.all.js") }}"></script>
     <div class="content-wrapper" id="pjax-container">
         @yield('content')
         {!! Admin::script() !!}
