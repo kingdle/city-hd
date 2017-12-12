@@ -22,4 +22,8 @@ class EmailController extends Controller
         return redirect('/home');
 
     }
+    public function appUpdate()
+    {
+        return view('app-update');
+    }
 }
