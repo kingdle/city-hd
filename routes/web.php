@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::redirect('/','/admin',301);
-Route::redirect('/login','/admin',301);
+//Route::redirect('/login','/admin',301);
 Route::redirect('/admin/sy-hd','/sy-hd',301);
 
 

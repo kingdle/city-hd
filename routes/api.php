@@ -35,3 +35,10 @@ Route::get('/svn',function (){
     $svn = App\App_update::all();
     return $svn;
 })->middleware('api','cors');
+
+Route::post('/register','Auth\RegisterController@register');
+Route::post('/login','Auth\LoginController@login');
+Route::post('/logout','Auth\LoginController@logout');
+Route::post('/token/refresh','Auth\LoginController@refresh');
+Route::post('/user/profile/update','ProfileController@update')->middleware('auth:api');
+Route::post('/user/password/update','PasswordController@update')->middleware('auth:api');

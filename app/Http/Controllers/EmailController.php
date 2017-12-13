@@ -19,7 +19,7 @@ class EmailController extends Controller
         $user->save();
         Auth::login($user);
         Flashy::message('邮箱验证成功!','success');
-        return redirect('/home');
+        return redirect('/admin');
 
     }
     public function appUpdate()

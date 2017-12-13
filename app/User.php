@@ -4,20 +4,21 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 use Mail;
 use Naux\Mail\SendCloudTemplate;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
+    use HasApiTokens,Notifiable;
+    protected $table = 'admin_users';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','avatar','confirmation_token',
+        'username','name', 'email', 'password','avatar','confirmation_token',
     ];
 
     /**
@@ -26,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','api_token'
     ];
     public function sendPasswordResetNotification($token)
     {

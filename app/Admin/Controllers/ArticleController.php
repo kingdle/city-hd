@@ -41,7 +41,7 @@ class ArticleController extends Controller
     public function create()
     {
         $tags = Tag::pluck('name', 'id');
-        $js = Admin::script('111222333');
+        $js = Admin::js('/vendor/ueditor/ueditor.all.js');
         return view('admin.articles.create', compact('tags', 'js'));
     }
 

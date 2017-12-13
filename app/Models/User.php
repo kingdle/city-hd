@@ -7,10 +7,11 @@ use App\Models\User\Profile;
 use App\Models\User\Sns;
 use Encore\Admin\Traits\AdminBuilder;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Model
 {
-    use AdminBuilder;
+    use HasApiTokens,AdminBuilder;
 
     //use Faker;
 

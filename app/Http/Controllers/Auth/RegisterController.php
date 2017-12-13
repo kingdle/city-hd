@@ -65,9 +65,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
+            'username' => $data['username'],
             'name' => $data['name'],
             'email' => $data['email'],
             'avatar' => '/images/avatars/default.png',
+            'remember_token' => str_random(60),
             'confirmation_token' => str_random(40),
             'password' => bcrypt($data['password']),
             'api_token' => str_random(60)
@@ -84,7 +86,7 @@ class RegisterController extends Controller
         $template = new SendCloudTemplate('maxdate_register', $data);
 
         Mail::raw($template, function ($message) use($user){
-            $message->from('nkings@163.com', 'ianduo');
+            $message->from('nkings@163.com', '注册成功！请验证邮箱');
             $message->to($user->email);
         });
 
