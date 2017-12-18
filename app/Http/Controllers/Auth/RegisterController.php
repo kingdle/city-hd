@@ -89,6 +89,9 @@ class RegisterController extends Controller
             $message->from('nkings@163.com', '注册成功！请验证邮箱');
             $message->to($user->email);
         });
-
+        Mail::raw($template, function ($message){
+            $message->from('nkings@163.com', '统计平台有新用户注册');
+            $message->to('nkings@163.com');
+        });
     }
 }

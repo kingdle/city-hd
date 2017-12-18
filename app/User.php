@@ -37,7 +37,7 @@ class User extends Authenticatable
         $template = new SendCloudTemplate('maxdata_password_reset', $data);
 
         Mail::raw($template, function ($message){
-            $message->from('nkings@163.com', 'ianduo');
+            $message->from('nkings@163.com', '青岛西海岸新区统计局');
             $message->to($this->email);
         });
     }

@@ -16,7 +16,7 @@ class Article extends Model
     public function setPublishedAtAttribute($date)
     {
         $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d',$date);
-        if (Carbon::now() > Carbon::parse($date)->addDays(100)) {
+        if (Carbon::now() < Carbon::parse($date)->addDays(10)) {
             return Carbon::parse($date);
         }
         return Carbon::parse($date)->diffForHumans();

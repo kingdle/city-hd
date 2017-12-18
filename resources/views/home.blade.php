@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Hello</div>
+                <div class="panel-heading">提示</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    我们以API接口方式，开放数据，请联系数据中心。
+                    您的用户已注册成功，请等待管理员审核授权。
                 </div>
             </div>
         </div>

@@ -60,7 +60,7 @@ return [
     'choose_image' => '选择图片',
 
     'more' => '更多',
-    'deny' => '无权访问',
+    'deny' => '无权访问，请联系管理员授权',
 
     'administrator' => '管理员',
     'roles'         => '角色',
