@@ -7,6 +7,7 @@ use App\Admin\Extensions\Tools\ReleasePost;
 use App\Admin\Extensions\Tools\RestorePost;
 use App\Admin\Extensions\Tools\ShowSelected;
 use App\Admin\Extensions\Tools\Trashed;
+use App\Models\Dept;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
@@ -167,7 +168,7 @@ class PostController extends Controller
             $form->text('title','标题')->rules('required|min:1');
 
             $form->select('author_id','发布部门')->options(function ($id) {
-                $user = User::find($id);
+                $user = Dept::find($id);
                 if ($user) {
                     return [$user->id => $user->name];
                 }
@@ -196,7 +197,7 @@ class PostController extends Controller
     {
         $q = $request->get('q');
 
-        return User::where('name', 'like', "%$q%")->paginate(null, ['id', 'name as text']);
+        return Dept::where('name', 'like', "%$q%")->paginate(null, ['id', 'name as text']);
     }
 
     public function release(Request $request)
