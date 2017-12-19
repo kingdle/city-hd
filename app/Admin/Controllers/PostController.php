@@ -86,7 +86,7 @@ class PostController extends Controller
 
             $grid->id('ID')->sortable();
 
-            $grid->column('title','标题')->ucfirst()->limit(30)->sortable();
+            $grid->column('title','标题')->ucfirst()->limit(50)->sortable();
 
             $grid->tags('标签')->pluck('name')->label();
             $states = [
@@ -104,13 +104,13 @@ class PostController extends Controller
 
             $grid->created_at('创建时间')->sortable()->editable('datetime');
 
-            $grid->column('float_bar')->floatBar();
+//            $grid->column('float_bar')->floatBar();
 
-            $grid->rows(function (Grid\Row $row) {
-                if ($row->id % 2) {
-                    $row->setAttributes(['style' => 'color:red;']);
-                }
-            });
+//            $grid->rows(function (Grid\Row $row) {
+//                if ($row->id % 2) {
+//                    $row->setAttributes(['style' => 'color:red;']);
+//                }
+//            });
 
             $grid->filter(function (Grid\Filter $filter) {
 
@@ -166,7 +166,7 @@ class PostController extends Controller
 
             $form->text('title','标题')->rules('required|min:1');
 
-            $form->select('author_id','发布人')->options(function ($id) {
+            $form->select('author_id','发布部门')->options(function ($id) {
                 $user = User::find($id);
                 if ($user) {
                     return [$user->id => $user->name];

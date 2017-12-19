@@ -21,8 +21,8 @@ class UserController extends Controller
     protected function index()
     {
         return Admin::content(function (Content $content) {
-            $content->header('Users');
-            $content->description('list');
+            $content->header('部门管理');
+            $content->description('列表');
             $content->body($this->grid());
         });
     }
@@ -31,8 +31,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('Users');
-            $content->description('edit');
+            $content->header('部门管理');
+            $content->description('编辑');
 
             $content->body($this->form()->edit($id));
         });
@@ -42,8 +42,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('Users');
-            $content->description('new');
+            $content->header('部门管理');
+            $content->description('新增');
 
             $content->body($this->form());
         });
@@ -61,63 +61,65 @@ class UserController extends Controller
 
             $grid->id('ID')->sortable();
 
-            $grid->name()->editable();
+            $grid->name('部门')->editable();
 
-            $grid->column('expand')->expand(function () {
-
-                $profile = array_only($this->profile, ['homepage', 'gender', 'birthday', 'address', 'last_login_at', 'last_login_ip', 'lat', 'lng']);
-
-                return new Table([], $profile);
-
-            }, 'Profile');
+//            $grid->column('expand','介绍')->expand(function () {
 //
-            $grid->column('position')->openMap(function () {
+//                $profile = array_only($this->profile, ['homepage', 'gender', 'birthday', 'address', 'last_login_at', 'last_login_ip', 'lat', 'lng']);
+//
+//                return new Table([], $profile);
+//
+//            }, 'Profile');
+//
+//            $grid->column('position')->openMap(function () {
+//
+//                return [$this->profile['lat'], $this->profile['lng']];
+//
+//            }, 'Position');
 
-                return [$this->profile['lat'], $this->profile['lng']];
-
-            }, 'Position');
-
-            $grid->column('profile.homepage')->urlWrapper();
-
-            $grid->email()->prependIcon('envelope');
+            $grid->column('profile.homepage', '官网')->urlWrapper();
+            $grid->profile()->mobile('应急手机')->sortable()->editable();
+            $grid->email('邮箱')->editable();
 
             //$grid->profile()->mobile()->prependIcon('phone');
 
             //$grid->column('profile.age')->progressBar(['success', 'striped'], 'xs')->sortable();
 
-            $grid->profile()->age()->sortable();
 
-            $grid->created_at();
 
-            $grid->updated_at();
+//            $grid->created_at('创建时间');
+
+            $grid->updated_at('更新时间');
 
             $grid->filter(function (Grid\Filter $filter) {
 
 //                $filter->disableIdFilter();
-
-                $filter->equal('address.province_id', 'Province')
-                    ->select(ChinaArea::province()->pluck('name', 'id'))
-                    ->load('address.city_id', '/demo/api/china/city');
-
-                $filter->equal('address.city_id', 'City')->select()
-                    ->load('address.district_id', '/demo/api/china/district');
-
-                $filter->equal('address.district_id', 'District')->select();
+                $filter->equal('name','部门');
+                $filter->equal('email','邮箱');
+                $filter->equal('mobile','应急手机');
+//                $filter->equal('address.province_id', 'Province')
+//                    ->select(ChinaArea::province()->pluck('name', 'id'))
+//                    ->load('address.city_id', '/demo/api/china/city');
+//
+//                $filter->equal('address.city_id', 'City')->select()
+//                    ->load('address.district_id', '/demo/api/china/district');
+//
+//                $filter->equal('address.district_id', 'District')->select();
             });
 
-            $grid->tools(function ($tools) {
-                $tools->append(new UserGender());
-            });
+//            $grid->tools(function ($tools) {
+//                $tools->append(new UserGender());
+//            });
 
             $grid->actions(function ($actions) {
 
-                if ($actions->getKey() % 2 == 0) {
-                    $actions->disableDelete();
-                    $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
-                } else {
-                    $actions->disableEdit();
-                    $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
-                }
+//                if ($actions->getKey() % 2 == 0) {
+                $actions->disableDelete();
+//                } else {
+//                $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
+//                    $actions->disableEdit();
+//                    $actions->prepend('<a href=""><i class="fa fa-paper-plane"></i></a>');
+//                }
             });
         });
     }
@@ -128,64 +130,64 @@ class UserController extends Controller
 
             $form->model()->makeVisible('password');
 
-            $form->tab('Basic', function (Form $form) {
+            $form->tab('基本信息', function (Form $form) {
 
                 $form->display('id');
 
                 //$form->input('name')->rules('required');
 
-                $form->text('name')/*->rules('required')*/;
-                $form->email('email')->rules('required');
-                $form->display('created_at');
-                $form->display('updated_at');
+                $form->text('name', '名称')/*->rules('required')*/
+                ;
+                $form->email('email', '邮箱')->rules('required');
+                $form->display('created_at', '创建日期');
+                $form->display('updated_at', '更新日期');
 
-            })->tab('Profile', function (Form $form) {
+            })->tab('简介', function (Form $form) {
 
-                $form->url('profile.homepage');
-                $form->ip('profile.last_login_ip');
-                $form->datetime('profile.last_login_at');
-                $form->color('profile.color')->default('#c48c20');
-                $form->mobile('profile.mobile')->default(13524120142);
-                $form->date('profile.birthday');
+                $form->url('profile.homepage', '首页');
+//                $form->ip('profile.last_login_ip','最后登录IP');
+//                $form->datetime('profile.last_login_at','最后登录时间');
+                $form->color('profile.color', '部门主题色')->default('#c48c20');
+                $form->mobile('profile.mobile', '手机')->default('13788899099');
+//                $form->date('profile.birthday');
 
 //                $form->map('profile.lat', 'profile.lng', 'Position')->useTencentMap();
-                $form->slider('profile.age', 'Age')->options(['max' => 50, 'min' => 20, 'step' => 1, 'postfix' => 'years old']);
-                $form->datetimeRange('profile.created_at', 'profile.updated_at', 'Time line');
+//                $form->slider('profile.age', 'Age')->options(['max' => 50, 'min' => 20, 'step' => 1, 'postfix' => 'years old']);
+//                $form->datetimeRange('profile.created_at', 'profile.updated_at', 'Time line');
 
-            })->tab('Sns info', function (Form $form) {
 
-                $form->text('sns.qq');
-                $form->text('sns.wechat')->rules('required');
-                $form->text('sns.weibo');
-                $form->text('sns.github');
-                $form->text('sns.google');
-                $form->text('sns.facebook');
-                $form->text('sns.twitter');
-                $form->display('sns.created_at');
-                $form->display('sns.updated_at');
+            })->tab('地址', function (Form $form) {
 
-            })->tab('Address', function (Form $form) {
-
-                $form->select('address.province_id')->options(
+                $form->select('address.province_id', '省')->options(
                     ChinaArea::province()->pluck('name', 'id')
                 )
                     ->load('address.city_id', '/demo/api/china/city')
                     ->load('test', '/demo/api/china/city');
 
-                $form->select('address.city_id')->options(function ($id) {
+                $form->select('address.city_id', '市')->options(function ($id) {
                     return ChinaArea::options($id);
                 })->load('address.district_id', '/demo/api/china/district');
 
-                $form->select('address.district_id')->options(function ($id) {
+                $form->select('address.district_id', '区')->options(function ($id) {
                     return ChinaArea::options($id);
                 });
 
-                $form->text('address.address');
+                $form->text('address.address', '详细地址');
+            })->tab('开放平台', function (Form $form) {
 
-            })->tab('Password', function (Form $form) {
-
-                $form->password('password')->rules('confirmed');
-                $form->password('password_confirmation');
+                $form->text('sns.qq', '联系QQ');
+                $form->text('sns.wechat', '微信公众号');
+                $form->text('sns.weibo', '微博');
+                $form->text('sns.github', 'Github');
+                $form->text('sns.google', '谷歌账号');
+                $form->text('sns.facebook', '脸书账号');
+                $form->text('sns.twitter', '推特账号');
+                $form->display('sns.created_at', '填写日期');
+                $form->display('sns.updated_at', '更新日期');
+//            })->tab('密码', function (Form $form) {
+//
+//                $form->password('password')->rules('confirmed');
+//                $form->password('password_confirmation');
 
             });
 
