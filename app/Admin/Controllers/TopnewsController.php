@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticleRequest;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Models\User;
+use App\Models\Dept;
 use MercurySeries\Flashy\Flashy;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
