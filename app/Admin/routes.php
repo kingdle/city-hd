@@ -51,7 +51,7 @@ Route::group([
     $router->resources([
 
         'tags'                  => TagController::class,
-        'dep'                 => UserController::class,
+        'dep'                 => DeptController::class,
         'images'                => ImageController::class,
         'posts'                 => PostController::class,
         'videos'                => VideoController::class,

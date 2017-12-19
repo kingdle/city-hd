@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models\Dept;
 
-use App\Models\User;
+use App\Models\Dept;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
@@ -14,6 +14,6 @@ class Profile extends Model
      */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Dept::class,'user_id');
     }
 }

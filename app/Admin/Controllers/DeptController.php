@@ -5,7 +5,7 @@ namespace App\Admin\Controllers;
 use App\Admin\Extensions\Tools\UserGender;
 use App\Http\Controllers\Controller;
 use App\Models\ChinaArea;
-use App\Models\User;
+use App\Models\Dept;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -14,7 +14,7 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Widgets\Table;
 use Illuminate\Support\Facades\Request;
 
-class UserController extends Controller
+class DeptController extends Controller
 {
     use ModelForm;
 
@@ -51,7 +51,7 @@ class UserController extends Controller
 
     protected function grid()
     {
-        return Admin::grid(User::class, function (Grid $grid) {
+        return Admin::grid(Dept::class, function (Grid $grid) {
 
             $grid->model()->gender(Request::get('gender'));
 
@@ -126,7 +126,7 @@ class UserController extends Controller
 
     public function form()
     {
-        return User::form(function (Form $form) {
+        return Dept::form(function (Form $form) {
 
             $form->model()->makeVisible('password');
 

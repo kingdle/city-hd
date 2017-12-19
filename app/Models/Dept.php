@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\User\Address;
-use App\Models\User\Profile;
-use App\Models\User\Sns;
+use App\Models\Dept\Address;
+use App\Models\Dept\Profile;
+use App\Models\Dept\Sns;
 use Encore\Admin\Traits\AdminBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\HasApiTokens;
 
-class User extends Model
+class Dept extends Model
 {
     use HasApiTokens,AdminBuilder;
 
@@ -36,17 +36,17 @@ class User extends Model
      */
     public function profile()
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(Profile::class, 'user_id');
     }
 
     public function sns()
     {
-        return $this->hasOne(Sns::class);
+        return $this->hasOne(Sns::class, 'user_id');
     }
 
     public function address()
     {
-        return $this->hasOne(Address::class);
+        return $this->hasOne(Address::class, 'user_id');
     }
 
     /**
@@ -54,7 +54,7 @@ class User extends Model
      */
     public function friends()
     {
-        return $this->belongsToMany(User::class, 'demo_friends', 'user_id', 'friend_id')->withPivot('remark');
+        return $this->belongsToMany(Dept::class, 'demo_friends', 'user_id', 'friend_id')->withPivot('remark');
     }
 
     /**
@@ -75,7 +75,7 @@ class User extends Model
 
     public function searchableAs()
     {
-        return 'users';
+        return 'depts';
     }
 }
 
