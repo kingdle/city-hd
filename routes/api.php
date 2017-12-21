@@ -22,8 +22,8 @@ Route::get('test', function () {
 });
 
 Route::get('/posts',function (){
-    $posts = App\Models\Post::all()->where('released', 1)->sortBy('updated_at');
-    return $posts;
+    $posts = App\Models\Post::all();
+    return $posts->sortByDesc('id');
 })->middleware('api','cors');
 
 Route::get('/post/{id}',function ($id){
