@@ -22,8 +22,16 @@ Route::get('test', function () {
 });
 
 Route::get('/posts',function (){
-    $posts = App\Models\Post::all();
-    return $posts->sortByDesc('id');
+    $posts = App\Models\Post::all()->where('released', 1);
+    foreach ($posts as $k => $v) {
+        if (gettype($v) == 'resource') {
+            return;
+        }
+        if (gettype($v) == 'object' || gettype($v) == 'array') {
+            $posts[$k] = [$v];
+        }
+    }
+    return $posts;
 })->middleware('api','cors');
 
 Route::get('/post/{id}',function ($id){
