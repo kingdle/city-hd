@@ -22,7 +22,7 @@ Route::get('test', function () {
 });
 
 Route::get('/posts',function (){
-    $posts = App\Models\Post::all()->where('released', 1)->sortByDesc('id');
+    $posts = App\Models\Post::orderBy('created_at','desc')->get();
     return $posts;
 })->middleware('api','cors');
 
