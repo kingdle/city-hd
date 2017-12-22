@@ -15,21 +15,21 @@
                     area: 3519,
                     time_year: initDate.getFullYear(),
                     time_month: initDate.getMonth() + 1,
-                    tmp_id: 1
+//                    tmp_id: 1
                 };
                 var baseSpeed = {
                     frame: 200000014,
                     area: 3519,
                     time_year: initDate.getFullYear(),
                     time_month: initDate.getMonth() + 1,
-                    tmp_id: 1
+//                    tmp_id: 1
                 };
                 var baseSpeedLast = {
                     frame: 200000014,
                     area: 3519,
                     time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
                     time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
-                    tmp_id: 1
+//                    tmp_id: 1
                 };
 
                 var baseTable = {
