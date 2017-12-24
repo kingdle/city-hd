@@ -166,23 +166,19 @@ class PostController extends Controller
             $form->display('id', 'ID');
 
             $form->text('title','标题')->rules('required|min:1');
-
+            $form->radio('released','发布')->options(['1' => '发布', '0'=> '不发布'])->default('1');
             $form->select('author_id','发布部门')->options(function ($id) {
                 $user = Dept::find($id);
                 if ($user) {
                     return [$user->id => $user->name];
                 }
             })->ajax('/admin/api/users')->rules('required|min:1');
+
             $form->file('images','封面')->removable();
             $form->file('files','附件')->removable();
             $form->editor('content','内容');
             $form->listbox('tags','标签')->options(Tag::all()->pluck('name', 'id'))->settings(['selectorMinimalHeight' => 300]);
-
             $form->number('rate','评分');
-
-            $form->radio('released','发布')->options(['1' => '发布', '0'=> '不发布'])->default('1');
-
-
             $form->datetime('release_at', '发布时间')->default(now());
             $form->display('created_at', '创建时间')->default(now());
             $form->display('updated_at', '更新时间')->default(now());

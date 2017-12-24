@@ -23,6 +23,10 @@
                         {!! Form::text('title',$article->title,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
+                        {!! Form::label('intro','概要:') !!}
+                        {!! Form::textarea('intro',$article->intro,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
                         {!! Form::label('content','正文:') !!}
                         <script id="container" name="content" type="text/plain">
                             {!! $article->content !!}

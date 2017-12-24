@@ -1,44 +1,40 @@
-<style>
-
-</style>
 <div class="card">
-    <a href="/admin/auth/articles/2">
         <div class="content">
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-12">
                     <div class="title-country">
-                        <p>2017年国家经济运行情况</p>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="details">
+                        <p><a href="/admin/auth/articles/{{ $article_country->id }}"> {{ $article_country->title }}</a></p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="conn">
-                        5月份，在以习近平同志为核心的党中央坚强领导下，各地区各部门认真贯彻落实党中央国务院决策部署，坚定不移地推进供给侧结构性改革，深入实施创新驱动发展战略，国民经济延续了总体平稳、稳中向好的发展态势，供给和需求稳定增长，就业形势持续向好，消费物价温和上涨...
+                        {{ $article_country->intro }}
                     </div>
                 </div>
             </div>
             <div class="footer">
                 <hr>
                 <div class="row">
-                    <div class="col-xs-8">
+                    <div class="col-xs-6">
                         <div class="numbers">
                             <div class="stats">
-                                <p>发布单位：黄岛统计局</p>
+                                @if($article_country->tags)
+                                    标签：
+                                    @foreach($article_country->tags as $tag)
+                                        {{ $tag->name }}
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-6">
                         <div class="stats">
-                            <p><i class="fa fa-calendar-minus-o"></i> 1小时前</p>
+                            <p><i class="fa fa-calendar-minus-o"></i> {{ $article_country->published_at }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </a>
 </div>

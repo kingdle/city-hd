@@ -28,6 +28,6 @@ class Tag extends Model
         $this->options = $options;
     }
     public function articles() {
-        return $this->belongsToMany('App\Models\Article','id');
+        return $this->belongsToMany('App\Models\Article','id')->withTimestamps();
     }
 }

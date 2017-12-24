@@ -48,7 +48,7 @@ class ArticleController extends Controller
     public function store(StoreArticleRequest $request)
     {
         $input = $request->all();
-        $input['intro'] = mb_substr($request->get('content'), 0, 120);
+
         $article = Article::create($input);
         $article->tags()->attach($request->input('tag_list'));
         Flashy::message('文章创建成功!', 'success');

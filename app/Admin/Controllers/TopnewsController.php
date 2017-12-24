@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 class TopnewsController extends Controller {
     public function index()
     {
-        $posts = Post::latest('release_at')->paginate(6);
+        $posts = Post::latest('release_at')->where('released','1')->paginate(6);
         $tags = Tag::pluck('name', 'id');
 
         return view('admin.topnews.index', compact('posts', 'tags'));

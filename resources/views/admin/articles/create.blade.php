@@ -22,6 +22,10 @@
                         {!! Form::text('title',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
+                        {!! Form::label('intro','概要:') !!}
+                        {!! Form::textarea('intro',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
                         {!! Form::label('content','正文:') !!}
                         <script id="container" name="content" style="height:300px;" type="text/plain"></script>
                     </div>
