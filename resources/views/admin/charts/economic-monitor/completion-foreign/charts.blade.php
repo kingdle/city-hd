@@ -23,18 +23,41 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function foreignChart(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: "item",
+                extField: store.findMetaByItemName({
+                    type: 'item',
+                    name: '外资'
+                }).extField
+            }, {
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: axisArr,
+        });
         // 基于准备好的dom，初始化echarts实例
         var ImyChart1 = echarts.init(document.getElementById('i-charts1'));
-
+        var ImyChart2 = echarts.init(document.getElementById('i-charts2'));
         // 指定图表的配置项和数据
-        var option = {
+        var optionOne = {
             title: {
                 text: '进出口贸易',
                 subtext: ''
             },
             grid: [
-                {x: '15%', y: '15%', width: '75%', height: '70%'},
+                {x: '20%', y: '22%', width: '65%', height: '60%'},
             ],
             tooltip: {
                 trigger: 'axis'
@@ -49,7 +72,7 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                    data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -94,28 +117,13 @@
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        ImyChart1.setOption(option);
-        $(window).resize(function () {
-            ImyChart1.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var ImyChart2 = echarts.init(document.getElementById('i-charts2'));
-
-        // 指定图表的配置项和数据
-        var option = {
+        var optionTwo = {
             title: {
                 text: '实际利用外资',
                 subtext: ''
             },
             grid: [
-                {x: '15%', y: '15%', width: '75%', height: '70%'},
+                {x: '20%', y: '22%', width: '65%', height: '60%'},
             ],
             tooltip: {
                 trigger: 'axis'
@@ -130,7 +138,7 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                    data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -176,11 +184,12 @@
             ]
         };
 
-
         // 使用刚指定的配置项和数据显示图表。
-        ImyChart2.setOption(option);
+        ImyChart1.setOption(optionOne);
+        ImyChart2.setOption(optionTwo);
         $(window).resize(function () {
+            ImyChart1.resize();
             ImyChart2.resize();
         });
-    });
+    }
 </script>

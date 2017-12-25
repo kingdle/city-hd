@@ -96,7 +96,6 @@ class PostController extends Controller
             ];
             $grid->column('released','发布')->switch($states);
 
-
             $grid->rate('等级')->display(function ($rate) {
                 $html = "<i class='fa fa-star' style='color:#ff8913'></i>";
 
@@ -140,9 +139,9 @@ class PostController extends Controller
 
                 $tools->batch(function (Grid\Tools\BatchActions $batch) {
 
-                    $batch->add('恢复', new RestorePost());
-                    $batch->add('发布', new ReleasePost(1));
-                    $batch->add('取消发布', new ReleasePost(0));
+//                    $batch->add('恢复', new RestorePost());
+//                    $batch->add('发布', new ReleasePost(1));
+//                    $batch->add('取消发布', new ReleasePost(0));
                     $batch->add('显示选中项', new ShowSelected());
                 });
 
@@ -166,7 +165,12 @@ class PostController extends Controller
             $form->display('id', 'ID');
 
             $form->text('title','标题')->rules('required|min:1');
-            $form->radio('released','发布')->options(['1' => '发布', '0'=> '不发布'])->default('1');
+//            $form->radio('released','发布')->options(['1' => '发布', '0'=> '不发布'])->default('1');
+            $states = [
+                'on'  => ['value' => 1, 'text' => '发布', 'color' => 'success'],
+                'off' => ['value' => 0, 'text' => '不发布', 'color' => 'danger'],
+            ];
+            $form->switch('released','是否发布')->states($states);
             $form->select('author_id','发布部门')->options(function ($id) {
                 $user = Dept::find($id);
                 if ($user) {
