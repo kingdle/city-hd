@@ -6,7 +6,7 @@
                     <h5><a href="/admin/auth/articles/{{ $article->id }}">{{$article->title}}</a></h5>
                 </div>
                 <div class="ibox-contenter">
-                    {{$article->intro}}
+                    {{ str_limit(strip_tags($article->intro), $limit = 290, $end = '...') }}
                 </div>
                 <div class="col-xs-12">
                     <div class="stats">

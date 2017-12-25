@@ -19,7 +19,7 @@ class CompletionIndustryController extends Controller
             $content->description('(不含保税区)');
 
             $content->row(function (Row $row) {
-                $tag_id = DB::table('article_tag')->where('tag_id', '13')->first();
+                $tag_id = DB::table('article_tag')->where('tag_id', '13')->orderBy('updated_at','desc')->first();
                 $article_id =  $tag_id->article_id;
                 $article = Article::findOrFail($article_id);
                 $row->column(4, view('admin.charts.economic-monitor.completion-industry.month-text',compact('article')));

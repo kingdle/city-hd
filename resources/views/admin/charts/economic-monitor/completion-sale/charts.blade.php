@@ -3,24 +3,8 @@
         <div class="col-lg-12">
             <div class="ibox-analysis float-e-margins">
                 <div class="ibox-title">
-                    <h5>社会消费品零售额运行趋势</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
+                    <h5>限上贸易运行趋势</h5>
+
                 </div>
                 <div class="ibox-contenter">
                     <div id="i-charts" style="height:180px"></div>
@@ -30,13 +14,38 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function saleChart(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: "item",
+                extField: store.findMetaByItemName({
+                    type: 'item',
+                    name: '固定'
+                }).extField
+            }, {
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: axisArr,
+        });
+//                var dd = chartKit.genSeriesData();
+//                console.log(dd);
         // 基于准备好的dom，初始化echarts实例
         var ImyChart = echarts.init(document.getElementById('i-charts'));
 
-        // 指定图表的配置项和数据
         var option = {
             title: {
+                y: '5%',
                 text: '',
                 subtext: ''
             },
@@ -47,14 +56,15 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['增加值', '增速']
+                data: ['累计', '增长'],
+                left:'10',
             },
             toolbox: {},
             calculable: true,
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                    data: axisD//['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
                 }
             ],
             yAxis: [
@@ -68,7 +78,7 @@
                 },
                 {
                     type: 'value',
-                    name: '增速',
+                    name: '增长',
                     splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}%'
@@ -77,24 +87,53 @@
             ],
             series: [
                 {
-                    name: '总额',
+                    name: '累计',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [487.3, 1312, 2070.02, 2765.69, 549.56, 1463.6, '', ''],
-                    markPoint: {},
-                    markLine: {}
-                },
-                {
-                    name: '增长',
-                    type: 'line',
-                    yAxisIndex: 1,
-                    data: [8.5, 10.5, 11.5, 12.3, 9.5, 11.9, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '限上'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
                             {type: 'min', name: '最慢'}
                         ]
                     },
+                    markLine: {}
+                },
+                {
+                    name: '增长',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '限上'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    }),
                     markLine: {}
                 }
             ]
@@ -106,5 +145,5 @@
         $(window).resize(function () {
             ImyChart.resize();
         });
-    });
+    }
 </script>

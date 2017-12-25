@@ -31,6 +31,18 @@
             width: 100%;
             margin-bottom: 10px;
         }
+        p.post-abstract {
+            padding: 20px 30px;
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 24px;
+            color: #808080;
+            margin: 0 0 20px 0;
+            background-color: #f6f6f6;
+        }
+        p.post-abstract .abstract-tit {
+            font-weight: bold;
+        }
     </style>
     <div class="box">
         <div class="row">
@@ -45,6 +57,10 @@
                         </div>
                         <div class="post-deco"></div>
                         <div class="article">
+                            <p class="post-abstract">
+                                <span class="abstract-tit">摘要：</span>
+                                {{ str_limit(strip_tags($article->content), $limit = 260, $end = '...') }}
+                            </p>
                             <p>{!! $article->content !!}</p>
                         </div>
                         <hr>

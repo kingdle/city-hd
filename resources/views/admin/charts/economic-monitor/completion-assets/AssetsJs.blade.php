@@ -6,20 +6,20 @@
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-        myChart.group = 'jidu';
+//        myChart.group = 'jidu';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-            group: 'jidu',
+//            group: 'jidu',
             baseOption: {
                 timeline: {
                     axisType: 'category',
                     autoPlay: false,
                     rewind: true,
-                    currentIndex: jiduTime.dateArr.length - 1,
+                    currentIndex: dateArr.length - 1,
                     playInterval: 1000,
-                    data: jiduTime.dateStrArr
+                    data: dateStrArr
                 },
                 calculable: true,
                 grid: {
@@ -47,7 +47,7 @@
     $(function () {
         storeC = new SyStore({
             autoLoad: true,
-            datasetId: 4,
+            datasetId: 3,
             success: function (store) {
                 initTimelineAssets();
                 topChart(store);
@@ -73,7 +73,7 @@
                 var kitS = new SyValueKit(baseSpeed, _store);
 
                 initTimelineAssets(function (dd) {
-                    var nowDate = jiduTime.dateArr[dd.currentIndex];
+                    var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();

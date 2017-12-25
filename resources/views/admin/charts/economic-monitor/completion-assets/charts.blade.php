@@ -4,23 +4,23 @@
             <div class="ibox-analysis float-e-margins">
                 <div class="ibox-title">
                     <h5>固定资产投资运行趋势</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
+                    {{--<div class="ibox-tools">--}}
+                        {{--<a class="collapse-link">--}}
+                            {{--<i class="fa fa-chevron-up"></i>--}}
+                        {{--</a>--}}
+                        {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">--}}
+                            {{--<i class="fa fa-wrench"></i>--}}
+                        {{--</a>--}}
+                        {{--<ul class="dropdown-menu dropdown-user">--}}
+                            {{--<li><a href="#">Config option 1</a>--}}
+                            {{--</li>--}}
+                            {{--<li><a href="#">Config option 2</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<a class="close-link">--}}
+                            {{--<i class="fa fa-times"></i>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="ibox-contenter">
                     <div id="i-charts" style="height:180px"></div>
@@ -106,7 +106,22 @@
                     name: '累计',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: ['', '','', '',200.4, 64.5, 86.6, 104.6, 134.6,'', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '固定资产'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -119,7 +134,22 @@
                     name: '增长',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: ['', '','', '',13.4, 12.1, 12, 11.3, 11.1,'', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '固定资产'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    }),
                     markLine: {}
                 }
             ]

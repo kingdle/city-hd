@@ -14,12 +14,10 @@ class CompletionAreaController extends Controller
     public function index()
     {
         return Admin::content(function (Content $content) {
-
             $content->header('地区生产总值完成情况');
             $content->description('(不含保税区)');
-
             $content->row(function (Row $row) {
-                $tag_id = DB::table('article_tag')->where('tag_id', '8')->first();
+                $tag_id = DB::table('article_tag')->where('tag_id', '8')->orderBy('updated_at','desc')->first();
                 $article_id =  $tag_id->article_id;
                 $article = Article::findOrFail($article_id);
                 $row->column(4, view('admin.charts.economic-monitor.completion-area.month-text', compact('article')));
@@ -34,7 +32,6 @@ class CompletionAreaController extends Controller
             $content->row(function (Row $row) {
                 $row->column(12, view('admin.charts.economic-monitor.completion-area.gross-value'));
             });
-
         });
     }
 }
