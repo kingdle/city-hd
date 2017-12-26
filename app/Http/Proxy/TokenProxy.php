@@ -78,7 +78,7 @@ class TokenProxy {
             'grant_type'    => $grantType,
         ]);
 
-        $response = $this->http->post('http://city-hd.dev/oauth/token', [
+        $response = $this->http->post('/oauth/token', [
             'form_params' => $data,
         ]);
 

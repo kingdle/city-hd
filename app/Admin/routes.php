@@ -76,7 +76,7 @@ Route::group([
     $router->post('posts/release', 'PostController@release');
     $router->post('posts/restore', 'PostController@restore');
     $router->get('api/users', 'PostController@users');
-    $router->resource('admin/users', 'UserController::class');
+    $router->resource('admin/users', UserController::class);
     $router->get('china/cascading-select', 'China\ChinaController@cascading');
 
     $router->get('api/world/cities', 'World\ApiController@cities');

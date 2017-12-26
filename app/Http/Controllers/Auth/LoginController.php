@@ -42,9 +42,14 @@ class LoginController extends Controller
         return $this->proxy->login(request('username'), request('password'));
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        return $this->proxy->logout();
+//        return $this->proxy->logout();
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
     }
 
     public function refresh()
