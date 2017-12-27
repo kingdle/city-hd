@@ -22,23 +22,43 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var ImyChart = echarts.init(document.getElementById('i-charts1'));
+    function financeChart(store) {
         // 指定图表的配置项和数据
-        var option = {
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        console.log(store)
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '比年初'
+                }).extField
+            }],
+            axis: axisArr,
+        });
+        // 基于准备好的dom，初始化echarts实例
+        var ImyChart1 = echarts.init(document.getElementById('i-charts1'));
+        var ImyChart2 = echarts.init(document.getElementById('i-charts2'));
+        // 指定图表的配置项和数据
+        var optionOne = {
             title: {
                 text: '一般公共预算收入',
                 subtext: ''
             },
             grid: [
-                {x: '15%', y: '15%', width: '75%', height: '70%'},
+                {x: '20%', y: '22%', width: '70%', height: '60%'},
             ],
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['收入', '增速']
+                data: ['收入', '增速'],
+                right:0,
             },
             toolbox: {
 
@@ -47,7 +67,7 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                    data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -73,7 +93,22 @@
                     name: '收入',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [39.3, 64.5, 86.6, 104.6, 134.6, 152.8, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '一般公共预算'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -86,33 +121,35 @@
                     name: '增速',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [13.7, 12.1, 12, 11.3,11.1, 11.3, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '一般公共预算'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
 
                     markLine: {}
                 }
             ]
         };
-        // 使用刚指定的配置项和数据显示图表。
-        ImyChart.setOption(option);
-        $(window).resize(function () {
-            ImyChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var ImyChart = echarts.init(document.getElementById('i-charts2'));
-
-        // 指定图表的配置项和数据
-        var option = {
+        var optionTwo = {
             title: {
                 left:'left',
                 text: '金融情况',
                 subtext: ''
             },
             grid: [
-                {x: '15%', y: '15%', width: '75%', height: '70%'},
+                {x: '20%', y: '22%', width: '70%', height: '60%'},
             ],
             tooltip: {
                 trigger: 'axis',
@@ -120,15 +157,14 @@
             },
             legend: {
                 x: 'right',
-                left:'20%',
                 size: '5',
-                data: ['存款余额', '个人储蓄存款', '贷款余额']
+                data: ['金融系统本外币存款余额', '个人储蓄存款', '金融系统本外币贷款余额']
             },
             //calculable : true,
             xAxis: [{
                 splitLine:{show: false},
                 type: 'category',
-                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7'],
+                data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7'],
 
             }],
             yAxis: [{
@@ -142,30 +178,96 @@
 
             ],
             series: [{
-                name: '存款余额',
+                name: '金融系统本外币存款余额',
                 type: 'bar',
-                data: [1573.8, 1606.6, 1600.7, 1591.3, 1639.8, 1680.3, '','']
+                data: chartKit.genSeriesData({
+                    series: [{
+                        type: "item",
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '金融系统本外币存款余额'
+                        }).extField
+                    }, {
+                        //        name: 2,
+                        type: 'frame',
+                        extField: store.findMetaByItemName({
+                            type: 'frame',
+                            name: '累计'
+                        }).extField
+                    }, {
+                        //        name: 2,
+                        type: 'area',
+                        extField: store.findMetaByItemName({
+                            type: 'area',
+                            name: '黄岛'
+                        }).extField
+                    }]
+                }),
             },
                 {
                     name: '个人储蓄存款',
                     type: 'bar',
-                    data: [761.5, 780.8, 749.8, 747.4,765, 749.9,'',''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '个人储蓄存款'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛'
+                            }).extField
+                        }]
+                    }),
 
                 },
                 {
-                    name: '贷款余额',
+                    name: '金融系统本外币贷款余额',
                     type: 'bar',
-                    data: [1618.3, 1678, 1716.8,1740.4 , 1750.5, 1778, '',''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '金融系统本外币贷款余额'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛'
+                            }).extField
+                        }]
+                    }),
 
                 }
             ]
         };
-
-
         // 使用刚指定的配置项和数据显示图表。
-        ImyChart.setOption(option);
+        ImyChart1.setOption(optionOne);
+        ImyChart2.setOption(optionTwo);
         $(window).resize(function () {
-            ImyChart.resize();
+            ImyChart1.resize();
+            ImyChart2.resize();
         });
-    });
+    }
 </script>

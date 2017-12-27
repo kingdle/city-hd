@@ -34,7 +34,7 @@
 <script type="text/javascript">
     function area() {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('area'));
+
         var axisD = [];
         for (var item in axisArr) {
             axisD.push(axisArr[item].name);
@@ -47,6 +47,7 @@
 
         });
         // 指定图表的配置项和数据
+        var myChart = echarts.init(document.getElementById('area'));
         var option = {
             title: {
                 text: ''

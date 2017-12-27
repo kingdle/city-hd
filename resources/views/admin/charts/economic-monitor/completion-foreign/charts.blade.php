@@ -98,7 +98,22 @@
                     name: '总量',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [285, 457.4, 607.2, 759.6, 898.7, 1018.2, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '进出口'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {},
                     markLine: {}
                 },
@@ -106,7 +121,22 @@
                     name: '增速',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [58.3, 62, 60, 52.3,46.9, 38.6, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '进出口'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -164,7 +194,22 @@
                     name: '总量',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [1.77, 4.93, 6.7, 7.5, 9.1, 10.6, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '利用外资'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {},
                     markLine: {}
                 },
@@ -172,7 +217,22 @@
                     name: '增速',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [82, 21.4, 35.7, 24.2, 5, 17.2, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '利用外资'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},

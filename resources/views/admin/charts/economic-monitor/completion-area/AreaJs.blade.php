@@ -53,6 +53,7 @@
                 topChart(store);
                 structureChart(store);
                 grossChart(store);
+                benchmarkChart(store);
                 var _store = store;
                 var sDate = new Date();
                 date = jiduTime.dateArr[jiduTime.dateArr.length-1];

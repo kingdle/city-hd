@@ -27,7 +27,30 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function economicline(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in jiduTime.cAxisArr) {
+            axisD.push(jiduTime.cAxisArr[item].name);
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: "item",
+                extField: store.findMetaByItemName({
+                    type: 'item',
+                    name: '外资'
+                }).extField
+            }, {
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: jiduTime.cAxisArr,
+        });
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('speed-line'));
 
@@ -53,7 +76,7 @@
                 type: 'category',
                 splitLine:{show: false},
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD//['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
             },
             yAxis: {
                 splitLine:{show: false},
@@ -100,5 +123,5 @@
             myChart.resize();
         });
 //        window.onresize = ;
-    });
+    }
 </script>

@@ -1,7 +1,7 @@
 function SyStore(config) {
     this.param = config && config.param ? config.param : {};
     this.success = config && config.success ? config.success : function () {
-        };
+    };
     this.autoLoad = config && config.autoLoad ? config.autoLoad : false;
     this.datasetId = config && config.datasetId ? config.datasetId : 3;
     if (this.autoLoad) {
@@ -9,6 +9,7 @@ function SyStore(config) {
     }
 
 }
+
 SyStore.prototype.init = function () {
     var _this = this;
     $.ajax({
@@ -22,7 +23,7 @@ SyStore.prototype.init = function () {
         }
     });
 
-}
+};
 SyStore.prototype.getDataByMeta = function (paramData) {
     var _this = this;
     var pd = {};
@@ -66,7 +67,7 @@ SyStore.prototype.getDataByMeta = function (paramData) {
 
         }
     });
-}
+};
 SyStore.prototype.findMetaByItemName = function (item) {
     var _this = this;
     var result = {};
@@ -82,7 +83,7 @@ SyStore.prototype.findMetaByItemName = function (item) {
         })
     }
     return result;
-}
+};
 SyStore.prototype.findMetaByName = function (name) {
     var _this = this;
     var result = {};
@@ -101,7 +102,7 @@ SyStore.prototype.findMetaByName = function (name) {
         });
     }
     return result;
-}
+};
 
 function SyCollection(datas) {
     var _this = this;
@@ -172,7 +173,7 @@ SyCollection.prototype.filter = function (condition) {
         return this;
     }
 
-}
+};
 
 SyCollection.prototype.find = function (condition) {
     var tmpResult = this;
@@ -203,7 +204,8 @@ SyCollection.prototype.find = function (condition) {
         return this._datas;
     }
 
-}
+};
+
 //序列1条件series[2014,2015]     维度条件dim[163,164]    filter   样式array   axis横轴[jimo,qingdao]{name type code extField}
 function SyChartSeriesKit(option) {
     this.setOption(option);
@@ -222,6 +224,7 @@ function SyChartSeriesKit(option) {
         }
     }
 }
+
 SyChartSeriesKit.prototype._genFilter = function (arr) {
     var tmpFilter = {};
     $.each(arr, function (index, item) {
@@ -232,7 +235,7 @@ SyChartSeriesKit.prototype._genFilter = function (arr) {
         }
     });
     return tmpFilter;
-}
+};
 SyChartSeriesKit.prototype.genSeriesData = function (option) {
     var _this = this;
     if (!option)
@@ -262,9 +265,9 @@ SyChartSeriesKit.prototype.genSeriesData = function (option) {
                         tmpResult.push(tmpAxisItem._datas[0] && tmpAxisItem._datas[0].value != null && typeof(tmpAxisItem._datas[0].value) != 'undefined' ? tmpAxisItem._datas[0].value : '-');
                     else
                         tmpResult.push(tmpAxisItem._datas[0] && tmpAxisItem._datas[0].value != null && typeof(tmpAxisItem._datas[0].value) != 'undefined' ? {
-                                name: item.name,
-                                value: tmpAxisItem._datas[0].value
-                            } : '-');
+                            name: item.name,
+                            value: tmpAxisItem._datas[0].value
+                        } : '-');
                 } else {
                     tmpDimV = [];
                     $.each(dim, function (jndex, tmpDim) {
@@ -273,20 +276,20 @@ SyChartSeriesKit.prototype.genSeriesData = function (option) {
                         tmpDimItem = tmpAxisItem.filter(tmpFilter);
                         if (style != 'obj') {
                             if (dimSize > 1)
-                                tmpDimV.push(tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? tmpDimItem._datas[0].value.trim() : '-');
+                                tmpDimV.push(tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? (tmpDimItem._datas[0].value+'').trim() : '-');
                             else
-                                tmpDimV = tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? tmpDimItem._datas[0].value.trim() : '-';
+                                tmpDimV = tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? (tmpDimItem._datas[0].value+'').trim() : '-';
                         } else {
                             if (dimSize > 1)
                                 tmpDimV.push(tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? {
-                                        name: item.name,
-                                        value: tmpDimItem._datas[0].value.trim()
-                                    } : '-');
+                                    name: item.name,
+                                    value: (tmpDimItem._datas[0].value+'').trim()
+                                } : '-');
                             else
                                 tmpDimV = tmpDimItem._datas[0] && tmpDimItem._datas[0].value != null && typeof(tmpDimItem._datas[0].value) != 'undefined' ? {
-                                        name: item.name,
-                                        value: tmpDimItem._datas[0].value.trim()
-                                    } : '-';
+                                    name: item.name,
+                                    value: (tmpDimItem._datas[0].value+'').trim()
+                                } : '-';
                         }
                     });
                     tmpResult.push(tmpDimV);
@@ -299,7 +302,7 @@ SyChartSeriesKit.prototype.genSeriesData = function (option) {
         }
     }
 
-}
+};
 
 SyChartSeriesKit.prototype.setOption = function (option) {
 
@@ -308,7 +311,7 @@ SyChartSeriesKit.prototype.setOption = function (option) {
             this[item] = option[item];
         }
     }
-}
+};
 
 function SyValueKit(baseFilterV, store) {
     this.baseFilterV = baseFilterV;
@@ -334,7 +337,7 @@ SyValueKit.prototype.findValueByItemName = function (filter, isV) {
 
     }
 
-}
+};
 SyValueKit.prototype.findValueByAreaName = function (filter, isV) {
     var meta = this.store.findMetaByItemName({
         type: 'area',
@@ -353,7 +356,7 @@ SyValueKit.prototype.findValueByAreaName = function (filter, isV) {
 
     }
 
-}
+};
 SyValueKit.prototype.findValueByObj = function (filter, isV) {
     //	var meta = this.store.findMetaByItemName({
     //		type: 'area',
@@ -368,10 +371,10 @@ SyValueKit.prototype.findValueByObj = function (filter, isV) {
 
     }
 
-}
+};
 SyValueKit.prototype.meta = function (type, value) {
     return this.store.findMetaByItemName({
         type: type,
         name: value
     });
-}
+};

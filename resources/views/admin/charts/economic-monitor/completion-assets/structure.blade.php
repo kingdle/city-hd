@@ -59,10 +59,11 @@
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-one'));
-
+        var myChartOne = echarts.init(document.getElementById('run-one'));
+        var myChartTwo = echarts.init(document.getElementById('run-two'));
+        var myChartThree = echarts.init(document.getElementById('run-three'));
         // 指定图表的配置项和数据
-        var option = {
+        var optionOne = {
             title: {
                 text: '',
                 subtext: '2017年7月',
@@ -98,19 +99,7 @@
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-two'));
-
-        // 指定图表的配置项和数据
-        option = {
+        var optionTwo = {
             title: {
                 text: '亿元新开工项目情况'
             },
@@ -171,19 +160,7 @@
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-three'));
-
-        // 指定图表的配置项和数据
-        var option = {
+        var optionThree = {
             title: {
                 text: '',
                 subtext: '2017年7月',
@@ -222,7 +199,12 @@
             ]
         };
 
+
+
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        myChartOne.setOption(optionOne);
+        myChartTwo.setOption(optionTwo);
+        myChartThree.setOption(optionThree);
+
     });
 </script>

@@ -24,7 +24,24 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function industryChart(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: axisArr,
+        });
         // 基于准备好的dom，初始化echarts实例
         var ImyChart = echarts.init(document.getElementById('i-charts'));
 
@@ -48,7 +65,7 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                    data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -74,7 +91,22 @@
                     name: '绝对额',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [723.4, 1187.3, 1603, 2068.7, 2620.2, 3094.1, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '规上工业'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {},
                     markLine: {}
                 },
@@ -82,7 +114,22 @@
                     name: '增长%',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [12.2, 13, 12.1, 12.9, 13.8, 13.5, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '规上工业'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
@@ -100,5 +147,5 @@
         $(window).resize(function () {
             ImyChart.resize();
         });
-    });
+    }
 </script>

@@ -1,4 +1,49 @@
 <script>
+    function initTimeline(showData) {
+        var dom = document.getElementById("HeaderDatelineArea");
+        var myChart = echarts.getInstanceByDom(dom);
+        if (myChart) {
+            myChart.dispose();
+        }
+        myChart = echarts.init(dom);
+        myChart.group = 'jidu';
+        if (showData) {
+            myChart.on('timelinechanged', showData);
+        }
+        var option = {
+            group: 'jidu',
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    autoPlay: false,
+                    rewind: true,
+                    currentIndex: jiduTime.dateArr.length - 1,
+                    playInterval: 1000,
+                    data: jiduTime.dateStrArr
+                },
+                calculable: true,
+                grid: {
+                    top: 80,
+                    bottom: 100,
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow',
+                            label: {
+                                show: true,
+                                formatter: function (params) {
+                                    return params.value.replace('\n', '');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        myChart.setOption(option);
+    }
+</script>
+<script>
     //    function initTimeline(showData) {
     //        var myChart = echarts.init(document.getElementById('HeaderDateline'));
     //        myChart.setOption(option);
@@ -11,11 +56,13 @@
         datasetId: 3,
         success: function (store) {
             $(function () {
+                initTimeline();
                 initChartsContain();
                 area();
                 assets();
                 industry();
                 sale();
+                economicline(store);
             });
 
             var _store = store;
