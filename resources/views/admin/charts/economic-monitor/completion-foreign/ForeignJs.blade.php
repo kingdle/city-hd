@@ -1,17 +1,17 @@
 <script>
-    function initTimelineAssets(showData) {
-        var dom = document.getElementById("HeaderDatelineAssets");
+    function initTimelineForeign(showData) {
+        var dom = document.getElementById("HeaderDatelineForeign");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-//        myChart.group = 'jidu';
+        myChart.group = 'month';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-//            group: 'jidu',
+            group: 'month',
             baseOption: {
                 timeline: {
                     axisType: 'category',
@@ -49,9 +49,10 @@
             autoLoad: true,
             datasetId: 3,
             success: function (store) {
-//                initTimelineAssets();
+                initTimelineForeign();
                 foreignChart(store);
-
+                benchmarkChart(store);
+                structureChart(store);
                 var _store = store;
                 var sDate = new Date();
                 date = new Date(sDate.getTime());

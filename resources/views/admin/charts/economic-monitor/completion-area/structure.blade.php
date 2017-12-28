@@ -372,9 +372,10 @@
             ]
         };
         // 使用刚指定的配置项和数据显示图表。
-        myChartOne.setOption(optionOne);
+
         myChartOne.group = 'jidu';
         echarts.connect('jidu');
+        myChartOne.setOption(optionOne);
         myChartTwo.setOption(optionTwo);
         myChartThree.setOption(optionThree);
         $(window).resize(function () {

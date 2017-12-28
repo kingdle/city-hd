@@ -51,7 +51,7 @@
             success: function (store) {
 //                initTimelineAssets();
                 industryChart(store);
-
+                benchmarkChart(store)
                 var _store = store;
                 var sDate = new Date();
                 date = new Date(sDate.getTime());

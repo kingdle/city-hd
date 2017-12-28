@@ -4,16 +4,9 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>分镇街固定资产投资情况</h5>
+
                     <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
+                        <span class="quotadate">{{ date("Y-m",mktime(0, 0 , 0,date("m"),1,date("Y"))) }}</span>
                     </div>
                 </div>
                 <div class="row-quota" id="quota">
@@ -33,14 +26,14 @@
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
-                            <th scope="row">黄  岛</th>
+                            <th scope="row">黄岛</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">辛  安</th>
+                            <th scope="row">辛 安</th>
                             <td>7.4</td>
                             <td>116.59</td>
                             <td>3.3</td>
@@ -82,35 +75,35 @@
                             <td>102.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">珠  海</th>
+                            <th scope="row">珠海</th>
                             <td>22.6</td>
                             <td>111.69</td>
                             <td>20.7</td>
                             <td>110.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">隐  珠</th>
+                            <th scope="row">隐珠</th>
                             <td>38.6</td>
                             <td>106.69</td>
                             <td>20.7</td>
                             <td>116.32</td>
                         </tr>
                         <tr>
-                            <th scope="row">铁  山</th>
+                            <th scope="row">铁山</th>
                             <td>8.6</td>
                             <td>124.69</td>
                             <td>8.3</td>
                             <td>65.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">滨  海</th>
+                            <th scope="row">滨海</th>
                             <td>10.6</td>
                             <td>104.69</td>
                             <td>10.3</td>
                             <td>19.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">王  台</th>
+                            <th scope="row">王台</th>
                             <td>18.6</td>
                             <td>109.69</td>
                             <td>16.7</td>
@@ -124,63 +117,63 @@
                             <td>30.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">琅  琊</th>
+                            <th scope="row">琅琊</th>
                             <td>7.6</td>
                             <td>102.45</td>
                             <td>7</td>
                             <td>57.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">泊  里</th>
+                            <th scope="row">泊里</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">大  场</th>
+                            <th scope="row">大场</th>
                             <td>12.6</td>
                             <td>101.7</td>
                             <td>9.7</td>
                             <td>131.26</td>
                         </tr>
                         <tr>
-                            <th scope="row">大  村</th>
+                            <th scope="row">大村</th>
                             <td>8.6</td>
                             <td>111.69</td>
                             <td>8.7</td>
                             <td>50.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">六  汪</th>
+                            <th scope="row">六汪</th>
                             <td>11.4</td>
                             <td>106.69</td>
                             <td>5.7</td>
                             <td>0.00</td>
                         </tr>
                         <tr>
-                            <th scope="row">海  青</th>
+                            <th scope="row">海青</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">宝  山</th>
+                            <th scope="row">宝山</th>
                             <td>7.4</td>
                             <td>112.69</td>
                             <td>1.8</td>
                             <td>665.08</td>
                         </tr>
                         <tr>
-                            <th scope="row">藏  南</th>
+                            <th scope="row">藏南</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">临  港</th>
+                            <th scope="row">临港</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>
@@ -194,7 +187,7 @@
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">胶  河</th>
+                            <th scope="row">胶河</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>
@@ -208,7 +201,7 @@
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">胶  南</th>
+                            <th scope="row">胶南</th>
                             <td>8.6</td>
                             <td>101.69</td>
                             <td>6.7</td>

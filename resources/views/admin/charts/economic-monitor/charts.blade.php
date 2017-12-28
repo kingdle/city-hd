@@ -9,7 +9,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    function initChartsContain() {
+    function initChartsMonitor(store) {
         var myC = echarts.init(document.getElementById('charts-contain'));
         var axisD = [];
         for (var item in axisArr) {
@@ -18,7 +18,7 @@
         }
 
         var chartKit = new SyChartSeriesKit({
-            store: storeA,
+            store: store,
             axis: axisArr,
 
         });
@@ -73,14 +73,14 @@
                     series: [{
                         //        name: "资产投资",
                         type: "item",
-                        extField: storeA.findMetaByItemName({
+                        extField: store.findMetaByItemName({
                             type: 'item',
                             name: '地区生产总值'
                         }).extField
                     }, {
                         //        name: 2,
                         type: 'frame',
-                        extField: storeA.findMetaByItemName({
+                        extField: store.findMetaByItemName({
                             type: 'frame',
                             name: '累计'
                         }).extField
@@ -94,14 +94,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '资产投资'
+                                name: '固定资产投资'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
                             }).extField
@@ -116,14 +116,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
                                 name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
                             }).extField
@@ -138,14 +138,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
                                 name: '社会消费品零售额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
                             }).extField
@@ -161,14 +161,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
                                 name: '地区生产总值'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
                             }).extField
@@ -183,14 +183,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '资产投资'
+                                name: '固定资产投资'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
                             }).extField
@@ -206,14 +206,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
                             }).extField
@@ -229,14 +229,14 @@
                         series: [{
                             //        name: "资产投资",
                             type: "item",
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '社会消费'
+                                name: '社会消费品零售额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
-                            extField: storeA.findMetaByItemName({
+                            extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
                             }).extField

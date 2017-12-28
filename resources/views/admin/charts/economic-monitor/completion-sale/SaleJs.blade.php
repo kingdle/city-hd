@@ -1,17 +1,17 @@
 <script>
     function initTimelineSale(showData) {
-        var dom = document.getElementById("HeaderDatelineAssets");
+        var dom = document.getElementById("HeaderDatelineSale");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-//        myChart.group = 'jidu';
+        myChart.group = 'month';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-//            group: 'jidu',
+            group: 'month',
             baseOption: {
                 timeline: {
                     axisType: 'category',
@@ -49,9 +49,10 @@
             autoLoad: true,
             datasetId: 3,
             success: function (store) {
-//                initTimelineSale();
+                initTimelineSale();
                 saleChart(store);
-
+                benchmarkChart(store)
+                structureChart(store)
                 var _store = store;
                 var sDate = new Date();
                 date = new Date(sDate.getTime());
@@ -72,7 +73,7 @@
                 var kitV = new SyValueKit(baseRes, _store);
                 var kitS = new SyValueKit(baseSpeed, _store);
 
-                initTimelineAssets(function (dd) {
+                initTimelineSale(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;

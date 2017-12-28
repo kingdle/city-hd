@@ -41,12 +41,36 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(function () {
+    function benchmarkChart(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: "item",
+                extField: store.findMetaByItemName({
+                    type: 'item',
+                    name: '第二产业'
+                }).extField
+            }, {
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: axisArr,
+        });
         // 基于准备好的dom，初始化echarts实例
         var PmyChart = echarts.init(document.getElementById('speed-line'));
+        var CmyChart = echarts.init(document.getElementById('total-line'));
 
         // 指定图表的配置项和数据
-        var option = {
+        var optionP = {
             title: {
                 text: ''
             },
@@ -54,7 +78,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['全国', '山东省', '西海岸新区', '浦东新区']
+                data: ['全国', '山东省', '浦东新区', '西海岸新区']
             },
             grid: {
                 left: '3%',
@@ -66,7 +90,7 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD//['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
             },
             yAxis: {
                 type: 'value'
@@ -76,45 +100,117 @@
                     name: '全国',
                     type: 'line',
                     //stack: '总量',
-                    data: [6.7, 6.7, 6.7, 6.7, 6.9, 6.9]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '全国'
+                            }).extField
+                        }]
+                    }),
                 },
                 {
                     name: '山东省',
                     type: 'line',
                     //stack: '总量',
-                    data: [7.9, 7.5, 8, 7.5, 7.9, 7]
-                },
-
-                {
-                    name: '西海岸新区',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [8.5, 10.5, 11.5, 12.3, 10, 12.1]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '山东'
+                            }).extField
+                        }]
+                    }),
                 },
                 {
                     name: '浦东新区',
                     type: 'line',
                     // stack: '总量',
-                    data: [8.3, 7.9, 8.2, 8.1, 7.9, 8]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '浦东'
+                            }).extField
+                        }]
+                    }),
+                },
+                {
+                    name: '西海岸新区',
+                    type: 'line',
+                    //stack: '总量',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛'
+                            }).extField
+                        }]
+                    }),
                 }
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        PmyChart.setOption(option);
-        $(window).resize(function () {
-            PmyChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var CmyChart = echarts.init(document.getElementById('total-line'));
-
-        // 指定图表的配置项和数据
-        var option = {
+        var optionC = {
             title: {
                 text: ''
             },
@@ -122,7 +218,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['西海岸新区', '威海市', '德州市', '浦东新区']
+                data: ['西海岸新区','济南市','青岛市','威海市', '德州市','潍坊市']
             },
             grid: {
                 left: '3%',
@@ -134,43 +230,189 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD//['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
             },
             yAxis: {
                 type: 'value'
             },
             series: [
                 {
+                    name: '西海岸新区',
+                    type: 'line',
+                    //stack: '总量',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛'
+                            }).extField
+                        }]
+                    }),
+                },
+                {
+                    name: '济南市',
+                    type: 'line',
+                    //stack: '总量',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '济南市'
+                            }).extField
+                        }]
+                    }),
+                },
+                {
+                    name: '青岛市',
+                    type: 'line',
+                    //stack: '总量',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '青岛市'
+                            }).extField
+                        }]
+                    }),
+                },
+                {
                     name: '德州市',
                     type: 'line',
                     //stack: '总量',
-                    data: [6.9, 6.8, 7, 7.2, 8.5, 8.5]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '德州市'
+                            }).extField
+                        }]
+                    }),
                 },
                 {
                     name: '威海市',
                     type: 'line',
                     //stack: '总量',
-                    data: [8, 7.8, 7.7, 8, 7.7, 7.7]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '威海市'
+                            }).extField
+                        }]
+                    }),
                 },
                 {
-                    name: '西海岸新区',
+                    name: '潍坊市',
                     type: 'line',
                     //stack: '总量',
-                    data: [8.5, 10.5, 11.5, 12.3, 10, 12.1]
-                },
-                {
-                    name: '浦东新区',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [8.3, 7.9, 8.2, 8.1, 7.9, 8]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '财政收入'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '潍坊市'
+                            }).extField
+                        }]
+                    }),
                 }
             ]
         };
 
         // 使用刚指定的配置项和数据显示图表。
-        CmyChart.setOption(option);
+        PmyChart.setOption(optionP);
+        CmyChart.setOption(optionC);
         $(window).resize(function () {
+            PmyChart.resize();
             CmyChart.resize();
         });
-    });
+    }
 </script>

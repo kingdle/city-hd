@@ -57,7 +57,7 @@
         success: function (store) {
             $(function () {
                 initTimeline();
-                initChartsContain();
+                initChartsMonitor(store);
                 area();
                 assets();
                 industry();

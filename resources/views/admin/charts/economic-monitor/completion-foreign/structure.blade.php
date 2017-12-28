@@ -51,37 +51,79 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="HeaderDatelineForeign" style="min-height: 50px"></div>
+    </div>
+</div>
 <script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-one'));
-
+    function structureChart(store) {
         // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: '',
-                subtext: '2017年7月',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left',
-                data: ['出口', '进口']
-            },
-            series: [
-                {
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        var pds = [];
+
+        for (var j in axisArr) {
+            //===============饼图kit==============
+            var pieKit = new SyChartSeriesKit({
+                store: store,
+                style: 'obj',
+                series: [{
+                    type: "time_year",
+                    extField: dateArr[j].getFullYear()
+                }, {
+                    type: 'time_month',
+                    extField: dateArr[j].getMonth() + 1
+                }, {
+                    type: 'area',
+                    extField: 1508
+                }, {
+                    type: 'frame',
+                    extField: 200000011
+                }],
+                axis: [{
+                    name: '进口',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '进口'
+                        }).extField
+                    }]
+                }, {
+                    name: '出口',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '出口'
+                        }).extField
+                    }]
+                }]
+            });
+            pds.push({
+                title: {
+                    text: '',
+                    subtext: dateStrArr[j],
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['进口', '出口']
+                },
+                series: [{
                     name: '总量',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
-                    data: [
-                        {value: 3474141, name: '出口'},
-                        {value: 1640257, name: '进口'}
-                    ],
+                    data: pieKit.genSeriesData(),
                     itemStyle: {
                         emphasis: {
                             shadowBlur: 10,
@@ -89,25 +131,51 @@
                             shadowColor: 'rgba(0, 0, 0, 0.5)'
                         }
                     }
-                }
-            ]
-        };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
+                }]
+            });
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: "item",
+                extField: store.findMetaByItemName({
+                    type: 'item',
+                    name: '第二产业'
+                }).extField
+            }, {
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: axisArr,
         });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-two'));
+        var myChartOne = echarts.init(document.getElementById('run-one'));
+        var myChartTwo = echarts.init(document.getElementById('run-two'));
+        var myChartThree = echarts.init(document.getElementById('run-three'));
 
         // 指定图表的配置项和数据
-        var option = {
+        var optionOne = {
+            baseOption: {
+                timeline: {
+                    data: dateStrArr,
+                    currentIndex: dateStrArr.length - 1,
+                    autoPlay: false,
+                    rewind: true,
+                    show: false
+                },
+                series: {
+                    type: 'pie'
+                }
+            },
+            options: pds
+        };
+
+        // 指定图表的配置项和数据
+        var optionTwo = {
             title: {
                 text: '',
                 subtext: '',
@@ -156,21 +224,8 @@
 
             ]
         };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-three'));
-
         // 指定图表的配置项和数据
-        var option = {
+        var optionThree = {
             title: {
                 text: ''
             },
@@ -190,7 +245,7 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
             },
             yAxis: {
                 type: 'value'
@@ -200,22 +255,60 @@
                     name: '千万美元以上',
                     type: 'line',
                     stack: '总量',
-                    data: [3.4, 3.2, 3.5, 4.1, 4, 3.4]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '千万美元以上'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    })
                 },
                 {
                     name: '亿美元以上',
                     type: 'line',
                     stack: '总量',
-                    data: [7.8, 9.2, 10.1, 10.1, 9.1, 9.1]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '亿美元以上'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    })
                 }
 
             ]
         };
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        myChartOne.group = 'month';
+        echarts.connect('month');
+        myChartOne.setOption(optionOne);
+        myChartTwo.setOption(optionTwo);
+        myChartThree.setOption(optionThree);
+
         $(window).resize(function () {
-            myChart.resize();
+            myChartOne.resize();
+            myChartTwo.resize();
+            myChartThree.resize();
+
         });
-    });
+    }
 </script>

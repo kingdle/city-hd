@@ -87,26 +87,114 @@
                     name: '全国',
                     type: 'line',
                     //stack: '总量',
-                    data: [6.7, 6.7, 6.7, 6.7, 6.9, 6.9]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '地区生产总值'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '全国'
+                            }).extField
+                        }]
+                    })
                 },
                 {
                     name: '山东省',
                     type: 'line',
                     //stack: '总量',
-                    data: [7.9, 7.5, 8, 7.5, 7.9, 7]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '地区生产总值'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '山东省'
+                            }).extField
+                        }]
+                    }),
                 },
 
                 {
                     name: '西海岸新区',
                     type: 'line',
                     //stack: '总量',
-                    data: [8.5, 10.5, 11.5, 12.3, 10, 12.1]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '地区生产总值'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '青岛西海岸新区'
+                            }).extField
+                        }]
+                    }),
                 },
                 {
                     name: '浦东新区',
                     type: 'line',
                     //stack: '总量',
-                    data: [8.3, 7.9, 8.2, 8.1, 7.9, 8]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '地区生产总值'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '浦东新区'
+                            }).extField
+                        }]
+                    }),
                 }
             ]
         };
