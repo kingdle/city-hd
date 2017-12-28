@@ -180,7 +180,7 @@ class PostController extends Controller
 
             $form->file('images','封面')->removable();
             $form->file('files','附件')->removable();
-            $form->ckeditor('content','内容');
+            $form->editor('content','内容');
             $form->listbox('tags','标签')->options(Tag::all()->pluck('name', 'id'))->settings(['selectorMinimalHeight' => 300]);
             $form->number('rate','评分');
             $form->datetime('release_at', '发布时间')->default(now());

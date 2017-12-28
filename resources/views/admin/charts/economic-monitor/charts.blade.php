@@ -84,6 +84,13 @@
                             type: 'frame',
                             name: '累计'
                         }).extField
+                    }, {
+                        //        name: 2,
+                        type: 'area',
+                        extField: store.findMetaByItemName({
+                            type: 'area',
+                            name: '西海岸'
+                        }).extField
                     }]
                 })//[518.4, 1358, 2146.9, 2871.1, 586.7, 1521.2, '','']
             },
@@ -104,6 +111,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
                             }).extField
                         }]
                     })//[1188.1, 924.1, 1475.9, 2008.6, 268.8, 1013.2,'',''],
@@ -127,6 +141,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
+                            }).extField
                         }]
                     })//[255 , 277.7, 499.9, 795.3, 332.9, 653.3,'',''],
 
@@ -148,6 +169,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
                             }).extField
                         }]
                     })//[121.6, 277.7, 384.6,533.4 , 134.2, 279.2, '',''],
@@ -172,6 +200,13 @@
                                 type: 'frame',
                                 name: '增长'
                             }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
+                            }).extField
                         }]
                     })//[518.4, 1358, 2146.9, 2871.1, 586.7, 1521.2, '','']
                 },
@@ -193,6 +228,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
                             }).extField
                         }]
                     })//[1188.1, 924.1, 1475.9, 2008.6, 268.8, 1013.2,'',''],
@@ -217,6 +259,13 @@
                                 type: 'frame',
                                 name: '增长'
                             }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
+                            }).extField
                         }]
                     })//[255 , 277.7, 499.9, 795.3, 332.9, 653.3,'',''],
 
@@ -239,6 +288,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '西海岸'
                             }).extField
                         }]
                     })//[121.6, 277.7, 384.6,533.4 , 134.2, 279.2, '',''],

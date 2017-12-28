@@ -85,7 +85,7 @@ const config = {
     uploadImgMaxSize: 5 * 1024 * 1024,
 
     // 配置一次最多上传几个图片
-    // uploadImgMaxLength: 5,
+    uploadImgMaxLength: 50,
 
     // 上传图片，是否显示 base64 格式
     uploadImgShowBase64: false,

@@ -24,7 +24,7 @@ class WangEditor extends Field
 
 var E = window.wangEditor
 var editor = new E('#{$this->id}');
-editor.customConfig.uploadImgShowBase64 = true
+editor.customConfig.uploadImgShowBase64 = false
 editor.customConfig.onchange = function (html) {
     $('input[name=$name]').val(html);
 }
