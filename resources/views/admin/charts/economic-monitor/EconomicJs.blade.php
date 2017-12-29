@@ -6,20 +6,20 @@
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-        myChart.group = 'jidu';
+        myChart.group = 'month';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-            group: 'jidu',
+            group: 'month',
             baseOption: {
                 timeline: {
                     axisType: 'category',
                     autoPlay: false,
                     rewind: true,
-                    currentIndex: jiduTime.dateArr.length - 1,
+                    currentIndex: dateArr.length - 1,
                     playInterval: 1000,
-                    data: jiduTime.dateStrArr
+                    data: dateStrArr
                 },
                 calculable: true,
                 grid: {
