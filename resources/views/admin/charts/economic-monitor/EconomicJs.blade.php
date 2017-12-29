@@ -1,6 +1,6 @@
 <script>
     function initTimeline(showData) {
-        var dom = document.getElementById("HeaderDatelineArea");
+        var dom = document.getElementById("HeaderDateline");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
             myChart.dispose();
@@ -56,13 +56,13 @@
         datasetId: 10,
         success: function (store) {
             $(function () {
-                initTimeline();
                 initChartsMonitor(store);
                 area();
                 assets();
                 industry();
                 sale();
                 economicline(store);
+                initTimeline();
             });
 
             var _store = store;
