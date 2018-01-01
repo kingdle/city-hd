@@ -24,6 +24,10 @@
             line-height: 32px;
             text-indent: 2em;
         }
+        .article p img {
+            width: 80%;
+            padding: 20px 0px;
+        }
         .post-deco {
             background: #039c9e;
             position: relative;
@@ -36,7 +40,7 @@
             text-align: center;
         }
         .a-img img {
-            width:80%;
+            width:30%;
         }
         p.post-abstract {
             padding: 20px 30px;
@@ -68,10 +72,11 @@
                                 <span class="abstract-tit">摘要：</span>
                                 {{ str_limit(strip_tags($posts->content), $limit = 100, $end = '...') }}
                             </p>
+
+                            <p>{!! $posts->content !!}</p>
                             @if($posts->images)
                                 <div class="a-img"><img src="/uploads/{{ $posts->images[0] }}" alt=""></div>
-                                @endif
-                            <p>{!! $posts->content !!}</p>
+                            @endif
                         </div>
                         <hr>
                         <div class="row">
