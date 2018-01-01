@@ -15,7 +15,7 @@ class Post extends Model
     protected $casts = [
         'extra' => 'json',
     ];
-    protected $fillable = ['title','content','author_id','rate','released','keywords','foo_bar','release_at','created_at','updated_at'];
+    protected $fillable = ['title','content','author_id','rate','released','keywords','foo_bar','release_at','created_at','updated_at','files','images'];
 
 
     public function author()
@@ -46,5 +46,20 @@ class Post extends Model
     public function scopeUnreleased($query)
     {
         return $query->where('released', 0);
+    }
+    public function getImagesAttribute($images)
+    {
+        if (is_string($images)) {
+            return json_decode($images, true);
+        }
+
+        return $images;
+    }
+
+    public function setImagesAttribute($images)
+    {
+        if (is_array($images)) {
+            $this->attributes['images'] = json_encode($images);
+        }
     }
 }

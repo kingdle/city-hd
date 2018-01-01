@@ -19,6 +19,7 @@
  */
 use Encore\Admin\Facades\Admin;
 use App\Admin\Extensions\Form\WangEditor;
+use App\Admin\Extensions\Form\CKEditor;
 use Encore\Admin\Form;
 use App\Admin\Extensions\Column\ExpandRow;
 use App\Admin\Extensions\Column\OpenMap;
@@ -28,12 +29,11 @@ use App\Admin\Extensions\Column\UrlWrapper;
 use App\Admin\Extensions\Nav\Links;
 use Encore\Admin\Grid;
 use Encore\Admin\Grid\Column;
-use App\Admin\Extensions\Form\CKEditor;
 
 
 Encore\Admin\Form::forget(['map', 'editor']);
-Form::extend('editor', WangEditor::class);
-//Form::extend('ckeditor', CKEditor::class);
+Form::extend('WangEditor', WangEditor::class);
+Form::extend('CKEditor', CKEditor::class);
 app('view')->prependNamespace('admin', resource_path('views/admin'));
 
 Admin::js('/js/timeline.js');

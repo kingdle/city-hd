@@ -177,10 +177,10 @@ class PostController extends Controller
                     return [$user->id => $user->name];
                 }
             })->ajax('/admin/api/users')->rules('required|min:1');
-
-            $form->file('images','封面')->removable();
+            $form->multipleImage('images','图片')->removable();
+//            $form->file('images','封面')->removable();
+            $form->CKEditor('content','内容');
             $form->file('files','附件')->removable();
-            $form->editor('content','内容');
             $form->listbox('tags','标签')->options(Tag::all()->pluck('name', 'id'))->settings(['selectorMinimalHeight' => 300]);
             $form->number('rate','评分');
             $form->datetime('release_at', '发布时间')->default(now());

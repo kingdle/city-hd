@@ -69,7 +69,7 @@
                                 {{ str_limit(strip_tags($posts->content), $limit = 100, $end = '...') }}
                             </p>
                             @if($posts->images)
-                                <div class="a-img"><img src="/uploads/{{ $posts->images }}" alt=""></div>
+                                <div class="a-img"><img src="/uploads/{{ $posts->images[0] }}" alt=""></div>
                                 @endif
                             <p>{!! $posts->content !!}</p>
                         </div>

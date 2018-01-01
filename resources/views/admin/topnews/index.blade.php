@@ -243,7 +243,7 @@
                         <li>
                             @if($article->images !='')
                             <a href="/admin/auth/top-news/{{ $article->id }}" class="pic visible-lg">
-                                <img src="/uploads/{{ $article->images }}" alt="" width="200" height="150">
+                                <img src="/uploads/{{ $article->images[0] }}" alt="" width="200" height="150">
                             </a>
                             @endif
                             <div class="cont">

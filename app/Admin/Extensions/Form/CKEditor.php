@@ -11,7 +11,7 @@ class CKEditor extends Field
     protected $view = 'admin.ckeditor';
     public function render()
     {
-        $this->script = "$('textarea.{$this->getElementClass()}').ckeditor();";
+        $this->script = "$('textarea.{$this->id}').ckeditor();";
         return parent::render();
     }
 }
