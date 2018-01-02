@@ -128,7 +128,8 @@
                             {type: 'min', name: '最慢'}
                         ]
                     },
-                    markLine: {}
+                    markLine: {},
+                    color: ['#409ea8']
                 },
                 {
                     name: '增长',

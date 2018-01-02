@@ -17,9 +17,9 @@
                     axisType: 'category',
                     autoPlay: false,
                     rewind: true,
-                    currentIndex: dateArr.length - 1,
+                    currentIndex: jiduTime.dateArr.length - 1,
                     playInterval: 1000,
-                    data: dateStrArr
+                    data: jiduTime.dateStrArr
                 },
                 calculable: true,
                 grid: {
@@ -74,7 +74,7 @@
                 var kitS = new SyValueKit(baseSpeed, _store);
 
                 initTimelineSale(function (dd) {
-                    var nowDate = dateArr[dd.currentIndex];
+                    var nowDate = jiduTime.dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();

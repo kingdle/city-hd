@@ -60,22 +60,22 @@
     function structureChart(store) {
         // 指定图表的配置项和数据
         var axisD = [];
-        for (var item in axisArr) {
-            axisD.push(axisArr[item].name);
+        for (var item in jiduTime.cAxisArr) {
+            axisD.push(jiduTime.cAxisArr[item].name);
         }
         var pds = [];
 
-        for (var j in axisArr) {
+        for (var j in jiduTime.cAxisArr) {
             //===============饼图kit==============
             var pieKit = new SyChartSeriesKit({
                 store: store,
                 style: 'obj',
                 series: [{
                     type: "time_year",
-                    extField: dateArr[j].getFullYear()
+                    extField: jiduTime.dateArr[j].getFullYear()
                 }, {
                     type: 'time_month',
-                    extField: dateArr[j].getMonth() + 1
+                    extField: jiduTime.dateArr[j].getMonth() + 1
                 }, {
                     type: 'area',
                     extField: 1508
@@ -124,7 +124,7 @@
             pds.push({
                 title: {
                     text: '',
-                    subtext: dateStrArr[j],
+                    subtext: jiduTime.dateStrArr[j],
                     x: 'center'
                 },
                 tooltip: {
@@ -168,7 +168,7 @@
                     name: '累计'
                 }).extField
             }],
-            axis: axisArr,
+            axis: jiduTime.cAxisArr,
         });
         // 基于准备好的dom，初始化echarts实例
         var myChartOne = echarts.init(document.getElementById('run-one'));
@@ -178,8 +178,8 @@
         var optionOne = {
             baseOption: {
                 timeline: {
-                    data: dateStrArr,
-                    currentIndex: dateStrArr.length - 1,
+                    data: jiduTime.dateStrArr,
+                    currentIndex: jiduTime.dateStrArr.length - 1,
                     autoPlay: false,
                     rewind: true,
                     show: false

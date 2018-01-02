@@ -115,7 +115,8 @@
                         }]
                     }),
                     markPoint: {},
-                    markLine: {}
+                    markLine: {},
+                    color: ['#409ea8']
                 },
                 {
                     name: '增速',
@@ -211,7 +212,8 @@
                         }]
                     }),
                     markPoint: {},
-                    markLine: {}
+                    markLine: {},
+                    color: ['#409ea8']
                 },
                 {
                     name: '增速',

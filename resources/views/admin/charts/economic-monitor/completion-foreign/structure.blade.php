@@ -84,21 +84,21 @@
                     extField: 200000011
                 }],
                 axis: [{
-                    name: '进口',
+                    name: '进口总额',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '进口'
+                            name: '进口总额'
                         }).extField
                     }]
                 }, {
-                    name: '出口',
+                    name: '出口总额',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '出口'
+                            name: '出口总额'
                         }).extField
                     }]
                 }]
@@ -116,7 +116,7 @@
                 legend: {
                     orient: 'vertical',
                     left: 'left',
-                    data: ['进口', '出口']
+                    data: ['进口总额', '出口总额']
                 },
                 series: [{
                     name: '总量',
@@ -188,7 +188,7 @@
                 }
             },
             legend: {
-                data: ['', '出口', '进口']
+                data: ['出口总额', '进口总额']
             },
             grid: {
                 left: '3%',
@@ -209,14 +209,14 @@
             ],
             series: [
                 {
-                    name: '进口',
+                    name: '进口总额',
                     type: 'bar',
                     stack: '总量',
                     data: [87044,106557,25026,124814,59568,34245]
 
                 },
                 {
-                    name: '出口',
+                    name: '出口总额',
                     type: 'bar',
                     stack: '总量',
                     data: [133853,153208,174335,237574,222270,1553]
