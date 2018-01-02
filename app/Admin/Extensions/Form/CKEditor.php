@@ -5,8 +5,8 @@ use Encore\Admin\Form\Field;
 class CKEditor extends Field
 {
     public static $js = [
-        'vendor/ckeditor/ckeditor.js',
-        'vendor/ckeditor/adapters/jquery.js',
+        'vendor/ckeditor2/ckeditor.js',
+        'vendor/ckeditor2/adapters/jquery.js',
     ];
     protected $view = 'admin.ckeditor';
     public function render()

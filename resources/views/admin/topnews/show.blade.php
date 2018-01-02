@@ -26,7 +26,8 @@
         }
         .article p img {
             width: 80%;
-            padding: 20px 0px;
+            margin:0 auto;
+            padding: 20px 20px;
         }
         .post-deco {
             background: #039c9e;
