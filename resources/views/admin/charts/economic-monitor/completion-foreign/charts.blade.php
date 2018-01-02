@@ -112,6 +112,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
+                            }).extField
                         }]
                     }),
                     markPoint: {},
@@ -135,6 +142,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     }),

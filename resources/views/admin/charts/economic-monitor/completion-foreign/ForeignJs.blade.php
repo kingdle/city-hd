@@ -47,7 +47,7 @@
     $(function () {
         storeA = new SyStore({
             autoLoad: true,
-            datasetId: 3,
+            datasetId: 11,
             success: function (store) {
                 initTimelineForeign();
                 foreignChart(store);
