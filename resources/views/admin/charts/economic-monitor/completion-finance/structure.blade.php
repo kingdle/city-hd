@@ -51,13 +51,154 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="HeaderDatelineFinance" style="min-height: 50px"></div>
+    </div>
+</div>
 <script type="text/javascript">
-    $(function () {
+    function structureChart(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        var pdsNum = [];
+        for (var j in axisArr) {
+            //===============饼图kit==============
+            var pieKitNum = new SyChartSeriesKit({
+                store: store,
+                style: 'obj',
+                series: [{
+                    type: "time_year",
+                    extField: dateArr[j].getFullYear()
+                }, {
+                    type: 'time_month',
+                    extField: dateArr[j].getMonth() + 1
+                }, {
+                    type: 'area',
+                    extField: 1508
+                }, {
+                    type: 'frame',
+                    extField: 200000011
+                }],
+                axis: [{
+                    name: '一般公共服务',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '一般公共服务'
+                        }).extField
+                    }]
+                }, {
+                    name: '公共安全',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '公共安全'
+                        }).extField
+                    }]
+                }, {
+                    name: '教育',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '教育'
+                        }).extField
+                    }]
+                }, {
+                    name: '科学技术',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '科学技术'
+                        }).extField
+                    }]
+                }, {
+                    name: '社会保障与就业',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '社会保障与就业'
+                        }).extField
+                    }]
+                }, {
+                    name: '医疗卫生与计划生育',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '医疗卫生与计划生育'
+                        }).extField
+                    }]
+                }, {
+                    name: '节能环保',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '节能环保'
+                        }).extField
+                    }]
+                }, {
+                    name: '城乡社区',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '城乡社区'
+                        }).extField
+                    }]
+                }]
+            });
+            pdsNum.push({
+                title: {
+                    text: '',
+                    subtext: dateStrArr[j],
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['一般公共服务', '公共安全', '教育','科学技术', '社会保障与就业', '医疗卫生与计划生育','节能环保','城乡社区']
+                },
+                series: [{
+                    name: '总量',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: pieKitNum.genSeriesData(),
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            });
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            axis: axisArr,
+        });
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-one'));
+        var myChartOne = echarts.init(document.getElementById('run-one'));
+        var myChartTwo = echarts.init(document.getElementById('run-two'));
+        var myChartThree = echarts.init(document.getElementById('run-three'));
 
         // 指定图表的配置项和数据
-        var option = {
+        var optionOne = {
             title: {
                 text: '',
                 subtext: '',
@@ -70,7 +211,7 @@
                 }
             },
             legend: {
-                data: ['', '税收收入', '非税收收入']
+                data: ['税收收入', '非税收收入']
             },
             grid: {
                 left: '3%',
@@ -81,12 +222,17 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                    data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
                 {
-                    type: 'value'
+                    type: 'value',
+                    name: '累计',
+                    splitLine: {show: false},
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
                 }
             ],
             series: [
@@ -95,90 +241,63 @@
                     name: '税收收入',
                     type: 'bar',
                     stack: '收入',
-                    data: [348039, 455866, 668077, 797998, 968225, 1153409]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '税收收入'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    })
                 },
                 {
-                    name: '税收收入',
+                    name: '非税收收入',
                     type: 'bar',
                     stack: '收入',
-                    data: [21136, 160470, 150755, 191671,314610, 293854]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '非税收收入'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    })
 
                 },
             ]
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-two'));
-
-        // 指定图表的配置项和数据
-
-        var option = {
-            title: {
-                text: '',
-                subtext: '2017年7月',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left',
-                data: ['一般公共服务', '公共安全', '教育','科学技术', '社会保障与就业', '医疗卫生与计划生育','节能环保','城乡社区']
-            },
-            series: [
-                {
-                    name: '总量',
-                    type: 'pie',
-                    radius: '55%',
-                    center: ['50%', '60%'],
-                    data: [
-                        {value: 134560, name: '一般公共服务'},
-                        {value: 39580, name: '公共安全'},
-                        {value: 189298, name: '教育'},
-                        {value: 5463, name: '科学技术'},
-                        {value: 137630, name: '社会保障与就业'},
-                        {value: 107139, name: '医疗卫生与计划生育'},
-                        {value:26632, name: '节能环保'},
-                        {value: 393123, name: '城乡社区'}
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
+        var optionTwo = {
+            baseOption: {
+                timeline: {
+                    data: dateStrArr,
+                    currentIndex: dateStrArr.length - 1,
+                    autoPlay: false,
+                    rewind: true,
+                    show: false
+                },
+                series: {
+                    type: 'pie'
                 }
-            ]
+            },
+            options: pdsNum
         };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-three'));
-
-        // 指定图表的配置项和数据
-        var option = {
+        var optionThree = {
             title: {
                 text: ''
             },
@@ -198,37 +317,93 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                name: '累计同比增长率',
+                splitLine: {show: false},
+                axisLabel: {
+                    formatter: '{value}%'
+                }
             },
             series: [
                 {
                     name: '存款余额',
                     type: 'line',
-                    stack: '比年初增加',
-                    data: [90, 122.9, 117, 107.5, 156, 196.5]
+                    stack: '累计同比增长率',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '存款余额'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计同比增长率'
+                            }).extField
+                        }]
+                    })
                 },
                 {
                     name: '个人储蓄存款',
                     type: 'line',
-                    stack: '比年初增加',
-                    data: [50.1, 69.4, 38.4, 36, 53.6, 38.6]
+                    stack: '累计同比增长率',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '个人储蓄存款'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计同比增长率'
+                            }).extField
+                        }]
+                    })
                 },
                 {
                     name: '贷款余额',
                     type: 'line',
-                    stack: '比年初增加',
-                    data: [96.7, 156.3, 195.1, 218.8, 228.8, 256.3]
+                    stack: '累计同比增长率',
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '贷款余额'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计同比增长率'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        myChartTwo.group = 'month';
+        echarts.connect('month');
+        myChartOne.setOption(optionOne);
+        myChartTwo.setOption(optionTwo);
+        myChartThree.setOption(optionThree);
+
         $(window).resize(function () {
-            myChart.resize();
+            myChartOne.resize();
+            myChartTwo.resize();
+            myChartThree.resize();
         });
-    });
+    };
 </script>

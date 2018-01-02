@@ -22,101 +22,391 @@
         </div>
     </div>
 </div>
+<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
 <script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('speed-line'));
+    $(function() {
 
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: ''
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['黄岛', '辛安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            toolbox: {},
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [
-                {
-                    name: '黄岛',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [11.5, 10.8, 4.8, 9.5, 11.7, 10.4]
-                },
-                {
-                    name: '辛安',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [42.1, 11.8, 11.1, 11.3, 12.6, 11.1]
-                },
-                {
-                    name: '薛家岛',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [48.2, 30.5, 20.6, 6.3, 5, 10.1]
-                },
-                {
-                    name: '灵珠山',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [0.1, 11.9, 11.2, 10.1, 11.9, 7.2]
-                },
-                {
-                    name: '长江路',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [10.3, 15.9, 11.2, 11.1, 10.9, 9]
-                },
-                {
-                    name: '红石崖',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [39.3, 35.9, 20.2, 29.1, 31.9, 26.7]
-                },
-                {
-                    name: '灵山卫',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [1.3, 7.9, 5.2, 14.1, 16.9, 18]
-                },
-                {
-                    name: '王台镇',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [15.3, 12.9, 14.2, 15.1, 14.9, 15.5]
-                },
+        storeB = new SyStore({
+            autoLoad: true,
+            datasetId: 9,
+            success: function(store) {
+                console.log(store)
 
-                {
-                    name: '隐珠',
-                    type: 'line',
-                    //stack: '总量',
-                    data: [3.3, 9.2, 10.2, 12.1, 12.9, 12.3]
+                var axisArr = [];
+                var date = [];
+                for(var item in store.collection.time){
+                    date.push(item)
+                    axisArr.push({
+                        "name": item,
+                        "arr": [{
+                            "name": item.split('-')[0],
+                            "type": "time_year",
+                            "extField": item.split('-')[0]
+                        }, {
+                            "name": item.split('-')[1],
+                            "type": "time_month",
+                            "extField": item.split('-')[1]
+                        }]
+                    });
                 }
-            ]
-        };
+                var chartKit = new SyChartSeriesKit({
+                    store: store,
+                    axis: axisArr,
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
+                });
+                console.log(axisArr)
+
+                var kk = chartKit.genSeriesData({
+                    series: [{
+                        //        name: "资产投资",
+                        type: "item",
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '工业'
+                        }).extField
+                    }, {
+                        //        name: 2,
+                        type: 'frame',
+                        extField: store.findMetaByItemName({
+                            type: 'frame',
+                            name: '增长率'
+                        }).extField
+                    }, {
+                        //        name: "资产投资",
+                        type: "area",
+                        extField: store.findMetaByItemName({
+                            type: 'area',
+                            name: '黄岛'
+                        }).extField
+                    }]
+                });
+                console.log(kk)
+                app3 = new Vue({
+                    el: '#app-2',
+                    data: {
+                        seen: true,
+                        date: date,
+                        item: '工业',
+                        frame: '增长率'
+                    },
+                    methods: {
+                        syClick: function() {
+                            console.log('click')
+                            this.date.reverse();
+                            //							this.seen = !this.seen
+                        },
+                        initChart: function() {
+                            var myChart = echarts.init(document.getElementById('speed-line'));
+                            myChart.setOption(this.option);
+                        }
+                    },
+                    computed: {
+                        option: function() {
+                            return {
+                                title: {
+                                    text: ''
+                                },
+                                tooltip: {
+                                    trigger: 'axis'
+                                },
+                                legend: {
+                                    data: ['黄岛', '辛安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠']
+                                },
+                                grid: {
+                                    left: '3%',
+                                    right: '4%',
+                                    bottom: '3%',
+                                    containLabel: true
+                                },
+                                toolbox: {},
+                                xAxis: {
+                                    type: 'category',
+                                    boundaryGap: false,
+                                    data: this.date
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [{
+                                    name: '黄岛',
+                                    type: 'line',
+                                    //stack: '总量',
+                                    data: chartKit.genSeriesData({
+                                        series: [{
+                                            //        name: "资产投资",
+                                            type: "item",
+                                            extField: store.findMetaByItemName({
+                                                type: 'item',
+                                                name: this.item
+                                            }).extField
+                                        }, {
+                                            //        name: 2,
+                                            type: 'frame',
+                                            extField: store.findMetaByItemName({
+                                                type: 'frame',
+                                                name: this.frame
+                                            }).extField
+                                        }, {
+                                            //        name: "资产投资",
+                                            type: "area",
+                                            extField: store.findMetaByItemName({
+                                                type: 'area',
+                                                name: '黄岛'
+                                            }).extField
+                                        }]
+                                    })
+                                },
+                                    {
+                                        name: '辛安',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '辛  安'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+                                    {
+                                        name: '薛家岛',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '薛家岛'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+                                    {
+                                        name: '灵珠山',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '灵珠山'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+                                    {
+                                        name: '长江路',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '长江路'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+                                    {
+                                        name: '红石崖',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '红石崖'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+                                    {
+                                        name: '灵山卫',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '灵山卫'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+                                    {
+                                        name: '王台镇',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '王台镇'
+                                                }).extField
+                                            }]
+                                        })
+                                    },
+
+                                    {
+                                        name: '隐珠',
+                                        type: 'line',
+                                        //stack: '总量',
+                                        data: chartKit.genSeriesData({
+                                            series: [{
+                                                //        name: "资产投资",
+                                                type: "item",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'item',
+                                                    name: this.item
+                                                }).extField
+                                            }, {
+                                                //        name: 2,
+                                                type: 'frame',
+                                                extField: store.findMetaByItemName({
+                                                    type: 'frame',
+                                                    name: this.frame
+                                                }).extField
+                                            }, {
+                                                //        name: "资产投资",
+                                                type: "area",
+                                                extField: store.findMetaByItemName({
+                                                    type: 'area',
+                                                    name: '隐珠'
+                                                }).extField
+                                            }]
+                                        })
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    updated: function() {
+                        console.log('updated')
+                        this.initChart();
+
+                    },
+                    mounted: function() {
+                        console.log('updated')
+                        this.initChart();
+
+                    }
+                })
+            }
         });
+
     });
 </script>
 @include('admin::charts.area-development.AreaJs')

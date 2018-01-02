@@ -1,17 +1,17 @@
 <script>
-    function initTimelineAssets(showData) {
-        var dom = document.getElementById("HeaderDatelineAssets");
+    function initTimelineFinance(showData) {
+        var dom = document.getElementById("HeaderDatelineFinance");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-//        myChart.group = 'jidu';
+        myChart.group = 'month';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-//            group: 'jidu',
+            group: 'month',
             baseOption: {
                 timeline: {
                     axisType: 'category',
@@ -47,11 +47,12 @@
     $(function () {
         storeA = new SyStore({
             autoLoad: true,
-            datasetId: 3,
+            datasetId: 13,
             success: function (store) {
-//                initTimelineAssets();
+                initTimelineFinance();
                 financeChart(store);
-                benchmarkChart(store)
+                benchmarkChart(store);
+                structureChart(store);
                 var _store = store;
                 var sDate = new Date();
                 date = new Date(sDate.getTime());
@@ -59,20 +60,20 @@
                     frame: 200000011,
                     area: 1508,
                     time_year: date.getFullYear(),
-                    time_month: date.getMonth()-3,
+                    time_month: date.getMonth() - 3,
                 }
 
                 var baseSpeed = {
                     frame: 200000014,
                     area: 1508,
                     time_year: date.getFullYear(),
-                    time_month: date.getMonth()-3,
+                    time_month: date.getMonth() - 3,
                 }
 
                 var kitV = new SyValueKit(baseRes, _store);
                 var kitS = new SyValueKit(baseSpeed, _store);
 
-                initTimelineAssets(function (dd) {
+                initTimelineFinance(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
@@ -85,22 +86,22 @@
                     var $trLists = $(".table tbody").children("tr");
                     $.each($trLists, function (i, trlist) {
                         var $trlist = $(trlist);
-                        var $tdTitle = $($trlist.find("td").eq(0));
-                        var $tdV = $($trlist.find("td").eq(1));
-                        var $tdS = $($trlist.find("td").eq(2));
-                        $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                        $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+                        var $thTitle = $($trlist.find("th"));
+                        var $tdV = $($trlist.find("td").eq(0));
+                        var $tdS = $($trlist.find("td").eq(1));
+                        $tdV.text(kitV.findValueByItemName($thTitle.text(), true));
+                        $tdS.text(kitS.findValueByItemName($thTitle.text(), true));
                     });
                 });
 
                 var $trLists = $(".table tbody").children("tr");
                 $.each($trLists, function (i, trlist) {
                     var $trlist = $(trlist);
-                    var $tdTitle = $($trlist.find("td").eq(0));
-                    var $tdV = $($trlist.find("td").eq(1));
-                    var $tdS = $($trlist.find("td").eq(2));
-                    $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                    $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+                    var $thTitle = $($trlist.find("th"));
+                    var $tdV = $($trlist.find("td").eq(0));
+                    var $tdS = $($trlist.find("td").eq(1));
+                    $tdV.text(kitV.findValueByItemName($thTitle.text(), true));
+                    $tdS.text(kitS.findValueByItemName($thTitle.text(), true));
                 });
             }
         });

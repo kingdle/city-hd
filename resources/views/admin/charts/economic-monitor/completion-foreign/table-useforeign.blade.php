@@ -32,44 +32,44 @@
                         <thead style="display:block;overflow-y: scroll;">
                         <tr>
                             <th>指标</th>
-                            <th>本月（个、万美元）</th>
+                            <th>本期（个、万美元）</th>
                             <th>累计（个、万美元）</th>
                             <th>累计增长%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
-                            <th scope="row">利用外资新签合同个数</th>
+                            <th scope="row" class="row-label">利用外资新签合同个数</th>
                             <td>11</td>
                             <td>44</td>
                             <td>33.3</td>
                         </tr>
                         <tr>
-                            <th scope="row">   其中：千万美元以上</th>
+                            <th scope="row">千万美元以上</th>
                             <td>8</td>
                             <td>30</td>
                             <td>76.5</td>
                         </tr>
                         <tr>
-                            <th scope="row">  &nbsp; &nbsp; &nbsp;亿美元以上</th>
+                            <th scope="row">亿美元以上</th>
                             <td>0</td>
                             <td>1</td>
                             <td>100</td>
                         </tr>
                         <tr>
-                            <th scope="row">利用外资项目总投资</th>
+                            <th scope="row" class="row-label">利用外资项目总投资</th>
                             <td>181134</td>
                             <td>58775</td>
                             <td>-2.54</td>
                         </tr>
                         <tr>
-                            <th scope="row">合同利用外资</th>
+                            <th scope="row" class="row-label">合同利用外资</th>
                             <td>16034</td>
                             <td>40049</td>
                             <td>-14.97</td>
                         </tr>
                         <tr>
-                            <th scope="row">实际利用外资</th>
+                            <th scope="row" class="row-label">实际利用外资</th>
                             <td>10768</td>
                             <td>60213</td>
                             <td>6.27</td>

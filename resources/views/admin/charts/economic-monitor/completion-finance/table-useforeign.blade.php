@@ -8,6 +8,13 @@
         line-height: 2em;
         min-height: 660px;
     }
+    .row-quota .row-label{
+        text-indent: 0em;
+        font-weight: 700;
+    }
+    .row-quota tbody th{
+        text-indent: 2em;
+    }
 </style>
 <div class="box">
     <div class="row">
@@ -33,26 +40,26 @@
                         <tr>
 
                             <th>指标</th>
-                            <th>月末累计（亿元）</th>
-                            <th>比年初增加（亿元）</th>
+                            <th>累计（亿元）</th>
+                            <th>增速%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
 
-                            <td>金融系统本外币存款余额</td>
+                            <th scope="row" class="row-label">金融系统本外币存款余额</th>
                             <td>1680.3</td>
                             <td>196.5</td>
                         </tr>
                         <tr>
 
-                            <td>个人储蓄存款</td>
+                            <th scope="row" class="row-label">个人储蓄存款</th>
                             <td>749.9</td>
                             <td>38.6</td>
                         </tr>
                         <tr>
 
-                            <td>金融系统本外币贷款余额</td>
+                            <th scope="row" class="row-label">金融系统本外币贷款余额</th>
                             <td>1778</td>
                             <td>256.3</td>
                         </tr>

@@ -1,25 +1,25 @@
 <script>
-    function initTimelineAssets(showData) {
-        var dom = document.getElementById("HeaderDatelineAssets");
+    function initTimelineIndustry(showData) {
+        var dom = document.getElementById("HeaderDatelineIndustry");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
             myChart.dispose();
         }
         myChart = echarts.init(dom);
-//        myChart.group = 'jidu';
+        myChart.group = 'jidu';
         if (showData) {
             myChart.on('timelinechanged', showData);
         }
         var option = {
-//            group: 'jidu',
+            group: 'jidu',
             baseOption: {
                 timeline: {
                     axisType: 'category',
                     autoPlay: false,
                     rewind: true,
-                    currentIndex: dateArr.length - 1,
+                    currentIndex: jiduTime.dateArr.length - 1,
                     playInterval: 1000,
-                    data: dateStrArr
+                    data: jiduTime.dateStrArr
                 },
                 calculable: true,
                 grid: {
@@ -47,11 +47,12 @@
     $(function () {
         storeA = new SyStore({
             autoLoad: true,
-            datasetId: 3,
+            datasetId: 12,
             success: function (store) {
-//                initTimelineAssets();
+                initTimelineIndustry();
                 industryChart(store);
-                benchmarkChart(store)
+                benchmarkChart(store);
+                structureChart(store);
                 var _store = store;
                 var sDate = new Date();
                 date = new Date(sDate.getTime());

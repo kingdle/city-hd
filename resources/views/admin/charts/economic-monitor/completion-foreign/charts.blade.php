@@ -32,19 +32,6 @@
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
-            series: [{
-                type: "item",
-                extField: store.findMetaByItemName({
-                    type: 'item',
-                    name: '外资'
-                }).extField
-            }, {
-                type: 'frame',
-                extField: store.findMetaByItemName({
-                    type: 'frame',
-                    name: '累计'
-                }).extField
-            }],
             axis: axisArr,
         });
         // 基于准备好的dom，初始化echarts实例
@@ -103,7 +90,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '进出口'
+                                name: '进出口总额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -134,7 +121,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '进出口'
+                                name: '进出口总额'
                             }).extField
                         }, {
                             //        name: 2,

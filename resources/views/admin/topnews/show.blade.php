@@ -4,31 +4,38 @@
         ul li {
             list-style-type: none;
         }
+
         .ibox-content {
             padding: 20px;
         }
+
         .article-title {
             text-align: center;
             margin: 30px 0;
         }
+
         .text-muted {
             color: #888888;
         }
+
         .article h1 {
             font-size: 48px;
             font-weight: 700;
             color: #2F4050;
         }
+
         .article p {
             font-size: 16px;
             line-height: 32px;
             text-indent: 2em;
         }
+
         .article p img {
             width: 80%;
-            margin:0 auto;
+            margin: 0 auto;
             padding: 20px 20px;
         }
+
         .post-deco {
             background: #039c9e;
             position: relative;
@@ -36,10 +43,12 @@
             width: 100%;
             margin-bottom: 10px;
         }
+
         .a-img {
             padding-bottom: 10px;
             text-align: left;
         }
+
         .a-img img {
             max-width: 130px;
             max-height: 130px;
@@ -55,6 +64,7 @@
             -o-transition: all .2s ease-in-out;
             transition: all .2s ease-in-out;
         }
+
         p.post-abstract {
             padding: 20px 30px;
             font-size: 14px;
@@ -64,11 +74,23 @@
             margin: 0 0 20px 0;
             background-color: #f6f6f6;
         }
+
         p.post-abstract .abstract-tit {
             font-weight: bold;
         }
-        .article table tr,.article table td{
+
+        .article table tr, .article table td {
             border: 1px solid #959595;
+        }
+        .tag h5 {
+            float: left;
+            padding-right: 20px;
+        }
+        .tag li {
+            line-height: 36px;
+        }
+        .tag li i{
+            color: #039c9e;
         }
     </style>
     <div class="box">
@@ -90,12 +112,20 @@
                             </p>
 
                             <p>{!! $posts->content !!}</p>
+                            @if($posts->files)
+                                <hr>
+                                <div class="a-img">
+                                    <h5>附件：</h5>
+                                    <a href="/uploads/{{ $posts->files }}"
+                                       alt="">{{ mb_substr($posts->files,6,200,'utf-8') }}</a>
+                                </div>
+                            @endif
                             @if($posts->images)
                                 <hr>
                                 <div class="a-img">
                                     <h5>应用图片：</h5>
                                     @foreach($posts->images as $image)
-                                    <img src="/uploads/{{ $image }}" alt="">
+                                        <img src="/uploads/{{ $image }}" alt="">
                                     @endforeach
                                 </div>
                             @endif
@@ -106,10 +136,12 @@
 
                                 <ul>
                                     @if($posts->tags)
-                                        <h5>标签:</h5>
-                                        @foreach($posts->tags as $tag)
-                                            <li><i class="fa fa-tag"></i> {{ $tag->name }}</li>
-                                        @endforeach
+                                        <div class="tag">
+                                            <h5>标签:</h5>
+                                            @foreach($posts->tags as $tag)
+                                                <li><i class="fa fa-tag"></i> {{ $tag->name }}</li>
+                                            @endforeach
+                                        </div>
                                     @endif
                                 </ul>
                             </div>

@@ -60,48 +60,61 @@
                     frame: 200000011,
                     area: 1508,
                     time_year: date.getFullYear(),
-                    time_month: date.getMonth()-3,
+                    time_month: date.getMonth()-1,
                 }
 
                 var baseSpeed = {
                     frame: 200000014,
                     area: 1508,
                     time_year: date.getFullYear(),
-                    time_month: date.getMonth()-3,
+                    time_month: date.getMonth()-1,
                 }
-
+                var baseBenqi = {
+                    frame: 200000001,
+                    area: 1508,
+                    time_year: date.getFullYear(),
+                    time_month: date.getMonth()-1,
+                }
                 var kitV = new SyValueKit(baseRes, _store);
                 var kitS = new SyValueKit(baseSpeed, _store);
+                var kitB = new SyValueKit(baseBenqi, _store);
 
-                initTimelineAssets(function (dd) {
+                initTimelineForeign(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();
                     baseSpeed.time_month = nowDate.getMonth() + 1;
+                    baseBenqi.time_year = nowDate.getFullYear();
+                    baseBenqi.time_month = nowDate.getMonth() + 1;
 
                     kitV = new SyValueKit(baseRes, _store);
                     kitS = new SyValueKit(baseSpeed, _store);
+                    kitB = new SyValueKit(baseBenqi, _store);
 
                     var $trLists = $(".table tbody").children("tr");
                     $.each($trLists, function (i, trlist) {
                         var $trlist = $(trlist);
-                        var $tdTitle = $($trlist.find("td").eq(0));
+                        var $thTitle = $($trlist.find("th"));
+                        var $tdB = $($trlist.find("td").eq(0));
                         var $tdV = $($trlist.find("td").eq(1));
                         var $tdS = $($trlist.find("td").eq(2));
-                        $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                        $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+                        $tdB.text(kitB.findValueByItemName($thTitle.text(), true));
+                        $tdV.text(kitV.findValueByItemName($thTitle.text(), true));
+                        $tdS.text(kitS.findValueByItemName($thTitle.text(), true));
                     });
                 });
 
                 var $trLists = $(".table tbody").children("tr");
                 $.each($trLists, function (i, trlist) {
                     var $trlist = $(trlist);
-                    var $tdTitle = $($trlist.find("td").eq(0));
+                    var $thTitle = $($trlist.find("th"));
+                    var $tdB = $($trlist.find("td").eq(0));
                     var $tdV = $($trlist.find("td").eq(1));
                     var $tdS = $($trlist.find("td").eq(2));
-                    $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                    $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+                    $tdB.text(kitB.findValueByItemName($thTitle.text(), true));
+                    $tdV.text(kitV.findValueByItemName($thTitle.text(), true));
+                    $tdS.text(kitS.findValueByItemName($thTitle.text(), true));
                 });
             }
         });

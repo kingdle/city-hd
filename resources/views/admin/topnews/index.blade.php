@@ -241,9 +241,9 @@
                     @foreach($posts as $article)
                         @if($article->released ==1)
                         <li>
-                            @if($article->images !='')
+                            @if($article->images)
                             <a href="/admin/auth/top-news/{{ $article->id }}" class="pic visible-lg">
-                                <img src="/uploads/{{ $article->images[0] }}" alt="" width="200" height="150">
+                                <img src="/uploads/{{ $article->images[0] }}" alt="" width="200">
                             </a>
                             @endif
                             <div class="cont">
@@ -251,10 +251,10 @@
                                 </h3>
                                 <div class="options fr">
                                     <a href="" data-id="" class="comment">
-                                    <span class="icon">
-                                            <i class="fa fa-comment-o"></i>
-                                    </span>
-                                        <span class="num">3</span>
+                                    {{--<span class="icon">--}}
+                                            {{--<i class="fa fa-comment-o"></i>--}}
+                                    {{--</span>--}}
+                                        {{--<span class="num"></span>--}}
                                     </a>
                                 </div>
                                 <div class="info">
@@ -265,9 +265,9 @@
                                 <p class="summary">{{ str_limit(strip_tags($article->content), $limit = 300, $end = '...') }}</p>
                                 <div class="tag">
                                     @if($article->tags)
-                                        <i class="fa fa-tag"></i>
+
                                         @foreach($article->tags as $tag)
-                                            <a class="collection-tag" href="">{{ $tag->name }}</a>
+                                            <i class="fa fa-tag"></i><a class="collection-tag" href="">{{ $tag->name }}</a>
                                         @endforeach
                                     @endif
                                 </div>

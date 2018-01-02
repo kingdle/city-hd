@@ -1,3 +1,4 @@
+<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
 <script>
 //    function initTimeline(showData) {
 //        var myChart = echarts.init(document.getElementById('HeaderDatelineB'));

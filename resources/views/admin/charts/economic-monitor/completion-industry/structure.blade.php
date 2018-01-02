@@ -51,41 +51,114 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="HeaderDatelineIndustry" style="min-height: 50px"></div>
+    </div>
+</div>
 <script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-one'));
-
+    function structureChart(store) {
         // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: '',
-                subtext: '2017年2季度',
-                x: 'center'
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            legend: {
-                orient: 'vertical',
-                left: 'left',
-                data: ['国有', '集体', '股份合作',' 股份制','外商及港澳台','其他经济']
-            },
-            series: [
-                {
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        var pdsNum = [];
+        for (var j in jiduTime.dateArr) {
+            //===============饼图kit==============
+            var pieKitNum = new SyChartSeriesKit({
+                store: store,
+                style: 'obj',
+                series: [{
+                    type: "time_year",
+                    extField: jiduTime.dateArr[j].getFullYear()
+                }, {
+                    type: 'time_month',
+                    extField: jiduTime.dateArr[j].getMonth() + 1
+                }, {
+                    type: 'area',
+                    extField: 1508
+                }, {
+                    type: 'frame',
+                    extField: 200000011
+                }],
+                axis: [{
+                    name: '国有',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '国有'
+                        }).extField
+                    }]
+                }, {
+                    name: '集体',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '集体'
+                        }).extField
+                    }]
+                }, {
+                    name: '股份合作',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '股份合作'
+                        }).extField
+                    }]
+                }, {
+                    name: '股份制',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '股份制'
+                        }).extField
+                    }]
+                }, {
+                    name: '外商及港澳台',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '外商及港澳台'
+                        }).extField
+                    }]
+                }, {
+                    name: '其他经济',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '其他经济'
+                        }).extField
+                    }]
+                }]
+            });
+            pdsNum.push({
+                title: {
+                    text: '',
+                    subtext: jiduTime.dateStrArr[j],
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['国有', '集体', '股份合作',' 股份制','外商及港澳台','其他经济']
+                },
+                series: [{
                     name: '总量',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
-                    data: [
-                        {value: 384362, name: '国有'},
-                        {value: 2803329, name: '集体'},
-                        {value: 3866, name: '股份合作'},
-                        {value: 19754367, name: '股份制'},
-                        {value: 7179550, name: '外商及港澳台'},
-                        {value: 285628, name: '其他经济'}
-                    ],
+                    data: pieKitNum.genSeriesData(),
                     itemStyle: {
                         emphasis: {
                             shadowBlur: 10,
@@ -93,25 +166,38 @@
                             shadowColor: 'rgba(0, 0, 0, 0.5)'
                         }
                     }
-                }
-            ]
-        };
-
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
+                }]
+            });
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            axis: axisArr,
         });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-two'));
+        var myChartOne = echarts.init(document.getElementById('run-one'));
+        var myChartTwo = echarts.init(document.getElementById('run-two'));
+        var myChartThree = echarts.init(document.getElementById('run-three'));
 
         // 指定图表的配置项和数据
-        var option = {
+        var optionOne = {
+            baseOption: {
+                timeline: {
+                    data: jiduTime.dateArr,
+                    currentIndex: jiduTime.dateArr.length - 1,
+                    autoPlay: false,
+                    rewind: true,
+                    show: false
+                },
+                series: {
+                    type: 'pie'
+                }
+            },
+            options: pdsNum
+        };
+
+        // 指定图表的配置项和数据
+        var optionTwo = {
             title: {
                 text: '',
                 subtext: '',
@@ -124,7 +210,7 @@
                 }
             },
             legend: {
-                data: ['', '轻工业', '重工业']
+                data: ['轻工业', '重工业']
             },
             grid: {
                 left: '3%',
@@ -135,7 +221,7 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
+                    data: axisD//['2017-2', '2017-3', '2017-4', '2017-5', '2017-6', '2017-7']
                 }
             ],
             yAxis: [
@@ -148,32 +234,49 @@
                     name: '轻工业',
                     type: 'bar',
                     stack: '产值',
-                    data: [2389217, 3897856, 5299042, 6753199, 8483317, 10091973]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '轻工业'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '产值'
+                            }).extField
+                        }]
+                    })
 
                 },
                 {
                     name: '重工业',
                     type: 'bar',
                     stack: '产值',
-                    data: [4716155, 7763773, 10440582, 13568250, 17261891,20319129]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '重工业'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '产值'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        $(window).resize(function () {
-            myChart.resize();
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('run-three'));
-
         // 指定图表的配置项和数据
-        var option = {
+        var optionThree = {
             title: {
                 text: ''
             },
@@ -181,7 +284,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['第一产业', '第二产业', '第三产业']
+                data: ['民营企业', '大中型工业企业']
             },
             grid: {
                 left: '3%',
@@ -193,7 +296,7 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
+                data: axisD//['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
             },
             yAxis: {
                 type: 'value'
@@ -204,21 +307,57 @@
                     name: '民营企业',
                     type: 'line',
                     stack: '产值',
-                    data: [14.5, 14.82, 16.3, 16.13, 17.8, 18.21]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '民营企业'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '产值'
+                            }).extField
+                        }]
+                    })
                 },
                 {
-                    name: ' 大中型工业企业',
+                    name: '大中型工业企业',
                     type: 'line',
                     stack: '产值',
-                    data: [9.05, 13.61, 9.93, 8.64, 9.31, 9.08]
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '大中型工业企业'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '产值'
+                            }).extField
+                        }]
+                    })
                 }
             ]
         };
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        myChartOne.group = 'jidu';
+        echarts.connect('jidu');
+        myChartOne.setOption(optionOne);
+        myChartTwo.setOption(optionTwo);
+        myChartThree.setOption(optionThree);
         $(window).resize(function () {
-            myChart.resize();
+            myChartOne.resize();
+            myChartTwo.resize();
+            myChartThree.resize();
         });
-    });
+    };
 </script>

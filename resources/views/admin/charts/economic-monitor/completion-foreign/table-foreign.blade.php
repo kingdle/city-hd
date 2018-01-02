@@ -8,6 +8,13 @@
         line-height: 2em;
         min-height: 660px;
     }
+    .row-quota .row-label{
+        text-indent: 0em;
+        font-weight: 700;
+    }
+    .row-quota tbody th{
+        text-indent: 2em;
+    }
 </style>
 <div class="box">
     <div class="row">
@@ -32,98 +39,98 @@
                         <thead style="display:block;overflow-y: scroll;">
                         <tr>
                             <th>指标</th>
-                            <th>本月（万元）</th>
+                            <th>本期（万元）</th>
                             <th>累计（万元）</th>
                             <th>累计增长%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
                         <tr>
-                            <th scope="row">进出口总额</th>
+                            <th scope="row" class="row-label">进出口总额</th>
                             <td>671409</td>
                             <td>5114398</td>
                             <td>16.6</td>
                         </tr>
                         <tr>
-                            <th scope="row">出口总额</th>
+                            <th scope="row" class="row-label">出口总额</th>
                             <td>455663</td>
                             <td>3474141</td>
                             <td>22.7</td>
                         </tr>
                         <tr>
-                            <th scope="row"> &nbsp; &nbsp; &nbsp;国有企业</th>
+                            <th scope="row">国有企业</th>
                             <td>133853</td>
                             <td>1314761</td>
                             <td>44.7</td>
                         </tr>
                         <tr>
-                            <th scope="row"> &nbsp; &nbsp; &nbsp;三资企业</th>
+                            <th scope="row">三资企业</th>
                             <td>153208</td>
                             <td>1071667</td>
                             <td>5.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">  &nbsp; &nbsp; &nbsp;其它企业</th>
+                            <th scope="row">其它企业</th>
                             <td>174335</td>
                             <td>1096617</td>
                             <td>21.8</td>
                         </tr>
                         <tr>
-                            <th scope="row">&nbsp; &nbsp; &nbsp;一般贸易</th>
+                            <th scope="row">一般贸易</th>
                             <td>237574</td>
                             <td>1612675</td>
                             <td>28.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">&nbsp; &nbsp; &nbsp;加工贸易</th>
+                            <th scope="row">加工贸易</th>
                             <td>222270</td>
                             <td>1857597</td>
                             <td>19.1</td>
                         </tr>
                         <tr>
-                            <th scope="row">&nbsp; &nbsp; &nbsp;其它贸易</th>
+                            <th scope="row">其它贸易</th>
                             <td>1553</td>
                             <td>12772</td>
                             <td>26.2</td>
                         </tr>
                         <tr>
-                            <th scope="row">进口总额</th>
+                            <th scope="row" class="row-label">进口总额</th>
                             <td>215746</td>
                             <td>1640257</td>
                             <td>5.4</td>
                         </tr>
                         <tr>
-                            <th scope="row"> &nbsp; &nbsp; &nbsp;国有企业</th>
+                            <th scope="row">国有企业</th>
                             <td>87044</td>
                             <td>602246</td>
                             <td>-10.2</td>
                         </tr>
                         <tr>
-                            <th scope="row"> &nbsp; &nbsp; &nbsp;三资企业</th>
+                            <th scope="row">三资企业</th>
                             <td>106557</td>
                             <td>836446</td>
                             <td>23.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">  &nbsp; &nbsp; &nbsp;其它企业</th>
+                            <th scope="row">其它企业</th>
                             <td>25026</td>
                             <td>209394</td>
                             <td>2.5</td>
                         </tr>
                         <tr>
-                            <th scope="row">&nbsp; &nbsp; &nbsp;一般贸易</th>
+                            <th scope="row">一般贸易</th>
                             <td>124814</td>
                             <td>922854</td>
                             <td>16</td>
                         </tr>
                         <tr>
-                            <th scope="row">&nbsp; &nbsp; &nbsp;加工贸易</th>
+                            <th scope="row">加工贸易</th>
                             <td>59568</td>
                             <td>416084</td>
                             <td>-23.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">&nbsp; &nbsp; &nbsp;其它贸易</th>
+                            <th scope="row">其它贸易</th>
                             <td>34245</td>
                             <td>309148</td>
                             <td>44.3</td>

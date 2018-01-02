@@ -93,6 +93,10 @@
                     baseRes.time_month = nowDate.getMonth() + 1;
                     baseSpeed.time_year = nowDate.getFullYear();
                     baseSpeed.time_month = nowDate.getMonth() + 1;
+                    baseJiHua.time_year = nowDate.getFullYear();
+                    baseJiHua.time_month = nowDate.getMonth() + 1;
+                    baseJinDu.time_year = nowDate.getFullYear();
+                    baseJinDu.time_month = nowDate.getMonth() + 1;
 
                     kitV = new SyValueKit(baseRes, _store);
                     kitS = new SyValueKit(baseSpeed, _store);

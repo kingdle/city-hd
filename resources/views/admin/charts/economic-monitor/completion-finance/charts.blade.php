@@ -134,7 +134,7 @@
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '累计'
+                                name: '增长'
                             }).extField
                         }]
                     }),
