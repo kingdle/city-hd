@@ -38,10 +38,22 @@
         }
         .a-img {
             padding-bottom: 10px;
-            text-align: center;
+            text-align: left;
         }
         .a-img img {
-            width:30%;
+            max-width: 130px;
+            max-height: 130px;
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            padding: 4px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
         }
         p.post-abstract {
             padding: 20px 30px;
@@ -54,6 +66,9 @@
         }
         p.post-abstract .abstract-tit {
             font-weight: bold;
+        }
+        .article table tr,.article table td{
+            border: 1px solid #959595;
         }
     </style>
     <div class="box">
@@ -76,15 +91,22 @@
 
                             <p>{!! $posts->content !!}</p>
                             @if($posts->images)
-                                <div class="a-img"><img src="/uploads/{{ $posts->images[0] }}" alt=""></div>
+                                <hr>
+                                <div class="a-img">
+                                    <h5>应用图片：</h5>
+                                    @foreach($posts->images as $image)
+                                    <img src="/uploads/{{ $image }}" alt="">
+                                    @endforeach
+                                </div>
                             @endif
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
-                                <h5>标签:</h5>
+
                                 <ul>
                                     @if($posts->tags)
+                                        <h5>标签:</h5>
                                         @foreach($posts->tags as $tag)
                                             <li><i class="fa fa-tag"></i> {{ $tag->name }}</li>
                                         @endforeach
