@@ -83,57 +83,57 @@
                     extField: 200000011
                 }],
                 axis: [{
-                    name: '国有',
+                    name: '国有（工业产值）',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '国有'
+                            name: '国有（工业产值）'
                         }).extField
                     }]
                 }, {
-                    name: '集体',
+                    name: '集体（工业产值）',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '集体'
+                            name: '集体（工业产值）'
                         }).extField
                     }]
                 }, {
-                    name: '股份合作',
+                    name: '股份合作（工业产值）',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '股份合作'
+                            name: '股份合作（工业产值）'
                         }).extField
                     }]
                 }, {
-                    name: '股份制',
+                    name: '股份制（工业产值）',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '股份制'
+                            name: '股份制（工业产值）'
                         }).extField
                     }]
                 }, {
-                    name: '外商及港澳台',
+                    name: '外商及港澳台（工业产值）',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '外商及港澳台'
+                            name: '外商及港澳台（工业产值）'
                         }).extField
                     }]
                 }, {
-                    name: '其他经济',
+                    name: '其他经济（工业产值）',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '其他经济'
+                            name: '其他经济（工业产值）'
                         }).extField
                     }]
                 }]
@@ -151,7 +151,7 @@
                 legend: {
                     orient: 'vertical',
                     left: 'left',
-                    data: ['国有', '集体', '股份合作',' 股份制','外商及港澳台','其他经济']
+                    data: ['国有（工业产值）', '集体（工业产值）', '股份合作（工业产值）',' 股份制（工业产值）','外商及港澳台（工业产值）','其他经济（工业产值）']
                 },
                 series: [{
                     name: '总量',
@@ -210,7 +210,7 @@
                 }
             },
             legend: {
-                data: ['轻工业', '重工业']
+                data: ['轻工业（工业产值）', '重工业（工业产值）']
             },
             grid: {
                 left: '3%',
@@ -231,44 +231,44 @@
             ],
             series: [
                 {
-                    name: '轻工业',
+                    name: '轻工业（工业产值）',
                     type: 'bar',
-                    stack: '产值',
+                    stack: '累计',
                     data: chartKit.genSeriesData({
                         series: [{
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '轻工业'
+                                name: '轻工业（工业产值）'
                             }).extField
                         }, {
                             //name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '产值'
+                                name: '累计'
                             }).extField
                         }]
                     })
 
                 },
                 {
-                    name: '重工业',
+                    name: '重工业（工业产值）',
                     type: 'bar',
-                    stack: '产值',
+                    stack: '累计',
                     data: chartKit.genSeriesData({
                         series: [{
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '重工业'
+                                name: '重工业（工业产值）'
                             }).extField
                         }, {
                             //name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '产值'
+                                name: '累计'
                             }).extField
                         }]
                     })
@@ -284,7 +284,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['民营企业', '大中型工业企业']
+                data: ['民营企业（工业产值）', '大中型工业企业（工业产值）']
             },
             grid: {
                 left: '3%',
@@ -304,43 +304,43 @@
             series: [
 
                 {
-                    name: '民营企业',
+                    name: '民营企业（工业产值）',
                     type: 'line',
-                    stack: '产值',
+                    stack: '累计',
                     data: chartKit.genSeriesData({
                         series: [{
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '民营企业'
+                                name: '民营企业（工业产值）'
                             }).extField
                         }, {
                             //name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '产值'
+                                name: '累计'
                             }).extField
                         }]
                     })
                 },
                 {
-                    name: '大中型工业企业',
+                    name: '大中型工业企业（工业产值）',
                     type: 'line',
-                    stack: '产值',
+                    stack: '累计',
                     data: chartKit.genSeriesData({
                         series: [{
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '大中型工业企业'
+                                name: '大中型工业企业（工业产值）'
                             }).extField
                         }, {
                             //name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '产值'
+                                name: '累计'
                             }).extField
                         }]
                     })

@@ -83,75 +83,75 @@
                     extField: 200000011
                 }],
                 axis: [{
-                    name: '一般公共服务',
+                    name: '一般公共服务支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '一般公共服务'
+                            name: '一般公共服务支出'
                         }).extField
                     }]
                 }, {
-                    name: '公共安全',
+                    name: '公共安全支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '公共安全'
+                            name: '公共安全支出'
                         }).extField
                     }]
                 }, {
-                    name: '教育',
+                    name: '教育支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '教育'
+                            name: '教育支出'
                         }).extField
                     }]
                 }, {
-                    name: '科学技术',
+                    name: '科学技术支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '科学技术'
+                            name: '科学技术支出'
                         }).extField
                     }]
                 }, {
-                    name: '社会保障与就业',
+                    name: '社会保障与就业支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '社会保障与就业'
+                            name: '社会保障与就业支出'
                         }).extField
                     }]
                 }, {
-                    name: '医疗卫生与计划生育',
+                    name: '医疗卫生与计划生育支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '医疗卫生与计划生育'
+                            name: '医疗卫生与计划生育支出'
                         }).extField
                     }]
                 }, {
-                    name: '节能环保',
+                    name: '节能环保支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '节能环保'
+                            name: '节能环保支出'
                         }).extField
                     }]
                 }, {
-                    name: '城乡社区',
+                    name: '城乡社区支出',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '城乡社区'
+                            name: '城乡社区支出'
                         }).extField
                     }]
                 }]
@@ -169,7 +169,7 @@
                 legend: {
                     orient: 'vertical',
                     left: 'left',
-                    data: ['一般公共服务', '公共安全', '教育','科学技术', '社会保障与就业', '医疗卫生与计划生育','节能环保','城乡社区']
+                    data: ['一般公共服务支出', '公共安全支出', '教育支出','科学技术支出', '社会保障与就业支出', '医疗卫生与计划生育支出','节能环保支出','城乡社区支出']
                 },
                 series: [{
                     name: '总量',
@@ -240,7 +240,7 @@
                 {
                     name: '税收收入',
                     type: 'bar',
-                    stack: '收入',
+                    stack: '累计',
                     data: chartKit.genSeriesData({
                         series: [{
                             type: "item",
@@ -261,7 +261,7 @@
                 {
                     name: '非税收收入',
                     type: 'bar',
-                    stack: '收入',
+                    stack: '累计',
                     data: chartKit.genSeriesData({
                         series: [{
                             type: "item",
@@ -305,7 +305,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['存款余额', '个人储蓄存款', '贷款余额']
+                data: ['金融系统本外币存款余额', '个人储蓄存款', '金融系统本外币贷款余额']
             },
             grid: {
                 left: '3%',
@@ -329,7 +329,7 @@
             },
             series: [
                 {
-                    name: '存款余额',
+                    name: '金融系统本外币存款余额',
                     type: 'line',
                     stack: '累计同比增长率',
                     data: chartKit.genSeriesData({
@@ -337,7 +337,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '存款余额'
+                                name: '金融系统本外币存款余额'
                             }).extField
                         }, {
                             //name: 2,
@@ -371,7 +371,7 @@
                     })
                 },
                 {
-                    name: '贷款余额',
+                    name: '金融系统本外币贷款余额',
                     type: 'line',
                     stack: '累计同比增长率',
                     data: chartKit.genSeriesData({
@@ -379,7 +379,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '贷款余额'
+                                name: '金融系统本外币贷款余额'
                             }).extField
                         }, {
                             //name: 2,

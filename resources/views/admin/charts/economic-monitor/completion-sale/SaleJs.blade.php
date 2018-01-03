@@ -47,7 +47,7 @@
     $(function () {
         storeA = new SyStore({
             autoLoad: true,
-            datasetId: 3,
+            datasetId: 2,
             success: function (store) {
                 initTimelineSale();
                 saleChart(store);

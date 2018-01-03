@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row-quota" id="quota">
-                    <table class="table table-hover scrolltable">
+                    <table class="table table-hover scrolltable table-dept">
                         <thead style="display:block;overflow-y: scroll;">
                         <tr class="area-f">
                             <th rowspan='2'>区直部门</th>
