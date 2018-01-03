@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="row-quota" id="quota">
-                    <table class="table table-hover scrolltable">
+                    <table class="table table-hover scrolltable table-town">
                         <thead style="display:block;overflow-y: scroll;">
                         <tr class="area-f">
                             <th rowspan='2'>镇街</th>
@@ -20,8 +20,8 @@
                         <tr class="area-s">
                             <th>计划</th>
                             <th>进度%</th>
-                            <th>其中：民间</th>
-                            <th>进度%</th>
+                            <th>民间</th>
+                            <th>增速%</th>
                         </tr>
                         </thead>
                         <tbody style="display:block; max-height:592px;overflow-y: scroll;">
@@ -33,7 +33,7 @@
                             <td>0.06</td>
                         </tr>
                         <tr>
-                            <th scope="row">辛 安</th>
+                            <th scope="row">辛安</th>
                             <td>7.4</td>
                             <td>116.59</td>
                             <td>3.3</td>
