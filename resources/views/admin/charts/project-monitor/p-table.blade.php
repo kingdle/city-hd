@@ -1,26 +1,131 @@
+<style>
+    .wrapper-content {
+        padding: 20px 10px 40px;
+    }
+
+    .ibox-title {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        border-color: #e7eaec;
+        border-image: none;
+        color: inherit;
+        margin-bottom: 0;
+        padding: 15px 15px 7px;
+        min-height: 48px;
+    }
+
+    .ibox-title h5 {
+        display: inline-block;
+        margin: 0 0 7px;
+        padding: 0;
+        text-overflow: ellipsis;
+        float: left;
+    }
+
+    .ibox-tools {
+        display: block;
+        float: none;
+        margin-top: 0;
+        position: relative;
+        padding: 0;
+        text-align: right;
+    }
+
+    .ibox-tools a.btn-primary {
+        color: #fff;
+    }
+
+    .ibox-content {
+        background-color: #ffffff;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .btn-white {
+        color: inherit;
+        background: white;
+        border: 1px solid #e7eaec;
+    }
+
+    .input-group {
+        position: relative;
+        display: table;
+        border-collapse: separate;
+    }
+
+    .input-group-btn {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+    }
+
+    .project-list .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-list table tr td {
+        border-top: none;
+        border-bottom: 1px solid #e7eaec;
+        padding: 15px 10px;
+        vertical-align: middle;
+    }
+
+    .label-primary, .badge-primary {
+        background-color: #1ab394;
+        color: #FFFFFF;
+    }
+
+    .project-list table tr td {
+        border-top: none;
+        border-bottom: 1px solid #e7eaec;
+        padding: 15px 10px;
+        vertical-align: middle;
+    }
+
+    .project-title a {
+        font-size: 14px;
+        color: #676a6c;
+        font-weight: 600;
+    }
+
+    .project-list table tr td {
+        border-top: none;
+        border-bottom: 1px solid #e7eaec;
+        padding: 15px 10px;
+        vertical-align: middle;
+    }
+
+    .project-people img {
+        width: 32px;
+        height: 32px;
+    }
+    .btn-white {
+        color: inherit;
+        background: white;
+        border: 1px solid #e7eaec;
+    }
+
+    .progress-mini, .progress-mini .progress-bar {
+        height: 5px;
+        margin-bottom: 0;
+    }
+</style>
+@include('admin::charts.project-monitor.P-js')
 <div class="box box-primary">
     <div class="row">
         <div class="col-lg-7">
             <div class="ibox-analysis float-e-margins">
                 <div class="ibox-title">
                     <h5>重点项目投资情况</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
+
                 </div>
                 <div class="ibox-contenter">
                     <div id="p-charts" style="height:290px"></div>
@@ -90,78 +195,127 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(function () {
+<script>
+    function topChart(store) {
+        // 指定图表的配置项和数据
+        var axisD = [];
+        for (var item in axisArr) {
+            axisD.push(axisArr[item].name);
+        }
+        //===============普通图kit==============
+        var chartKit = new SyChartSeriesKit({
+            store: store,
+            series: [{
+                type: "item",
+                extField: store.findMetaByItemName({
+                    type: 'item',
+                    name: '固定'
+                }).extField
+            }, {
+                type: 'frame',
+                extField: store.findMetaByItemName({
+                    type: 'frame',
+                    name: '累计'
+                }).extField
+            }],
+            axis: axisArr,
+        });
+//                var dd = chartKit.genSeriesData();
+//                console.log(dd);
         // 基于准备好的dom，初始化echarts实例
         var ImyChart = echarts.init(document.getElementById('p-charts'));
 
-        // 指定图表的配置项和数据
         var option = {
             title: {
+                y: '5%',
                 text: '',
-                subtext: '',
-                top: 10,
-                left: 10,
+                subtext: ''
             },
             grid: [
-                {x: '10%', y: '20%', width: '83%', height: '70%'},
+                {x: '15%', y: '20%', width: '78%', height: '70%'},
             ],
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['计划总投资', '累计完成投资', '本月完成投资'],
-
+                data: ['累计', '增长']
             },
             toolbox: {},
             calculable: true,
             xAxis: [
                 {
                     type: 'category',
-                    data: ['2017-2', '2017-3', '2017-4', '2017-5', '2017-6']
+                    data: axisD//['2016-3', '2016-6', '2016-9', '2016-12', '2017-3', '2017-6']
                 }
             ],
             yAxis: [
                 {
                     type: 'value',
-                    name: '增加值',
+                    name: '',
                     splitLine: {show: false},
                     axisLabel: {
                         formatter: '{value}亿元'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '增长',
+                    splitLine: {show: false},
+                    axisLabel: {
+                        formatter: '{value}%'
                     }
                 }
             ],
             series: [
                 {
-                    name: '计划总投资',
+                    name: '累计',
                     type: 'bar',
                     splitLine: {show: false},
-                    data: [200.4, 64.5, 86.6, 104.6, 134.6, '', ''],
-                    markPoint: {},
-                    markLine: {}
-                },
-                {
-                    name: '累计完成投资',
-                    type: 'bar',
-                    data: [198.4, 62.5, 76.6, 134.6, 114.6, '', ''],
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '固定资产'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '累计'
+                            }).extField
+                        }]
+                    }),
                     markPoint: {
                         data: [
                             {type: 'max', name: '最快'},
                             {type: 'min', name: '最慢'}
                         ]
                     },
-                    markLine: {}
+                    markLine: {},
+                    color: ['#409ea8']
                 },
                 {
-                    name: '本月完成投资',
-                    type: 'bar',
-                    data: [18.4, 22.5, 16.6, 14.6, 24.6, '', ''],
-                    markPoint: {
-                        data: [
-                            {type: 'max', name: '最快'},
-                            {type: 'min', name: '最慢'}
-                        ]
-                    },
+                    name: '增长',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: chartKit.genSeriesData({
+                        series: [{
+                            type: "item",
+                            extField: store.findMetaByItemName({
+                                type: 'item',
+                                name: '固定资产'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'frame',
+                            extField: store.findMetaByItemName({
+                                type: 'frame',
+                                name: '增长'
+                            }).extField
+                        }]
+                    }),
                     markLine: {}
                 }
             ]
@@ -173,5 +327,5 @@
         $(window).resize(function () {
             ImyChart.resize();
         });
-    });
+    }
 </script>

@@ -89,7 +89,7 @@ class MultipleImageController extends Controller
             $form->display('id', 'ID');
 
             $form->text('title')->rules('required');
-            $form->multipleImage('pictures');
+            $form->multipleImage('pictures')->removable();
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

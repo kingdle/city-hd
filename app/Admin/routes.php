@@ -34,6 +34,10 @@ Route::group([
     $router->get('/auth/development-prefecture', 'AreadevPrefectureController@index');
     $router->get('/auth/project-monitor', 'ProjectController@index');
     $router->get('/auth/project-monitor/content', 'ProjectController@show');
+    $router->get('/auth/project-monitor/create', 'ProjectController@create');
+    $router->get('/auth/project-monitor/show', 'ProjectController@show');
+    $router->get('/auth/project-monitor/{id}/edit', 'ProjectController@edit');
+    $router->post('/auth/project-monitor/{id}', 'ProjectController@create');
     $router->get('/auth/search', 'SearchController@index');
     $router->get('/server', 'ServerController@index');
     $router->get('/home', 'HomeController@index');
@@ -54,6 +58,7 @@ Route::group([
         'dep'                 => DeptController::class,
         'images'                => ImageController::class,
         'posts'                 => PostController::class,
+        'project'                 => ProjectController::class,
         'videos'                => VideoController::class,
         'articles'              => ArticleController::class,
         'painters'              => PainterController::class,
