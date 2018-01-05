@@ -202,8 +202,8 @@
     }
 
     .a-img img {
-        max-width: 220px;
-        max-height: 220px;
+        max-width: 320px;
+        max-height: 320px;
         display: inline-block;
         max-width: 100%;
         height: auto;
