@@ -202,14 +202,14 @@
     }
 
     .a-img img {
-        max-width: 320px;
-        max-height: 320px;
+
+        max-height: 260px;
         display: inline-block;
         max-width: 100%;
         height: auto;
         padding: 4px;
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin-right: 20px;
+        margin-bottom: 20px;
         line-height: 1.42857143;
         background-color: #fff;
         border: 1px solid #ddd;
