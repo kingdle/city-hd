@@ -708,7 +708,7 @@ canvas {
     width: 100%;
     height: 300px;
     line-height: 200px;
-    font-size: 50px;
+    font-size: 40px;
     color: #fff4ce;
     font-weight: 100;
     text-shadow: 2px 2px 2px #575757;
@@ -716,14 +716,49 @@ canvas {
     list-style-type:none;
 }
 
-.surface-sta-ul li span {
-    font-size: 70px;
-    font-weight: 700;
-    color: #ff9a03;
-    font-family: "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
-}
+
 .p-two-border {
     border-bottom: 1px groove #ffffff;
+}
+@media screen and (max-width: 1024px) {
+    .surface-ul li {
+        width: 100%;
+        height: 300px;
+        line-height: 200px;
+        font-size: 40px;
+        color: #fff4ce;
+        font-weight: 100;
+        text-shadow: 2px 2px 2px #575757;
+        list-style-type:none;
+        text-align: center
+    }
+
+    .surface-ul li span {
+        font-size: 60px;
+        font-weight: 700;
+        color: #ff9a03;
+        font-family: "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .surface-ul li {
+        width: 100%;
+        height: 300px;
+        line-height: 200px;
+        font-size: 40px;
+        color: #fff4ce;
+        font-weight: 100;
+        text-shadow: 2px 2px 2px #575757;
+        list-style-type:none;
+        text-align: center
+    }
+
+    .surface-ul li span {
+        font-size: 60px;
+        font-weight: 700;
+        color: #ff9a03;
+        font-family: "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
+    }
 }
 @media screen and (max-width: 480px) {
     porctlist li {

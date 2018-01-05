@@ -82,12 +82,30 @@ class ProjectController extends Controller
 
             $grid->id('ID')->sortable();
             $grid->title('项目名称')->sortable();
+            $grid->Responsible_unit('负责单位')->sortable();
             $grid->Address('地址')->sortable();
             $grid->T_investment('总投资')->sortable();
             $grid->C_investment('累计完成投资')->sortable();
             $grid->Speed('完成进度')->sortable()->editable();
             $grid->S_at('开工日期')->sortable();
-            $grid->updated_at('更新日期')->sortable();
+//            $grid->updated_at('更新日期')->sortable();
+
+            $grid->filter(function (Grid\Filter $filter) {
+                $filter->like('title','项目名称');
+                $filter->like('Responsible_unit','负责单位');
+                $filter->like('Address','项目地址');
+                $filter->like('T_investment','总投资');
+                $filter->like('C_investment','累计完成投资');
+                $filter->like('Speed','完成进度');
+                $filter->datetime('S_at','开工日期');
+                $filter->datetime('E_at','计划完工日期');
+            });
+            $grid->actions(function ($actions) {
+                // append一个操作
+                $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
+            });
+            $grid->model()->orderBy('id', 'desc');
+            $grid->paginate(15);
         });
     }
 
@@ -114,5 +132,17 @@ class ProjectController extends Controller
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });
+    }
+    public function release(Request $request)
+    {
+        foreach (Project::find($request->get('ids')) as $post) {
+            $post->released = $request->get('action');
+            $post->save();
+        }
+    }
+
+    public function restore(Request $request)
+    {
+        return Project::onlyTrashed()->find($request->get('ids'))->each->restore();
     }
 }
