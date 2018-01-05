@@ -102,7 +102,7 @@
                             <h1>
                                 {{ $posts->title }}
                             </h1>
-                            <span class="text-muted"><i class="fa fa-clock-o"></i> {{ $posts->updated_at }}</span>
+                            <span class="text-muted"><i class="fa fa-clock-o"></i> {{ $posts->updated_at->diffForHumans()  }}</span>
                         </div>
                         <div class="post-deco"></div>
                         <div class="article">

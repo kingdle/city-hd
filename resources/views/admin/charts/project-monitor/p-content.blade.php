@@ -1,3 +1,5 @@
+@extends('admin::index')
+@section('content')
 <style>
     .wrapper-content {
         padding: 0 10px 40px;
@@ -21,10 +23,6 @@
         border-width: 1px 0;
     }
 
-    .m-b-md {
-        margin-bottom: 20px;
-    }
-
     .btn-white {
         color: inherit;
         background: white;
@@ -38,7 +36,7 @@
 
     .dl-horizontal dt {
         float: left;
-        width: 160px;
+        width: 100px;
         overflow: hidden;
         clear: left;
         text-align: right;
@@ -46,7 +44,11 @@
         white-space: nowrap;
         font-weight: 200;
     }
-
+    .dl-horizontal dd {
+        margin-left: 120px;
+        font-weight: 700;
+        color: #409ea8;;
+    }
     .panel-heading {
         border-bottom: 1px solid transparent;
         border-top-left-radius: 3px;
@@ -55,6 +57,7 @@
 
     .panel-body {
         padding: 15px;
+        min-height:500px;
     }
 
     .feed-activity-list .feed-element {
@@ -182,9 +185,41 @@
 
     .img-article {
         width: 190px;
-        height: 128px;
+        height: 180px;
         padding: 5px;
     }
+    .row-quota{
+        padding-top: 20px;
+    }
+    .row-quota dd,dt{
+        line-height: 30px;
+    }
+    .row-quota .progress {
+        margin-top: 5px;
+    }
+    .a-img {
+        text-align: left;
+    }
+
+    .a-img img {
+        max-width: 220px;
+        max-height: 220px;
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+        padding: 4px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 1px 1px 5px 0 #a2958a;
+        border-radius: 4px;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
 </style>
 <div class="box">
     <div class="row">
@@ -194,112 +229,58 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="m-b-md">
-                                    <a href="#" class="btn btn-white btn-xs pull-right">项目编辑</a>
-                                    <h2>中国北方（青岛）国际水产品交易中心</h2>
-                                </div>
 
+                                    <div class="col-md-11">
+                                        <h2>{{ $project->title }}</h2>
+                                    </div>
+                                    <div class="col-md-1 hidden-xs">
+                                        <button class="button button-box"><i class="fa fa-reply"></i></button>
+                                    </div>
+
+                                <script>
+                                    $(".col-md-1 button").click(function(){
+                                        history.go(-1)
+                                    })
+                                </script>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row row-quota">
                             <div class="col-lg-7">
                                 <dl class="dl-horizontal">
                                     <dt>总投资:</dt>
-                                    <dd><span class="label label-primary">260.7亿元</span></dd>
+                                    <dd><span class="label label-primary">{{ $project->T_investment }}亿元</span></dd>
                                     <dt>累计完成投资:</dt>
-                                    <dd><span class="label label-success">210.7亿元</span></dd>
+                                    <dd><span class="label label-success">{{ $project->C_investment }}亿元</span></dd>
                                 </dl>
-                                <dl class="dl-horizontal">
 
-                                    <dt>项目负责单位:</dt>
-                                    <dd>青岛西海岸新区</dd>
-                                    <dt>项目负责人:</dt>
-                                    <dd> XXX</dd>
-                                    <dt>开工时间:</dt>
-                                    <dd>2016年八月</dd>
-                                    <dt>预计结束时间:</dt>
-                                    <dd> 2018年8月</dd>
-                                    <dt>项目地址:</dt>
-                                    <dd><a href="#" class="text-navy">董家口循环经济区</a></dd>
-                                    <dt>项目简介:</dt>
-                                    <dd>
-                                        项目占地12.26平方公里，总投资260.7亿元，包括国际水产品交易中心和冷链物流基地及海洋文化城两部分。三个冷藏库面积分别为31475、31372、30822平方米，每个冷藏库能容纳10万吨海鲜，建成后将成为东北亚最大的冷库群。
-                                    </dd>
-                                </dl>
                                 <dl class="dl-horizontal">
                                     <dt>项目完成进度:</dt>
                                     <dd>
                                         <div class="progress progress-striped active m-b-sm">
-                                            <div style="width: 60%;" class="progress-bar">60%</div>
+                                            <div style="width: {{ $project->Speed }}%;" class="progress-bar">{{ $project->Speed }}%</div>
                                         </div>
 
                                     </dd>
+                                    <dt>项目简介:</dt>
+                                    <dd>
+                                        {{ $project->Abstract }}
+                                    </dd>
+                                    <dt>更新日期:</dt>
+                                    <dd>{{ $project->updated_at->diffForHumans() }}</dd>
                                 </dl>
                             </div>
                             <div class="col-lg-5" id="cluster_info">
-                                <div class="ibox-content townbox-content">
-                                    <div id="myCarousel" class="carousel slide " data-ride="carousel">
-                                        <!-- Indicators -->
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-                                            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-                                            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                                            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-                                        </ol>
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="item active left">
-                                                <img class="first-slide"
-                                                     src="{{ asset('uploads/project-monitor/p-content-1.jpg') }}"
-                                                     alt="First slide">
-                                                <div class="container">
-                                                    <div class="carousel-caption">
-                                                        <p>东北亚最大的冷库群效果图</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item next left">
-                                                <img class="second-slide"
-                                                     src="{{ asset('uploads/project-monitor/p-content-2.jpg') }}"
-                                                     alt="Second slide">
-                                                <div class="container">
-                                                    <div class="carousel-caption">
-                                                        <p>冷链物流基地卫星图</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <img class="third-slide"
-                                                     src="{{ asset('uploads/project-monitor/p-content-3.jpg') }}"
-                                                     alt="Third slide">
-                                                <div class="container">
-                                                    <div class="carousel-caption">
-                                                        <p>海洋文化城建设中</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <img class="third-slide"
-                                                     src="{{ asset('uploads/project-monitor/p-content-4.jpg') }}"
-                                                     alt="Third slide">
-                                                <div class="container">
-                                                    <div class="carousel-caption">
-                                                        <p>国际水产品交易中心建设中</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a class="left carousel-control" href="#myCarousel" role="button"
-                                           data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="right carousel-control" href="#myCarousel" role="button"
-                                           data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </div>
-                                </div>
+                                <dl class="dl-horizontal">
+                                    <dt>项目负责单位:</dt>
+                                    <dd>{{ $project->Responsible_unit }}</dd>
+                                    <dt>项目负责人:</dt>
+                                    <dd>{{ $project->Person }}</dd>
+                                    <dt>开工时间:</dt>
+                                    <dd>{{ $project->S_at }}</dd>
+                                    <dt>项目地址:</dt>
+                                    <dd>{{ $project->Address }}</dd>
+
+                                </dl>
                             </div>
                         </div>
                         <div class="row">
@@ -314,7 +295,7 @@
                                         <div class="panel-options">
                                             <ul class="nav nav-tabs">
                                                 <li class="active"><a href="#tab-1" data-toggle="tab"
-                                                                      aria-expanded="true">项目动态</a></li>
+                                                                      aria-expanded="true">项目动态图片</a></li>
 
                                             </ul>
                                         </div>
@@ -323,72 +304,13 @@
                                     <div class="panel-body">
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="tab-1">
-                                                <div class="feed-activity-list">
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle"
-                                                                 src="{{ asset('uploads/project-monitor/p-content-3.jpg') }}">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>本年累计完成投资</strong> 158亿元 <strong>本月完成投资额
-                                                            </strong> 26亿元同比增长19% <br>
-                                                            <small class="text-muted">2017年10月
-                                                            </small>
-                                                            <div class="well">
-                                                                <img alt="image" class="img-article"
-                                                                     src="{{ asset('uploads/project-monitor/p-content-3.jpg') }}">
-                                                                <span>
-                                                                    2017年10月，位于北面的办公楼开工建设，主体已完工，在进行内部装修。办公楼南面是冷链物流基地项目的冷冻冷藏基地。3个冷藏库在进行主体建设，预计12月中旬完成主体建设.
-                                                                </span>
-                                                            </div>
-                                                        </div>
+                                                @if($project->pictures)
+                                                    <div class="a-img">
+                                                        @foreach($project->pictures as $picture)
+                                                            <img src="/uploads/{{ $picture }}" alt="">
+                                                        @endforeach
                                                     </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle"
-                                                                 src="{{ asset('uploads/project-monitor/p-content-1.jpg') }}">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>本年累计完成投资</strong> 129亿元 <strong>本月完成投资额
-                                                            </strong> 16亿元同比增长10% <br>
-                                                            <small class="text-muted">2017年9月
-                                                            </small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle"
-                                                                 src="{{ asset('uploads/project-monitor/p-content-4.jpg') }}">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>本年累计完成投资</strong> 113亿元 <strong>本月完成投资额
-                                                            </strong> 13亿元同比增长10% <br>
-                                                            <small class="text-muted">2017年8月
-                                                            </small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="feed-element">
-                                                        <a href="#" class="pull-left">
-                                                            <img alt="image" class="img-circle"
-                                                                 src="{{ asset('uploads/project-monitor/p-content-2.jpg') }}">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right">2h ago</small>
-                                                            <strong>本年累计完成投资</strong> 100亿元 <strong>本月完成投资额
-                                                            </strong> 10亿元同比增长10% <br>
-                                                            <small class="text-muted">2017年7月
-                                                            </small>
-                                                            <div class="well">
-                                                                <img alt="image" class="img-article"
-                                                                     src="{{ asset('uploads/project-monitor/p-content-4.jpg') }}">
-                                                                2017年7月，位于南面的办公楼开工建设，主体已完工，在进行内部装修。预计10月分开始建设北部办公楼。
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -401,3 +323,4 @@
         </div>
     </div>
 </div>
+@endsection

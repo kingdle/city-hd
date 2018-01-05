@@ -53,7 +53,7 @@
                             <h1>
                                 {{ $article->title }}
                             </h1>
-                            <span class="text-muted"><i class="fa fa-clock-o"></i> {{ $article->published_at }}</span>
+                            <span class="text-muted"><i class="fa fa-clock-o"></i> {{ $article->updated_at->diffForHumans() }}</span>
                         </div>
                         <div class="post-deco"></div>
                         <div class="article">

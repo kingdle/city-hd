@@ -49,7 +49,6 @@ Route::group([
     $router->get('/project/create', 'ProjectController@create');
     $router->get('/project/show', 'ProjectController@show');
     $router->get('/project/{id}/edit', 'ProjectController@edit');
-    $router->post('/project/{id}', 'ProjectController@conn');
     $router->get('/auth/top-news','TopnewsController@index');
     $router->get('/auth/top-news/{id}','TopnewsController@show');
     $router->resources([

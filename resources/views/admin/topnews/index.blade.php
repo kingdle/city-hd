@@ -261,7 +261,7 @@
                                 <span class="author">
                                     <a href="" class="name" target="_blank">{{ $article->author->name }}</a>
                                     <span class="gap_point">•</span>
-                                    <i class="fa fa-clock-o"></i>{{ $article->updated_at }}</span></div>
+                                    <i class="fa fa-clock-o"></i>{{ $article->updated_at->diffForHumans() }}</span></div>
                                 <p class="summary">{{ str_limit(strip_tags($article->content), $limit = 300, $end = '...') }}</p>
                                 <div class="tag">
                                     @if($article->tags)

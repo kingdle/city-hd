@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ admin_base_path('/auth/project-monitor') }}">
+                <a href="{{ admin_base_path('/project') }}">
                     <i class="fa fa-star fa-5x"></i><br><span>重点项目监测</span>
                 </a>
             </li>

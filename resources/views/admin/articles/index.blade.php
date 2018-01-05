@@ -123,7 +123,7 @@
                             <p><a href="/admin/auth/articles/{{ $article->id }}"> {{ $article->title }}</a></p>
                             <div class="taglist">
                                 <ul>
-                                    <li><i class="fa fa-clock-o"></i>{{ $article->published_at }}</li>
+                                    <li><i class="fa fa-clock-o"></i>{{ $article->updated_at->diffForHumans() }}</li>
                                     @if($article->tags)
                                         @foreach($article->tags as $tag)
                                             <li><i class="fa fa-tag"></i> {{ $tag->name }}</li>

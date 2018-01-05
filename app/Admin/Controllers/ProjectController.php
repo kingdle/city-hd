@@ -11,6 +11,7 @@ use Encore\Admin\Layout\Row;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 
+
 class ProjectController extends Controller
 {
     use ModelForm;
@@ -29,17 +30,11 @@ class ProjectController extends Controller
             $content->body($this->grid());
         });
     }
-    public function show()
+    public function show($id)
     {
-        return Admin::content(function (Content $content) {
+        $project = Project::findOrFail($id);
+        return view('admin.charts.project-monitor.p-content', compact('project'));
 
-            $content->header('重点项目监测');
-            $content->description(now());
-
-            //$content->body(view('admin.charts.industry-monitor.616.dateline'));
-            $content->body(view('admin.charts.project-monitor.p-content'));
-
-        });
     }
     /**
      * Edit interface.
@@ -102,9 +97,9 @@ class ProjectController extends Controller
             });
             $grid->actions(function ($actions) {
                 // append一个操作
-                $actions->append('<a href=""><i class="fa fa-eye"></i></a>');
+                $actions->append("<a href='/admin/project/{$actions->getKey()}'><i class='fa fa-eye'></i></a>");
             });
-            $grid->model()->orderBy('id', 'desc');
+            $grid->model()->orderBy('updated_at', 'desc');
             $grid->paginate(15);
         });
     }
