@@ -32,12 +32,7 @@ Route::group([
     $router->get('/auth/development-functional', 'AreadevController@index');
     $router->get('/auth/development-town', 'AreadevTownController@index');
     $router->get('/auth/development-prefecture', 'AreadevPrefectureController@index');
-    $router->get('/auth/project-monitor', 'ProjectController@index');
-    $router->get('/auth/project-monitor/content', 'ProjectController@show');
-    $router->get('/auth/project-monitor/create', 'ProjectController@create');
-    $router->get('/auth/project-monitor/show', 'ProjectController@show');
-    $router->get('/auth/project-monitor/{id}/edit', 'ProjectController@edit');
-    $router->post('/auth/project-monitor/{id}', 'ProjectController@create');
+
     $router->get('/auth/search', 'SearchController@index');
     $router->get('/server', 'ServerController@index');
     $router->get('/home', 'HomeController@index');
@@ -49,7 +44,12 @@ Route::group([
     $router->get('/auth/article/create','ArticleController@create');
     $router->get('/auth/article/edit/{id}','ArticleController@edit');
     $router->post('/auth/article/update','ArticleController@update');
-
+    $router->get('/project', 'ProjectController@index');
+    $router->get('/project/content', 'ProjectController@show');
+    $router->get('/project/create', 'ProjectController@create');
+    $router->get('/project/show', 'ProjectController@show');
+    $router->get('/project/{id}/edit', 'ProjectController@edit');
+    $router->post('/project/{id}', 'ProjectController@conn');
     $router->get('/auth/top-news','TopnewsController@index');
     $router->get('/auth/top-news/{id}','TopnewsController@show');
     $router->resources([
@@ -80,8 +80,9 @@ Route::group([
     ]);
     $router->post('posts/release', 'PostController@release');
     $router->post('posts/restore', 'PostController@restore');
+    $router->post('project/release', 'projectController@release');
+    $router->post('project/restore', 'projectController@restore');
     $router->get('api/users', 'PostController@users');
-    $router->resource('admin/users', UserController::class);
     $router->get('china/cascading-select', 'China\ChinaController@cascading');
 
     $router->get('api/world/cities', 'World\ApiController@cities');

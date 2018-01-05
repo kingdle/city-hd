@@ -4,15 +4,16 @@ namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Encore\Admin\Controllers\ModelForm;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 
-
 class ProjectController extends Controller
 {
+    use ModelForm;
     public function index()
     {
         return Admin::content(function (Content $content) {
@@ -80,12 +81,13 @@ class ProjectController extends Controller
         return Admin::grid(Project::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-
-            $grid->title('项目名称')->sortable()->editable();
-            $grid->Address('地址')->sortable()->editable();
+            $grid->title('项目名称')->sortable();
+            $grid->Address('地址')->sortable();
+            $grid->T_investment('总投资')->sortable();
+            $grid->C_investment('累计完成投资')->sortable();
+            $grid->Speed('完成进度')->sortable()->editable();
             $grid->S_at('开工日期')->sortable();
-            $grid->Speed('完成进度')->sortable();
-            $grid->updated_at('更新日期');
+            $grid->updated_at('更新日期')->sortable();
         });
     }
 
@@ -99,14 +101,13 @@ class ProjectController extends Controller
         return Admin::form(Project::class, function (Form $form) {
 
             $form->display('id', 'ID');
-
             $form->text('title','项目名称')->rules('required');
-            $form->text('T_investment','总投资')->rules('required');
-            $form->text('C_investment','累计完成投资')->rules('required');
-            $form->text('Responsible_unit','项目负责单位')->rules('required');
-            $form->text('Person','项目负责人')->rules('required');
-            $form->text('Address','项目地址')->rules('required');
-            $form->text('Speed','项目进度')->rules('required');
+            $form->text('T_investment','总投资');
+            $form->text('C_investment','累计完成投资');
+            $form->text('Responsible_unit','项目负责单位');
+            $form->text('Person','项目负责人');
+            $form->text('Address','项目地址');
+            $form->text('Speed','项目进度');
             $form->multipleImage('pictures','项目图片')->removable();
             $form->datetime('S_at', '开工时间')->default(now());
             $form->datetime('E_at', '预计结束时间')->default(now());

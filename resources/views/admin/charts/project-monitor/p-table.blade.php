@@ -124,7 +124,7 @@
         <div class="col-lg-7">
             <div class="ibox-analysis float-e-margins">
                 <div class="ibox-title">
-                    <h5>重点项目投资情况</h5>
+                    <h5>固定资产投资情况</h5>
 
                 </div>
                 <div class="ibox-contenter">
