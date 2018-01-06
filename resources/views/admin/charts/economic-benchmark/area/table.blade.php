@@ -603,8 +603,8 @@
     function area() {
         // 基于准备好的dom，初始化echarts实例
         var axisD = [];
-        for (var item in axisArr) {
-            axisD.push(axisArr[item].name);
+        for (var item in jiduTime.cAxisArr) {
+            axisD.push(jiduTime.cAxisArr[item].name);
         }
         var axisQuarter = [];
         for (var item in jiduTime.cAxisArr) {
@@ -612,7 +612,7 @@
         }
         var chartKit = new SyChartSeriesKit({
             store: storeA,
-            axis: axisArr,
+            axis: jiduTime.cAxisArr,
         });
         var chartKitQ = new SyChartSeriesKit({
             store: storeA,

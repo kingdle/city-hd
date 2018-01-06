@@ -9,6 +9,7 @@ function SyStore(config) {
     }
 
 }
+SyStore.gPath = 'http://hd.maxdata.cc:8185/sy-hd';
 
 SyStore.prototype.init = function () {
     var _this = this;

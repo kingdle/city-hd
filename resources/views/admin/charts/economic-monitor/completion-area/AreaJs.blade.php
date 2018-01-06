@@ -49,7 +49,6 @@
             autoLoad: true,
             datasetId: 4,
             success: function (store) {
-                initTimelineArea();
                 topChart(store);
                 structureChart(store);
                 grossChart(store);

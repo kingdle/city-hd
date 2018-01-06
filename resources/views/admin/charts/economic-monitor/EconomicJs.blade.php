@@ -55,14 +55,16 @@
         autoLoad: true,
         datasetId: 10,
         success: function (store) {
+            var _store = store;
             $(function () {
-                initChartsMonitor(store);
-                area();
-                assets();
-                industry();
-                sale();
-                economicline(store);
-                initTimeline();
+
+                    initChartsMonitor(_store);
+                    area();
+                    assets();
+                    industry();
+                    sale();
+                    economicline(store);
+
             });
 
             var _store = store;
@@ -192,7 +194,7 @@
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
-                var $trLists = $(".table tbody").children("tr");
+                var $trLists = $(".table-economic tbody").children("tr");
                 $.each($trLists, function (i, trlist) {
                     var $trlist = $(trlist);
                     var $tdTitle = $($trlist.find("td").eq(0));
@@ -204,7 +206,7 @@
             });
 
 
-            var $trLists = $(".table tbody").children("tr");
+            var $trLists = $(".table-economic tbody").children("tr");
             $.each($trLists, function (i, trlist) {
                 var $trlist = $(trlist);
                 var $tdTitle = $($trlist.find("td").eq(0));

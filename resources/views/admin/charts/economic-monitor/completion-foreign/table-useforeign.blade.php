@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="row-quota" id="quota">
-                    <table class="table table-hover scrolltable">
+                    <table class="table table-use table-hover scrolltable">
                         <thead style="display:block;overflow-y: scroll;">
                         <tr>
                             <th>指标</th>

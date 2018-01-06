@@ -151,21 +151,129 @@
                     extField: 200000001
                 }],
                 axis: [{
-                    name: '进口总额',
+                    name: '国有企业',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '进口总额'
+                            name: '国有企业（出口总额'
                         }).extField
                     }]
                 }, {
-                    name: '出口总额',
+                    name: '三资企业',
                     arr: [{
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '出口总额'
+                            name: '三资企业（出口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '其它企业',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '其它企业（出口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '一般贸易',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '一般贸易（出口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '加工贸易',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '加工贸易（出口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '其它贸易',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '其它贸易（出口总额）'
+                        }).extField
+                    }]
+                }]
+            });
+            var barKit2 = new SyChartSeriesKit({
+                store: store,
+                style: 'obj',
+                series: [{
+                    type: "time_year",
+                    extField: dateArr[j].getFullYear()
+                }, {
+                    type: 'time_month',
+                    extField: dateArr[j].getMonth() + 1
+                }, {
+                    type: 'area',
+                    extField: 1508
+                }, {
+                    type: 'frame',
+                    extField: 200000001
+                }],
+                axis: [{
+                    name: '国有企业',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '国有企业（进口总额'
+                        }).extField
+                    }]
+                }, {
+                    name: '三资企业',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '三资企业（进口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '其它企业',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '其它企业（进口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '一般贸易',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '一般贸易（进口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '加工贸易',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '加工贸易（进口总额）'
+                        }).extField
+                    }]
+                }, {
+                    name: '其它贸易',
+                    arr: [{
+                        type: 'item',
+                        extField: store.findMetaByItemName({
+                            type: 'item',
+                            name: '其它贸易（进口总额）'
                         }).extField
                     }]
                 }]
@@ -193,6 +301,9 @@
                 },
                 xAxis: [
                     {
+                        axisLabel:{
+                            interval:0
+                        },
                         type: 'category',
                         data: ['国有企业', '三资企业', '其它企业', '一般贸易', '加工贸易', '其它贸易']
                     }
@@ -207,7 +318,7 @@
                         name: '进口总额',
                         type: 'bar',
                         stack: '总量',
-                        data: barKit.genSeriesData(),
+                        data: barKit2.genSeriesData(),
 
                     },
                     {

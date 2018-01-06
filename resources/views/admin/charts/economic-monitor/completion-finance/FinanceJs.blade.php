@@ -49,7 +49,6 @@
             autoLoad: true,
             datasetId: 13,
             success: function (store) {
-                initTimelineFinance();
                 financeChart(store);
                 benchmarkChart(store);
                 structureChart(store);
@@ -85,7 +84,7 @@
                     kitV = new SyValueKit(baseRes, _store);
                     kitS = new SyValueKit(baseSpeed, _store);
 
-                    var $trLists = $(".table tbody").children("tr");
+                    var $trLists = $(".table-finance tbody").children("tr");
                     $.each($trLists, function (i, trlist) {
                         var $trlist = $(trlist);
                         var $thTitle = $($trlist.find("th"));
@@ -96,7 +95,7 @@
                     });
                 });
 
-                var $trLists = $(".table tbody").children("tr");
+                var $trLists = $(".table-finance tbody").children("tr");
                 $.each($trLists, function (i, trlist) {
                     var $trlist = $(trlist);
                     var $thTitle = $($trlist.find("th"));

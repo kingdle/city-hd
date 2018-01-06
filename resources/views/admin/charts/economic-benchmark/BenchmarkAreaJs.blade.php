@@ -12,21 +12,21 @@
 
                 var baseRes = {
                     frame: 200000011,
-                    area: 3519,
+
                     time_year: initDate.getFullYear(),
                     time_month: initDate.getMonth() + 1,
 //                    tmp_id: 1
                 };
                 var baseSpeed = {
                     frame: 200000014,
-                    area: 3519,
+
                     time_year: initDate.getFullYear(),
                     time_month: initDate.getMonth() + 1,
 //                    tmp_id: 1
                 };
                 var baseSpeedLast = {
                     frame: 200000014,
-                    area: 3519,
+
                     time_year: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getFullYear(),
                     time_month: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 2).getMonth() + 1,
 //                    tmp_id: 1
@@ -108,7 +108,32 @@
 //                    );
 //
 //                });
+                var $tbodys = $('tbody');
+                $.each($tbodys,function(ii,tbody){
+                    var $totalLists = $(tbody).find("tr");
+                    var itemName = $(tbody).attr('itemName');
 
+                    $.each($totalLists, function (i, trlist) {
+                        var $totalList = $(trlist);
+                        var $tdTitle = $($totalList.find("td").eq(0));
+
+                        var $tdV = $($totalList.find("td").eq(1));
+                        var $tdS = $($totalList.find("td").eq(2));
+
+                        $tdV.text(
+                            kitTable.findValueByObj({
+                                area: kitTable.meta("area", $tdTitle.text()).extField,
+                                item: kitTable.meta("item", itemName).extField
+                            }, true)
+                        );
+                        $tdS.text(
+                            kitTableS.findValueByObj({
+                                area: kitTableS.meta("area", $tdTitle.text()).extField,
+                                item: kitTableS.meta("item", itemName).extField
+                            }, true)
+                        );
+                    });
+                })
                 initTimeline(function (dd) {
                     var nowDate = dateArr[dd.currentIndex];
                     baseRes.time_year = nowDate.getFullYear();
