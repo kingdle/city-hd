@@ -4,7 +4,7 @@
         datasetId: 7,
         success: function (store) {
             $(function () {
-                initTimeline();
+
                 city();
             });
             var _store = store;

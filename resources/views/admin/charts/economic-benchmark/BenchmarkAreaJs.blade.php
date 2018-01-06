@@ -4,8 +4,6 @@
             autoLoad: true,
             datasetId: 16,
             success: function (store) {
-
-                initTimeline();
                 area();
                 var _store = store;
                 var initDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 30 * 1);
