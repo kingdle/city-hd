@@ -81,8 +81,10 @@ class ProjectController extends Controller
             $grid->Address('地址')->sortable();
             $grid->T_investment('总投资')->sortable();
             $grid->C_investment('累计完成投资')->sortable();
-            $grid->Speed('完成进度')->sortable()->editable();
-            $grid->S_at('开工日期')->sortable();
+            $grid->Speed('完成进度')->sortable();
+            $grid->updated_at('更新日期')->display(function($updated_at) {
+                return str_limit($updated_at, 10, '');
+            });
 //            $grid->updated_at('更新日期')->sortable();
 
             $grid->filter(function (Grid\Filter $filter) {

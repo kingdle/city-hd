@@ -255,6 +255,10 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //name: 2,
+                            type: 'tmpId',
+                            extField: '17'
                         }]
                     })
                 },
@@ -276,6 +280,10 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //name: 2,
+                            type: 'tmpId',
+                            extField: '17'
                         }]
                     })
 

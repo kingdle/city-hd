@@ -600,7 +600,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    function province() {
+    function area() {
         // 基于准备好的dom，初始化echarts实例
         var axisD = [];
         for (var item in axisArr) {

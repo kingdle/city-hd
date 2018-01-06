@@ -58,37 +58,37 @@
                             <td>22.7</td>
                         </tr>
                         <tr>
-                            <th scope="row">国有企业</th>
+                            <th scope="row">国有企业（出口</th>
                             <td>133853</td>
                             <td>1314761</td>
                             <td>44.7</td>
                         </tr>
                         <tr>
-                            <th scope="row">三资企业</th>
+                            <th scope="row">三资企业（出口</th>
                             <td>153208</td>
                             <td>1071667</td>
                             <td>5.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">其它企业</th>
+                            <th scope="row">其它企业（出口</th>
                             <td>174335</td>
                             <td>1096617</td>
                             <td>21.8</td>
                         </tr>
                         <tr>
-                            <th scope="row">一般贸易</th>
+                            <th scope="row">一般贸易（出口</th>
                             <td>237574</td>
                             <td>1612675</td>
                             <td>28.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">加工贸易</th>
+                            <th scope="row">加工贸易（出口</th>
                             <td>222270</td>
                             <td>1857597</td>
                             <td>19.1</td>
                         </tr>
                         <tr>
-                            <th scope="row">其它贸易</th>
+                            <th scope="row">其它贸易（出口</th>
                             <td>1553</td>
                             <td>12772</td>
                             <td>26.2</td>
@@ -100,37 +100,37 @@
                             <td>5.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">国有企业</th>
+                            <th scope="row">国有企业（进口</th>
                             <td>87044</td>
                             <td>602246</td>
                             <td>-10.2</td>
                         </tr>
                         <tr>
-                            <th scope="row">三资企业</th>
+                            <th scope="row">三资企业（进口</th>
                             <td>106557</td>
                             <td>836446</td>
                             <td>23.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">其它企业</th>
+                            <th scope="row">其它企业（进口</th>
                             <td>25026</td>
                             <td>209394</td>
                             <td>2.5</td>
                         </tr>
                         <tr>
-                            <th scope="row">一般贸易</th>
+                            <th scope="row">一般贸易（进口</th>
                             <td>124814</td>
                             <td>922854</td>
                             <td>16</td>
                         </tr>
                         <tr>
-                            <th scope="row">加工贸易</th>
+                            <th scope="row">加工贸易（进口</th>
                             <td>59568</td>
                             <td>416084</td>
                             <td>-23.4</td>
                         </tr>
                         <tr>
-                            <th scope="row">其它贸易</th>
+                            <th scope="row">其它贸易（进口</th>
                             <td>34245</td>
                             <td>309148</td>
                             <td>44.3</td>

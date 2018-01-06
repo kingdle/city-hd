@@ -61,6 +61,7 @@
                     area: 1508,
                     time_year: date.getFullYear(),
                     time_month: date.getMonth()-1,
+                    tmpId:15,
                 }
 
                 var baseSpeed = {
@@ -68,12 +69,14 @@
                     area: 1508,
                     time_year: date.getFullYear(),
                     time_month: date.getMonth()-1,
+                    tmpId:15,
                 }
                 var baseBenqi = {
                     frame: 200000001,
                     area: 1508,
                     time_year: date.getFullYear(),
                     time_month: date.getMonth()-1,
+                    tmpId:15,
                 }
                 var kitV = new SyValueKit(baseRes, _store);
                 var kitS = new SyValueKit(baseSpeed, _store);

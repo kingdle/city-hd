@@ -16,4 +16,4 @@
         </div>
     </div>
 </div>
-@include('admin::charts.economic-benchmark.BenchmarkProvinceJs')
+@include('admin::charts.economic-benchmark.BenchmarkAreaJs')

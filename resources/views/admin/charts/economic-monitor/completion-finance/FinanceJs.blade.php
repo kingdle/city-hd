@@ -61,6 +61,7 @@
                     area: 1508,
                     time_year: date.getFullYear(),
                     time_month: date.getMonth() - 3,
+                    tmpId:17,
                 }
 
                 var baseSpeed = {
@@ -68,6 +69,7 @@
                     area: 1508,
                     time_year: date.getFullYear(),
                     time_month: date.getMonth() - 3,
+                    tmpId:17,
                 }
 
                 var kitV = new SyValueKit(baseRes, _store);
