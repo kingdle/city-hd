@@ -18,11 +18,9 @@ class SearchController extends Controller
 
             $content->body(view('admin.charts.search.search-bar'));
             $content->row(function (Row $row) {
-                $row->column(10, view('admin.charts.search.s-content'));
-                $row->column(2, view('admin.charts.search.s-list'));
+                $row->column(12, view('admin.charts.search.s-content'));
+//                $row->column(2, view('admin.charts.search.s-list'));
             });
-
-
         });
     }
 }

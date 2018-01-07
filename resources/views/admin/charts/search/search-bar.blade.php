@@ -20,7 +20,7 @@
         <div class="text-center">
             <div class="col-md-12">
                 <div class="ibox float-e-margins">
-                    <form method="get" action="" class="pull-right content-search">
+                    <form method="get" action="" class="content-search">
                         <div class="input-group">
                             <input type="text" class="form-control input-sm" name="search" placeholder="全库搜索">
                             <div class="input-group-btn">
