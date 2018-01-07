@@ -33,11 +33,11 @@
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="industry">
                                                 <div class="row">
-                                                    <div class="col-sm-3">
+                                                    <div class="col-sm-4">
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-1">
+                                                                    <div id="vuetable-1">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>
@@ -52,11 +52,11 @@
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="profit">
                                                 <div class="row">
-                                                    <div class="col-sm-3">
+                                                    <div class="col-sm-4">
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-2">
+                                                                    <div id="vuetable-2">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>
@@ -71,11 +71,11 @@
                                             </div>
                                             <div role="tabpanel" class="tab-pane" id="assets">
                                                 <div class="row">
-                                                    <div class="col-sm-3">
+                                                    <div class="col-sm-4">
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-3">
+                                                                    <div id="vuetable-3">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>
@@ -94,7 +94,7 @@
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-4">
+                                                                    <div id="vuetable-4">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>

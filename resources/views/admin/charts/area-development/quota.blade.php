@@ -37,7 +37,7 @@
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-1">
+                                                                    <div id="vuetable-1">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>
@@ -76,7 +76,7 @@
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-3">
+                                                                    <div id="vuetable-3">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>
@@ -95,7 +95,7 @@
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <div id="app-4">
+                                                                    <div id="vuetable-4">
                                                                         <sy-table :stru="stru"></sy-table>
                                                                     </div>
                                                                 </div>

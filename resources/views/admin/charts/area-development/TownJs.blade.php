@@ -108,7 +108,7 @@
                         }];
                         //创建表格
                         var aa = new Vue({
-                            el: '#app-1',
+                            el: '#vuetable-1',
                             data: {
                                 stru: struA //表格结构
                             },
@@ -145,7 +145,7 @@
                         }];
                         //创建表格
                         var aa = new Vue({
-                            el: '#app-2',
+                            el: '#vuetable-2',
                             data: {
                                 stru: struB //表格结构
                             },
@@ -188,7 +188,7 @@
                         }];
                         //创建表格
                         var cc = new Vue({
-                            el: '#app-3',
+                            el: '#vuetable-3',
                             data: {
                                 stru: struC //表格结构
                             },
@@ -226,7 +226,7 @@
                         }];
                         //创建表格
                         var dd = new Vue({
-                            el: '#app-4',
+                            el: '#vuetable-4',
                             data: {
                                 stru: struD //表格结构
                             },
