@@ -122,7 +122,7 @@
         });
         storeB = new SyStore({
             autoLoad: true,
-            datasetId: 8,
+            datasetId: 9,
             success: function (store) {
                 var _store = store;
                 $.ajax({
