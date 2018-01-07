@@ -496,12 +496,4 @@
         };
     });
 </script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var _width = $('#app-1').width();
-        $('#app-1 table > tbody > tr > td:nth-child(0)').width(_width * 0.4);
-        $('#app-1 table > tbody > tr > td:nth-child(1)').width(_width * 0.3);
-        $('#app-1 table > tbody > tr > td:nth-child(2)').width(_width * 0.3);
-    })
-</script>
 
