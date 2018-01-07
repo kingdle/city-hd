@@ -122,7 +122,7 @@
         });
         storeB = new SyStore({
             autoLoad: true,
-            datasetId: 9,
+            datasetId: 8,
             success: function (store) {
                 var _store = store;
                 $.ajax({
@@ -130,7 +130,7 @@
                     url: SyStore.gPath + "/report/getAnReportByTmpId", //获取表格结构api
                     async: true,
                     data: {
-                        tmpType: 'tmp',
+//                        tmpType: 'tmp',
                         tmpId: 43 //表格结构id
                     },
                     success: function (stru) {
@@ -144,16 +144,21 @@
                             "extField": nowDate.getMonth() + 1
                         }];
                         //创建表格
-                        var bb = new Vue({
+                        var aa = new Vue({
                             el: '#app-2',
                             data: {
                                 stru: struB //表格结构
                             },
                             store: _store,
                             mounted: function () {
+                                console.log(store)
                             }
 
                         });
+
+                        console.log(aa)
+
+
                     }
                 });
             }

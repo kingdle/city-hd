@@ -134,7 +134,7 @@
         storeB = new SyStore({
             autoLoad: true,
             datasetId: 15,
-            success: function(store) {
+            success: function (store) {
                 var _store = store;
                 $.ajax({
                     type: "get",
@@ -172,7 +172,8 @@
 
                     }
                 });
-            }});
+            }
+        });
 
         storeC = new SyStore({
             autoLoad: true,
