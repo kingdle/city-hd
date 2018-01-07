@@ -165,8 +165,8 @@
                         var $totalList = $(trlist);
                         var $tdTitle = $($totalList.find("td").eq(0));
 //                            var $liTitle = $($totalList.find('ul>li>a'));
-                        var $tdV = $($totalList.find("td").eq(1));
-                        var $tdS = $($totalList.find("td").eq(2));
+                        var $tdS = $($totalList.find("td").eq(1));
+                        var $tdV = $($totalList.find("td").eq(2));
 //                            console.log($liTitle.html());
                         $tdV.text(
                             kitTable.findValueByObj({
@@ -194,8 +194,8 @@
                     var $totalList = $(trlist);
                     var $tdTitle = $($totalList.find("td").eq(0));
 //                            var $liTitle = $($totalList.find('ul>li>a'));
-                    var $tdV = $($totalList.find("td").eq(1));
-                    var $tdS = $($totalList.find("td").eq(2));
+                    var $tdS = $($totalList.find("td").eq(1));
+                    var $tdV = $($totalList.find("td").eq(2));
 //                            console.log($liTitle.html());
                     $tdV.text(
                         kitTable.findValueByObj({

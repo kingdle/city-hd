@@ -18,7 +18,6 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                     <div class="col-sm-4 con">
                                                         <h5 class="m-b-md">航运物流增加值</h5>
                                                         <h4 class="text-navy update-s-v">
@@ -39,7 +38,6 @@
                                                         <img src="{{ asset('uploads/616/ShippingLogistics.png') }}"
                                                              alt="航运物流增加值" class="img-responsive img-thumbnail">
                                                     </div>
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +46,6 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4 con">
                                                     <h5 class="m-b-md">船舶海工产值</h5>
                                                     <h4 class="text-navy update-s-v">
@@ -69,7 +66,7 @@
                                                     <img src="{{ asset('uploads/616/watercraft.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +75,6 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">家电电子产值</h5>
                                                     <h4 class="text-navy update-s-v">
@@ -99,7 +95,7 @@
                                                     <img src="{{ asset('uploads/616/electronics.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +104,6 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">汽车制造产值</h5>
                                                     <h4 class="text-navy update-s-v">
@@ -129,7 +124,7 @@
                                                     <img src="{{ asset('uploads/616/AutomobileMaking.png') }}"
                                                          alt="航运物流增加值" class="img-responsive img-thumbnail">
                                                 </div>
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +133,6 @@
                                     <div class="ibox">
                                         <div class="ibox-content ">
                                             <div class="row">
-                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">机械装备产值</h5>
                                                     <h4 class="text-navy update-s-v">
@@ -159,7 +153,7 @@
                                                     <img src="{{ asset('uploads/616/machine.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +162,6 @@
                                     <div class="ibox">
                                         <div class="ibox-content">
                                             <div class="row">
-                                                <a href="{{ admin_base_path('auth/616/content') }}">
                                                 <div class="col-sm-4">
                                                     <h5 class="m-b-md">石油化工产值</h5>
                                                     <h4 class="text-navy update-s-v">
@@ -189,7 +182,7 @@
                                                     <img src="{{ asset('uploads/616/oil.png') }}" alt="航运物流增加值"
                                                          class="img-responsive img-thumbnail">
                                                 </div>
-                                                </a>
+
                                             </div>
                                         </div>
                                     </div>

@@ -22,8 +22,8 @@
                                                                                       aria-controls="industry"
                                                                                       role="tab"
                                                                                       data-toggle="tab">工业产值</a></li>
-                                            <li role="presentation"><a href="#profit" aria-controls="profit" role="tab"
-                                                                       data-toggle="tab">利税总额</a></li>
+                                            {{--<li role="presentation"><a href="#profit" aria-controls="profit" role="tab"--}}
+                                                                       {{--data-toggle="tab">利税总额</a></li>--}}
                                             <li role="presentation"><a href="#assets" aria-controls="assets" role="tab"
                                                                        data-toggle="tab">固定资产</a></li>
                                             <li role="presentation"><a href="#trade" aria-controls="trade" role="tab"
@@ -37,84 +37,9 @@
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <table class="table table-striped">
-                                                                        <thead style="display:block;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <th>#</th>
-                                                                            <th>功能区</th>
-                                                                            <th>累计</th>
-                                                                            <th>增长</th>
-                                                                        </tr>
-                                                                        </thead>
-                                                                        <tbody style="display:block; max-height:360px;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <td>3</td>
-                                                                            <td>海洋高新区</td>
-                                                                            <td>52277</td>
-                                                                            <td>11%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>4</td>
-                                                                            <td>中德生态园</td>
-                                                                            <td>131016</td>
-                                                                            <td>12.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>5</td>
-                                                                            <td>经济技术开发区</td>
-                                                                            <td>68284</td>
-                                                                            <td>5.2%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>6</td>
-                                                                            <td>董家口循环经济区</td>
-                                                                            <td>2041</td>
-                                                                            <td>63.93 %</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>7</td>
-                                                                            <td>国际旅游度假区</td>
-                                                                            <td>184112</td>
-                                                                            <td>-1.71%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>8</td>
-                                                                            <td>灵山湾影视文化产业区</td>
-                                                                            <td>12968</td>
-                                                                            <td>26.6%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>9</td>
-                                                                            <td>现代农业示范区</td>
-                                                                            <td>7877</td>
-                                                                            <td>20.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>10</td>
-                                                                            <td>古镇口创新示范区</td>
-                                                                            <td>131245</td>
-                                                                            <td>11.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>11</td>
-                                                                            <td>西海岸交通商务区</td>
-                                                                            <td>71245</td>
-                                                                            <td>20.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏马山旅游度假区</td>
-                                                                            <td>91245</td>
-                                                                            <td>17.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>13</td>
-                                                                            <td>轨道交通指挥部</td>
-                                                                            <td>231145</td>
-                                                                            <td>19.5%</td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
+                                                                    <div id="app-1">
+                                                                        <sy-table :stru="stru"></sy-table>
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
@@ -240,184 +165,34 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div role="tabpanel" class="tab-pane" id="profit">
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <div class="ibox float-e-margins">
-                                                            <div class="ibox-content">
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped">
-                                                                        <thead style="display:block;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <th>#</th>
-                                                                            <th>功能区</th>
-                                                                            <th>累计（万元）</th>
-                                                                            <th>增长</th>
-                                                                        </tr>
-                                                                        </thead>
-                                                                        <tbody style="display:block; max-height:360px;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <td>3</td>
-                                                                            <td>海洋高新区</td>
-                                                                            <td>52277</td>
-                                                                            <td>11%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>4</td>
-                                                                            <td>中德生态园</td>
-                                                                            <td>131016</td>
-                                                                            <td>12.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>5</td>
-                                                                            <td>经济技术开发区</td>
-                                                                            <td>68284</td>
-                                                                            <td>5.2%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>6</td>
-                                                                            <td>董家口循环经济区</td>
-                                                                            <td>2041</td>
-                                                                            <td>63.93 %</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>7</td>
-                                                                            <td>国际旅游度假区</td>
-                                                                            <td>184112</td>
-                                                                            <td>-1.71%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>8</td>
-                                                                            <td>灵山湾影视文化产业区</td>
-                                                                            <td>12968</td>
-                                                                            <td>26.6%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>9</td>
-                                                                            <td>现代农业示范区</td>
-                                                                            <td>7877</td>
-                                                                            <td>20.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>10</td>
-                                                                            <td>古镇口创新示范区</td>
-                                                                            <td>131245</td>
-                                                                            <td>11.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>11</td>
-                                                                            <td>西海岸交通商务区</td>
-                                                                            <td>71245</td>
-                                                                            <td>20.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏马山旅游度假区</td>
-                                                                            <td>91245</td>
-                                                                            <td>17.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>13</td>
-                                                                            <td>轨道交通指挥部</td>
-                                                                            <td>231145</td>
-                                                                            <td>19.5%</td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
+                                            {{--<div role="tabpanel" class="tab-pane" id="profit">--}}
+                                                {{--<div class="row">--}}
+                                                    {{--<div class="col-sm-4">--}}
+                                                        {{--<div class="ibox float-e-margins">--}}
+                                                            {{--<div class="ibox-content">--}}
+                                                                {{--<div class="table-responsive">--}}
+                                                                    {{--<div id="app-2">--}}
+                                                                        {{--<sy-table :stru="stru"></sy-table>--}}
+                                                                    {{--</div>--}}
+                                                                {{--</div>--}}
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-8">
-                                                        <div id="tax-charts" style="height:440px"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-sm-8">--}}
+                                                        {{--<div id="tax-charts" style="height:440px"></div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div role="tabpanel" class="tab-pane" id="assets">
                                                 <div class="row">
                                                     <div class="col-sm-4">
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <table class="table table-striped">
-                                                                        <thead style="display:block;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <th>#</th>
-                                                                            <th>功能区</th>
-                                                                            <th>累计（万元）</th>
-                                                                            <th>增长</th>
-                                                                        </tr>
-                                                                        </thead>
-                                                                        <tbody style="display:block; max-height:360px;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <td>3</td>
-                                                                            <td>海洋高新区</td>
-                                                                            <td>52277</td>
-                                                                            <td>11%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>4</td>
-                                                                            <td>中德生态园</td>
-                                                                            <td>131016</td>
-                                                                            <td>12.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>5</td>
-                                                                            <td>经济技术开发区</td>
-                                                                            <td>68284</td>
-                                                                            <td>5.2%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>6</td>
-                                                                            <td>董家口循环经济区</td>
-                                                                            <td>2041</td>
-                                                                            <td>63.93 %</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>7</td>
-                                                                            <td>国际旅游度假区</td>
-                                                                            <td>184112</td>
-                                                                            <td>-1.71%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>8</td>
-                                                                            <td>灵山湾影视文化产业区</td>
-                                                                            <td>12968</td>
-                                                                            <td>26.6%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>9</td>
-                                                                            <td>现代农业示范区</td>
-                                                                            <td>7877</td>
-                                                                            <td>20.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>10</td>
-                                                                            <td>古镇口创新示范区</td>
-                                                                            <td>131245</td>
-                                                                            <td>11.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>11</td>
-                                                                            <td>西海岸交通商务区</td>
-                                                                            <td>71245</td>
-                                                                            <td>20.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏马山旅游度假区</td>
-                                                                            <td>91245</td>
-                                                                            <td>17.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>13</td>
-                                                                            <td>轨道交通指挥部</td>
-                                                                            <td>231145</td>
-                                                                            <td>19.5%</td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
+                                                                    <div id="app-3">
+                                                                        <sy-table :stru="stru"></sy-table>
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
@@ -434,84 +209,9 @@
                                                         <div class="ibox float-e-margins">
                                                             <div class="ibox-content">
                                                                 <div class="table-responsive">
-                                                                    <table class="table table-striped">
-                                                                        <thead style="display:block;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <th>#</th>
-                                                                            <th>功能区</th>
-                                                                            <th>累计（万元）</th>
-                                                                            <th>增长</th>
-                                                                        </tr>
-                                                                        </thead>
-                                                                        <tbody style="display:block; max-height:360px;overflow-y: scroll;">
-                                                                        <tr>
-                                                                            <td>3</td>
-                                                                            <td>海洋高新区</td>
-                                                                            <td>52277</td>
-                                                                            <td>11%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>4</td>
-                                                                            <td>中德生态园</td>
-                                                                            <td>131016</td>
-                                                                            <td>12.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>5</td>
-                                                                            <td>经济技术开发区</td>
-                                                                            <td>68284</td>
-                                                                            <td>5.2%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>6</td>
-                                                                            <td>董家口循环经济区</td>
-                                                                            <td>2041</td>
-                                                                            <td>63.93 %</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>7</td>
-                                                                            <td>国际旅游度假区</td>
-                                                                            <td>184112</td>
-                                                                            <td>-1.71%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>8</td>
-                                                                            <td>灵山湾影视文化产业区</td>
-                                                                            <td>12968</td>
-                                                                            <td>26.6%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>9</td>
-                                                                            <td>现代农业示范区</td>
-                                                                            <td>7877</td>
-                                                                            <td>20.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>10</td>
-                                                                            <td>古镇口创新示范区</td>
-                                                                            <td>131245</td>
-                                                                            <td>11.5%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>11</td>
-                                                                            <td>西海岸交通商务区</td>
-                                                                            <td>71245</td>
-                                                                            <td>20.7%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>12</td>
-                                                                            <td>藏马山旅游度假区</td>
-                                                                            <td>91245</td>
-                                                                            <td>17.4%</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>13</td>
-                                                                            <td>轨道交通指挥部</td>
-                                                                            <td>231145</td>
-                                                                            <td>19.5%</td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
+                                                                    <div id="app-4">
+                                                                        <sy-table :stru="stru"></sy-table>
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
@@ -619,89 +319,89 @@
 {{--});--}}
 {{--});--}}
 {{--</script>--}}
-<script type="text/javascript">
-    $(function () {
-        // 基于准备好的dom，初始化echarts实例
-        var taxContainer = document.getElementById('tax-charts');
-        //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-        var resizeMainContainer = function () {
-            var _width = $('.col-sm-8').width();
-            var _height = $('.col-sm-8').height();
-            taxContainer.style.width = _width + 'px';
-            taxContainer.style.height = _height + 'px';
-        };
-        //设置div容器高宽
-        resizeMainContainer();
-        // 初始化图表
-        var taxChart = echarts.init(taxContainer);
-        // 指定图表的配置项和数据
-        var option = {
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b}: {c} ({d}%)"
-            },
-            title: {
-                text: '利税总额',
-                subtext: '分街镇主要经济指标',
-                x: 'center',
-                top: '10',
-            },
-            legend: {
-                orient: 'vertical',
-                x: 'left',
-                top: '10',
-                data: ['海洋高新区', '中德生态园', '经济技术开发区', '董家口循环经济区', '国际旅游度假区', '灵山湾影视文化产业区', '现代农业示范区', '古镇口创新示范区', '西海岸交通商务区', '藏马山旅游度假区', '轨道交通指挥部']
-            },
-            series: [
-                {
-                    name: '街镇',
-                    type: 'pie',
-                    radius: ['40%', '70%'],
-                    avoidLabelOverlap: false,
-                    label: {
-                        normal: {
-                            show: false,
-                            position: 'center'
-                        },
-                        emphasis: {
-                            show: true,
-                            textStyle: {
-                                fontSize: '30',
-                                fontWeight: 'bold'
-                            }
-                        }
-                    },
-                    labelLine: {
-                        normal: {
-                            show: false
-                        }
-                    },
-                    data: [
-                        {value: 11.9, name: '海洋高新区'},
-                        {value: 16.6, name: '中德生态园'},
-                        {value: 8.4, name: '经济技术开发区'},
-                        {value: 8.5, name: '董家口循环经济区'},
-                        {value: 11.9, name: '国际旅游度假区'},
-                        {value: 16.6, name: '灵山湾影视文化产业区'},
-                        {value: 8.4, name: '现代农业示范区'},
-                        {value: 8.5, name: '古镇口创新示范区'},
-                        {value: 8.7, name: '西海岸交通商务区'},
-                        {value: 8.4, name: '藏马山旅游度假区'},
-                        {value: 11.5, name: '轨道交通指挥部'}
-                    ]
-                }
-            ]
-        };
+{{--<script type="text/javascript">--}}
+    {{--$(function () {--}}
+        {{--// 基于准备好的dom，初始化echarts实例--}}
+        {{--var taxContainer = document.getElementById('tax-charts');--}}
+        {{--//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽--}}
+        {{--var resizeMainContainer = function () {--}}
+            {{--var _width = $('.col-sm-8').width();--}}
+            {{--var _height = $('.col-sm-8').height();--}}
+            {{--taxContainer.style.width = _width + 'px';--}}
+            {{--taxContainer.style.height = _height + 'px';--}}
+        {{--};--}}
+        {{--//设置div容器高宽--}}
+        {{--resizeMainContainer();--}}
+        {{--// 初始化图表--}}
+        {{--var taxChart = echarts.init(taxContainer);--}}
+        {{--// 指定图表的配置项和数据--}}
+        {{--var option = {--}}
+            {{--tooltip: {--}}
+                {{--trigger: 'item',--}}
+                {{--formatter: "{a} <br/>{b}: {c} ({d}%)"--}}
+            {{--},--}}
+            {{--title: {--}}
+                {{--text: '利税总额',--}}
+                {{--subtext: '分街镇主要经济指标',--}}
+                {{--x: 'center',--}}
+                {{--top: '10',--}}
+            {{--},--}}
+            {{--legend: {--}}
+                {{--orient: 'vertical',--}}
+                {{--x: 'left',--}}
+                {{--top: '10',--}}
+                {{--data: ['海洋高新区', '中德生态园', '经济技术开发区', '董家口循环经济区', '国际旅游度假区', '灵山湾影视文化产业区', '现代农业示范区', '古镇口创新示范区', '西海岸交通商务区', '藏马山旅游度假区', '轨道交通指挥部']--}}
+            {{--},--}}
+            {{--series: [--}}
+                {{--{--}}
+                    {{--name: '街镇',--}}
+                    {{--type: 'pie',--}}
+                    {{--radius: ['40%', '70%'],--}}
+                    {{--avoidLabelOverlap: false,--}}
+                    {{--label: {--}}
+                        {{--normal: {--}}
+                            {{--show: false,--}}
+                            {{--position: 'center'--}}
+                        {{--},--}}
+                        {{--emphasis: {--}}
+                            {{--show: true,--}}
+                            {{--textStyle: {--}}
+                                {{--fontSize: '30',--}}
+                                {{--fontWeight: 'bold'--}}
+                            {{--}--}}
+                        {{--}--}}
+                    {{--},--}}
+                    {{--labelLine: {--}}
+                        {{--normal: {--}}
+                            {{--show: false--}}
+                        {{--}--}}
+                    {{--},--}}
+                    {{--data: [--}}
+                        {{--{value: 11.9, name: '海洋高新区'},--}}
+                        {{--{value: 16.6, name: '中德生态园'},--}}
+                        {{--{value: 8.4, name: '经济技术开发区'},--}}
+                        {{--{value: 8.5, name: '董家口循环经济区'},--}}
+                        {{--{value: 11.9, name: '国际旅游度假区'},--}}
+                        {{--{value: 16.6, name: '灵山湾影视文化产业区'},--}}
+                        {{--{value: 8.4, name: '现代农业示范区'},--}}
+                        {{--{value: 8.5, name: '古镇口创新示范区'},--}}
+                        {{--{value: 8.7, name: '西海岸交通商务区'},--}}
+                        {{--{value: 8.4, name: '藏马山旅游度假区'},--}}
+                        {{--{value: 11.5, name: '轨道交通指挥部'}--}}
+                    {{--]--}}
+                {{--}--}}
+            {{--]--}}
+        {{--};--}}
 
-        // 使用刚指定的配置项和数据显示图表。
-        taxChart.setOption(option);
+        {{--// 使用刚指定的配置项和数据显示图表。--}}
+        {{--taxChart.setOption(option);--}}
 
-        window.onresize = function () {
-            resizeMainContainer();
-            taxChart.resize();
-        };
-    });
-</script>
+        {{--window.onresize = function () {--}}
+            {{--resizeMainContainer();--}}
+            {{--taxChart.resize();--}}
+        {{--};--}}
+    {{--});--}}
+{{--</script>--}}
 <script type="text/javascript">
     $(function () {
         // 基于准备好的dom，初始化echarts实例

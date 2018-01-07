@@ -38,94 +38,94 @@
 
                                                         <th>#</th>
                                                         <th>区市</th>
-                                                        <th>总量（计量单位：亿元）</th>
                                                         <th>增长</th>
+                                                        <th>总量（计量单位：亿元）</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody itemName="地区生产总值">
                                                     <tr>
                                                         <th>1</th>
                                                         <td>青岛市</td>
-                                                        <td>5075.1</td>
-                                                        <td>7.7%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>2</th>
                                                         <td>市南区</td>
-                                                        <td>490.1</td>
-                                                        <td>3.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>3</th>
                                                         <td>市北区</td>
-                                                        <td>388.6</td>
-                                                        <td>8.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>4</th>
                                                         <td>李沧区</td>
-                                                        <td>189.6</td>
-                                                        <td>8.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>5</th>
                                                         <td>崂山区</td>
-                                                        <td>293.3</td>
-                                                        <td>8.6%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>6</th>
                                                         <td>青岛西海岸新区</td>
-                                                        <td>1521.3</td>
-                                                        <td>12.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th></th>
                                                         <td>黄岛区</td>
-                                                        <td>1463.6</td>
-                                                        <td>11.9%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th></th>
                                                         <td>保税港区</td>
-                                                        <td>57.6</td>
-                                                        <td>16.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>7</th>
                                                         <td>城阳区</td>
-                                                        <td>517.9</td>
-                                                        <td>8.6%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>8</th>
                                                         <td>即墨市</td>
-                                                        <td>634.9</td>
-                                                        <td>7.9%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>9</th>
                                                         <td>胶州市</td>
-                                                        <td>568.9</td>
-                                                        <td>9.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>10</th>
                                                         <td>平度市</td>
-                                                        <td>448.7</td>
-                                                        <td>8.2%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>11</th>
                                                         <td>莱西市</td>
-                                                        <td>292.0</td>
-                                                        <td>7.1%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <th>12</th>
                                                         <td>红岛经济区</td>
-                                                        <td>41.7</td>
-                                                        <td>6.0%</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -152,7 +152,6 @@
 
                                                         <th>#</th>
                                                         <th>区市</th>
-                                                        <th></th>
                                                         <th>增加值</th>
                                                     </tr>
                                                     </thead>
@@ -161,85 +160,71 @@
                                                         <th>1</th>
                                                         <td>青岛市</td>
                                                         <td></td>
-                                                        <td>7.4%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>2</th>
                                                         <td>市南区</td>
                                                         <td></td>
-                                                        <td>10.8%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>3</th>
                                                         <td>市北区</td>
                                                         <td></td>
-                                                        <td>7%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>4</th>
                                                         <td>李沧区</td>
                                                         <td></td>
-                                                        <td>7.1%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>5</th>
                                                         <td>崂山区</td>
                                                         <td></td>
-                                                        <td>7.2%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>6</th>
                                                         <td>青岛西海岸新区</td>
                                                         <td></td>
-                                                        <td>12.1%</td>
                                                     </tr>
                                                     <tr>
                                                         <th></th>
                                                         <td>黄岛区</td>
                                                         <td></td>
-                                                        <td>11.9%</td>
                                                     </tr>
                                                     <tr>
                                                         <th></th>
                                                         <td>保税港区</td>
                                                         <td></td>
-                                                        <td>16.6%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>7</th>
                                                         <td>城阳区</td>
                                                         <td></td>
-                                                        <td>8.4%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>8</th>
                                                         <td>即墨市</td>
                                                         <td></td>
-                                                        <td>8.5%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>9</th>
                                                         <td>胶州市</td>
                                                         <td></td>
-                                                        <td>8.7%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>10</th>
                                                         <td>平度市</td>
                                                         <td></td>
-                                                        <td>8.4%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>11</th>
                                                         <td>莱西市</td>
                                                         <td></td>
-                                                        <td>6.5%</td>
                                                     </tr>
                                                     <tr>
                                                         <th>12</th>
                                                         <td>红岛经济区</td>
                                                         <td></td>
-                                                        <td>6.4%</td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -266,8 +251,8 @@
 
                                                         <th>#</th>
                                                         <th>区市</th>
-                                                        <th>累计（计量单位：万元）</th>
                                                         <th>增长</th>
+                                                        <th>累计（计量单位：万元）</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody itemName="固定资产投资">
@@ -380,8 +365,8 @@
 
                                                         <th>#</th>
                                                         <th>区市</th>
-                                                        <th>累计（计量单位：万元）</th>
                                                         <th>增长</th>
+                                                        <th>累计（计量单位：万元）</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody itemName="一般公共预算">
@@ -494,8 +479,8 @@
 
                                                         <th>#</th>
                                                         <th>区市</th>
-                                                        <th>累计（计量单位：万元）</th>
                                                         <th>增长</th>
+                                                        <th>累计（计量单位：万元）</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody itemName="社会消费品">
@@ -608,8 +593,8 @@
 
                                                         <th>#</th>
                                                         <th>区市</th>
-                                                        <th>累计（计量单位：万元）</th>
                                                         <th>增长</th>
+                                                        <th>累计（计量单位：万元）</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody itemName="对外贸易">

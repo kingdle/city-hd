@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>指标运行趋势</h5>
+                        <h5>指标运行趋势（固定资产投资总额）</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -22,10 +22,9 @@
         </div>
     </div>
 </div>
-<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
+
 <script type="text/javascript">
     $(function() {
-
         storeB = new SyStore({
             autoLoad: true,
             datasetId: 9,
@@ -54,40 +53,13 @@
                     axis: axisArr,
 
                 });
-                console.log(axisArr)
-
-                var kk = chartKit.genSeriesData({
-                    series: [{
-                        //        name: "资产投资",
-                        type: "item",
-                        extField: store.findMetaByItemName({
-                            type: 'item',
-                            name: '工业'
-                        }).extField
-                    }, {
-                        //        name: 2,
-                        type: 'frame',
-                        extField: store.findMetaByItemName({
-                            type: 'frame',
-                            name: '增长率'
-                        }).extField
-                    }, {
-                        //        name: "资产投资",
-                        type: "area",
-                        extField: store.findMetaByItemName({
-                            type: 'area',
-                            name: '黄岛'
-                        }).extField
-                    }]
-                });
-                console.log(kk)
                 app3 = new Vue({
                     el: '#app-2',
                     data: {
                         seen: true,
                         date: date,
-                        item: '工业',
-                        frame: '增长率'
+                        item: '固定资产投资总额',
+                        frame: '进度'
                     },
                     methods: {
                         syClick: function() {
@@ -394,12 +366,10 @@
                         }
                     },
                     updated: function() {
-                        console.log('updated')
                         this.initChart();
 
                     },
                     mounted: function() {
-                        console.log('updated')
                         this.initChart();
 
                     }
@@ -409,4 +379,4 @@
 
     });
 </script>
-@include('admin::charts.area-development.AreaJs')
+@include('admin::charts.area-development.TownJs')

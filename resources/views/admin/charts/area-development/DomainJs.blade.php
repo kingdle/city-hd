@@ -1,8 +1,8 @@
 <script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
 <script src="{{ admin_asset ("/js/vuetable1.js") }}"></script>
 <script>
-    function initTimelineAssets(showData) {
-        var dom = document.getElementById("HeaderDatelineAssets");
+    function initTimelineDomain(showData) {
+        var dom = document.getElementById("HeaderDateline");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
             myChart.dispose();
@@ -45,38 +45,27 @@
         myChart.setOption(option);
     }
 </script>
-<script>
-    $(function () {
-        storeA = new SyStore({
-            autoLoad: true,
-            datasetId: 14,
-            success: function (store) {
-                topChart(store);
-                benchmarkChart(store);
-                structureChart(store);
-            }
-        });
-    })
-</script>
+
 <script>
     $(function () {
         struA = {};
         struB = {};
         struC = {};
+        struD = {};
         storeA = new SyStore({
             autoLoad: true,
             datasetId: 8,
             success: function (store) {
-                initTimelineAssets(function (index) {
+                initTimelineDomain(function (index) {
                     var nowDate = dateArr[index.currentIndex];
-                    struB.reportMetas = [{
+                    struA.reportMetas = [{
                         "type": "time_year",
                         "extField": nowDate.getFullYear()
                     }, {
                         "type": "time_month",
                         "extField": nowDate.getMonth() + 1
                     }];
-                    struA.reportMetas = [{
+                    struB.reportMetas = [{
                         "type": "time_year",
                         "extField": nowDate.getFullYear()
                     }, {
@@ -90,7 +79,13 @@
                         "type": "time_month",
                         "extField": nowDate.getMonth() + 1
                     }];
-
+                    struD.reportMetas = [{
+                        "type": "time_year",
+                        "extField": nowDate.getFullYear()
+                    }, {
+                        "type": "time_month",
+                        "extField": nowDate.getMonth() + 1
+                    }];
                 });
                 var _store = store;
                 $.ajax({
@@ -99,7 +94,7 @@
                     async: true,
                     data: {
                         tmpType: 'tmp',
-                        tmpId: 21 //表格结构id
+                        tmpId: 22 //表格结构id
                     },
                     success: function (stru) {
                         struA = stru;
@@ -119,65 +114,16 @@
                             },
                             store: _store,
                             mounted: function () {
-                                console.log(store)
                             }
-
                         });
-
-                        console.log(aa)
-
-
                     }
                 });
             }
         });
-        storeB = new SyStore({
-            autoLoad: true,
-            datasetId: 15,
-            success: function(store) {
-                var _store = store;
-                $.ajax({
-                    type: "get",
-                    url: SyStore.gPath + "/report/getAnReportByTmpId", //获取表格结构api
-                    async: true,
-                    data: {
-                        tmpType: 'tmp',
-                        tmpId: 24 //表格结构id
-                    },
-                    success: function (stru) {
-                        struB = stru;
-                        //输入初始日期
-                        struB.reportMetas = [{
-                            "type": "time_year",
-                            "extField": nowDate.getFullYear()
-                        }, {
-                            "type": "time_month",
-                            "extField": nowDate.getMonth() + 1
-                        }];
-                        //创建表格
-                        var aa = new Vue({
-                            el: '#app-2',
-                            data: {
-                                stru: struB //表格结构
-                            },
-                            store: _store,
-                            mounted: function () {
-                                console.log(store)
-                            }
-
-                        });
-
-                        console.log(aa)
-
-
-                    }
-                });
-            }});
-
         storeC = new SyStore({
             autoLoad: true,
-            datasetId: 9,
-            success: function(store) {
+            datasetId: 8,
+            success: function (store) {
                 var _store = store;
                 $.ajax({
                     type: "get",
@@ -185,12 +131,12 @@
                     async: true,
                     data: {
                         tmpType: 'tmp',
-                        tmpId: 26 //表格结构id
+                        tmpId: 21 //表格结构id
                     },
                     success: function (stru) {
                         struC = stru;
                         //输入初始日期
-                        struC..reportMetas = [{
+                        struC.reportMetas = [{
                             "type": "time_year",
                             "extField": nowDate.getFullYear()
                         }, {
@@ -198,23 +144,56 @@
                             "extField": nowDate.getMonth() + 1
                         }];
                         //创建表格
-                        var aa = new Vue({
+                        var cc = new Vue({
                             el: '#app-3',
                             data: {
                                 stru: struC //表格结构
                             },
                             store: _store,
                             mounted: function () {
-                                console.log(store)
                             }
 
                         });
-
-                        console.log(aa)
-
-
                     }
                 });
-            }});
+            }
+        });
+        storeD = new SyStore({
+            autoLoad: true,
+            datasetId: 8,
+            success: function (store) {
+                var _store = store;
+                $.ajax({
+                    type: "get",
+                    url: SyStore.gPath + "/report/getAnReportByTmpId", //获取表格结构api
+                    async: true,
+                    data: {
+                        tmpType: 'tmp',
+                        tmpId: 23 //表格结构id
+                    },
+                    success: function (stru) {
+                        struD = stru;
+                        //输入初始日期
+                        struD.reportMetas = [{
+                            "type": "time_year",
+                            "extField": nowDate.getFullYear()
+                        }, {
+                            "type": "time_month",
+                            "extField": nowDate.getMonth() + 1
+                        }];
+                        //创建表格
+                        var dd = new Vue({
+                            el: '#app-4',
+                            data: {
+                                stru: struD //表格结构
+                            },
+                            store: _store,
+                            mounted: function () {
+                            }
+                        });
+                    }
+                });
+            }
+        });
     })
 </script>

@@ -84,7 +84,12 @@ Vue.component('sy-tr', {
 });
 Vue.component('sy-table', {
 	props: ['stru'],
-	template: '<table><sy-tr v-if="row!=stru.reportCellDatas.length-1" v-for="(tr,row) in stru.reportCellDatas"  :spans="spans" :row="row" :tds="tr" :reportMetas="stru.reportMetas?stru.reportMetas:[]"></sy-tr></table>',
+	template: '<table class="table table-finance table-hover scrolltable">' +
+		'<tbody style="display:block; max-height:402px;overflow-y: scroll;">'+
+	'<sy-tr v-if="row!=stru.reportCellDatas.length-1" v-for="(tr,row) in stru.reportCellDatas"  :spans="spans" :row="row" :tds="tr" :reportMetas="stru.reportMetas?stru.reportMetas:[]">' +
+	'</sy-tr>' +
+	'</tbody>' +
+    '</table>',
 	computed: {
 		spans: function() {
 			var spans = this.getSpans();
