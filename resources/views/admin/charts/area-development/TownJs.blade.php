@@ -238,6 +238,7 @@
                 });
             }
         });
+
     })
 </script>
 <script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
