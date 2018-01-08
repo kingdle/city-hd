@@ -151,12 +151,12 @@
                             },
                             store: _store,
                             mounted: function () {
-                                console.log(store)
+//                                console.log(store)
                             }
 
                         });
 
-                        console.log(aa)
+//                        console.log(aa)
 
 
                     }

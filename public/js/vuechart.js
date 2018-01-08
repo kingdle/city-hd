@@ -21,7 +21,7 @@ Vue.component('sy-chart', {
 			}
 
 			option = this.genOption(option);
-			console.log(option);
+			// console.log(option);
 			return option;
 		},
 
@@ -34,12 +34,12 @@ Vue.component('sy-chart', {
 	},
 	methods: {
 		initStore: function(fnt) {
-			console.log('initStore')
+			// console.log('initStore')
 			var _fnt = fnt;
 			if(this.$parent.$options.store) {
 				this.store = this.$parent.$options.store;
 			}
-			console.log(this)
+			// console.log(this)
 			if(this.mystoreid && this.mystoreid != this.systoreid && !this.store) {
 
 				_this.store = new SyStore({
@@ -75,7 +75,7 @@ Vue.component('sy-chart', {
 						tmpSeriesfilter = [];
 						if(series.syfilter) {
 							for(var filter in series.syfilter) {
-								console.log(filter)
+								// console.log(filter)
 								filter = series.syfilter[filter];
 								if(!filter.extField) {
 									tmpSeriesfilter.push({
@@ -136,7 +136,7 @@ Vue.component('sy-chart', {
 		}
 	},
 	updated: function() {
-		console.log('updated')
+		// console.log('updated')
 		var _this = this;
 		this.initStore(function() {
 
@@ -145,7 +145,7 @@ Vue.component('sy-chart', {
 
 	},
 	mounted: function() {
-		console.log('mounted')
+		// console.log('mounted')
 
 		this.fresh++;
 

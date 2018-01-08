@@ -46,8 +46,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-8">
-                                                        <div id="industry-charts" style="height:420px;min-height: 420px">
-                                                            <sy-chart chartid="testChart" :syoption="syoption" :styleobj="styleobj"></sy-chart>
+                                                        <div id="industry-charts"
+                                                             style="height:420px;min-height: 420px">
+                                                            <sy-chart chartid="testChart" :syoption="syoption"
+                                                                      :styleobj="styleobj"></sy-chart>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -67,7 +69,8 @@
                                                     </div>
                                                     <div class="col-sm-8">
                                                         <div id="tax-charts" style="height:420px">
-                                                            <sy-chart chartid="testChart" :syoption="syoption" :styleobj="styleobj"></sy-chart>
+                                                            <sy-chart chartid="testChart" :syoption="syoption"
+                                                                      :styleobj="styleobj"></sy-chart>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -124,33 +127,15 @@
 </div>
 <script type="text/javascript">
     var a = 1;
-    var csData = null;
-    var seriesFilters = null;
-    $(function() {
-
-        storeB = new SyStore({
+    var seriesFiltersA = null;
+    $(function () {
+        storeA = new SyStore({
             autoLoad: true,
             datasetId: 9,
-            success: function(store) {
-                initTimelineTown(function (index) {
-                    var nowDate = dateArr[index.currentIndex];
-                    seriesFilters.reportMetas = [{ //序列过滤条件
-                        type: 'item', //元数据类型
-                        name: "工业增加值" //元数据名称
-                    }, {
-                        type: 'frame',
-                        extField: "200000014" //也可直接传入元数据id，如传入id则不按名称查找
-                    },{
-                        "type": "time_year",
-                        "extField": nowDate.getFullYear()
-                    }, {
-                        "type": "time_month",
-                        "extField": nowDate.getMonth() + 1
-                    }];
-                });
+            success: function (store) {
                 var axisArr = []; //横轴过滤结构
                 var axisItem = null; //横轴项
-                for(var item in store.meta.area) {
+                for (var item in store.meta.area) {
                     axisItem = {
                         "name": store.meta.area[item].name,
                         "arr": [{ //横轴过滤条件
@@ -161,20 +146,20 @@
                     };
                     axisArr.push(axisItem);
                 }
-                seriesFilters = [{ //序列过滤条件
+                seriesFiltersA = [{ //序列过滤条件
                     type: 'item', //元数据类型
                     name: "工业增加值" //元数据名称
                 }, {
                     type: 'frame',
                     extField: "200000014" //也可直接传入元数据id，如传入id则不按名称查找
                 }, {
-                    type: 'time_year',
-                    extField: "2017" //也可直接传入元数据id，如传入id则不按名称查找
+                    "type": "time_year",
+                    "extField": "2017"
                 }, {
-                    type: 'time_month',
-                    extField: "9" //也可直接传入元数据id，如传入id则不按名称查找
+                    "type": "time_month",
+                    "extField": "9"
                 }];
-                var sychartOption = {
+                var sychartOptionA = {
                     title: {
                         text: '工业增加值',
                         x: 'center'
@@ -186,61 +171,45 @@
                     legend: {
                         orient: 'vertical',
                         left: 'left',
-                        //										data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+                        data: ['黄岛', '辛  安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']
                     },
                     syaxisfilter: axisArr, //传入横轴过滤条件
                     series: [{
                         name: '工业增加值',
                         type: 'pie',
-                        radius: '45%',
-                        center: ['50%', '60%'],
-                        syfilter: seriesFilters,
+                        radius: ['40%', '70%'],
+                        center: ['60%', '55%'],
+                        syfilter: seriesFiltersA,
+
                     }]
                 };
-                app3 = new Vue({
+                app1 = new Vue({
                     el: '#industry-charts',
                     store: store, //传入数据集
                     data: {
                         styleobj: {
-                            height: '500px'
+                            height: '420px'
                         },
-                        syoption: sychartOption
+                        syoption: sychartOptionA
                     }
                 });
-
                 $.ajax({
                     type: "get",
-                    url: "http://hd.maxdata.cc:8185/sy-hd/report/getAnReportByTmpId", //获取表格结构api
+                    url: SyStore.gPath + "/report/getAnReportByTmpId",
                     async: true,
                     data: {
-                        //								tmpType: 'tmp',
                         tmpId: 42 //表格结构id
                     },
-                    success: function(data) {
-                        csData = data;
+                    success: function (data) {
+                        seriesFiltersA = data;
                         //输入初始日期
-                        data.reportMetas = [{
+                        seriesFiltersA.reportMetas = [{
                             "type": "time_year",
-                            "extField": "2017"
+                            "extField": nowDate.getFullYear()
                         }, {
                             "type": "time_month",
-                            "extField": "9"
+                            "extField": nowDate.getMonth() + 1
                         }];
-                        //创建表格
-                        var aa = new Vue({
-                            el: '#app-1',
-                            data: {
-                                stru: data //表格结构
-                            },
-                            store: store,
-                            mounted: function() {
-                                console.log(store)
-                            }
-
-                        });
-                        console.log(aa)
-
-                        //更新日期
                         var bb = new Vue({
                             el: '#app-2',
                             data: {
@@ -263,17 +232,10 @@
                                 }
                             }
                         });
-                        console.log(data)
                     }
                 });
 
             }
         });
-
     });
-
-
 </script>
-
-
-
