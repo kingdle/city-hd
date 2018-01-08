@@ -191,7 +191,7 @@
                     success: function (stru) {
                         struC = stru;
                         //输入初始日期
-                        struC..reportMetas = [{
+                        struC.reportMetas = [{
                             "type": "time_year",
                             "extField": nowDate.getFullYear()
                         }, {
