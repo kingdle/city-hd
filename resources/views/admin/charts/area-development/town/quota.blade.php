@@ -6,9 +6,11 @@
                     <div class="ibox-title">
                         <h5>指标列表及报表</h5>
                         <div class="ibox-tools">
-                            <a class="close-link-pillar">
-                                <i class="fa fa-chevron-down"></i>
-                            </a>
+                            <div id="app-time">
+                                <input v-on:keyup.13="changeDate" v-model="year" placeholder="year">
+                                <input v-on:keyup.13="changeDate" v-model="month" placeholder="month">
+                                <button @click="changeDate">更新日期</button>
+                            </div>
                         </div>
                     </div>
                     <div class="warpper-content-pillar">
@@ -29,6 +31,7 @@
                                             <li role="presentation"><a href="#trade" aria-controls="trade" role="tab"
                                                                        data-toggle="tab">限上贸易</a></li>
                                         </ul>
+
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane active" id="industry">
@@ -114,7 +117,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -125,17 +127,19 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
+<script>
     var a = 1;
-    var seriesFiltersA = null;
-    $(function () {
-        storeA = new SyStore({
+    $(function() {
+        var csData = null;
+        var seriesFilters = null;
+        storeB = new SyStore({
             autoLoad: true,
             datasetId: 9,
-            success: function (store) {
+            success: function(store) {
+
                 var axisArr = []; //横轴过滤结构
                 var axisItem = null; //横轴项
-                for (var item in store.meta.area) {
+                for(var item in store.meta.area) {
                     axisItem = {
                         "name": store.meta.area[item].name,
                         "arr": [{ //横轴过滤条件
@@ -146,22 +150,22 @@
                     };
                     axisArr.push(axisItem);
                 }
-                seriesFiltersA = [{ //序列过滤条件
+                seriesFilters = [{ //序列过滤条件
                     type: 'item', //元数据类型
                     name: "工业增加值" //元数据名称
                 }, {
                     type: 'frame',
                     extField: "200000014" //也可直接传入元数据id，如传入id则不按名称查找
                 }, {
-                    "type": "time_year",
-                    "extField": "2017"
+                    type: 'time_year',
+                    extField:"2017"//也可直接传入元数据id，如传入id则不按名称查找
                 }, {
-                    "type": "time_month",
-                    "extField": "9"
+                    type: 'time_month',
+                    extField:"11" //也可直接传入元数据id，如传入id则不按名称查找
                 }];
-                var sychartOptionA = {
+                var sychartOption = {
                     title: {
-                        text: '工业增加值',
+                        text: '',
                         x: 'center'
                     },
                     tooltip: {
@@ -171,7 +175,8 @@
                     legend: {
                         orient: 'vertical',
                         left: 'left',
-                        data: ['黄岛', '辛  安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']
+                        data: ['镇街','黄岛', '辛  安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']
+                //										data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
                     },
                     syaxisfilter: axisArr, //传入横轴过滤条件
                     series: [{
@@ -179,7 +184,7 @@
                         type: 'pie',
                         radius: ['40%', '70%'],
                         center: ['60%', '55%'],
-                        syfilter: seriesFiltersA,
+                        syfilter: seriesFilters,
 
                     }]
                 };
@@ -190,31 +195,33 @@
                         styleobj: {
                             height: '420px'
                         },
-                        syoption: sychartOptionA
+                        syoption: sychartOption
                     }
                 });
                 $.ajax({
                     type: "get",
-                    url: SyStore.gPath + "/report/getAnReportByTmpId",
+                    url: SyStore.gPath + "/report/getAnReportByTmpId",  //获取表格结构api
                     async: true,
                     data: {
+                        //								tmpType: 'tmp',
                         tmpId: 42 //表格结构id
                     },
-                    success: function (data) {
-                        seriesFiltersA = data;
+                    success: function(data) {
+                        csData = data;
                         //输入初始日期
-                        seriesFiltersA.reportMetas = [{
+                        data.reportMetas = [{
                             "type": "time_year",
-                            "extField": nowDate.getFullYear()
+                            "extField":"2017"
                         }, {
                             "type": "time_month",
-                            "extField": nowDate.getMonth() + 1
+                            "extField":"11"
                         }];
+                        //更新日期
                         var bb = new Vue({
-                            el: '#app-2',
+                            el: '#app-time',
                             data: {
                                 year: '2017',
-                                month: '9'
+                                month: '11'
                             },
                             methods: {
                                 changeDate: function() {

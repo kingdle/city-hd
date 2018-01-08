@@ -49,7 +49,6 @@
 <script>
     $(function () {
         struA = {};
-        struB = {};
         struC = {};
         struD = {};
         storeA = new SyStore({
@@ -59,13 +58,6 @@
                 initTimelineDomain(function (index) {
                     var nowDate = dateArr[index.currentIndex];
                     struA.reportMetas = [{
-                        "type": "time_year",
-                        "extField": nowDate.getFullYear()
-                    }, {
-                        "type": "time_month",
-                        "extField": nowDate.getMonth() + 1
-                    }];
-                    struB.reportMetas = [{
                         "type": "time_year",
                         "extField": nowDate.getFullYear()
                     }, {
@@ -108,7 +100,7 @@
                         }];
                         //创建表格
                         var aa = new Vue({
-                            el: '#vuetable-1',
+                            el: '#vuetable-3',
                             data: {
                                 stru: struA //表格结构
                             },
@@ -145,7 +137,7 @@
                         }];
                         //创建表格
                         var cc = new Vue({
-                            el: '#vuetable-3',
+                            el: '#vuetable-1',
                             data: {
                                 stru: struC //表格结构
                             },
@@ -197,3 +189,6 @@
         });
     })
 </script>
+<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
+<script src="{{ admin_asset ("/js/vuetable1.js") }}"></script>
+<script src="{{ admin_asset ("/js/vuechart.js") }}"></script>
