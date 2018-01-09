@@ -35,7 +35,6 @@ class PostController extends Controller
             $content->body($this->grid());
         });
     }
-
     /**
      * Edit interface.
      *
@@ -111,9 +110,9 @@ class PostController extends Controller
 
             $grid->filter(function (Grid\Filter $filter) {
 
-                $filter->equal('title','标题');
+                $filter->like('title','标题');
 
-                $filter->equal('created_at','创建时间')->datetime();
+                $filter->like('created_at','创建时间')->datetime();
 
                 $filter->between('updated_at','更新时间')->datetime();
 

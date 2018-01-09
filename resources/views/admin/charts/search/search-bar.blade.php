@@ -20,11 +20,11 @@
         <div class="text-center">
             <div class="col-md-12">
                 <div class="ibox float-e-margins">
-                    <form method="get" action="" class="content-search">
+                    <form method="get" action="{{ route('posts.index') }}" class="content-search" pjax-container>
                         <div class="input-group">
-                            <input type="text" class="form-control input-sm" name="search" placeholder="全库搜索">
+                            <input type="text" class="form-control input-sm" name="title" placeholder="头条搜索">
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-sm btn-primary">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-sm btn-primary">
                                     查询
                                 </button>
                             </div>
