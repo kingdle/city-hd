@@ -142,7 +142,8 @@ class PostController extends Controller
                 });
 
             });
-
+            $grid->model()->orderBy('updated_at', 'desc');
+            $grid->paginate(15);
             $grid->exporter(new ExcelExporter());
         });
     }
