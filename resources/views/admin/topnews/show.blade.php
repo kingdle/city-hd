@@ -92,11 +92,25 @@
         .tag li i{
             color: #039c9e;
         }
+        .return {
+            top: 40px;
+        }
     </style>
     <div class="box">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox">
+                    <div class="col-md-11 hidden-xs">
+                        <div id=""></div>
+                    </div>
+                    <div class="return col-md-1 hidden-xs">
+                        <button class="button button-box"><i class="fa fa-reply"></i></button>
+                    </div>
+                    <script>
+                        $(".col-md-1 button").click(function () {
+                            history.go(-1)
+                        })
+                    </script>
                     <div class="ibox-content">
                         <div class="text-center article-title">
                             <h1>

@@ -142,6 +142,10 @@ class PostController extends Controller
                 });
 
             });
+            $grid->actions(function ($actions) {
+                // append一个操作
+                $actions->append("<a href='/admin/auth/top-news/{$actions->getKey()}'><i class='fa fa-eye'></i></a>");
+            });
             $grid->model()->orderBy('updated_at', 'desc');
             $grid->paginate(15);
             $grid->exporter(new ExcelExporter());
