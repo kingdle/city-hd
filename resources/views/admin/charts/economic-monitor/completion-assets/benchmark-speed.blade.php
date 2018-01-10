@@ -78,7 +78,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['全国', '山东省', '浦东新区', '西海岸新区']
+                data: ['全国', '山东省', '青岛市', '西海岸新区']
             },
             grid: {
                 left: '3%',
@@ -105,14 +105,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -133,14 +133,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -153,7 +153,7 @@
                     }),
                 },
                 {
-                    name: '浦东新区',
+                    name: '青岛市',
                     type: 'line',
                     // stack: '总量',
                     data: chartKit.genSeriesData({
@@ -161,21 +161,21 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '浦东'
+                                name: '青岛市'
                             }).extField
                         }]
                     }),
@@ -189,21 +189,21 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '黄岛'
+                                name: '黄岛区'
                             }).extField
                         }]
                     }),
@@ -245,14 +245,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -273,14 +273,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -301,14 +301,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -329,14 +329,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -357,14 +357,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,
@@ -385,14 +385,14 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
                             }).extField
                         }, {
                             //        name: 2,

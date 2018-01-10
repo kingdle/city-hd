@@ -78,7 +78,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['全国', '山东省', '浦东新区', '西海岸新区']
+                data: ['全国', '山东省', '青岛市', '西海岸新区']
             },
             grid: {
                 left: '3%',
@@ -153,7 +153,7 @@
                     }),
                 },
                 {
-                    name: '浦东新区',
+                    name: '青岛市',
                     type: 'line',
                     // stack: '总量',
                     data: chartKit.genSeriesData({
@@ -175,7 +175,7 @@
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '浦东'
+                                name: '青岛市'
                             }).extField
                         }]
                     }),

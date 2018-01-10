@@ -241,6 +241,3 @@
 
     })
 </script>
-<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
-<script src="{{ admin_asset ("/js/vuetable1.js") }}"></script>
-<script src="{{ admin_asset ("/js/vuechart.js") }}"></script>

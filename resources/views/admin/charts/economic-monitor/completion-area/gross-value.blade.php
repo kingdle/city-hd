@@ -56,7 +56,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>农林牧渔业</td>
+                                    <td>农林牧渔业 （总量）</td>
                                     <td>34.8</td>
                                     <td>3.5</td>
                                 </tr>
@@ -68,7 +68,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>工业</td>
+                                    <td>工业增加值</td>
                                     <td>653.3</td>
                                     <td>66.1</td>
                                 </tr>

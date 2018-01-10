@@ -185,6 +185,7 @@
                     name: '地区生产总值增速',
                     type: 'line',
                     yAxisIndex: 1,
+                    connectNulls:true,
                     data: chartKit.genSeriesData({
                         series: [{
                             //        name: "资产投资",
@@ -274,6 +275,7 @@
                     name: '社会消费品零售额增速',
                     type: 'line',
                     yAxisIndex: 1,
+                    connectNulls:true,
                     data: chartKit.genSeriesData({
                         series: [{
                             //        name: "资产投资",

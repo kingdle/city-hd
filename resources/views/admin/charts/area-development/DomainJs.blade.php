@@ -1,5 +1,4 @@
-<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
-<script src="{{ admin_asset ("/js/vuetable1.js") }}"></script>
+
 <script>
     function initTimelineDomain(showData) {
         var dom = document.getElementById("HeaderDateline");

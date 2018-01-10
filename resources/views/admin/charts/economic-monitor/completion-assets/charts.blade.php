@@ -39,19 +39,6 @@
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
-            series: [{
-                type: "item",
-                extField: store.findMetaByItemName({
-                    type: 'item',
-                    name: '固定'
-                }).extField
-            }, {
-                type: 'frame',
-                extField: store.findMetaByItemName({
-                    type: 'frame',
-                    name: '累计'
-                }).extField
-            }],
             axis: axisArr,
         });
 //                var dd = chartKit.genSeriesData();
@@ -72,8 +59,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['累计', '增长'],
-                left:'10',
+                data: ['累计', '累计同比增长率'],
             },
             toolbox: {},
             calculable: true,
@@ -111,7 +97,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -119,6 +105,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     }),
@@ -132,7 +125,7 @@
                     color: ['#409ea8']
                 },
                 {
-                    name: '增长',
+                    name: '累计同比增长率',
                     type: 'line',
                     yAxisIndex: 1,
                     data: chartKit.genSeriesData({
@@ -140,14 +133,21 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '固定资产'
+                                name: '固定资产投资总额'
                             }).extField
                         }, {
                             //        name: 2,
                             type: 'frame',
                             extField: store.findMetaByItemName({
                                 type: 'frame',
-                                name: '增长'
+                                name: '同比增长率'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     }),

@@ -103,17 +103,18 @@
                 var $title = $($card.find('.title p')[0]);
                 var $valV = $($card.find('.numbers>p>span')[0]);
                 var $valS = $($card.find('.sta>p>span')[0]);
+                var sVal=kitS.findValueByItemName($title.html(), true);
                 var slVal = kitSL.findValueByItemName($title.html(), true);
                 var CResult = null;
                 try {
-                    CResult = slVal - kitS.findValueByItemName($title.html(), true);
-                    if (CResult == 0) {
+                    CResult = slVal - sVal;
+                    if (sVal == 0) {
                         $card.find('.sta').removeClass('stats-gray stats-up stats-down');
                         $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
                         $card.find('.sta').addClass('sta stats-gray');
                         $card.find('.sta i').addClass('fa');
                     } else {
-                        if (CResult > 0) {
+                        if (sVal < 0) {
                             $card.find('.sta').removeClass('stats-gray stats-up stats-down');
                             $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
                             $card.find('.sta').addClass('sta stats-down');
@@ -125,7 +126,7 @@
                             $card.find('.sta i').addClass('fa fa-arrow-up');
                         }
                     }
-                    if (CResult = isNaN(CResult)) {
+                    if (sVal = isNaN(sVal)) {
                         $card.find('.sta').removeClass('stats-gray stats-up stats-down');
                         $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
                     }
@@ -159,18 +160,19 @@
                     var $valV = $($card.find('.numbers>p>span')[0]);
                     var $valS = $($card.find('.sta>p>span')[0]);
                     var $quotadate = $(".quotadate");
+                    var sVal=kitS.findValueByItemName($title.html(), true);
                     var slVal = kitSL.findValueByItemName($title.html(), true);
                     var CResult = null;
                     try {
-                        CResult = slVal - kitS.findValueByItemName($title.html(), true);
-
-                        if (CResult == 0) {
+                        CResult = slVal - sVal;
+                        //修改为只要增速不小于零就显示红色向上箭头，把条件变量由CResult替换为sVal了
+                        if (sVal == 0) {
                             $card.find('.sta').removeClass('stats-gray stats-up stats-down');
                             $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
                             $card.find('.sta').addClass('sta stats-gray');
                             $card.find('.sta i').addClass('fa');
                         } else {
-                            if (CResult > 0) {
+                            if (sVal < 0) {
                                 $card.find('.sta').removeClass('stats-gray stats-up stats-down');
                                 $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
                                 $card.find('.sta').addClass('sta stats-down');
@@ -182,7 +184,7 @@
                                 $card.find('.sta i').addClass('fa fa-arrow-up');
                             }
                         }
-                        if (CResult = isNaN(CResult)) {
+                        if (sVal = isNaN(sVal)) {
                             $card.find('.sta').removeClass('stats-gray stats-up stats-down');
                             $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
                         }

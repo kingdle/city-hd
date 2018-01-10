@@ -55,34 +55,34 @@
                     var $valS = $($card.find('.progress span')[0]);
                     var slVal = kitSL.findValueByItemName($title.html(), true);
                     var CResult = null;
-                    try {
-                        CResult = slVal - kitS.findValueByItemName($title.html(), true);
-                        if (CResult == 0) {
-                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                            $card.find('.sta').addClass('sta stats-gray');
-                            $card.find('.sta i').addClass('fa');
-                        } else {
-                            if (CResult > 0) {
-                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                                $card.find('.sta').addClass('sta stats-down');
-                                $card.find('.sta i').addClass('fa fa-arrow-down');
-                            } else {
-                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                                $card.find('.sta').addClass('sta stats-up');
-                                $card.find('.sta i').addClass('fa fa-arrow-up');
-                            }
-                        }
-                        if (CResult = isNaN(CResult)) {
-                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                        }
-                    }
-                    catch (e) {
-
-                    }
+//                    try {
+//                        CResult = slVal - kitS.findValueByItemName($title.html(), true);
+//                        if (CResult == 0) {
+//                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                            $card.find('.sta').addClass('sta stats-gray');
+//                            $card.find('.sta i').addClass('fa');
+//                        } else {
+//                            if (CResult > 0) {
+//                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                                $card.find('.sta').addClass('sta stats-down');
+//                                $card.find('.sta i').addClass('fa fa-arrow-down');
+//                            } else {
+//                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                                $card.find('.sta').addClass('sta stats-up');
+//                                $card.find('.sta i').addClass('fa fa-arrow-up');
+//                            }
+//                        }
+//                        if (CResult = isNaN(CResult)) {
+//                            $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                            $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                        }
+//                    }
+//                    catch (e) {
+//
+//                    }
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
@@ -137,33 +137,33 @@
                         var speedUp = kitS.findValueByItemName($title.html(), true);
                         var slVal = kitSL.findValueByItemName($title.html(), true);
                         var CResult = null;
-                        try {
-                            CResult = slVal - kitS.findValueByItemName($title.html(), true);
-                            if (CResult == 0) {
-                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                                $card.find('.sta').addClass('sta stats-gray');
-                                $card.find('.sta i').addClass('fa');
-                            } else {
-                                if (CResult > 0) {
-                                    $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                                    $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                                    $card.find('.sta').addClass('sta stats-down');
-                                    $card.find('.sta i').addClass('fa fa-arrow-down');
-                                } else {
-                                    $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                                    $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                                    $card.find('.sta').addClass('sta stats-up');
-                                    $card.find('.sta i').addClass('fa fa-arrow-up');
-                                }
-                            }
-                            if (CResult = isNaN(CResult)) {
-                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
-                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
-                            }
-                        }
-                        catch (e) {
-                        }
+//                        try {
+//                            CResult = slVal - kitS.findValueByItemName($title.html(), true);
+//                            if (CResult == 0) {
+//                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                                $card.find('.sta').addClass('sta stats-gray');
+//                                $card.find('.sta i').addClass('fa');
+//                            } else {
+//                                if (CResult > 0) {
+//                                    $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                                    $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                                    $card.find('.sta').addClass('sta stats-down');
+//                                    $card.find('.sta i').addClass('fa fa-arrow-down');
+//                                } else {
+//                                    $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                                    $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                                    $card.find('.sta').addClass('sta stats-up');
+//                                    $card.find('.sta i').addClass('fa fa-arrow-up');
+//                                }
+//                            }
+//                            if (CResult = isNaN(CResult)) {
+//                                $card.find('.sta').removeClass('stats-gray stats-up stats-down');
+//                                $card.find('.sta i').removeClass('fa-arrow-up fa-arrow-down');
+//                            }
+//                        }
+//                        catch (e) {
+//                        }
                         $quotadate.html(baseSpeed.time_year + '-' + baseSpeed.time_month);
                         $barS.css("width", speedUp != '-' ? speedUp : '0' + '%');
                         $valV.html(kitV.findValueByItemName($title.html(), true));

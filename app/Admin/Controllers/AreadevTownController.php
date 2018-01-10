@@ -17,7 +17,10 @@ class AreadevTownController extends Controller
             $content->description('详情');
 
             $content->row(function (Row $row) {
-                $row->column(12, view('admin.charts.area-development.town.quota'));
+                $js = Admin::js('/js/vue.min.js');
+                $js1 = Admin::js('/js/vuetable1.js');
+                $js2 = Admin::js('/js/vuechart.js');
+                $row->column(12, view('admin.charts.area-development.town.quota', compact('js','js1','js2')));
             });
             $content->row(function (Row $row) {
                 //$row->column(12, view('admin.charts.area-development.quota-map'));
