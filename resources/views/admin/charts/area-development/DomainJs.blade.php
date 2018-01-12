@@ -102,7 +102,7 @@
                     url: SyStore.gPath + "/report/getAnReportByTmpId", //获取表格结构api
                     async: true,
                     data: {
-//                        tmpType: 'tmp',
+                        tmpType: 'tmp',
                         tmpId: 22 //表格结构id
                     },
                     success: function (stru) {
