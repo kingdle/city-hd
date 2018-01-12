@@ -6,11 +6,7 @@
                     <div class="ibox-title">
                         <h5>指标列表及报表</h5>
                         <div class="ibox-tools">
-                            <div id="app-time">
-                                <input v-on:keyup.13="changeDate" v-model="year" placeholder="year">
-                                <input v-on:keyup.13="changeDate" v-model="month" placeholder="month">
-                                <button @click="changeDate">更新日期</button>
-                            </div>
+
                         </div>
                     </div>
                     <div class="warpper-content-pillar">
@@ -72,7 +68,7 @@
                                                     </div>
                                                     <div class="col-sm-8">
                                                         <div id="tax-charts" style="height:420px">
-                                                            <sy-chart chartid="testChart" :syoption="syoption"
+                                                            <sy-chart chartid="vue-chart-2" :syoption="syoption"
                                                                       :styleobj="styleobj"></sy-chart>
                                                         </div>
                                                     </div>
@@ -93,7 +89,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-8">
-                                                        <div id="assets-charts" style="height:420px"></div>
+                                                        <div id="build-charts" style="height:420px">
+                                                            <sy-chart chartid="vue-chart-3" :syoption="syoption"
+                                                                      :styleobj="styleobj"></sy-chart>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,7 +111,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-8">
-                                                        <div id="sale-charts" style="height:420px"></div>
+                                                        <div id="sale-charts" style="height:420px">
+                                                            <sy-chart chartid="vue-chart-4" :syoption="syoption"
+                                                                      :styleobj="styleobj"></sy-chart>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -132,120 +134,4 @@
 <script src="{{ admin_asset ("/js/vuechart.js") }}"></script>
 <script>
     var a = 1;
-    $(function() {
-        var csData = null;
-        var seriesFilters = null;
-        storeB = new SyStore({
-            autoLoad: true,
-            datasetId: 9,
-            success: function(store) {
-
-                var axisArr = []; //横轴过滤结构
-                var axisItem = null; //横轴项
-                for(var item in store.meta.area) {
-                    axisItem = {
-                        "name": store.meta.area[item].name,
-                        "arr": [{ //横轴过滤条件
-                            //									"name": item.split('-')[0], //元数据名
-                            "type": "area", //元数据类型
-                            "extField": store.meta.area[item].extField //元数据id
-                        }]
-                    };
-                    axisArr.push(axisItem);
-                }
-                seriesFilters = [{ //序列过滤条件
-                    type: 'item', //元数据类型
-                    name: "工业增加值" //元数据名称
-                }, {
-                    type: 'frame',
-                    extField: "200000014" //也可直接传入元数据id，如传入id则不按名称查找
-                }, {
-                    type: 'time_year',
-                    extField:"2017"//也可直接传入元数据id，如传入id则不按名称查找
-                }, {
-                    type: 'time_month',
-                    extField:"11" //也可直接传入元数据id，如传入id则不按名称查找
-                }];
-                var sychartOption = {
-                    title: {
-                        text: '',
-                        x: 'center'
-                    },
-                    tooltip: {
-                        trigger: 'item',
-                        formatter: "{a} <br/>{b} : {c} ({d}%)"
-                    },
-                    legend: {
-                        orient: 'vertical',
-                        left: 'left',
-                        data: ['镇街','黄岛', '辛  安', '薛家岛', '灵珠山', '长江路', '红石崖', '灵山卫', '王台镇', '隐珠', '滨海', '张家楼', '琅琊', '藏南', '泊里', '大场', '海青', '大村', '六汪', '宝山', '铁山', '胶南', '珠海', '度假区', '胶河', '临港']
-                //										data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
-                    },
-                    syaxisfilter: axisArr, //传入横轴过滤条件
-                    series: [{
-                        name: '工业增加值',
-                        type: 'pie',
-                        radius: ['40%', '70%'],
-                        center: ['60%', '55%'],
-                        syfilter: seriesFilters,
-
-                    }]
-                };
-                app1 = new Vue({
-                    el: '#industry-charts',
-                    store: store, //传入数据集
-                    data: {
-                        styleobj: {
-                            height: '420px'
-                        },
-                        syoption: sychartOption
-                    }
-                });
-                $.ajax({
-                    type: "get",
-                    url: SyStore.gPath + "/report/getAnReportByTmpId",  //获取表格结构api
-                    async: true,
-                    data: {
-                        //								tmpType: 'tmp',
-                        tmpId: 42 //表格结构id
-                    },
-                    success: function(data) {
-                        csData = data;
-                        //输入初始日期
-                        data.reportMetas = [{
-                            "type": "time_year",
-                            "extField":"2017"
-                        }, {
-                            "type": "time_month",
-                            "extField":"11"
-                        }];
-                        //更新日期
-                        var bb = new Vue({
-                            el: '#app-time',
-                            data: {
-                                year: '2017',
-                                month: '11'
-                            },
-                            methods: {
-                                changeDate: function() {
-                                    seriesFilters[2].extField = this.year;
-                                    seriesFilters[3].extField = this.month;
-                                    //修改日期
-                                    csData.reportMetas = [{
-                                        "type": "time_year",
-                                        "extField": this.year
-                                    }, {
-                                        "type": "time_month",
-                                        "extField": this.month
-                                    }];
-
-                                }
-                            }
-                        });
-                    }
-                });
-
-            }
-        });
-    });
 </script>

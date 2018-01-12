@@ -1,5 +1,5 @@
 <script>
-    function initTimeline(showData) {
+    function initTimelineEconomic(showData) {
         var dom = document.getElementById("HeaderDateline");
         var myChart = echarts.getInstanceByDom(dom);
         if (myChart) {
@@ -57,7 +57,6 @@
         success: function (store) {
             var _store = store;
             $(function () {
-
                     initChartsMonitor(_store);
                     area();
                     assets();
@@ -141,7 +140,7 @@
                 $valS.html(kitS.findValueByItemName($title.html(), true));
             });
 
-            initTimeline(function (dd) {
+            initTimelineEconomic(function (dd) {
                 var nowDate = dateArr[dd.currentIndex];
                 baseRes.time_year = nowDate.getFullYear();
                 baseRes.time_month = nowDate.getMonth() + 1;
