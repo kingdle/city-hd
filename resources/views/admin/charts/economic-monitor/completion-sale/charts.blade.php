@@ -23,19 +23,6 @@
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
-            series: [{
-                type: "item",
-                extField: store.findMetaByItemName({
-                    type: 'item',
-                    name: '固定'
-                }).extField
-            }, {
-                type: 'frame',
-                extField: store.findMetaByItemName({
-                    type: 'frame',
-                    name: '累计'
-                }).extField
-            }],
             axis: axisArr,
         });
 //                var dd = chartKit.genSeriesData();
@@ -95,7 +82,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -103,6 +90,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),
@@ -124,7 +118,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -132,6 +126,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),

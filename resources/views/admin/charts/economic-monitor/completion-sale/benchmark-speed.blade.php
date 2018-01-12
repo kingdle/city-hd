@@ -50,19 +50,6 @@
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
-            series: [{
-                type: "item",
-                extField: store.findMetaByItemName({
-                    type: 'item',
-                    name: '第二产业'
-                }).extField
-            }, {
-                type: 'frame',
-                extField: store.findMetaByItemName({
-                    type: 'frame',
-                    name: '累计'
-                }).extField
-            }],
             axis: axisArr,
         });
         // 基于准备好的dom，初始化echarts实例
@@ -78,7 +65,7 @@
                 trigger: 'axis'
             },
             legend: {
-                data: ['全国', '山东省', '青岛市', '西海岸新区']
+                data: ['全国', '山东省', '青岛市', '青岛西海岸新区']
             },
             grid: {
                 left: '3%',
@@ -105,7 +92,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -133,7 +120,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -161,7 +148,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -181,7 +168,7 @@
                     }),
                 },
                 {
-                    name: '西海岸新区',
+                    name: '青岛西海岸新区',
                     type: 'line',
                     //stack: '总量',
                     data: chartKit.genSeriesData({
@@ -189,7 +176,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -203,7 +190,7 @@
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '黄岛'
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),
@@ -245,7 +232,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -259,7 +246,7 @@
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '黄岛'
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),
@@ -273,7 +260,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -301,7 +288,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -329,7 +316,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -357,7 +344,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,
@@ -385,7 +372,7 @@
                             type: "item",
                             extField: store.findMetaByItemName({
                                 type: 'item',
-                                name: '限上贸易'
+                                name: '限上贸易销售额'
                             }).extField
                         }, {
                             //        name: 2,

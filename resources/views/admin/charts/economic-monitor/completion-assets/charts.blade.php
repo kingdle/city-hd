@@ -111,7 +111,7 @@
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '黄岛区'
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),
@@ -147,7 +147,7 @@
                             type: 'area',
                             extField: store.findMetaByItemName({
                                 type: 'area',
-                                name: '黄岛区'
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),

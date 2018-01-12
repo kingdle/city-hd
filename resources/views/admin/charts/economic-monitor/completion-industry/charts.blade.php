@@ -33,13 +33,6 @@
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
-            series: [{
-                type: 'frame',
-                extField: store.findMetaByItemName({
-                    type: 'frame',
-                    name: '累计'
-                }).extField
-            }],
             axis: axisArr,
         });
         // 基于准备好的dom，初始化echarts实例
@@ -105,6 +98,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '青岛西海岸新区'
+                            }).extField
                         }]
                     }),
                     markPoint: {},
@@ -128,6 +128,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '增长'
+                            }).extField
+                        }, {
+                            //        name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '青岛西海岸新区'
                             }).extField
                         }]
                     }),

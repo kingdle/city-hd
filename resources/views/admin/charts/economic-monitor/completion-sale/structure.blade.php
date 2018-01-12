@@ -89,7 +89,8 @@
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '批发业'
+                            name: '批发业',
+                            area: '黄岛区'
                         }).extField
                     }]
                 }, {
@@ -98,7 +99,8 @@
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '零售业'
+                            name: '零售业',
+                            area: '黄岛区'
                         }).extField
                     }]
                 }, {
@@ -107,7 +109,8 @@
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '住宿业'
+                            name: '住宿业',
+                            area: '黄岛区'
                         }).extField
                     }]
                 }, {
@@ -116,7 +119,8 @@
                         type: 'item',
                         extField: store.findMetaByItemName({
                             type: 'item',
-                            name: '餐饮业'
+                            name: '餐饮业',
+                            area: '黄岛区'
                         }).extField
                     }]
                 }]
@@ -155,19 +159,6 @@
         //===============普通图kit==============
         var chartKit = new SyChartSeriesKit({
             store: store,
-            series: [{
-                type: "item",
-                extField: store.findMetaByItemName({
-                    type: 'item',
-                    name: '第二产业'
-                }).extField
-            }, {
-                type: 'frame',
-                extField: store.findMetaByItemName({
-                    type: 'frame',
-                    name: '累计'
-                }).extField
-            }],
             axis: jiduTime.cAxisArr,
         });
         // 基于准备好的dom，初始化echarts实例
@@ -241,6 +232,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
+                            }).extField
                         }]
                     })
 
@@ -263,6 +261,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
+                            }).extField
                         }]
                     })
                 },
@@ -283,6 +288,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     })
@@ -305,6 +317,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     })
@@ -355,6 +374,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
+                            }).extField
                         }]
                     })
                 },
@@ -375,6 +401,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     })
@@ -397,6 +430,13 @@
                                 type: 'frame',
                                 name: '累计'
                             }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
+                            }).extField
                         }]
                     })
                 },
@@ -417,6 +457,13 @@
                             extField: store.findMetaByItemName({
                                 type: 'frame',
                                 name: '累计'
+                            }).extField
+                        }, {
+                            //name: 2,
+                            type: 'area',
+                            extField: store.findMetaByItemName({
+                                type: 'area',
+                                name: '黄岛区'
                             }).extField
                         }]
                     })
