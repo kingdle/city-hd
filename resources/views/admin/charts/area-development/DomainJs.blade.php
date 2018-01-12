@@ -162,7 +162,7 @@
                     },
                     syaxisfilter: axisArr, //传入横轴过滤条件
                     series: [{
-                        name: '工业增加值',
+                        name: '规上工业总产值',
                         type: 'pie',
                         radius: ['40%', '70%'],
                         center: ['60%', '55%'],
@@ -170,7 +170,7 @@
                         sydims: [ //序列维度。散点图有两个维度。其他的只有一个维度，也可以不传入维度，在syfilter中过滤
                             [{
                                 type: 'item',
-                                name: '工业增加值'
+                                name: '规上工业总产值'
                             }, {
                                 type: 'frame',
                                 extField: "200000014" //也可直接传入元数据id，如传入id则不按名称查找
