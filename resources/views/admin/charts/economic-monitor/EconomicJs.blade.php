@@ -195,29 +195,80 @@
                     $valV.html(kitV.findValueByItemName($title.html(), true));
                     $valS.html(kitS.findValueByItemName($title.html(), true));
                 });
-                var $trLists = $(".table-economic tbody").children("tr");
-                $.each($trLists, function (i, trlist) {
-                    var $trlist = $(trlist);
-                    var $tdTitle = $($trlist.find("td").eq(0));
-                    var $tdV = $($trlist.find("td").eq(1));
-                    var $tdS = $($trlist.find("td").eq(2));
-                    $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                    $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
-                });
+//                var $trLists = $(".table-economic tbody").children("tr");
+//                $.each($trLists, function (i, trlist) {
+//                    var $trlist = $(trlist);
+//                    var $tdTitle = $($trlist.find("td").eq(0));
+//                    var $tdV = $($trlist.find("td").eq(1));
+//                    var $tdS = $($trlist.find("td").eq(2));
+//                    $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
+//                    $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+//                });
             });
 
 
-            var $trLists = $(".table-economic tbody").children("tr");
-            $.each($trLists, function (i, trlist) {
-                var $trlist = $(trlist);
-                var $tdTitle = $($trlist.find("td").eq(0));
-                var $tdV = $($trlist.find("td").eq(1));
-                var $tdS = $($trlist.find("td").eq(2));
-                $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
-            });
 
         }
     });
 
+</script>
+<script src="{{ admin_asset ("/js/vue.min.js") }}"></script>
+<script src="{{ admin_asset ("/js/vuetable1.js") }}"></script>
+<script>
+    $(function () {
+        struA = {};
+        storeA = new SyStore({
+            autoLoad: true,
+            datasetId: 10,
+            success: function (store) {
+                initTimelineEconomic(function (index) {
+                    var nowDate = dateArr[index.currentIndex];
+                    struA.reportMetas = [{
+                        "type": "time_year",
+                        "extField": nowDate.getFullYear()
+                    }, {
+                        "type": "time_month",
+                        "extField": nowDate.getMonth() + 1
+                    }];
+                });
+                var _store = store;
+                $.ajax({
+                    type: "get",
+                    url: SyStore.gPath + "/report/getAnReportByTmpId", //获取表格结构api
+                    async: true,
+                    data: {
+                        tmpType: 'tmp',
+                        tmpId: 7 //表格结构id
+                    },
+                    success: function (stru) {
+                        struA = stru;
+                        //输入初始日期
+                        struA.reportMetas = [{
+                            "type": "time_year",
+                            "extField": nowDate.getFullYear()
+                        }, {
+                            "type": "time_month",
+                            "extField": nowDate.getMonth() + 1
+                        }];
+                        //创建表格
+                        var aa = new Vue({
+                            el: '#app-1',
+                            data: {
+                                stru: struA //表格结构
+                            },
+                            store: _store,
+                            mounted: function () {
+                                console.log(store)
+                            }
+
+                        });
+
+                        console.log(aa)
+
+
+                    }
+                });
+            }
+        });
+    })
 </script>
