@@ -26,8 +26,8 @@ class EconomicmonitorController extends Controller
                 $row->column(3, view('admin.charts.economic-monitor.sale'));
             });
             $content->row(function(Row $row) {
-                $row->column(4, view('admin.charts.economic-monitor.tables'));
-                $row->column(8, view('admin.charts.economic-monitor.charts'));
+                $row->column(3, view('admin.charts.economic-monitor.tables'));
+                $row->column(9, view('admin.charts.economic-monitor.charts'));
 
             });
             $content->row(function (Row $row) {

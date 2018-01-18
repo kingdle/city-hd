@@ -8,13 +8,19 @@
         line-height: 2em;
         min-height: 500px;
     }
-    .table>thead>tr>th {
+
+    .table > thead > tr > th {
         vertical-align: inherit;
         text-align: center;
     }
-    .table>tbody>tr>td {
+
+    .table > tbody > tr > td {
         vertical-align: inherit;
         text-align: center;
+    }
+
+    .row-quota table tbody {
+        max-height: 480px;
     }
 </style>
 <div class="box">

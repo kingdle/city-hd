@@ -1,3 +1,8 @@
+<style>
+    .row-quota table tbody {
+        max-height:602px;
+    }
+</style>
 <div class="box">
     <div class="row">
         <div class="col-lg-12">

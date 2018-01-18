@@ -1,3 +1,8 @@
+<style>
+    .row-quota table tbody {
+        max-height:480px;
+    }
+</style>
 <div class="card">
     <div class="content">
         <div class="row">
@@ -19,13 +24,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var _width = $('#quota').width();
-        $('#quota th:first-child').width(_width * 0.1);
-        $('#quota td:first-child').width(_width * 0.1);
-        $('#quota th:nth-child(2)').width(_width * 0.3);
-        $('#quota td:nth-child(2)').width(_width * 0.3);
-        $('#quota th:nth-child(3)').width(_width * 0.3);
-        $('#quota td:nth-child(3)').width(_width * 0.3);
-        $('#quota th:nth-child(4)').width(_width * 0.2);
-        $('#quota td:nth-child(4)').width(_width * 0.2);
+        $('#quota table tbody td:first-child').width(_width * 0.3);
+        $('#quota table tbody td:nth-child(1)').width(_width * 0.3);
+        $('#quota table tbody td:nth-child(2)').width(_width * 0.3);
+        $('#quota table tbody td:nth-child(3)').width(_width * 0.2);
     })
 </script>
