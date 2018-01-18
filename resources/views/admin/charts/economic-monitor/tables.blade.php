@@ -10,7 +10,7 @@
 
         </div>
         <div class="row-quota" id="quota">
-            <div id="app-1">
+            <div id="economic-1">
                 <sy-table :stru="stru"></sy-table>
             </div>
         </div>

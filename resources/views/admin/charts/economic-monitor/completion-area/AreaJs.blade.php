@@ -83,15 +83,15 @@
                     kitV = new SyValueKit(baseRes, _store);
                     kitS = new SyValueKit(baseSpeed, _store);
 
-                    var $trLists = $(".table tbody").children("tr");
-                    $.each($trLists, function (i, trlist) {
-                        var $trlist = $(trlist);
-                        var $tdTitle = $($trlist.find("td").eq(0));
-                        var $tdV = $($trlist.find("td").eq(1));
-                        var $tdS = $($trlist.find("td").eq(2));
-                        $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
-                        $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
-                    });
+//                    var $trLists = $(".table tbody").children("tr");
+//                    $.each($trLists, function (i, trlist) {
+//                        var $trlist = $(trlist);
+//                        var $tdTitle = $($trlist.find("td").eq(0));
+//                        var $tdV = $($trlist.find("td").eq(1));
+//                        var $tdS = $($trlist.find("td").eq(2));
+//                        $tdV.text(kitV.findValueByItemName($tdTitle.text(), true));
+//                        $tdS.text(kitS.findValueByItemName($tdTitle.text(), true));
+//                    });
                 });
 
                 var $trLists = $(".table tbody").children("tr");
