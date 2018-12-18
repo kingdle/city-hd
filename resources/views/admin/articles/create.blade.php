@@ -3,6 +3,8 @@
     <script>
         window.UEDITOR_CONFIG.serverUrl = '/ueditor/server'
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <style>
         .col-lg-10 {
             padding-bottom: 70px;
@@ -23,11 +25,13 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('intro','概要:') !!}
-                        {!! Form::textarea('intro',null,['class'=>'form-control']) !!}
+                        {!! Form::text('intro',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('content','正文:') !!}
-                        <script id="container" name="content" style="height:300px;" type="text/plain"></script>
+                        {!! Form::textarea('content',null,['class'=>'form-control']) !!}
+
+                        {{--<script id="container" name="content" style="height:300px;" type="text/plain"></script>--}}
                     </div>
                     <div class="form-group">
                         {!! Form::label('published_at','发布日期') !!}
@@ -58,24 +62,25 @@
                 placeholder: "添加标签"
             });
         });
+        var simplemde = new SimpleMDE({ element: document.getElementById("content") });
     </script>
     <!-- 实例化编辑器 -->
-    <script type="text/javascript">
-        var ue = UE.getEditor('container',
-            {
-                toolbars: [
-                    ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']
-                ],
-                elementPathEnabled: false,
-                enableContextMenu: false,
-                autoClearEmptyNode: true,
-                wordCount: false,
-                imagePopup: false,
-                autotypeset: {indent: true, imageBlockLine: 'center'}
-            }
-        );
-        ue.ready(function () {
-            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-        });
-    </script>
+    {{--<script type="text/javascript">--}}
+        {{--var ue = UE.getEditor('container',--}}
+            {{--{--}}
+                {{--toolbars: [--}}
+                    {{--['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft', 'justifycenter', 'justifyright', 'link', 'insertimage', 'fullscreen']--}}
+                {{--],--}}
+                {{--elementPathEnabled: false,--}}
+                {{--enableContextMenu: false,--}}
+                {{--autoClearEmptyNode: true,--}}
+                {{--wordCount: false,--}}
+                {{--imagePopup: false,--}}
+                {{--autotypeset: {indent: true, imageBlockLine: 'center'}--}}
+            {{--}--}}
+        {{--);--}}
+        {{--ue.ready(function () {--}}
+            {{--ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.--}}
+        {{--});--}}
+    {{--</script>--}}
 @endsection

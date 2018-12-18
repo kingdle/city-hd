@@ -29,7 +29,7 @@ use App\Admin\Extensions\Column\UrlWrapper;
 use App\Admin\Extensions\Nav\Links;
 use Encore\Admin\Grid;
 use Encore\Admin\Grid\Column;
-
+use App\Admin\Extensions\Simplemde;
 
 Encore\Admin\Form::forget(['map', 'editor']);
 Form::extend('WangEditor', WangEditor::class);
@@ -57,6 +57,8 @@ Column::extend('prependIcon', function ($value, $icon) {
 
 Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
 
+
+Form::extend('editor', Simplemde::class);
 //    $navbar->left(view('admin.search-bar'));
 //    $navbar->right(new Links());
 

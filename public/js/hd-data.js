@@ -9,7 +9,7 @@ function SyStore(config) {
     }
 
 }
-SyStore.gPath = 'http://hd.maxdata.cc:8185/sy-hd';
+SyStore.gPath = 'http://xha.me:8185/sy-hd';
 
 SyStore.prototype.init = function () {
     var _this = this;
@@ -17,7 +17,7 @@ SyStore.prototype.init = function () {
         type: "post",
         jsonp: "callback",
         jsonpCallback: "jsonpCallback",
-        url: "http://218.58.53.234:8183/sy-hd/dataset/getDatasetMetasAsType?datasetId=" + _this.datasetId,
+        url: "http://xha.me:8183/sy-hd/dataset/getDatasetMetasAsType?datasetId=" + _this.datasetId,
         success: function (paramData) {
             _this.getDataByMeta(paramData);
 
@@ -42,7 +42,7 @@ SyStore.prototype.getDataByMeta = function (paramData) {
     }
     $.ajax({
         type: "post",
-        url: "http://218.58.53.234:8183/sy-hd/data",
+        url: "http://xha.me:8183/sy-hd/data",
         data: pd,
         jsonp: "callback",
         jsonpCallback: "jsonpCallback",

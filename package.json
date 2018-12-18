@@ -11,15 +11,15 @@
     },
     "devDependencies": {
         "axios": "^0.16.2",
-        "bootstrap-sass": "^3.3.7",
-        "cross-env": "^5.0.1",
-        "jquery": "^3.1.1",
+        "bootstrap-sass": "^3.4.0",
+        "jquery": "^3.3.1",
         "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.1.10"
+        "lodash": "^4.17.11",
+        "vue": "^2.5.21"
     },
     "dependencies": {
-        "chart.js": "^2.7.0",
-        "gulp": "^3.9.1"
+        "chart.js": "^2.7.3",
+        "gulp": "^3.9.1",
+        "simplemde": "^1.11.2"
     }
 }
